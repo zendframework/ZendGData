@@ -24,9 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Calendar;
-use Zend\GData;
-use Zend\GData\App;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Calendar data API
@@ -44,7 +42,7 @@ use Zend\GData\App;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Calendar extends GData\GData
+class Calendar extends GData
 {
 
     const CALENDAR_FEED_URI = 'http://www.google.com/calendar/feeds';
@@ -71,8 +69,8 @@ class Calendar extends GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Calendar');
-        $this->registerPackage('\Zend\GData\Calendar\Extension');
+        $this->registerPackage('Zend\GData\Calendar');
+        $this->registerPackage('Zend\GData\Calendar\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
     }
@@ -87,12 +85,12 @@ class Calendar extends GData\GData
     {
         if ($location == null) {
             $uri = self::CALENDAR_EVENT_FEED_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Calendar\EventFeed');
+        return parent::getFeed($uri, 'Zend\GData\Calendar\EventFeed');
     }
 
     /**
@@ -105,12 +103,12 @@ class Calendar extends GData\GData
         if ($location == null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Calendar\EventEntry');
+        return parent::getEntry($uri, 'Zend\GData\Calendar\EventEntry');
     }
 
 
@@ -122,7 +120,7 @@ class Calendar extends GData\GData
     public function getCalendarListFeed()
     {
         $uri = self::CALENDAR_FEED_URI . '/default';
-        return parent::getFeed($uri,'\Zend\GData\Calendar\ListFeed');
+        return parent::getFeed($uri,'Zend\GData\Calendar\ListFeed');
     }
 
     /**
@@ -135,12 +133,12 @@ class Calendar extends GData\GData
         if ($location == null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri,'\Zend\GData\Calendar\ListEntry');
+        return parent::getEntry($uri,'Zend\GData\Calendar\ListEntry');
     }
 
     public function insertEvent($event, $uri=null)
@@ -148,7 +146,7 @@ class Calendar extends GData\GData
         if ($uri == null) {
             $uri = $this->_defaultPostUri;
         }
-        $newEvent = $this->insertEntry($event, $uri, '\Zend\GData\Calendar\EventEntry');
+        $newEvent = $this->insertEntry($event, $uri, 'Zend\GData\Calendar\EventEntry');
         return $newEvent;
     }
 

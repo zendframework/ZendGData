@@ -24,8 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\GBase;
-use Zend\GData;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Base data API
@@ -44,7 +43,7 @@ use Zend\GData;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GBase extends GData\GData
+class GBase extends GData
 {
 
     /**
@@ -88,8 +87,8 @@ class GBase extends GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\GBase');
-        $this->registerPackage('\Zend\GData\GBase\Extension');
+        $this->registerPackage('Zend\GData\GBase');
+        $this->registerPackage('Zend\GData\GBase\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
     }
@@ -104,12 +103,12 @@ class GBase extends GData\GData
     {
         if ($location === null) {
             $uri = self::GBASE_ITEM_FEED_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GBase\ItemFeed');
+        return parent::getFeed($uri, 'Zend\GData\GBase\ItemFeed');
     }
 
     /**
@@ -121,14 +120,14 @@ class GBase extends GData\GData
     public function getGBaseItemEntry($location = null)
     {
         if ($location === null) {
-            throw new GData\App\InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\GBase\ItemEntry');
+        return parent::getEntry($uri, 'Zend\GData\GBase\ItemEntry');
     }
 
     /**
@@ -145,7 +144,7 @@ class GBase extends GData\GData
         } else {
             $uri = $this->_defaultPostUri . '?dry-run=true';
         }
-        $newitem = $this->insertEntry($entry, $uri, '\Zend\GData\GBase\ItemEntry');
+        $newitem = $this->insertEntry($entry, $uri, 'Zend\GData\GBase\ItemEntry');
         return $newitem;
     }
 
@@ -185,11 +184,11 @@ class GBase extends GData\GData
     {
         if ($location === null) {
             $uri = self::GBASE_SNIPPET_FEED_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GBase\SnippetFeed');
+        return parent::getFeed($uri, 'Zend\GData\GBase\SnippetFeed');
     }
 }

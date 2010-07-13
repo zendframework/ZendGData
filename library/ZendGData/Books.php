@@ -24,8 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Books;
-use Zend\GData;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Books service
@@ -41,7 +40,7 @@ use Zend\GData;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Books extends GData\GData
+class Books extends GData
 {
     const VOLUME_FEED_URI = 'http://books.google.com/books/feeds/volumes';
     const MY_LIBRARY_FEED_URI = 'http://books.google.com/books/feeds/users/me/collections/library/volumes';
@@ -86,12 +85,12 @@ class Books extends GData\GData
     {
         if ($location == null) {
             $uri = self::VOLUME_FEED_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
     }
 
     /**
@@ -108,12 +107,12 @@ class Books extends GData\GData
     {
         if ($volumeId !== null) {
             $uri = self::VOLUME_FEED_URI . "/" . $volumeId;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Books\VolumeEntry');
+        return parent::getEntry($uri, 'Zend\GData\Books\VolumeEntry');
     }
 
     /**
@@ -131,7 +130,7 @@ class Books extends GData\GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
     }
 
     /**
@@ -149,7 +148,7 @@ class Books extends GData\GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
     }
 
     /**
@@ -168,7 +167,7 @@ class Books extends GData\GData
             $uri = $location;
         }
         return parent::insertEntry(
-            $entry, $uri, '\Zend\GData\Books\VolumeEntry');
+            $entry, $uri, 'Zend\GData\Books\VolumeEntry');
     }
 
     /**

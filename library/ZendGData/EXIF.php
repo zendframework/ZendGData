@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Zend Framework
  *
@@ -14,7 +15,7 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage DublinCore
+ * @subpackage Exif
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
@@ -23,33 +24,33 @@
 /**
  * @namespace
  */
-namespace Zend\GData\DublinCore;
+namespace Zend\GData;
 
 /**
- * Service class for interacting with the services which use the
- * DublinCore extensions.
+ * Service class for interacting with the services which use the EXIF extensions
+ * @link http://code.google.com/apis/picasaweb/reference.html#exif_reference
  *
  * @uses       \Zend\GData\GData
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage DublinCore
+ * @subpackage Exif
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class DublinCore extends \Zend\GData\GData
+class EXIF extends GData
 {
 
     /**
-     * Namespaces used for Zend_Gdata_DublinCore
+     * Namespaces used for Zend_Gdata_Exif
      *
      * @var array
      */
     public static $namespaces = array(
-        array('dc', 'http://purl.org/dc/terms', 1, 0)
+        array('exif', 'http://schemas.google.com/photos/exif/2007', 1, 0)
     );
 
     /**
-     * Create Zend_Gdata_DublinCore object
+     * Create Zend_Gdata_Exif object
      *
      * @param \Zend\HTTP\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.
@@ -57,8 +58,8 @@ class DublinCore extends \Zend\GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\DublinCore');
-        $this->registerPackage('\Zend\GData\DublinCore\Extension');
+        $this->registerPackage('Zend\GData\EXIF');
+        $this->registerPackage('Zend\GData\EXIF\Extension');
         parent::__construct($client, $applicationId);
     }
 

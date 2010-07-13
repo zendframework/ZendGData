@@ -23,19 +23,19 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Extension;
+namespace Zend\GData;
 
 /**
  * Represents a Gdata extension
  *
- * @uses       \Zend\GData\App\Extension\Extension
+ * @uses       \Zend\GData\App\Extension
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Gdata
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Extension extends \Zend\GData\App\Extension\Extension
+class Extension extends App\Extension
 {
 
     protected $_rootNamespace = 'gd';

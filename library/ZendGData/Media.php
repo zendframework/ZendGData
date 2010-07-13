@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Zend Framework
  *
@@ -15,7 +14,7 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Exif
+ * @subpackage Media
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
@@ -24,42 +23,42 @@
 /**
  * @namespace
  */
-namespace Zend\GData\EXIF;
+namespace Zend\GData;
 
 /**
- * Service class for interacting with the services which use the EXIF extensions
- * @link http://code.google.com/apis/picasaweb/reference.html#exif_reference
+ * Service class for interacting with the services which use the media extensions
+ * @link http://code.google.com/apis/gdata/calendar.html
  *
  * @uses       \Zend\GData\GData
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Exif
+ * @subpackage Media
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class EXIF extends \Zend\GData\GData
+class Media extends GData
 {
 
     /**
-     * Namespaces used for Zend_Gdata_Exif
+     * Namespaces used for Zend_Gdata_Photos
      *
      * @var array
      */
     public static $namespaces = array(
-        array('exif', 'http://schemas.google.com/photos/exif/2007', 1, 0)
+        array('media', 'http://search.yahoo.com/mrss/', 1, 0)
     );
 
     /**
-     * Create Zend_Gdata_Exif object
+     * Create Gdata_Media object
      *
      * @param \Zend\HTTP\Client $client (optional) The HTTP client to use when
-     *          when communicating with the Google servers.
+     *          when communicating with the Google Apps servers.
      * @param string $applicationId The identity of the app in the form of Company-AppName-Version
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\EXIF');
-        $this->registerPackage('\Zend\GData\EXIF\Extension');
+        $this->registerPackage('Zend\GData\Media');
+        $this->registerPackage('Zend\GData\Media\Extension');
         parent::__construct($client, $applicationId);
     }
 

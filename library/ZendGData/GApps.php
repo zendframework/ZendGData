@@ -23,9 +23,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\GApps;
-use Zend\GData\App;
-use Zend\GData;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Apps Provisioning API.
@@ -55,7 +53,7 @@ use Zend\GData;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class GApps extends GData\GData
+class GApps extends GData
 {
 
     const APPS_BASE_FEED_URI = 'https://apps-apis.google.com/a/feeds';
@@ -113,8 +111,8 @@ class GApps extends GData\GData
      */
     public function __construct($client = null, $domain = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\GApps');
-        $this->registerPackage('\Zend\GData\GApps\Extension');
+        $this->registerPackage('Zend\GData\GApps');
+        $this->registerPackage('Zend\GData\GApps\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
         $this->_domain = $domain;
@@ -143,7 +141,7 @@ class GApps extends GData\GData
             // Check to see if there is an AppsForYourDomainErrors
             // datastructure in the response. If so, convert it to
             // an exception and throw it.
-            $error = new ServiceException();
+            $error = new GApps\ServiceException();
             $error->importFromString($response->getBody());
             throw $error;
         } catch (App\Exception $e2) {
@@ -170,7 +168,7 @@ class GApps extends GData\GData
      * @throws \Zend\GData\GApps\ServiceException
      * @return \Zend\GData\App\Feed
      */
-    public static function import($uri, $client = null, $className='\Zend\GData\App\Feed')
+    public static function import($uri, $client = null, $className='Zend\GData\App\Feed')
     {
         try {
             return parent::import($uri, $client, $className);
@@ -335,12 +333,12 @@ class GApps extends GData\GData
     {
         if ($location === null) {
             $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GApps\UserFeed');
+        return parent::getFeed($uri, 'Zend\GData\GApps\UserFeed');
     }
 
     /**
@@ -357,7 +355,7 @@ class GApps extends GData\GData
     {
         if ($location === null) {
             $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -381,7 +379,7 @@ class GApps extends GData\GData
         if ($location === null) {
             $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
             $uri .= $this->getDomain();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -405,7 +403,7 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -429,13 +427,13 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
 
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GApps\OwnerFeed');
+        return parent::getFeed($uri, 'Zend\GData\GApps\OwnerFeed');
     }
 
     /**
@@ -453,12 +451,12 @@ class GApps extends GData\GData
     {
         if ($location === null) {
             $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GApps\EmailListFeed');
+        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListFeed');
     }
 
     /**
@@ -476,12 +474,12 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\GApps\EmailListRecipientFeed');
+        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListRecipientFeed');
     }
 
     /**
@@ -498,12 +496,12 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\GApps\UserEntry');
+        return parent::getEntry($uri, 'Zend\GData\GApps\UserEntry');
     }
 
     /**
@@ -520,7 +518,7 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -542,7 +540,7 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -564,7 +562,7 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -586,12 +584,12 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\GApps\OwnerEntry');
+        return parent::getEntry($uri, 'Zend\GData\GApps\OwnerEntry');
     }
 
     /**
@@ -608,12 +606,12 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\GApps\EmailListEntry');
+        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListEntry');
     }
 
     /**
@@ -630,12 +628,12 @@ class GApps extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\GApps\EmailListRecipientEntry');
+        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListRecipientEntry');
     }
 
     /**
@@ -656,7 +654,7 @@ class GApps extends GData\GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
         }
-        $newEntry = $this->insertEntry($user, $uri, '\Zend\GData\GApps\UserEntry');
+        $newEntry = $this->insertEntry($user, $uri, 'Zend\GData\GApps\UserEntry');
         return $newEntry;
     }
 
@@ -679,7 +677,7 @@ class GApps extends GData\GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
         }
-        $newEntry = $this->insertEntry($nickname, $uri, '\Zend\GData\GApps\NicknameEntry');
+        $newEntry = $this->insertEntry($nickname, $uri, 'Zend\GData\GApps\NicknameEntry');
         return $newEntry;
     }
 
@@ -771,7 +769,7 @@ class GApps extends GData\GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH;
         }
-        $newEntry = $this->insertEntry($emailList, $uri, '\Zend\GData\GApps\EmailListEntry');
+        $newEntry = $this->insertEntry($emailList, $uri, 'Zend\GData\GApps\EmailListEntry');
         return $newEntry;
     }
 
@@ -797,7 +795,7 @@ class GApps extends GData\GData
         } elseif ($uri instanceof EmailListEntry) {
             $uri = $uri->getLink('edit')->href;
         }
-        $newEntry = $this->insertEntry($recipient, $uri, '\Zend\GData\GApps\EmailListRecipientEntry');
+        $newEntry = $this->insertEntry($recipient, $uri, 'Zend\GData\GApps\EmailListRecipientEntry');
         return $newEntry;
     }
 
@@ -896,9 +894,9 @@ class GApps extends GData\GData
         $query = $this->newUserQuery($username);
         try {
             $user = $this->getUserEntry($query);
-        } catch (ServiceException $e) {
+        } catch (GApps\ServiceException $e) {
             // Set the user to null if not found
-            if ($e->hasError(Error::ENTITY_DOES_NOT_EXIST)) {
+            if ($e->hasError(GApps\Error::ENTITY_DOES_NOT_EXIST)) {
                 $user = null;
             } else {
                 throw $e;
@@ -1048,9 +1046,9 @@ class GApps extends GData\GData
         $query->setNickname($nickname);
         try {
             $nickname = $this->getNicknameEntry($query);
-        } catch (ServiceException $e) {
+        } catch (GApps\ServiceException $e) {
             // Set the nickname to null if not found
-            if ($e->hasError(Error::ENTITY_DOES_NOT_EXIST)) {
+            if ($e->hasError(GApps\Error::ENTITY_DOES_NOT_EXIST)) {
                 $nickname = null;
             } else {
                 throw $e;
@@ -1180,9 +1178,9 @@ class GApps extends GData\GData
 
         try {
             $group = $this->getGroupEntry($query);
-        } catch (ServiceException $e) {
+        } catch (GApps\ServiceException $e) {
             // Set the group to null if not found
-            if ($e->hasError(Error::ENTITY_DOES_NOT_EXIST)) {
+            if ($e->hasError(GApps\Error::ENTITY_DOES_NOT_EXIST)) {
                 $group = null;
             } else {
                 throw $e;

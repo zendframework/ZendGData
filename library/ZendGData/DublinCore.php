@@ -14,7 +14,7 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Media
+ * @subpackage DublinCore
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  * @version    $Id$
@@ -23,42 +23,42 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Media;
+namespace Zend\GData;
 
 /**
- * Service class for interacting with the services which use the media extensions
- * @link http://code.google.com/apis/gdata/calendar.html
+ * Service class for interacting with the services which use the
+ * DublinCore extensions.
  *
  * @uses       \Zend\GData\GData
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Media
+ * @subpackage DublinCore
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Media extends \Zend\GData\GData
+class DublinCore extends GData
 {
 
     /**
-     * Namespaces used for Zend_Gdata_Photos
+     * Namespaces used for Zend_Gdata_DublinCore
      *
      * @var array
      */
     public static $namespaces = array(
-        array('media', 'http://search.yahoo.com/mrss/', 1, 0)
+        array('dc', 'http://purl.org/dc/terms', 1, 0)
     );
 
     /**
-     * Create Gdata_Media object
+     * Create Zend_Gdata_DublinCore object
      *
      * @param \Zend\HTTP\Client $client (optional) The HTTP client to use when
-     *          when communicating with the Google Apps servers.
+     *          when communicating with the Google servers.
      * @param string $applicationId The identity of the app in the form of Company-AppName-Version
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Media');
-        $this->registerPackage('\Zend\GData\Media\Extension');
+        $this->registerPackage('Zend\GData\DublinCore');
+        $this->registerPackage('Zend\GData\DublinCore\Extension');
         parent::__construct($client, $applicationId);
     }
 

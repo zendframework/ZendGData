@@ -24,8 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Docs;
-use Zend\GData;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Document List data API
@@ -43,7 +42,7 @@ use Zend\GData;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Docs extends GData\GData
+class Docs extends GData
 {
 
     const DOCUMENTS_LIST_FEED_URI = 'http://docs.google.com/feeds/documents/private/full';
@@ -80,7 +79,7 @@ class Docs extends GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Docs');
+        $this->registerPackage('Zend\GData\Docs');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
     }
@@ -109,12 +108,12 @@ class Docs extends GData\GData
     {
         if ($location === null) {
             $uri = self::DOCUMENTS_LIST_FEED_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Docs\DocumentListFeed');
+        return parent::getFeed($uri, 'Zend\GData\Docs\DocumentListFeed');
     }
 
     /**
@@ -126,14 +125,14 @@ class Docs extends GData\GData
     public function getDocumentListEntry($location = null)
     {
         if ($location === null) {
-            throw new GData\App\InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Docs\DocumentListEntry');
+        return parent::getEntry($uri, 'Zend\GData\Docs\DocumentListEntry');
     }
 
     /**
@@ -251,10 +250,10 @@ class Docs extends GData\GData
      *       the appropriate type doesn't exist yet.
      */
     public function createFolder($folderName, $folderResourceId=null) {
-        $category = new GData\App\Extension\Category(self::DOCUMENTS_CATEGORY_TERM, 
+        $category = new App\Extension\Category(self::DOCUMENTS_CATEGORY_TERM, 
                                                           self::DOCUMENTS_CATEGORY_SCHEMA);
-        $title = new GData\App\Extension\Title($folderName);
-        $entry = new GData\Entry();
+        $title = new App\Extension\Title($folderName);
+        $entry = new Entry();
 
         $entry->setCategory(array($category));
         $entry->setTitle($title);
@@ -281,7 +280,7 @@ class Docs extends GData\GData
      *     service after insertion.
      */
     public function insertDocument($data, $uri,
-        $className='\Zend\GData\Docs\DocumentListEntry')
+        $className='Zend\GData\Docs\DocumentListEntry')
     {
         return $this->insertEntry($data, $uri, $className);
     }

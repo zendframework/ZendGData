@@ -24,9 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Health;
-use Zend\GData\App;
-use Zend\GData;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Health Data API
@@ -46,7 +44,7 @@ use Zend\GData;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Health extends GData\GData
+class Health extends GData
 {
     /**
      * URIs of the AuthSub/OAuth feeds.
@@ -107,8 +105,8 @@ class Health extends GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0', $useH9Sandbox = false)
     {
-        $this->registerPackage('\Zend\GData\Health');
-        $this->registerPackage('\Zend\GData\Health\Extension\Ccr');
+        $this->registerPackage('Zend\GData\Health');
+        $this->registerPackage('Zend\GData\Health\Extension\Ccr');
         parent::__construct($client, $applicationId);
         $this->_useH9Sandbox = $useH9Sandbox;
     }
@@ -127,7 +125,7 @@ class Health extends GData\GData
      * Sets which of the user's profiles will be used
      *
      * @param string $id The profile ID
-     * @return \Zend\GData\Health\Health Provides a fluent interface
+     * @return \Zend\GData\Health Provides a fluent interface
      */
     public function setProfileID($id) {
         $this->_profileID = $id;
@@ -150,7 +148,7 @@ class Health extends GData\GData
 
         if($query === null)  {
             $uri = self::CLIENTLOGIN_PROFILELIST_FEED_URI;
-        } else if ($query instanceof GData\Query) {
+        } else if ($query instanceof Query) {
             $uri = $query->getQueryUrl();
         } else {
             $uri = $query;
@@ -161,7 +159,7 @@ class Health extends GData\GData
             $uri = preg_replace('/\/health\//', '/h9/', $uri);
         }
 
-        return parent::getFeed($uri, '\Zend\GData\Health\ProfileListFeed');
+        return parent::getFeed($uri, 'Zend\GData\Health\ProfileListFeed');
     }
 
     /**
@@ -180,7 +178,7 @@ class Health extends GData\GData
                 'Profile ID must not be null. Did you call setProfileID()?');
         }
 
-        if ($query instanceof GData\Query) {
+        if ($query instanceof Query) {
             $uri = $query->getQueryUrl();
         } else if ($this->_httpClient->getClientLoginToken() !== null &&
                    $query == null) {
@@ -196,7 +194,7 @@ class Health extends GData\GData
             $uri = preg_replace('/\/health\//', '/h9/', $uri);
         }
 
-        return parent::getFeed($uri, '\Zend\GData\Health\ProfileFeed');
+        return parent::getFeed($uri, 'Zend\GData\Health\ProfileFeed');
     }
 
     /**
@@ -208,14 +206,14 @@ class Health extends GData\GData
     public function getHealthProfileEntry($query = null)
     {
         if ($query === null) {
-            throw new GData\App\InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                 'Query must not be null');
-        } else if ($query instanceof GData\Query) {
+        } else if ($query instanceof Query) {
             $uri = $query->getQueryUrl();
         } else {
             $uri = $query;
         }
-        return parent::getEntry($uri, '\Zend\GData\Health\ProfileEntry');
+        return parent::getEntry($uri, 'Zend\GData\Health\ProfileEntry');
     }
 
     /**
@@ -243,7 +241,7 @@ class Health extends GData\GData
             $uri = self::AUTHSUB_REGISTER_FEED_URI;
         }
 
-        $entry = new ProfileEntry();
+        $entry = new Health\ProfileEntry();
         $entry->title = $this->newTitle($subject);
         $entry->content = $this->newContent($body);
         $entry->content->type = $bodyType ? $bodyType : 'text';
@@ -254,6 +252,6 @@ class Health extends GData\GData
             $uri = preg_replace('/\/health\//', '/h9/', $uri);
         }
 
-        return $this->insertEntry($entry, $uri, '\Zend\GData\Health\ProfileEntry');
+        return $this->insertEntry($entry, $uri, 'Zend\GData\Health\ProfileEntry');
     }
 }

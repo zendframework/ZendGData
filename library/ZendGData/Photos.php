@@ -23,9 +23,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Photos;
-use Zend\GData;
-use Zend\GData\App;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the Google Photos Data API.
@@ -35,18 +33,13 @@ use Zend\GData\App;
  *
  * @link http://code.google.com/apis/picasaweb/gdata.html
  *
- * @uses       \Zend\GData\GData
- * @uses       \Zend\GData\App\InvalidArgumentException
- * @uses       \Zend\GData\Photos\AlbumFeed
- * @uses       \Zend\GData\Photos\PhotoFeed
- * @uses       \Zend\GData\Photos\UserFeed
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Photos
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Photos extends GData\GData
+class Photos extends GData
 {
 
     const PICASA_BASE_URI = 'http://picasaweb.google.com/data';
@@ -121,8 +114,8 @@ class Photos extends GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Photos');
-        $this->registerPackage('\Zend\GData\Photos\Extension');
+        $this->registerPackage('Zend\GData\Photos');
+        $this->registerPackage('Zend\GData\Photos\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost('service', self::AUTH_SERVICE_NAME);
     }
@@ -140,13 +133,13 @@ class Photos extends GData\GData
      */
     public function getUserFeed($userName = null, $location = null)
     {
-        if ($location instanceof UserQuery) {
+        if ($location instanceof Photos\UserQuery) {
             $location->setType('feed');
             if ($userName !== null) {
                 $location->setUser($userName);
             }
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             if ($userName !== null) {
                 $location->setUser($userName);
             }
@@ -163,7 +156,7 @@ class Photos extends GData\GData
                 self::DEFAULT_USER;
         }
 
-        return parent::getFeed($uri, '\Zend\GData\Photos\UserFeed');
+        return parent::getFeed($uri, 'Zend\GData\Photos\UserFeed');
     }
 
     /**
@@ -180,15 +173,15 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('feed');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Photos\AlbumFeed');
+        return parent::getFeed($uri, 'Zend\GData\Photos\AlbumFeed');
     }
 
     /**
@@ -208,15 +201,15 @@ class Photos extends GData\GData
             $uri = self::PICASA_BASE_FEED_URI . '/' .
                 self::DEFAULT_PROJECTION . '/' .
                 self::COMMUNITY_SEARCH_PATH;
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('feed');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\Photos\PhotoFeed');
+        return parent::getFeed($uri, 'Zend\GData\Photos\PhotoFeed');
     }
 
     /**
@@ -232,10 +225,10 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('entry');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -256,15 +249,15 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('entry');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Photos\AlbumEntry');
+        return parent::getEntry($uri, 'Zend\GData\Photos\AlbumEntry');
     }
 
     /**
@@ -280,15 +273,15 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('entry');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Photos\PhotoEntry');
+        return parent::getEntry($uri, 'Zend\GData\Photos\PhotoEntry');
     }
 
     /**
@@ -304,15 +297,15 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('entry');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Photos\TagEntry');
+        return parent::getEntry($uri, 'Zend\GData\Photos\TagEntry');
     }
 
     /**
@@ -328,15 +321,15 @@ class Photos extends GData\GData
         if ($location === null) {
             throw new App\InvalidArgumentException(
                     'Location must not be null');
-        } else if ($location instanceof UserQuery) {
+        } else if ($location instanceof Photos\UserQuery) {
             $location->setType('entry');
             $uri = $location->getQueryUrl();
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Photos\CommentEntry');
+        return parent::getEntry($uri, 'Zend\GData\Photos\CommentEntry');
     }
 
     /**
@@ -359,7 +352,7 @@ class Photos extends GData\GData
                 self::DEFAULT_PROJECTION . '/' . self::USER_PATH . '/' .
                 self::DEFAULT_USER;
         }
-        $newEntry = $this->insertEntry($album, $uri, '\Zend\GData\Photos\AlbumEntry');
+        $newEntry = $this->insertEntry($album, $uri, 'Zend\GData\Photos\AlbumEntry');
         return $newEntry;
     }
 
@@ -384,7 +377,7 @@ class Photos extends GData\GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($photo, $uri, '\Zend\GData\Photos\PhotoEntry');
+        $newEntry = $this->insertEntry($photo, $uri, 'Zend\GData\Photos\PhotoEntry');
         return $newEntry;
     }
 
@@ -409,7 +402,7 @@ class Photos extends GData\GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($tag, $uri, '\Zend\GData\Photos\TagEntry');
+        $newEntry = $this->insertEntry($tag, $uri, 'Zend\GData\Photos\TagEntry');
         return $newEntry;
     }
 
@@ -435,7 +428,7 @@ class Photos extends GData\GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($comment, $uri, '\Zend\GData\Photos\CommentEntry');
+        $newEntry = $this->insertEntry($comment, $uri, 'Zend\GData\Photos\CommentEntry');
         return $newEntry;
     }
 

@@ -23,7 +23,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\Geo;
+namespace Zend\GData;
 
 /**
  * Service class for interacting with the services which use the
@@ -39,7 +39,7 @@ namespace Zend\GData\Geo;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class Geo extends \Zend\GData\GData
+class Geo extends GData
 {
 
     /**
@@ -62,8 +62,8 @@ class Geo extends \Zend\GData\GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Geo');
-        $this->registerPackage('\Zend\GData\Geo\Extension');
+        $this->registerPackage('Zend\GData\Geo');
+        $this->registerPackage('Zend\GData\Geo\Extension');
         parent::__construct($client, $applicationId);
     }
 

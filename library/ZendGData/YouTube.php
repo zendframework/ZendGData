@@ -23,10 +23,9 @@
 /**
  * @namespace
  */
-namespace Zend\GData\YouTube;
+namespace Zend\GData;
+
 use Zend\HTTP;
-use Zend\GData;
-use Zend\GData\App;
 
 /**
  * Service class for interacting with the YouTube Data API.
@@ -36,7 +35,7 @@ use Zend\GData\App;
  * @uses       \Zend\GData\App\HttpException
  * @uses       \Zend\GData\App\InvalidArgumentException
  * @uses       \Zend\GData\App\VersionException
- * @uses       \Zend\GData\Media\Media
+ * @uses       \Zend\GData\Media
  * @uses       \Zend\GData\YouTube\ActivityFeed
  * @uses       \Zend\GData\YouTube\CommentFeed
  * @uses       \Zend\GData\YouTube\ContactFeed
@@ -52,7 +51,7 @@ use Zend\GData\App;
  * @copyright  Copyright (c) 2005-2010 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
  */
-class YouTube extends GData\Media\Media
+class YouTube extends Media
 {
 
     const AUTH_SERVICE_NAME = 'youtube';
@@ -173,10 +172,10 @@ class YouTube extends GData\Media\Media
         $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
         $developerKey = null)
     {
-        $this->registerPackage('\Zend\GData\YouTube');
-        $this->registerPackage('\Zend\GData\YouTube\Extension');
-        $this->registerPackage('\Zend\GData\Media');
-        $this->registerPackage('\Zend\GData\Media\Extension');
+        $this->registerPackage('Zend\GData\YouTube');
+        $this->registerPackage('Zend\GData\YouTube\Extension');
+        $this->registerPackage('Zend\GData\Media');
+        $this->registerPackage('Zend\GData\Media\Extension');
 
         // NOTE This constructor no longer calls the parent constructor
         $this->setHttpClient($client, $applicationId, $clientId, $developerKey);
@@ -187,7 +186,7 @@ class YouTube extends GData\Media\Media
      *
      * @param \Zend\HTTP\Client $client The client to use for communication
      * @throws \Zend\GData\App\HttpException
-     * @return \Zend\GData\App\App Provides a fluent interface
+     * @return \Zend\GData\App Provides a fluent interface
      */
     public function setHttpClient($client,
         $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
@@ -224,7 +223,7 @@ class YouTube extends GData\Media\Media
     {
         if ($location == null) {
             $uri = self::VIDEO_URI;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -254,7 +253,7 @@ class YouTube extends GData\Media\Media
             } else {
                 $uri = self::VIDEO_URI . "/" . $videoId;
             }
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -292,7 +291,7 @@ class YouTube extends GData\Media\Media
         if ($videoId !== null) {
             $uri = self::VIDEO_URI . "/" . $videoId . "/" .
                 self::RELATED_URI_SUFFIX;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -314,7 +313,7 @@ class YouTube extends GData\Media\Media
         if ($videoId !== null) {
             $uri = self::VIDEO_URI . "/" . $videoId . "/" .
                 self::RESPONSES_URI_SUFFIX;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -335,7 +334,7 @@ class YouTube extends GData\Media\Media
     {
         if ($videoId !== null) {
             $uri = self::VIDEO_URI . "/" . $videoId . "/comments";
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -361,8 +360,8 @@ class YouTube extends GData\Media\Media
 
         if ($location == null) {
             $uri = $standardFeedUri;
-        } else if ($location instanceof GData\Query) {
-            if ($location instanceof VideoQuery) {
+        } else if ($location instanceof Query) {
+            if ($location instanceof YouTube\VideoQuery) {
                 if (!isset($location->url)) {
                     $location->setFeedType('top rated');
                 }
@@ -393,8 +392,8 @@ class YouTube extends GData\Media\Media
 
         if ($location == null) {
             $uri = $standardFeedUri;
-        } else if ($location instanceof GData\Query) {
-            if ($location instanceof VideoQuery) {
+        } else if ($location instanceof Query) {
+            if ($location instanceof YouTube\VideoQuery) {
                 if (!isset($location->url)) {
                     $location->setFeedType('most viewed');
                 }
@@ -424,8 +423,8 @@ class YouTube extends GData\Media\Media
 
         if ($location == null) {
             $uri = $standardFeedUri;
-        } else if ($location instanceof GData\Query) {
-            if ($location instanceof VideoQuery) {
+        } else if ($location instanceof Query) {
+            if ($location instanceof YouTube\VideoQuery) {
                 if (!isset($location->url)) {
                     $location->setFeedType('recently featured');
                 }
@@ -456,8 +455,8 @@ class YouTube extends GData\Media\Media
 
         if ($location == null) {
             $uri = $standardFeedUri;
-        } else if ($location instanceof GData\Query) {
-            if ($location instanceof VideoQuery) {
+        } else if ($location instanceof Query) {
+            if ($location instanceof YouTube\VideoQuery) {
                 if (!isset($location->url)) {
                     $location->setFeedType('watch on mobile');
                 }
@@ -481,7 +480,7 @@ class YouTube extends GData\Media\Media
     {
         if ($user !== null) {
             $uri = self::USER_URI . '/' . $user . '/playlists';
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -499,7 +498,7 @@ class YouTube extends GData\Media\Media
      */
     public function getPlaylistVideoFeed($location)
     {
-        if ($location instanceof GData\Query) {
+        if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -539,7 +538,7 @@ class YouTube extends GData\Media\Media
     {
         if ($user !== null) {
             $uri = self::USER_URI . '/' . $user . '/contacts';
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -560,7 +559,7 @@ class YouTube extends GData\Media\Media
         if ($user !== null) {
             $uri = self::USER_URI . '/' . $user . '/' .
                    self::UPLOADS_URI_SUFFIX;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -581,7 +580,7 @@ class YouTube extends GData\Media\Media
         if ($user !== null) {
             $uri = self::USER_URI . '/' . $user . '/' .
                    self::FAVORITES_URI_SUFFIX;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -601,7 +600,7 @@ class YouTube extends GData\Media\Media
     {
         if ($user !== null) {
             $uri = self::USER_URI . '/' . $user;
-        } else if ($location instanceof GData\Query) {
+        } else if ($location instanceof Query) {
             $uri = $location->getQueryUrl();
         } else {
             $uri = $location;
@@ -693,7 +692,7 @@ class YouTube extends GData\Media\Media
         }
 
         $uri = null;
-        if ($username instanceof GData\Query) {
+        if ($username instanceof Query) {
             $uri = $username->getQueryUrl();
         } else {
             if (count(explode(',', $username)) >

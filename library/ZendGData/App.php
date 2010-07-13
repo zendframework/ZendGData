@@ -24,7 +24,7 @@
 /**
  * @namespace
  */
-namespace Zend\GData\App;
+namespace Zend\GData;
 use Zend\HTTP;
 
 /**
@@ -39,7 +39,7 @@ use Zend\HTTP;
  * @uses       \Zend\GData\Feed
  * @uses       \Zend\GData\HttpAdapterStreamingProxy
  * @uses       \Zend\GData\HttpAdapterStreamingSocket
- * @uses       Zend_Gdata_Http_Client
+ * @uses       \Zend\GData\HttpClient
  * @uses       \Zend\HTTP\Client\Exception
  * @uses       \Zend\Loader
  * @uses       \Zend\Version
@@ -180,7 +180,7 @@ class App
      * This array is searched when using the magic __call method below
      * to instantiante new objects.
      *
-     * @param string $name The name of the package (eg \Zend\GData\App\App)
+     * @param string $name The name of the package (eg \Zend\GData\App)
      * @return void
      */
     public function registerPackage($name)
@@ -198,7 +198,7 @@ class App
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
-    public function getFeed($uri, $className='\Zend\GData\App\Feed')
+    public function getFeed($uri, $className='Zend\GData\App\Feed')
     {
         return $this->importUrl($uri, $className, null);
     }
@@ -213,7 +213,7 @@ class App
      *                                     by passing false to the
      *                                     useObjectMapping() function.
      */
-    public function getEntry($uri, $className='\Zend\GData\App\Entry')
+    public function getEntry($uri, $className='Zend\GData\App\Entry')
     {
         return $this->importUrl($uri, $className, null);
     }
@@ -233,7 +233,7 @@ class App
      *
      * @param \Zend\HTTP\Client $client The client to use for communication
      * @throws \Zend\GData\App\HttpException
-     * @return \Zend\GData\App\App Provides a fluent interface
+     * @return \Zend\GData\App Provides a fluent interface
      */
     public function setHttpClient($client,
         $applicationId = 'MyCompany-MyApp-1.0')
@@ -242,7 +242,7 @@ class App
             $client = new HTTP\Client();
         }
         if (!$client instanceof HTTP\Client) {
-            throw new HttpException(
+            throw new App\HttpException(
                 'Argument is not an instance of Zend\HTTP\Client.');
         }
         $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
@@ -328,7 +328,7 @@ class App
     public static function setGzipEnabled($enabled = false)
     {
         if ($enabled && !function_exists('gzinflate')) {
-            throw new InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                     'You cannot enable gzipped responses if the zlib module ' .
                     'is not enabled in your PHP installation.');
 
@@ -404,7 +404,7 @@ class App
     public function setMajorProtocolVersion($value)
     {
         if (!($value >= 1)) {
-            throw new InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                     'Major protocol version must be >= 1');
         }
         $this->_majorProtocolVersion = $value;
@@ -433,7 +433,7 @@ class App
     public function setMinorProtocolVersion($value)
     {
         if (!($value >= 0)) {
-            throw new InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                     'Minor protocol version must be >= 0');
         }
         $this->_minorProtocolVersion = $value;
@@ -497,7 +497,7 @@ class App
             if ($contentTypeOverride === null) {
                 $finalContentType = 'application/atom+xml';
             }
-        } elseif ($data instanceof MediaEntry) {
+        } elseif ($data instanceof App\MediaEntry) {
             $rawData = $data->encode();
             if ($data->getMediaSource() !== null) {
                 $finalContentType = $rawData->getContentType();
@@ -512,7 +512,7 @@ class App
                     $url = $editLink->getHref();
                 }
             }
-        } elseif ($data instanceof Entry) {
+        } elseif ($data instanceof App\Entry) {
             $rawData = $data->saveXML();
             $finalContentType = 'application/atom+xml';
             if ($method == 'PUT' || $method == 'DELETE') {
@@ -521,7 +521,7 @@ class App
                     $url = $editLink->getHref();
                 }
             }
-        } elseif ($data instanceof MediaSource) {
+        } elseif ($data instanceof App\MediaSource) {
             $rawData = $data->encode();
             if ($data->getSlug() !== null) {
                 $headers['Slug'] = $data->getSlug();
@@ -601,12 +601,12 @@ class App
         // check the overridden method
         if (($method == 'POST' || $method == 'PUT') && $body === null &&
             $headers['x-http-method-override'] != 'DELETE') {
-                throw new InvalidArgumentException(
+                throw new App\InvalidArgumentException(
                         'You must specify the data to post as either a ' .
-                        'string or a child of Zend_Gdata_App_Entry');
+                        'string or a child of Zend\GData\App\Entry');
         }
         if ($url === null) {
-            throw new InvalidArgumentException(
+            throw new App\InvalidArgumentException(
                 'You must specify an URI to which to post.');
         }
         $headers['Content-Type'] = $contentType;
@@ -652,9 +652,9 @@ class App
             $oldHttpAdapter = $this->_httpClient->getAdapter();
 
             if ($oldHttpAdapter instanceof \Zend\HTTP\Client\Adapter\Proxy) {
-                $newAdapter = new \Zend\GData\HttpAdapterStreamingProxy();
+                $newAdapter = new HttpAdapterStreamingProxy();
             } else {
-                $newAdapter = new \Zend\GData\HttpAdapterStreamingSocket();
+                $newAdapter = new HttpAdapterStreamingSocket();
             }
             $this->_httpClient->setAdapter($newAdapter);
         } else {
@@ -672,7 +672,7 @@ class App
             if ($usingMimeStream) {
                 $this->_httpClient->setAdapter($oldHttpAdapter);
             }
-            throw new HttpException($e->getMessage(), $e);
+            throw new App\HttpException($e->getMessage(), $e);
         }
         if ($response->isRedirect() && $response->getStatus() != '304') {
             if ($remainingRedirects > 0) {
@@ -681,7 +681,7 @@ class App
                     $method, $newUrl, $headers, $body,
                     $contentType, $remainingRedirects);
             } else {
-                throw new HttpException(
+                throw new App\HttpException(
                         'Number of redirects exceeds maximum', null, $response);
             }
         }
@@ -691,7 +691,7 @@ class App
             if (self::getVerboseExceptionMessages()) {
                 $exceptionMessage .= "\n" . $response->getBody();
             }
-            $exception = new HttpException($exceptionMessage);
+            $exception = new App\HttpException($exceptionMessage);
             $exception->setResponse($response);
             throw $exception;
         }
@@ -711,7 +711,7 @@ class App
      *                                    useObjectMapping() function.
      */
     public static function import($uri, $client = null,
-        $className='\Zend\GData\App\Feed')
+        $className='Zend\GData\App\Feed')
     {
         $app = new self($client);
         $requestData = $app->prepareRequest('GET', $uri);
@@ -742,7 +742,7 @@ class App
      *                                    by passing false to the
      *                                    useObjectMapping() function.
      */
-    public function importUrl($url, $className='\Zend\GData\App\Feed',
+    public function importUrl($url, $className='Zend\GData\App\Feed',
         $extraHeaders = array())
     {
         $response = $this->get($url, $extraHeaders);
@@ -791,11 +791,11 @@ class App
      * @return \Zend\GData\App\Feed
      */
     public static function importString($string,
-        $className='\Zend\GData\App\Feed', $majorProtocolVersion = null,
+        $className='Zend\GData\App\Feed', $majorProtocolVersion = null,
         $minorProtocolVersion = null)
     {
         if (!class_exists($className)) {
-            throw new Exception('Invalid class "' . $className . '" provided');
+            throw new App\Exception('Invalid class "' . $className . '" provided');
         }
 
         // Load the feed as an XML DOMDocument object
@@ -805,7 +805,7 @@ class App
         @ini_restore('track_errors');
 
         if (!$success) {
-            throw new Exception(
+            throw new App\Exception(
                 "DOMDocument cannot parse XML: $php_errormsg");
         }
 
@@ -828,13 +828,13 @@ class App
      * @return \Zend\GData\App\Feed
      */
     public static function importFile($filename,
-            $className='\Zend\GData\App\Feed', $useIncludePath = false)
+            $className='Zend\GData\App\Feed', $useIncludePath = false)
     {
         @ini_set('track_errors', 1);
         $feed = @file_get_contents($filename, $useIncludePath);
         @ini_restore('track_errors');
         if ($feed === false) {
-            throw new Exception(
+            throw new App\Exception(
                 "File could not be loaded: $php_errormsg");
         }
         return self::importString($feed, $className);
@@ -946,11 +946,11 @@ class App
      * @return \Zend\GData\App\Entry The entry returned by the service after
      *         insertion.
      */
-    public function insertEntry($data, $uri, $className='\Zend\GData\App\Entry',
+    public function insertEntry($data, $uri, $className='Zend\GData\App\Entry',
         $extraHeaders = array())
     {
         if (!class_exists($className)) {
-            throw new Exception('Invalid class provided "' . $className . '"');
+            throw new App\Exception('Invalid class provided "' . $className . '"');
         }
         $response = $this->post($data, $uri, null, null, $extraHeaders);
 
@@ -982,14 +982,14 @@ class App
     public function updateEntry($data, $uri = null, $className = null,
         $extraHeaders = array())
     {
-        if ($className === null && $data instanceof Entry) {
+        if ($className === null && $data instanceof App\Entry) {
             $className = get_class($data);
         } elseif ($className === null) {
-            $className = '\Zend\GData\App\Entry';
+            $className = 'Zend\GData\App\Entry';
         }
 
         if (!class_exists($className)) {
-            throw new Exception('Invalid class provided "' . $className . '"');
+            throw new App\Exception('Invalid class provided "' . $className . '"');
         }
 
         $response = $this->put($data, $uri, null, null, $extraHeaders);
@@ -1028,16 +1028,16 @@ class App
                      // with magic factories. See ZF-6660.
                      if (class_exists($name . '\\' . $class)) {
                         $foundClassName = $name . '\\' . $class;
+                        break;
                      }
-                     break;
-                 } catch (\Zend\Exception $e) {
+                 } catch (\Exception $e) {
                      // package wasn't here- continue searching
                  }
             }
             if ($foundClassName != null) {
                 $reflectionObj = new \ReflectionClass($foundClassName);
                 $instance = $reflectionObj->newInstanceArgs($args);
-                if ($instance instanceof FeedEntryParent) {
+                if ($instance instanceof App\FeedEntryParent) {
                     $instance->setHttpClient($this->_httpClient);
 
                     // Propogate version data
@@ -1048,11 +1048,11 @@ class App
                 }
                 return $instance;
             } else {
-                throw new Exception(
+                throw new App\Exception(
                         "Unable to find '${class}' in registered packages");
             }
         } else {
-            throw new Exception("No such method ${method}");
+            throw new App\Exception("No such method ${method}");
         }
     }
 
@@ -1097,7 +1097,7 @@ class App
     public function enableRequestDebugLogging($logfile)
     {
         $this->_httpClient->setConfig(array(
-            'adapter' => '\Zend\GData\App\LoggingHttpClientAdapterSocket',
+            'adapter' => 'Zend\GData\App\LoggingHttpClientAdapterSocket',
             'logfile' => $logfile
             ));
     }
@@ -1170,7 +1170,7 @@ class App
         $result = '';
         // Set an If-Match header if an ETag has been set (version >= 2 only)
         if ($this->_majorProtocolVersion >= 2 &&
-                $data instanceof Entry) {
+                $data instanceof App\Entry) {
             $etag = $data->getEtag();
             if (($etag !== null) &&
                     ($allowWeek || substr($etag, 0, 2) != 'W/')) {
