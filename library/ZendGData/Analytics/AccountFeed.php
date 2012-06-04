@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Zend Framework
  *
@@ -15,33 +14,42 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
+ * @subpackage Analytics
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id:$
  */
 
-namespace Zend\GData\GApps;
+namespace Zend\GData\Analytics;
 
-use Zend\GData\GApps;
+use Zend\GData;
 
 /**
- * Data model for a collection of Google Apps group entries, usually
- * provided by the Google Apps servers.
- *
- * For information on requesting this feed from a server, see the Google
- * Apps service class, \Zend\GData\GApps.
- *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @subpackage Analytics
  */
-class GroupFeed extends \Zend\GData\Feed
+class AccountFeed extends GData\Feed
 {
+    /**
+     * The classname for individual feed elements.
+     *
+     * @var string
+     */
+    protected $_entryClassName = 'Zend\GData\Analytics\AccountEntry';
 
-    protected $_entryClassName = '\Zend\GData\GApps\GroupEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\GroupFeed';
+    /**
+     * The classname for the feed.
+     *
+     * @var string
+     */
+    protected $_feedClassName = 'Zend\GData\Analytics\AccountFeed';
 
+    /**
+     * @see Zend_GData_Feed::__construct()
+     */
+    public function __construct($element = null)
+    {
+        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        parent::__construct($element);
+    }
 }

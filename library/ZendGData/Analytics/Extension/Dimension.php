@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Zend Framework
  *
@@ -15,33 +14,22 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
+ * @subpackage Analytics
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id:$
  */
 
-namespace Zend\GData\GApps;
-
-use Zend\GData\GApps;
+namespace Zend\GData\Analytics\Extension;
 
 /**
- * Data model for a collection of Google Apps group entries, usually
- * provided by the Google Apps servers.
- *
- * For information on requesting this feed from a server, see the Google
- * Apps service class, \Zend\GData\GApps.
- *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @subpackage Analytics
  */
-class GroupFeed extends \Zend\GData\Feed
+class Dimension extends Metric
 {
-
-    protected $_entryClassName = '\Zend\GData\GApps\GroupEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\GroupFeed';
-
+    protected $_rootNamespace = 'ga';
+    protected $_rootElement = 'dimension';
+    protected $_value = null;
+    protected $_name = null;
 }

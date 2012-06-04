@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Zend Framework
  *
@@ -15,49 +14,36 @@
  *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
+ * @subpackage Analytics
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @version    $Id: EmailList.php 20096 2010-01-06 02:05:09Z bkarwin $
  */
 
-namespace Zend\GData\Docs\Extension;
+namespace Zend\GData\Analytics\Extension;
+
+use Zend\GData;
 
 /**
- * Represents the gAcl:role element used by the Docs data API.
- *
  * @category   Zend
  * @package    Zend_Gdata
- * @subpackage Gapps
- * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
- * @license    http://framework.zend.com/license/new-bsd     New BSD License
+ * @subpackage Analytics
  */
-class ACLRole extends \Zend\GData\Extension
+class TableId extends GData\Extension
 {
-
-    protected $_rootNamespace = 'gAcl';
-    protected $_rootElement = 'role';
-
-    /**
-     * The permission to give to the user.  Possible roles include
-     * 'writer', 'owner', or 'reader'
-     *
-     * @var string
-     */
+    protected $_rootNamespace = 'ga';
+    protected $_rootElement = 'tableId';
     protected $_value = null;
 
     /**
-     * Constructs a new \Zend\GData\Docs\Extension\ACLRole object.
-     *
-     * @param string $value The role of the acl.
+     * Constructs a new Zend_Gdata_Calendar_Extension_Timezone object.
+     * @param string $value (optional) The text content of the element.
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Docs::$namespaces);
+        $this->registerAllNamespaces(GData\Analytics::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
-
 
     /**
      * Retrieves a DOMElement which corresponds to this element and all
@@ -66,16 +52,16 @@ class ACLRole extends \Zend\GData\Extension
      * for application storage/persistence.
      *
      * @param DOMDocument $doc The DOMDocument used to construct DOMElements
-     * @return DOMElement The DOMElement representing this element and all
-     * child properties.
+     * @param int $majorVersion By default 1
+     * @param int $minorVersion (Optional)
+     * @return \DOMElement The DOMElement representing this element and all
      */
     public function getDOM($doc = null, $majorVersion = 1, $minorVersion = null)
     {
         $element = parent::getDOM($doc, $majorVersion, $minorVersion);
-        if ($this->_value !== null) {
+        if ($this->_value != null) {
             $element->setAttribute('value', $this->_value);
         }
-        
         return $element;
     }
 
@@ -84,24 +70,17 @@ class ACLRole extends \Zend\GData\Extension
      * instance members.  If no mapping is defined, the name and value are
      * stored in an array.
      *
-     * @param DOMNode $attribute The DOMNode attribute needed to be handled
+     * @param DOMNode $child The DOMNode attribute needed to be handled
      */
-    protected function takeAttributeFromDOM($attribute)
+    protected function takeChildFromDOM($child)
     {
-        switch ($attribute->localName) {
-        case 'value':
-            $this->_value = $attribute->nodeValue;
-            break;
-        default:
-            parent::takeAttributeFromDOM($attribute);
-        }
+       $this->_value = $child->nodeValue;
     }
 
     /**
      * Get the value for this element's value attribute.
      *
-     * @see setName
-     * @return string The requested attribute.
+     * @return string The value associated with this attribute.
      */
     public function getValue()
     {
@@ -112,7 +91,7 @@ class ACLRole extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Docs\Extension\ACLRole The element being modified.
+     * @return TableId The element being modified.
      */
     public function setValue($value)
     {
@@ -122,13 +101,9 @@ class ACLRole extends \Zend\GData\Extension
 
     /**
      * Magic toString method allows using this directly via echo
-     * Works best in PHP >= 4.2.0
-     *
-     * @return string
      */
     public function __toString()
     {
-        return "Value: " . $this->getValue();
+        return $this->getValue();
     }
 }
-?>
