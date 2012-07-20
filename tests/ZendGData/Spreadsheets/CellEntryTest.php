@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
@@ -29,7 +29,7 @@ class CellEntryTest extends \PHPUnit_Framework_TestCase
 
     public function testToAndFromString()
     {
-        $this->cellEntry->setCell(new \Zend\GData\Spreadsheets\Extension\Cell('my cell', '1', '2', 'input value', 'numeric value'));
+        $this->cellEntry->setCell(new \ZendGData\Spreadsheets\Extension\Cell('my cell', '1', '2', 'input value', 'numeric value'));
         $this->assertTrue($this->cellEntry->getCell()->getText() == 'my cell');
         $this->assertTrue($this->cellEntry->getCell()->getRow() == '1');
         $this->assertTrue($this->cellEntry->getCell()->getColumn() == '2');

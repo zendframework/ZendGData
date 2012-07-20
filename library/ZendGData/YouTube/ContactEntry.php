@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * The YouTube contacts flavor of an Atom Entry with media support
@@ -28,7 +28,7 @@ class ContactEntry extends UserProfileEntry
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ContactEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\ContactEntry';
 
     /**
      * Status of the user as a contact
@@ -93,8 +93,8 @@ class ContactEntry extends UserProfileEntry
     /**
      * Sets the status
      *
-     * @param \Zend\GData\YouTube\Extension\Status $status The status
-     * @return \Zend\GData\YouTube\ContactEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Status $status The status
+     * @return \ZendGData\YouTube\ContactEntry Provides a fluent interface
      */
     public function setStatus($status = null)
     {
@@ -105,7 +105,7 @@ class ContactEntry extends UserProfileEntry
     /**
      * Returns the status
      *
-     * @return \Zend\GData\YouTube\Extension\Status  The status
+     * @return \ZendGData\YouTube\Extension\Status  The status
      */
     public function getStatus()
     {

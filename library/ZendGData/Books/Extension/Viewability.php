@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books\Extension;
+namespace ZendGData\Books\Extension;
 
 /**
  * Describes a viewability
@@ -17,7 +17,7 @@ namespace Zend\GData\Books\Extension;
  * @package    Zend_Gdata
  * @subpackage Books
  */
-class Viewability extends \Zend\GData\Extension
+class Viewability extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gbs';
@@ -33,7 +33,7 @@ class Viewability extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Books::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -91,7 +91,7 @@ class Viewability extends \Zend\GData\Extension
      *
      * @param string $value programmatic value that describes the viewability
      *     of a volume in Googl eBook Search
-     * @return \Zend\GData\Books\Extension\Viewability Provides a fluent
+     * @return \ZendGData\Books\Extension\Viewability Provides a fluent
      *     interface
      */
     public function setValue($value)

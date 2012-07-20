@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * @category   Zend

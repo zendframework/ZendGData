@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Represents the gd:recurrence element

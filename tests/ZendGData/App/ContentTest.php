@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App\Extension;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -25,10 +25,10 @@ class ContentTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->contentText = file_get_contents(
-                'Zend/GData/App/_files/ContentElementSample1.xml',
+                'ZendGData/App/_files/ContentElementSample1.xml',
                 true);
         $this->contentText2 = file_get_contents(
-                'Zend/GData/App/_files/ContentElementSample2.xml',
+                'ZendGData/App/_files/ContentElementSample2.xml',
                 true);
         $this->content = new Extension\Content();
     }

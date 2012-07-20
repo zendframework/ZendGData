@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * Concrete class for working with Atom entries.
@@ -19,10 +19,10 @@ use Zend\GData\Spreadsheets;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class SpreadsheetEntry extends \Zend\GData\Entry
+class SpreadsheetEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\SpreadsheetEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\SpreadsheetEntry';
 
     /**
      * Constructs a new Zend_Gdata_Spreadsheets_SpreadsheetEntry object.
@@ -37,7 +37,7 @@ class SpreadsheetEntry extends \Zend\GData\Entry
     /**
      * Returns the worksheets in this spreadsheet
      *
-     * @return \Zend\GData\Spreadsheets\WorksheetFeed The worksheets
+     * @return \ZendGData\Spreadsheets\WorksheetFeed The worksheets
      */
     public function getWorksheets()
     {

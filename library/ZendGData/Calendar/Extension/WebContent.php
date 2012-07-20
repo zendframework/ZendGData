@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace ZendGData\Calendar\Extension;
 
 /**
  * Represents the gCal:webContent element used by the Calendar data API
@@ -17,7 +17,7 @@ namespace Zend\GData\Calendar\Extension;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class WebContent extends \Zend\GData\Extension
+class WebContent extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gCal';
@@ -34,7 +34,7 @@ class WebContent extends \Zend\GData\Extension
      */
     public function __construct($url = null, $height = null, $width = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Calendar::$namespaces);
         parent::__construct();
         $this->_url = $url;
         $this->_height = $height;
@@ -104,7 +104,7 @@ class WebContent extends \Zend\GData\Extension
      * Set the value for this element's URL attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\WebContent The element being modified.
+     * @return \ZendGData\Calendar\Extension\WebContent The element being modified.
      */
     public function setURL($value)
     {
@@ -126,7 +126,7 @@ class WebContent extends \Zend\GData\Extension
      * Set the value for this element's height attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\WebContent The element being modified.
+     * @return \ZendGData\Calendar\Extension\WebContent The element being modified.
      */
     public function setHeight($value)
     {
@@ -148,7 +148,7 @@ class WebContent extends \Zend\GData\Extension
      * Set the value for this element's height attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\WebContent The element being modified.
+     * @return \ZendGData\Calendar\Extension\WebContent The element being modified.
      */
     public function setWidth($value)
     {

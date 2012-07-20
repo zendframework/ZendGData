@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube video playlist flavor of an Atom entry
@@ -20,10 +20,10 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class UserProfileEntry extends \Zend\GData\Entry
+class UserProfileEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\UserProfileEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\UserProfileEntry';
 
     /**
      * Nested feed links
@@ -147,14 +147,14 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Statistics
      *
-     * @var \Zend\GData\YouTube\Extension\Statistics
+     * @var \ZendGData\YouTube\Extension\Statistics
      */
     protected $_statistics = null;
 
     /**
      * Thumbnail
      *
-     * @var \Zend\GData\Media\Extension\MediaThumbnail
+     * @var \ZendGData\Media\Extension\MediaThumbnail
      */
     protected $_thumbnail = null;
 
@@ -342,12 +342,12 @@ class UserProfileEntry extends \Zend\GData\Entry
             $this->_statistics = $statistics;
             break;
         case $this->lookupNamespace('media') . ':' . 'thumbnail':
-            $thumbnail = new \Zend\GData\Media\Extension\MediaThumbnail();
+            $thumbnail = new \ZendGData\Media\Extension\MediaThumbnail();
             $thumbnail->transferFromDOM($child);
             $this->_thumbnail = $thumbnail;
             break;
         case $this->lookupNamespace('gd') . ':' . 'feedLink':
-            $feedLink = new \Zend\GData\Extension\FeedLink();
+            $feedLink = new \ZendGData\Extension\FeedLink();
             $feedLink->transferFromDOM($child);
             $this->_feedLink[] = $feedLink;
             break;
@@ -360,10 +360,10 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the content of the 'about me' field.
      *
-     * @param \Zend\GData\YouTube\Extension\AboutMe $aboutMe The 'about me'
+     * @param \ZendGData\YouTube\Extension\AboutMe $aboutMe The 'about me'
      *        information.
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setAboutMe($aboutMe = null)
     {
@@ -381,8 +381,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the contents of the 'about me' field.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\AboutMe  The 'about me' information
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\AboutMe  The 'about me' information
      */
     public function getAboutMe()
     {
@@ -399,9 +399,9 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the content of the 'first name' field.
      *
-     * @param \Zend\GData\YouTube\Extension\FirstName $firstName The first name
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\FirstName $firstName The first name
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setFirstName($firstName = null)
     {
@@ -419,8 +419,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the first name
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\FirstName  The first name
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\FirstName  The first name
      */
     public function getFirstName()
     {
@@ -437,9 +437,9 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the content of the 'last name' field.
      *
-     * @param \Zend\GData\YouTube\Extension\LastName $lastName The last name
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\LastName $lastName The last name
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setLastName($lastName = null)
     {
@@ -457,8 +457,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the last name
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\LastName  The last name
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\LastName  The last name
      */
     public function getLastName()
     {
@@ -468,8 +468,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the statistics
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\Statistics  The profile statistics
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\Statistics  The profile statistics
      */
     public function getStatistics()
     {
@@ -479,8 +479,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the thumbnail
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\Media\Extension\MediaThumbnail The profile thumbnail
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\Media\Extension\MediaThumbnail The profile thumbnail
      */
     public function getThumbnail()
     {
@@ -490,8 +490,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the age
      *
-     * @param \Zend\GData\YouTube\Extension\Age $age The age
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Age $age The age
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setAge($age = null)
     {
@@ -502,7 +502,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the age
      *
-     * @return \Zend\GData\YouTube\Extension\Age  The age
+     * @return \ZendGData\YouTube\Extension\Age  The age
      */
     public function getAge()
     {
@@ -512,8 +512,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the username
      *
-     * @param \Zend\GData\YouTube\Extension\Username $username The username
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Username $username The username
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setUsername($username = null)
     {
@@ -524,7 +524,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the username
      *
-     * @return \Zend\GData\YouTube\Extension\Username  The username
+     * @return \ZendGData\YouTube\Extension\Username  The username
      */
     public function getUsername()
     {
@@ -534,8 +534,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the books
      *
-     * @param \Zend\GData\YouTube\Extension\Books $books The books
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Books $books The books
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setBooks($books = null)
     {
@@ -546,7 +546,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the books
      *
-     * @return \Zend\GData\YouTube\Extension\Books  The books
+     * @return \ZendGData\YouTube\Extension\Books  The books
      */
     public function getBooks()
     {
@@ -556,8 +556,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the company
      *
-     * @param \Zend\GData\YouTube\Extension\Company $company The company
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Company $company The company
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setCompany($company = null)
     {
@@ -568,7 +568,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the company
      *
-     * @return \Zend\GData\YouTube\Extension\Company  The company
+     * @return \ZendGData\YouTube\Extension\Company  The company
      */
     public function getCompany()
     {
@@ -578,8 +578,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the hobbies
      *
-     * @param \Zend\GData\YouTube\Extension\Hobbies $hobbies The hobbies
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Hobbies $hobbies The hobbies
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setHobbies($hobbies = null)
     {
@@ -590,7 +590,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the hobbies
      *
-     * @return \Zend\GData\YouTube\Extension\Hobbies  The hobbies
+     * @return \ZendGData\YouTube\Extension\Hobbies  The hobbies
      */
     public function getHobbies()
     {
@@ -600,8 +600,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the hometown
      *
-     * @param \Zend\GData\YouTube\Extension\Hometown $hometown The hometown
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Hometown $hometown The hometown
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setHometown($hometown = null)
     {
@@ -612,7 +612,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the hometown
      *
-     * @return \Zend\GData\YouTube\Extension\Hometown  The hometown
+     * @return \ZendGData\YouTube\Extension\Hometown  The hometown
      */
     public function getHometown()
     {
@@ -622,8 +622,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the location
      *
-     * @param \Zend\GData\YouTube\Extension\Location $location The location
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Location $location The location
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setLocation($location = null)
     {
@@ -634,7 +634,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the location
      *
-     * @return \Zend\GData\YouTube\Extension\Location  The location
+     * @return \ZendGData\YouTube\Extension\Location  The location
      */
     public function getLocation()
     {
@@ -644,8 +644,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the movies
      *
-     * @param \Zend\GData\YouTube\Extension\Movies $movies The movies
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Movies $movies The movies
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setMovies($movies = null)
     {
@@ -656,7 +656,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the movies
      *
-     * @return \Zend\GData\YouTube\Extension\Movies  The movies
+     * @return \ZendGData\YouTube\Extension\Movies  The movies
      */
     public function getMovies()
     {
@@ -666,8 +666,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the music
      *
-     * @param \Zend\GData\YouTube\Extension\Music $music The music
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Music $music The music
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setMusic($music = null)
     {
@@ -678,7 +678,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the music
      *
-     * @return \Zend\GData\YouTube\Extension\Music  The music
+     * @return \ZendGData\YouTube\Extension\Music  The music
      */
     public function getMusic()
     {
@@ -688,8 +688,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the occupation
      *
-     * @param \Zend\GData\YouTube\Extension\Occupation $occupation The occupation
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Occupation $occupation The occupation
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setOccupation($occupation = null)
     {
@@ -700,7 +700,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the occupation
      *
-     * @return \Zend\GData\YouTube\Extension\Occupation  The occupation
+     * @return \ZendGData\YouTube\Extension\Occupation  The occupation
      */
     public function getOccupation()
     {
@@ -710,8 +710,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the school
      *
-     * @param \Zend\GData\YouTube\Extension\School $school The school
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\School $school The school
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setSchool($school = null)
     {
@@ -722,7 +722,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the school
      *
-     * @return \Zend\GData\YouTube\Extension\School  The school
+     * @return \ZendGData\YouTube\Extension\School  The school
      */
     public function getSchool()
     {
@@ -732,8 +732,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the gender
      *
-     * @param \Zend\GData\YouTube\Extension\Gender $gender The gender
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Gender $gender The gender
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setGender($gender = null)
     {
@@ -744,7 +744,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the gender
      *
-     * @return \Zend\GData\YouTube\Extension\Gender  The gender
+     * @return \ZendGData\YouTube\Extension\Gender  The gender
      */
     public function getGender()
     {
@@ -754,8 +754,8 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Sets the relationship
      *
-     * @param \Zend\GData\YouTube\Extension\Relationship $relationship The relationship
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Relationship $relationship The relationship
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setRelationship($relationship = null)
     {
@@ -766,7 +766,7 @@ class UserProfileEntry extends \Zend\GData\Entry
     /**
      * Returns the relationship
      *
-     * @return \Zend\GData\YouTube\Extension\Relationship  The relationship
+     * @return \ZendGData\YouTube\Extension\Relationship  The relationship
      */
     public function getRelationship()
     {
@@ -777,7 +777,7 @@ class UserProfileEntry extends \Zend\GData\Entry
      * Sets the array of embedded feeds related to the video
      *
      * @param array $feedLink The array of embedded feeds relating to the video
-     * @return \Zend\GData\YouTube\UserProfileEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\UserProfileEntry Provides a fluent interface
      */
     public function setFeedLink($feedLink = null)
     {
@@ -791,7 +791,7 @@ class UserProfileEntry extends \Zend\GData\Entry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \ZendGData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available

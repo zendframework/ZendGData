@@ -10,9 +10,9 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Calendar;
-use Zend\GData\App\Extension as AppExtension;
-use Zend\GData\Extension;
+use ZendGData\Calendar;
+use ZendGData\App\Extension as AppExtension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -31,7 +31,7 @@ class CalendarFeedCompositeTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $eventFeedText = file_get_contents(
-                'Zend/GData/Calendar/_files/EventFeedCompositeSample1.xml',
+                'ZendGData/Calendar/_files/EventFeedCompositeSample1.xml',
                 true);
         $this->eventFeed = new Calendar\EventFeed($eventFeedText);
     }
@@ -394,7 +394,7 @@ class CalendarFeedCompositeTest extends \PHPUnit_Framework_TestCase
 
         // Make sure the embedded feed looks right
         $cFeed = $fl->getFeed();
-        $this->assertTrue($cFeed instanceof \Zend\GData\App\Feed);
+        $this->assertTrue($cFeed instanceof \ZendGData\App\Feed);
         $this->assertEquals($cFeed, $fl->feed);
 
         // Verify the remainder of the comment feed metadata
@@ -407,7 +407,7 @@ class CalendarFeedCompositeTest extends \PHPUnit_Framework_TestCase
         // Verify that the comments appear to be good
         $commentCount = 0;
         foreach ($cFeed as $entry) {
-            $this->assertTrue($entry instanceof \Zend\GData\Entry);
+            $this->assertTrue($entry instanceof \ZendGData\Entry);
             $commentCount++;
         }
         $this->assertEquals(2, $commentCount);

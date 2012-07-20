@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Represents the gd:eventStatus element
@@ -65,7 +65,7 @@ class EventStatus extends Extension
      * Set the value for this element's Value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Visibility The element being modified.
+     * @return \ZendGData\Extension\Visibility The element being modified.
      */
     public function setValue($value)
     {

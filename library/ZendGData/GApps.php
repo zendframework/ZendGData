@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the Google Apps Provisioning API.
@@ -83,8 +83,8 @@ class GApps extends GData
      */
     public function __construct($client = null, $domain = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\GApps');
-        $this->registerPackage('Zend\GData\GApps\Extension');
+        $this->registerPackage('ZendGData\GApps');
+        $this->registerPackage('ZendGData\GApps\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
         $this->_domain = $domain;
@@ -140,7 +140,7 @@ class GApps extends GData
      * @throws GApps\ServiceException
      * @return App\Feed
      */
-    public static function import($uri, $client = null, $className='Zend\GData\App\Feed')
+    public static function import($uri, $client = null, $className='ZendGData\App\Feed')
     {
         try {
             return parent::import($uri, $client, $className);
@@ -310,7 +310,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\UserFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\UserFeed');
     }
 
     /**
@@ -332,7 +332,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\NicknameFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\NicknameFeed');
     }
 
     /**
@@ -356,7 +356,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\GroupFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\GroupFeed');
     }
 
     /**
@@ -380,7 +380,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\MemberFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\MemberFeed');
     }
 
     /**
@@ -405,7 +405,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\OwnerFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\OwnerFeed');
     }
 
     /**
@@ -428,7 +428,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\EmailListFeed');
     }
 
     /**
@@ -451,7 +451,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\GApps\EmailListRecipientFeed');
+        return parent::getFeed($uri, 'ZendGData\GApps\EmailListRecipientFeed');
     }
 
     /**
@@ -473,7 +473,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\UserEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\UserEntry');
     }
 
     /**
@@ -495,7 +495,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\NicknameEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\NicknameEntry');
     }
 
     /**
@@ -517,7 +517,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\GroupEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\GroupEntry');
     }
 
     /**
@@ -539,7 +539,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\MemberEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\MemberEntry');
     }
 
     /**
@@ -561,7 +561,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\OwnerEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\OwnerEntry');
     }
 
     /**
@@ -583,7 +583,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\EmailListEntry');
     }
 
     /**
@@ -605,7 +605,7 @@ class GApps extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\GApps\EmailListRecipientEntry');
+        return parent::getEntry($uri, 'ZendGData\GApps\EmailListRecipientEntry');
     }
 
     /**
@@ -626,7 +626,7 @@ class GApps extends GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_USER_PATH;
         }
-        $newEntry = $this->insertEntry($user, $uri, 'Zend\GData\GApps\UserEntry');
+        $newEntry = $this->insertEntry($user, $uri, 'ZendGData\GApps\UserEntry');
         return $newEntry;
     }
 
@@ -649,7 +649,7 @@ class GApps extends GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_NICKNAME_PATH;
         }
-        $newEntry = $this->insertEntry($nickname, $uri, 'Zend\GData\GApps\NicknameEntry');
+        $newEntry = $this->insertEntry($nickname, $uri, 'ZendGData\GApps\NicknameEntry');
         return $newEntry;
     }
 
@@ -672,7 +672,7 @@ class GApps extends GData
             $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
             $uri .= $this->getDomain();
         }
-        $newEntry = $this->insertEntry($group, $uri, 'Zend\GData\GApps\GroupEntry');
+        $newEntry = $this->insertEntry($group, $uri, 'ZendGData\GApps\GroupEntry');
         return $newEntry;
     }
 
@@ -695,7 +695,7 @@ class GApps extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($member, $uri, 'Zend\GData\GApps\MemberEntry');
+        $newEntry = $this->insertEntry($member, $uri, 'ZendGData\GApps\MemberEntry');
         return $newEntry;
     }
 
@@ -718,7 +718,7 @@ class GApps extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($owner, $uri, 'Zend\GData\GApps\OwnerEntry');
+        $newEntry = $this->insertEntry($owner, $uri, 'ZendGData\GApps\OwnerEntry');
         return $newEntry;
     }
 
@@ -741,7 +741,7 @@ class GApps extends GData
         if ($uri === null) {
             $uri = $this->getBaseUrl() . self::APPS_EMAIL_LIST_PATH;
         }
-        $newEntry = $this->insertEntry($emailList, $uri, 'Zend\GData\GApps\EmailListEntry');
+        $newEntry = $this->insertEntry($emailList, $uri, 'ZendGData\GApps\EmailListEntry');
         return $newEntry;
     }
 
@@ -767,7 +767,7 @@ class GApps extends GData
         } elseif ($uri instanceof GApps\EmailListEntry) {
             $uri = $uri->getLink('edit')->href;
         }
-        $newEntry = $this->insertEntry($recipient, $uri, 'Zend\GData\GApps\EmailListRecipientEntry');
+        $newEntry = $this->insertEntry($recipient, $uri, 'ZendGData\GApps\EmailListRecipientEntry');
         return $newEntry;
     }
 
@@ -885,7 +885,7 @@ class GApps extends GData
      * @param string $startUsername (optional) The first username to retrieve.
      *          If null or not declared, the page will begin with the first
      *          user in the domain.
-     * @return GApps\UserFeed Collection of Zend\GData\UserEntry
+     * @return GApps\UserFeed Collection of ZendGData\UserEntry
      *              objects representing all users in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -1180,7 +1180,7 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return GApps\GroupFeed Collection of Zend\GData\GroupEntry objects
+     * @return GApps\GroupFeed Collection of ZendGData\GroupEntry objects
      *              representing all groups apart of the domain.
      */
     public function retrieveAllGroups()
@@ -1304,7 +1304,7 @@ class GApps extends GData
      * Retrieves all the owners of a group
      *
      * @param string $groupId The unique identifier for the group
-     * @return GApps\OwnerFeed Collection of Zend\GData\OwnerEntry
+     * @return GApps\OwnerFeed Collection of ZendGData\OwnerEntry
      *              objects representing all owners apart of the group.
      */
     public function retrieveGroupOwners($groupId)
@@ -1402,7 +1402,7 @@ class GApps extends GData
         $uri  = self::APPS_BASE_FEED_URI . self::APPS_GROUP_PATH . '/';
         $uri .= $this->getDomain() . '/' . $groupId;
 
-        return $this->updateEntry($group, $uri, 'Zend\GData\GApps\GroupEntry');
+        return $this->updateEntry($group, $uri, 'ZendGData\GApps\GroupEntry');
     }
 
     /**
@@ -1411,7 +1411,7 @@ class GApps extends GData
      * @param string $memberId Member username
      * @param bool $directOnly (Optional) If true, members with direct association
      *             only will be considered
-     * @return GApps\GroupFeed Collection of Zend\GData\GroupEntry
+     * @return GApps\GroupFeed Collection of ZendGData\GroupEntry
      *              objects representing all groups member is apart of in the domain.
      */
     public function retrieveGroups($memberId, $directOnly = null)
@@ -1431,7 +1431,7 @@ class GApps extends GData
      * @param string $startGroup (optional) The first group to
      *              retrieve. If null or not defined, the page will begin
      *              with the first group in the domain.
-     * @return GApps\GroupFeed Collection of Zend\GData\GroupEntry
+     * @return GApps\GroupFeed Collection of ZendGData\GroupEntry
      *              objects representing the groups in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -1450,7 +1450,7 @@ class GApps extends GData
      * @param string $groupId The group id which should be searched.
      * @param string $startMember (optinal) The address of the first member,
      *              or null to start with the first member in the list.
-     * @return GApps\MemberFeed Collection of Zend\GData\MemberEntry
+     * @return GApps\MemberFeed Collection of ZendGData\MemberEntry
      *              objects
      */
     public function retrievePageOfMembers($groupId, $startMember = null)

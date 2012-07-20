@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\GroupEntry;
+use ZendGData\GApps\GroupEntry;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class GroupEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/GApps/_files/GroupEntryDataSample1.xml',
+                'ZendGData/GApps/_files/GroupEntryDataSample1.xml',
                 true);
         $this->entry = new GroupEntry();
     }

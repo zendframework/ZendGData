@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class InboxFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->V2feedText = file_get_contents(
-            'Zend/GData/YouTube/_files/InboxFeedDataSampleV2.xml',
+            'ZendGData/YouTube/_files/InboxFeedDataSampleV2.xml',
             true);
         $this->feed = new YouTube\InboxFeed();
     }

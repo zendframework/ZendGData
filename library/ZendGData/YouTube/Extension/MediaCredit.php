@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the YouTube specific media:credit element
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaCredit extends \Zend\GData\Extension
+class MediaCredit extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'credit';
@@ -53,7 +53,7 @@ class MediaCredit extends \Zend\GData\Extension
     public function __construct($text = null, $role = null,  $scheme = null,
         $yttype = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_role = $role;
@@ -121,7 +121,7 @@ class MediaCredit extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCredit Provides a fluent
+     * @return \ZendGData\Media\Extension\MediaCredit Provides a fluent
      *         interface
      */
     public function setRole($value)
@@ -140,7 +140,7 @@ class MediaCredit extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCredit Provides a fluent
+     * @return \ZendGData\Media\Extension\MediaCredit Provides a fluent
      *         interface
      */
     public function setScheme($value)
@@ -159,7 +159,7 @@ class MediaCredit extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCredit Provides a fluent
+     * @return \ZendGData\Media\Extension\MediaCredit Provides a fluent
      *         interface
      */
     public function setYTtype($value)

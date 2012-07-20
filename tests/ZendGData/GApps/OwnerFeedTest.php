@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\OwnerEntry;
-use Zend\GData\GApps\OwnerFeed;
+use ZendGData\GApps\OwnerEntry;
+use ZendGData\GApps\OwnerFeed;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class OwnerFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $ownerFeedText = file_get_contents(
-                'Zend/GData/GApps/_files/OwnerFeedDataSample1.xml',
+                'ZendGData/GApps/_files/OwnerFeedDataSample1.xml',
                 true);
         $this->ownerFeed = new OwnerFeed($ownerFeedText);
         $this->emptyOwnerFeed = new OwnerFeed();

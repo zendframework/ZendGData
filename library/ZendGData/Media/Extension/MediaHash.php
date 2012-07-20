@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:hash element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaHash extends \Zend\GData\Extension
+class MediaHash extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'hash';
@@ -32,7 +32,7 @@ class MediaHash extends \Zend\GData\Extension
      */
     public function __construct($text = null, $algo = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_algo = $algo;
@@ -63,7 +63,7 @@ class MediaHash extends \Zend\GData\Extension
      * stored in an array.
      *
      * @param DOMNode $attribute The DOMNode attribute needed to be handled
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     protected function takeAttributeFromDOM($attribute)
     {
@@ -86,7 +86,7 @@ class MediaHash extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaHash Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaHash Provides a fluent interface
      */
     public function setAlgo($value)
     {

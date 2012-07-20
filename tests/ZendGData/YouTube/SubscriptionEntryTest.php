@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
-use Zend\GData\Extension;
+use ZendGData\YouTube;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -26,22 +26,22 @@ class SubscriptionEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/YouTube/_files/SubscriptionEntryDataSample1.xml',
+                'ZendGData/YouTube/_files/SubscriptionEntryDataSample1.xml',
                 true);
         $this->v2entryText_channel = file_get_contents(
-                'Zend/GData/YouTube/_files/' .
+                'ZendGData/YouTube/_files/' .
                 'SubscriptionEntryDataSample_channelV2.xml',
                 true);
         $this->v2entryText_playlist = file_get_contents(
-                'Zend/GData/YouTube/_files/' .
+                'ZendGData/YouTube/_files/' .
                 'SubscriptionEntryDataSample_playlistV2.xml',
                 true);
         $this->v2entryText_favorites = file_get_contents(
-                'Zend/GData/YouTube/_files/' .
+                'ZendGData/YouTube/_files/' .
                 'SubscriptionEntryDataSample_favoritesV2.xml',
                 true);
         $this->v2entryText_query = file_get_contents(
-                'Zend/GData/YouTube/_files/' .
+                'ZendGData/YouTube/_files/' .
                 'SubscriptionEntryDataSample_queryV2.xml',
                 true);
 
@@ -144,7 +144,7 @@ class SubscriptionEntryTest extends \PHPUnit_Framework_TestCase
             $subscriptionListEntry->getCountHint()->text);
         $thumbnail = $subscriptionListEntry->getMediaThumbnail();
         $this->assertTrue(
-            $thumbnail instanceof \Zend\GData\Media\Extension\MediaThumbnail);
+            $thumbnail instanceof \ZendGData\Media\Extension\MediaThumbnail);
         $this->assertTrue($thumbnail->getUrl() != null);
         $this->assertEquals(
             'http://gdata.youtube.com/feeds/api/users/' .
@@ -275,7 +275,7 @@ class SubscriptionEntryTest extends \PHPUnit_Framework_TestCase
         $exceptionCaught = false;
         try {
             $this->entry->getCountHint();
-        } catch (\Zend\GData\App\VersionException $e) {
+        } catch (\ZendGData\App\VersionException $e) {
             $exceptionCaught = true;
         }
         $this->assertTrue($exceptionCaught, 'Expected a VersionException on ' .

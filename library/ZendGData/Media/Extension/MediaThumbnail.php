@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:thumbnail element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaThumbnail extends \Zend\GData\Extension
+class MediaThumbnail extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'thumbnail';
@@ -54,7 +54,7 @@ class MediaThumbnail extends \Zend\GData\Extension
     public function __construct($url = null, $width = null, $height = null,
             $time = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_url = $url;
         $this->_width = $width;
@@ -127,7 +127,7 @@ class MediaThumbnail extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaThumbnail Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaThumbnail Provides a fluent interface
      */
     public function setUrl($value)
     {
@@ -145,7 +145,7 @@ class MediaThumbnail extends \Zend\GData\Extension
 
     /**
      * @param int $value
-     * @return \Zend\GData\Media\Extension\MediaThumbnail Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaThumbnail Provides a fluent interface
      */
     public function setWidth($value)
     {
@@ -163,7 +163,7 @@ class MediaThumbnail extends \Zend\GData\Extension
 
     /**
      * @param int $value
-     * @return \Zend\GData\Media\Extension\MediaThumbnail Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaThumbnail Provides a fluent interface
      */
     public function setHeight($value)
     {
@@ -181,7 +181,7 @@ class MediaThumbnail extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaThumbnail Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaThumbnail Provides a fluent interface
      */
     public function setTime($value)
     {

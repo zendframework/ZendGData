@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:credit element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaCredit extends \Zend\GData\Extension
+class MediaCredit extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'credit';
@@ -42,7 +42,7 @@ class MediaCredit extends \Zend\GData\Extension
      */
     public function __construct($text = null, $role = null,  $scheme = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_role = $role;
@@ -102,7 +102,7 @@ class MediaCredit extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCredit Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaCredit Provides a fluent interface
      */
     public function setRole($value)
     {
@@ -120,7 +120,7 @@ class MediaCredit extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCredit Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaCredit Provides a fluent interface
      */
     public function setScheme($value)
     {

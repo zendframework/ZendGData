@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
  * Atom feed class
@@ -165,7 +165,7 @@ class Feed extends AbstractFeedSourceParent
      * Gets the array of atom:entry elements contained within this
      * atom:feed representation
      *
-     * @return array|\Zend\GData\App\Entry
+     * @return array|\ZendGData\App\Entry
      */
     public function getEntry()
     {
@@ -176,8 +176,8 @@ class Feed extends AbstractFeedSourceParent
      * Sets the array of atom:entry elements contained within this
      * atom:feed representation
      *
-     * @param array $value The array of \Zend\GData\App\Entry elements
-     * @return \Zend\GData\App\Feed Provides a fluent interface
+     * @param array $value The array of \ZendGData\App\Entry elements
+     * @return \ZendGData\App\Feed Provides a fluent interface
      */
     public function setEntry($value)
     {
@@ -189,8 +189,8 @@ class Feed extends AbstractFeedSourceParent
      * Adds an entry representation to the array of entries
      * contained within this feed
      *
-     * @param \Zend\GData\App\Entry An individual entry to add.
-     * @return \Zend\GData\App\Feed Provides a fluent interface
+     * @param \ZendGData\App\Entry An individual entry to add.
+     * @return \ZendGData\App\Feed Provides a fluent interface
      */
     public function addEntry($value)
     {
@@ -202,7 +202,7 @@ class Feed extends AbstractFeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to set
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \ZendGData\App\Entry $value The value to set
      * @return void
      */
     public function offsetSet($key, $value)
@@ -214,7 +214,7 @@ class Feed extends AbstractFeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to get
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \ZendGData\App\Entry $value The value to set
      */
     public function offsetGet($key)
     {
@@ -227,7 +227,7 @@ class Feed extends AbstractFeedSourceParent
      * Required by the ArrayAccess interface
      *
      * @param int $key The index to set
-     * @param \Zend\GData\App\Entry $value The value to set
+     * @param \ZendGData\App\Entry $value The value to set
      */
     public function offsetUnset($key)
     {
@@ -250,7 +250,7 @@ class Feed extends AbstractFeedSourceParent
    /**
      * Retrieve the next set of results from this feed.
      *
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      * @return mixed|null Returns the next set of results as a feed of the same
      *          class as this feed, or null if no results exist.
      */
@@ -270,7 +270,7 @@ class Feed extends AbstractFeedSourceParent
    /**
      * Retrieve the previous set of results from this feed.
      *
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      * @return mixed|null Returns the previous set of results as a feed of
      *          the same class as this feed, or null if no results exist.
      */
@@ -295,7 +295,7 @@ class Feed extends AbstractFeedSourceParent
      *
      * @see _majorProtocolVersion
      * @param (int|NULL) $value The major protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function setMajorProtocolVersion($value)
     {
@@ -308,13 +308,13 @@ class Feed extends AbstractFeedSourceParent
     /**
      * Set the minor protocol version that should be used. If set to NULL, no
      * minor protocol version will be sent to the server. Values < 0 will
-     * cause a \Zend\GData\App\InvalidArgumentException to be thrown.
+     * cause a \ZendGData\App\InvalidArgumentException to be thrown.
      *
      * This value will be propogated to all child entries.
      *
      * @see _minorProtocolVersion
      * @param (int|NULL) $value The minor protocol version to use.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function setMinorProtocolVersion($value)
     {

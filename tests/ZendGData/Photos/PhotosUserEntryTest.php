@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $userEntryText = file_get_contents(
                 '_files/TestUserEntry.xml',
                 true);
-        $this->userEntry = new \Zend\GData\Photos\UserEntry($userEntryText);
+        $this->userEntry = new \ZendGData\Photos\UserEntry($userEntryText);
     }
 
     /**
@@ -104,9 +104,9 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entryAuthor = $entry->getAuthor();
         $this->assertEquals($entryAuthor, $entry->author);
         $this->assertEquals(1, count($entryAuthor));
-        $this->assertTrue($entryAuthor[0] instanceof \Zend\GData\App\Extension\Author);
+        $this->assertTrue($entryAuthor[0] instanceof \ZendGData\App\Extension\Author);
         $this->verifyProperty2($entryAuthor[0], "name", "text", "sample");
-        $this->assertTrue($entryAuthor[0]->getUri() instanceof \Zend\GData\App\Extension\Uri);
+        $this->assertTrue($entryAuthor[0]->getUri() instanceof \ZendGData\App\Extension\Uri);
         $this->verifyProperty2($entryAuthor[0], "uri", "text", "http://picasaweb.google.com/sample.user");
     }
 
@@ -119,7 +119,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's ID is correct
-        $this->assertTrue($entry->getId() instanceof \Zend\GData\App\Extension\Id);
+        $this->assertTrue($entry->getId() instanceof \ZendGData\App\Extension\Id);
         $this->verifyProperty2($entry, "id", "text",
                 "http://picasaweb.google.com/data/entry/api/user/sample.user");
     }
@@ -133,7 +133,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the photo entry has an Atom Published object
-        $this->assertTrue($entry->getPublished() instanceof \Zend\GData\App\Extension\Published);
+        $this->assertTrue($entry->getPublished() instanceof \ZendGData\App\Extension\Published);
         $this->verifyProperty2($entry, "published", "text", "2007-09-24T23:45:49.059Z");
     }
 
@@ -146,7 +146,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's updated date is correct
-        $this->assertTrue($entry->getUpdated() instanceof \Zend\GData\App\Extension\Updated);
+        $this->assertTrue($entry->getUpdated() instanceof \ZendGData\App\Extension\Updated);
         $this->verifyProperty2($entry, "updated", "text",
                 "2007-09-24T23:45:49.059Z");
     }
@@ -160,7 +160,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getTitle() instanceof \Zend\GData\App\Extension\Title);
+        $this->assertTrue($entry->getTitle() instanceof \ZendGData\App\Extension\Title);
         $this->verifyProperty2($entry, "title", "text", "sample.user");
     }
 
@@ -173,7 +173,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's user is correct
-        $this->assertTrue($entry->getGphotoUser() instanceof \Zend\GData\Photos\Extension\User);
+        $this->assertTrue($entry->getGphotoUser() instanceof \ZendGData\Photos\Extension\User);
         $this->verifyProperty2($entry, "gphotoUser", "text", "sample.user");
         $this->verifyProperty3($entry, "gphotoUser", "text", "sample.user");
     }
@@ -187,7 +187,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's nickname is correct
-        $this->assertTrue($entry->getGphotoNickname() instanceof \Zend\GData\Photos\Extension\Nickname);
+        $this->assertTrue($entry->getGphotoNickname() instanceof \ZendGData\Photos\Extension\Nickname);
         $this->verifyProperty2($entry, "gphotoNickname", "text", "sample");
         $this->verifyProperty3($entry, "gphotoNickname", "text", "sample");
     }
@@ -201,7 +201,7 @@ class PhotosUserEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->userEntry;
 
         // Assert that the entry's thumbnail is correct
-        $this->assertTrue($entry->getGphotoThumbnail() instanceof \Zend\GData\Photos\Extension\Thumbnail);
+        $this->assertTrue($entry->getGphotoThumbnail() instanceof \ZendGData\Photos\Extension\Thumbnail);
         $this->verifyProperty2($entry, "gphotoThumbnail", "text",
             "http://lh5.google.com/sample.user/AAAAuZnob5E/AAAAAAAAAAA/EtCbNCdLGxM/s64-c/sample.user");
         $this->verifyProperty3($entry, "gphotoThumbnail", "text",

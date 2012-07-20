@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:recorded element
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Recorded extends \Zend\GData\Extension
+class Recorded extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'recorded';
@@ -25,7 +25,7 @@ class Recorded extends \Zend\GData\Extension
 
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
         $this->_text = $text;
     }

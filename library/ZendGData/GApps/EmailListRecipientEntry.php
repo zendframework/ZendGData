@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model class for a Google Apps Email List Recipient Entry.
@@ -31,17 +31,17 @@ use Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class EmailListRecipientEntry extends \Zend\GData\Entry
+class EmailListRecipientEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\EmailListRecipientEntry';
+    protected $_entryClassName = 'ZendGData\GApps\EmailListRecipientEntry';
 
     /**
      * <gd:who> element used to store the email address of the current
      * recipient. Only the email property of this element should be
      * populated.
      *
-     * @var \Zend\GData\Extension\Who
+     * @var \ZendGData\Extension\Who
      */
     protected $_who = null;
 
@@ -87,7 +87,7 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
 
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('gd') . ':' . 'who';
-                $who = new \Zend\GData\Extension\Who();
+                $who = new \ZendGData\Extension\Who();
                 $who->transferFromDOM($child);
                 $this->_who = $who;
                 break;
@@ -101,7 +101,7 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
      * Get the value of the who property for this object.
      *
      * @see setWho
-     * @return \Zend\GData\Extension\Who The requested object.
+     * @return \ZendGData\Extension\Who The requested object.
      */
     public function getWho()
     {
@@ -112,7 +112,7 @@ class EmailListRecipientEntry extends \Zend\GData\Entry
      * Set the value of the who property for this object. This property
      * is used to store the email address of the current recipient.
      *
-     * @param \Zend\GData\Extension\Who $value The desired value for this
+     * @param \ZendGData\Extension\Who $value The desired value for this
      *          instance's who property.
      * @return EmailListRecipientEntry Provides a fluent interface.
      */

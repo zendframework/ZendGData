@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class CommentsTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->commentsText = file_get_contents(
-                'Zend/GData/_files/CommentsElementSample1.xml',
+                'ZendGData/_files/CommentsElementSample1.xml',
                 true);
         $this->comments = new Extension\Comments();
     }
@@ -66,12 +66,12 @@ class CommentsTest extends \PHPUnit_Framework_TestCase
         $newComments->transferFromXML($this->comments->saveXML());
         $this->assertEquals(0, count($newComments->extensionElements));
         $newComments->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newComments->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#regular", $newComments->rel);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newComments2 = $gdata->newComments();
         $newComments2->transferFromXML($newComments->saveXML());
         $this->assertEquals(1, count($newComments2->extensionElements));

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs;
+namespace ZendGData\Docs;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model class for a Google Docs ACL Entry.
@@ -24,16 +24,16 @@ use Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class ACLEntry extends \Zend\GData\Entry
+class ACLEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Docs\ACLEntry';
+    protected $_entryClassName = 'ZendGData\Docs\ACLEntry';
 
     /**
      * <gAcl:role> element containing information about the
      * role of the ACL.
      *
-     * @var \Zend\GData\Docs\Extension\ACLRole
+     * @var \ZendGData\Docs\Extension\ACLRole
      */
     protected $_role = null;
 
@@ -41,7 +41,7 @@ class ACLEntry extends \Zend\GData\Entry
      * <gAcl:scope> element containing the information about
      * the scope of the ACL (user type and user id);
      *
-     * @var \Zend\GData\Docs\Extension\ACLScope
+     * @var \ZendGData\Docs\Extension\ACLScope
      */
     protected $_scope = null;
 
@@ -109,7 +109,7 @@ class ACLEntry extends \Zend\GData\Entry
      * Get the value of the role property for this object.
      *
      * @see setRole
-     * @return \Zend\GData\GApps\Extension\Login The requested object.
+     * @return \ZendGData\GApps\Extension\Login The requested object.
      */
     public function getRole()
     {
@@ -119,9 +119,9 @@ class ACLEntry extends \Zend\GData\Entry
     /**
      * Set the value of the role property for this object.
      *
-     * @param \Zend\GData\Docs\Extension\ACLRole $value The desired value for
+     * @param \ZendGData\Docs\Extension\ACLRole $value The desired value for
      *          this instance's login property.
-     * @return \Zend\GData\Docs\ACLEntry Provides a fluent interface.
+     * @return \ZendGData\Docs\ACLEntry Provides a fluent interface.
      */
     public function setRole($value)
     {
@@ -133,7 +133,7 @@ class ACLEntry extends \Zend\GData\Entry
      * Get the value of the scope property for this object.
      *
      * @see setScope
-     * @return \Zend\GData\Docs\Extension\ACLScope The requested object.
+     * @return \ZendGData\Docs\Extension\ACLScope The requested object.
      */
     public function getScope()
     {
@@ -143,9 +143,9 @@ class ACLEntry extends \Zend\GData\Entry
     /**
      * Set the value of the scope property for this object.
      *
-     * @param \Zend\GData\Docs\Extension\ACLScope $value The desired value for
+     * @param \ZendGData\Docs\Extension\ACLScope $value The desired value for
      *          this instance's name property.
-     * @return \Zend\GData\Docs\ACLEntry Provides a fluent interface.
+     * @return \ZendGData\Docs\ACLEntry Provides a fluent interface.
      */
     public function setScope($value)
     {

@@ -8,16 +8,16 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class ListFeed extends \Zend\GData\Feed
+class ListFeed extends \ZendGData\Feed
 {
 
     /**
@@ -25,14 +25,14 @@ class ListFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\ListEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\ListEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Spreadsheets\ListFeed';
+    protected $_feedClassName = 'ZendGData\Spreadsheets\ListFeed';
 
     /**
      * Constructs a new Zend_Gdata_Spreadsheets_ListFeed object.

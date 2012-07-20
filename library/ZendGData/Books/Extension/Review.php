@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books\Extension;
+namespace ZendGData\Books\Extension;
 
 /**
  * User-provided review
@@ -17,7 +17,7 @@ namespace Zend\GData\Books\Extension;
  * @package    Zend_Gdata
  * @subpackage Books
  */
-class Review extends \Zend\GData\Extension
+class Review extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gbs';
@@ -36,7 +36,7 @@ class Review extends \Zend\GData\Extension
      */
     public function __construct($lang = null, $type = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Books::$namespaces);
         parent::__construct();
         $this->_lang = $lang;
         $this->_type = $type;
@@ -109,7 +109,7 @@ class Review extends \Zend\GData\Extension
      * Sets the language of link title
      *
      * @param string $lang language of link title
-     * @return \Zend\GData\Books\Extension\Review Provides a fluent interface
+     * @return \ZendGData\Books\Extension\Review Provides a fluent interface
      */
     public function setLang($lang)
     {
@@ -121,7 +121,7 @@ class Review extends \Zend\GData\Extension
      * Sets the type of text construct (typically 'text', 'html' or 'xhtml')
      *
      * @param string $type type of text construct (typically 'text', 'html' or 'xhtml')
-     * @return \Zend\GData\Books\Extension\Review Provides a fluent interface
+     * @return \ZendGData\Books\Extension\Review Provides a fluent interface
      */
     public function setType($type)
     {

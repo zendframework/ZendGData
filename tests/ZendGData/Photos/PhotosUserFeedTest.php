@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
-use Zend\GData\Photos;
-use Zend\GData\App\Extension;
+use ZendGData\Photos;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -304,7 +304,7 @@ class PhotosUserFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->userFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoUser() instanceof \Zend\GData\Photos\Extension\User);
+        $this->assertTrue($feed->getGphotoUser() instanceof \ZendGData\Photos\Extension\User);
         $this->verifyProperty2($feed, "gphotoUser", "text",
                 "sample.user");
         $this->verifyProperty3($feed, "gphotoUser", "text",
@@ -320,7 +320,7 @@ class PhotosUserFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->userFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoNickname() instanceof \Zend\GData\Photos\Extension\Nickname);
+        $this->assertTrue($feed->getGphotoNickname() instanceof \ZendGData\Photos\Extension\Nickname);
         $this->verifyProperty2($feed, "gphotoNickname", "text",
                 "sample");
         $this->verifyProperty3($feed, "gphotoNickname", "text",
@@ -336,7 +336,7 @@ class PhotosUserFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->userFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoThumbnail() instanceof \Zend\GData\Photos\Extension\Thumbnail);
+        $this->assertTrue($feed->getGphotoThumbnail() instanceof \ZendGData\Photos\Extension\Thumbnail);
         $this->verifyProperty2($feed, "gphotoThumbnail", "text",
                 "http://lh5.google.com/sample.user/AAAAuZnob5E/AAAAAAAAAAA/EtCbNCdLGxM/s64-c/sample.user");
         $this->verifyProperty3($feed, "gphotoThumbnail", "text",

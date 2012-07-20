@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:statistics element used by the YouTube data API
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Statistics extends \Zend\GData\Extension
+class Statistics extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -84,7 +84,7 @@ class Statistics extends \Zend\GData\Extension
         $subscriberCount = null, $lastWebAccess = null,
         $favoriteCount = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
         $this->_viewCount = $viewCount;
         $this->_videoWatchCount = $videoWatchCount;
@@ -172,7 +172,7 @@ class Statistics extends \Zend\GData\Extension
      * Set the value for this element's viewCount attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Statistics The element being
+     * @return \ZendGData\YouTube\Extension\Statistics The element being
      * modified.
      */
     public function setViewCount($value)
@@ -195,7 +195,7 @@ class Statistics extends \Zend\GData\Extension
      * Set the value for this element's videoWatchCount attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Statistics The element being
+     * @return \ZendGData\YouTube\Extension\Statistics The element being
      * modified.
      */
     public function setVideoWatchCount($value)
@@ -218,7 +218,7 @@ class Statistics extends \Zend\GData\Extension
      * Set the value for this element's subscriberCount attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Statistics The element being
+     * @return \ZendGData\YouTube\Extension\Statistics The element being
      * modified.
      */
     public function setSubscriberCount($value)
@@ -241,7 +241,7 @@ class Statistics extends \Zend\GData\Extension
      * Set the value for this element's lastWebAccess attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Statistics The element being
+     * @return \ZendGData\YouTube\Extension\Statistics The element being
      * modified.
      */
     public function setLastWebAccess($value)
@@ -264,7 +264,7 @@ class Statistics extends \Zend\GData\Extension
      * Set the value for this element's favoriteCount attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Statistics The element being
+     * @return \ZendGData\YouTube\Extension\Statistics The element being
      * modified.
      */
     public function setFavoriteCount($value)

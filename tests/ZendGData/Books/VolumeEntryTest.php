@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Books;
+namespace ZendGDataTest\Books;
 
-use Zend\GData\Books;
+use ZendGData\Books;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class VolumeEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/Books/_files/VolumeEntryDataSample1.xml',
+                'ZendGData/Books/_files/VolumeEntryDataSample1.xml',
                 true);
         $this->entry = new Books\VolumeEntry();
     }

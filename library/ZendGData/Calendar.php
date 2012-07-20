@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the Google Calendar data API
@@ -45,8 +45,8 @@ class Calendar extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Calendar');
-        $this->registerPackage('Zend\GData\Calendar\Extension');
+        $this->registerPackage('ZendGData\Calendar');
+        $this->registerPackage('ZendGData\Calendar\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
     }
@@ -55,7 +55,7 @@ class Calendar extends GData
      * Retreive feed object
      *
      * @param mixed $location The location for the feed, as a URL or Query
-     * @return \Zend\GData\Calendar\EventFeed
+     * @return \ZendGData\Calendar\EventFeed
      */
     public function getCalendarEventFeed($location = null)
     {
@@ -66,13 +66,13 @@ class Calendar extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Calendar\EventFeed');
+        return parent::getFeed($uri, 'ZendGData\Calendar\EventFeed');
     }
 
     /**
      * Retreive entry object
      *
-     * @return \Zend\GData\Calendar\EventEntry
+     * @return \ZendGData\Calendar\EventEntry
      */
     public function getCalendarEventEntry($location = null)
     {
@@ -84,25 +84,25 @@ class Calendar extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Calendar\EventEntry');
+        return parent::getEntry($uri, 'ZendGData\Calendar\EventEntry');
     }
 
 
     /**
      * Retrieve feed object
      *
-     * @return \Zend\GData\Calendar\ListFeed
+     * @return \ZendGData\Calendar\ListFeed
      */
     public function getCalendarListFeed()
     {
         $uri = self::CALENDAR_FEED_URI . '/default';
-        return parent::getFeed($uri,'Zend\GData\Calendar\ListFeed');
+        return parent::getFeed($uri,'ZendGData\Calendar\ListFeed');
     }
 
     /**
      * Retreive entryobject
      *
-     * @return \Zend\GData\Calendar\ListEntry
+     * @return \ZendGData\Calendar\ListEntry
      */
     public function getCalendarListEntry($location = null)
     {
@@ -114,7 +114,7 @@ class Calendar extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri,'Zend\GData\Calendar\ListEntry');
+        return parent::getEntry($uri,'ZendGData\Calendar\ListEntry');
     }
 
     public function insertEvent($event, $uri=null)
@@ -122,7 +122,7 @@ class Calendar extends GData
         if ($uri == null) {
             $uri = $this->_defaultPostUri;
         }
-        $newEvent = $this->insertEntry($event, $uri, 'Zend\GData\Calendar\EventEntry');
+        $newEvent = $this->insertEntry($event, $uri, 'ZendGData\Calendar\EventEntry');
         return $newEvent;
     }
 

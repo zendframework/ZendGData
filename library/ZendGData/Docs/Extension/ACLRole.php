@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs\Extension;
+namespace ZendGData\Docs\Extension;
 
 /**
  * Represents the gAcl:role element used by the Docs data API.
@@ -17,7 +17,7 @@ namespace Zend\GData\Docs\Extension;
  * @package    Zend_Gdata
  * @subpackage Gapps
  */
-class ACLRole extends \Zend\GData\Extension
+class ACLRole extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gAcl';
@@ -32,13 +32,13 @@ class ACLRole extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new \Zend\GData\Docs\Extension\ACLRole object.
+     * Constructs a new \ZendGData\Docs\Extension\ACLRole object.
      *
      * @param string $value The role of the acl.
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Docs::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Docs::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -97,7 +97,7 @@ class ACLRole extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Docs\Extension\ACLRole The element being modified.
+     * @return \ZendGData\Docs\Extension\ACLRole The element being modified.
      */
     public function setValue($value)
     {

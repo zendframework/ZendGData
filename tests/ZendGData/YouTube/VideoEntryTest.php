@@ -8,11 +8,11 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
-use Zend\GData\App\Extension;
-use Zend\GData\App;
+use ZendGData\YouTube;
+use ZendGData\App\Extension;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -27,10 +27,10 @@ class VideoEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->privateEntryText = file_get_contents(
-                'Zend/GData/YouTube/_files/VideoEntryDataSamplePrivate.xml',
+                'ZendGData/YouTube/_files/VideoEntryDataSamplePrivate.xml',
                 true);
         $this->v2EntryText = file_get_contents(
-                'Zend/GData/YouTube/_files/VideoEntryDataSampleV2.xml',
+                'ZendGData/YouTube/_files/VideoEntryDataSampleV2.xml',
                 true);
         $this->entry = new YouTube\VideoEntry();
     }
@@ -121,7 +121,7 @@ class VideoEntryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(240, $mediaGroup->thumbnail[3]->height);
         $this->assertEquals(320, $mediaGroup->thumbnail[3]->width);
         $this->assertEquals('00:02:07.500', $mediaGroup->thumbnail[3]->time);
-        $this->assertTrue($mediaGroup->private instanceof \Zend\GData\YouTube\Extension\PrivateExtension);
+        $this->assertTrue($mediaGroup->private instanceof \ZendGData\YouTube\Extension\PrivateExtension);
 
         $this->assertEquals(113321, $videoEntry->statistics->viewCount);
         $this->assertEquals(1, $videoEntry->rating->min);
@@ -246,9 +246,9 @@ class VideoEntryTest extends \PHPUnit_Framework_TestCase
         $v2VideoEntry = new YouTube\VideoEntry();
         $v2VideoEntry->setMajorProtocolVersion(2);
 
-        $v2MediaGroup = new \Zend\GData\YouTube\Extension\MediaGroup();
+        $v2MediaGroup = new \ZendGData\YouTube\Extension\MediaGroup();
         $v2MediaGroup->setVideoId(
-            new \Zend\GData\YouTube\Extension\VideoId('UMFI1hdm96E'));
+            new \ZendGData\YouTube\Extension\VideoId('UMFI1hdm96E'));
 
         $v2VideoEntry->setMediaGroup($v2MediaGroup);
 

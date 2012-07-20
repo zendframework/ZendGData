@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
-use Zend\GData\Photos;
-use Zend\GData\App;
+use ZendGData\Photos;
+use ZendGData\App;
 
 /**
  * @category   Zend

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\Extension;
+use ZendGData\GApps\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class NameTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->theNameText = file_get_contents(
-                'Zend/GData/GApps/_files/NameElementSample1.xml',
+                'ZendGData/GApps/_files/NameElementSample1.xml',
                 true);
         $this->theName = new Extension\Name();
     }
@@ -69,13 +69,13 @@ class NameTest extends \PHPUnit_Framework_TestCase
         $newName->transferFromXML($this->theName->saveXML());
         $this->assertEquals(0, count($newName->extensionElements));
         $newName->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newName->extensionElements));
         $this->assertEquals("John", $newName->givenName);
         $this->assertEquals("Doe", $newName->familyName);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GApps();
+        $gdata = new \ZendGData\GApps();
         $newName2 = $gdata->newName();
         $newName2->transferFromXML($newName->saveXML());
         $this->assertEquals(1, count($newName2->extensionElements));

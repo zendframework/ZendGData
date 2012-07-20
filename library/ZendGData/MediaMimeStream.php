@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * A streaming Media MIME class that allows for buffered read operations.
@@ -61,7 +61,7 @@ class MediaMimeStream
      * @param string $filePath The path to the file that constitutes the binary
      *               part of the message.
      * @param string $fileContentType The valid internet media type of the file.
-     * @throws \Zend\GData\App\IOException If the file cannot be read or does
+     * @throws \ZendGData\App\IOException If the file cannot be read or does
      *         not exist. Also if mbstring.func_overload has been set > 1.
      */
     public function __construct($xmlString = null, $filePath = null,

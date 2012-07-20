@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class TransparencyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->transparencyText = file_get_contents(
-                'Zend/GData/_files/TransparencyElementSample1.xml',
+                'ZendGData/_files/TransparencyElementSample1.xml',
                 true);
         $this->transparency = new Extension\Transparency();
     }
@@ -66,12 +66,12 @@ class TransparencyTest extends \PHPUnit_Framework_TestCase
         $newTransparency->transferFromXML($this->transparency->saveXML());
         $this->assertEquals(0, count($newTransparency->extensionElements));
         $newTransparency->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newTransparency->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#event.opaque", $newTransparency->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newTransparency2 = $gdata->newTransparency();
         $newTransparency2->transferFromXML($newTransparency->saveXML());
         $this->assertEquals(1, count($newTransparency2->extensionElements));

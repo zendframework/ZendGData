@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace ZendGData\GApps\Extension;
 
 /**
  * Represents the apps:name element used by the Apps data API. This is used
@@ -19,7 +19,7 @@ namespace Zend\GData\GApps\Extension;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class Name extends \Zend\GData\Extension
+class Name extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -49,7 +49,7 @@ class Name extends \Zend\GData\Extension
      */
     public function __construct($familyName = null, $givenName = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct();
         $this->_familyName = $familyName;
         $this->_givenName = $givenName;
@@ -114,7 +114,7 @@ class Name extends \Zend\GData\Extension
      * represents a user's family name.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Name Provides a fluent interface..
+     * @return \ZendGData\GApps\Extension\Name Provides a fluent interface..
      */
     public function setFamilyName($value)
     {
@@ -138,7 +138,7 @@ class Name extends \Zend\GData\Extension
      * represents a user's given name.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Name Provides a fluent interface.
+     * @return \ZendGData\GApps\Extension\Name Provides a fluent interface.
      */
     public function setGivenName($value)
     {

@@ -10,8 +10,6 @@
 
 namespace ZendTest\GData;
 
-require_once 'Zend/GData/TestAsset/MockHttpClient.php';
-
 /**
  * @category   Zend
  * @package    Zend_GData_Docs
@@ -24,10 +22,10 @@ class DocsTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->adapter = new \ZendTest\GData\TestAsset\MockHttpClient();
-        $this->client = new \Zend\GData\HttpClient();
+        $this->adapter = new \ZendGDataTest\TestAsset\MockHttpClient();
+        $this->client = new \ZendGData\HttpClient();
         $this->client->setAdapter($this->adapter);
-        $this->gdata = new \Zend\GData\Docs($this->client);
+        $this->gdata = new \ZendGData\Docs($this->client);
     }
 
     public function testCreateFolder()

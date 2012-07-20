@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\Extension;
+use ZendGData\GApps\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class QuotaTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->quotaText = file_get_contents(
-                'Zend/GData/GApps/_files/QuotaElementSample1.xml',
+                'ZendGData/GApps/_files/QuotaElementSample1.xml',
                 true);
         $this->quota = new Extension\Quota();
     }
@@ -67,12 +67,12 @@ class QuotaTest extends \PHPUnit_Framework_TestCase
         $newQuota->transferFromXML($this->quota->saveXML());
         $this->assertEquals(0, count($newQuota->extensionElements));
         $newQuota->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newQuota->extensionElements));
         $this->assertEquals("123456789", $newQuota->limit);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GApps();
+        $gdata = new \ZendGData\GApps();
         $newQuota2 = $gdata->newQuota();
         $newQuota2->transferFromXML($newQuota->saveXML());
         $this->assertEquals(1, count($newQuota2->extensionElements));

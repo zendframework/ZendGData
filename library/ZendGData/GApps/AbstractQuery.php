@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
-use Zend\GData\Query;
+use ZendGData\GApps;
+use ZendGData\Query;
 
 /**
  * Assists in constructing queries for Google Apps entries. This class
@@ -92,7 +92,7 @@ abstract class AbstractQuery extends Query
          } elseif ($this->_domain !== null) {
              return GApps::APPS_BASE_FEED_URI . '/' . $this->_domain;
          } else {
-             throw new \Zend\GData\App\InvalidArgumentException(
+             throw new \ZendGData\App\InvalidArgumentException(
                  'Domain must be specified.');
          }
      }

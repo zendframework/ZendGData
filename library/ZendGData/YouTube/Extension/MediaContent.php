@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the media:content element of Media RSS.
@@ -20,7 +20,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class MediaContent extends \Zend\GData\Media\Extension\MediaContent
+class MediaContent extends \ZendGData\Media\Extension\MediaContent
 {
     protected $_rootElement = 'content';
     protected $_rootNamespace = 'media';
@@ -36,7 +36,7 @@ class MediaContent extends \Zend\GData\Media\Extension\MediaContent
 
     public function __construct()
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
     }
 
@@ -91,7 +91,7 @@ class MediaContent extends \Zend\GData\Media\Extension\MediaContent
      * Sets the format of the media
      *
      * @param int $value    Format of the media
-     * @return \Zend\GData\YouTube\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\YouTube\Extension\MediaContent  Provides a fluent interface
      *
      */
     public function setFormat($value)

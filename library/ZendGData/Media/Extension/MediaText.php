@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:text element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaText extends \Zend\GData\Extension
+class MediaText extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'text';
@@ -55,7 +55,7 @@ class MediaText extends \Zend\GData\Extension
     public function __construct($text = null, $type = null, $lang = null,
             $start = null, $end = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_type = $type;
@@ -129,7 +129,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setType($value)
     {
@@ -147,7 +147,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setLang($value)
     {
@@ -165,7 +165,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setStart($value)
     {
@@ -183,7 +183,7 @@ class MediaText extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaText Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaText Provides a fluent interface
      */
     public function setEnd($value)
     {

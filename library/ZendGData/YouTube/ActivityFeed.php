@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * A feed of user activity entries for YouTube
@@ -20,7 +20,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class ActivityFeed extends \Zend\GData\Feed
+class ActivityFeed extends \ZendGData\Feed
 {
 
     /**
@@ -28,7 +28,7 @@ class ActivityFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ActivityEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\ActivityEntry';
 
     /**
      * Creates an Activity feed, representing a list of activity entries

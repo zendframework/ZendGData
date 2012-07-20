@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $photoEntryText = file_get_contents(
                 '_files/TestPhotoEntry.xml',
                 true);
-        $this->photoEntry = new \Zend\GData\Photos\PhotoEntry($photoEntryText);
+        $this->photoEntry = new \ZendGData\Photos\PhotoEntry($photoEntryText);
     }
 
     /**
@@ -101,7 +101,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's ID is correct
-        $this->assertTrue($entry->getId() instanceof \Zend\GData\App\Extension\Id);
+        $this->assertTrue($entry->getId() instanceof \ZendGData\App\Extension\Id);
         $this->verifyProperty2($entry, "id", "text",
                 "http://picasaweb.google.com/data/entry/api/user/sample.user/albumid/1/photoid/100");
     }
@@ -115,7 +115,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the photo entry has an Atom Published object
-        $this->assertTrue($entry->getPublished() instanceof \Zend\GData\App\Extension\Published);
+        $this->assertTrue($entry->getPublished() instanceof \ZendGData\App\Extension\Published);
         $this->verifyProperty2($entry, "published", "text", "2007-09-05T20:49:24.000Z");
     }
 
@@ -128,7 +128,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's updated date is correct
-        $this->assertTrue($entry->getUpdated() instanceof \Zend\GData\App\Extension\Updated);
+        $this->assertTrue($entry->getUpdated() instanceof \ZendGData\App\Extension\Updated);
         $this->verifyProperty2($entry, "updated", "text",
                 "2007-09-21T18:19:38.000Z");
     }
@@ -142,7 +142,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getTitle() instanceof \Zend\GData\App\Extension\Title);
+        $this->assertTrue($entry->getTitle() instanceof \ZendGData\App\Extension\Title);
         $this->verifyProperty2($entry, "title", "text", "Aqua Graphite.jpg");
     }
 
@@ -155,7 +155,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getGphotoId() instanceof \Zend\GData\Photos\Extension\Id);
+        $this->assertTrue($entry->getGphotoId() instanceof \ZendGData\Photos\Extension\Id);
         $this->verifyProperty2($entry, "gphotoId", "text",
                 "100");
         $this->verifyProperty3($entry, "gphotoId", "text",
@@ -213,7 +213,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's version is correct
-        $this->assertTrue($entry->getGphotoVersion() instanceof \Zend\GData\Photos\Extension\Version);
+        $this->assertTrue($entry->getGphotoVersion() instanceof \ZendGData\Photos\Extension\Version);
         $this->verifyProperty2($entry, "gphotoVersion", "text",
                 "1190398778006402");
         $this->verifyProperty3($entry, "gphotoVersion", "text",
@@ -229,7 +229,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's albumid is correct
-        $this->assertTrue($entry->getGphotoAlbumId() instanceof \Zend\GData\Photos\Extension\AlbumId);
+        $this->assertTrue($entry->getGphotoAlbumId() instanceof \ZendGData\Photos\Extension\AlbumId);
         $this->verifyProperty2($entry, "gphotoAlbumId", "text",
                 "1");
         $this->verifyProperty3($entry, "gphotoAlbumId", "text",
@@ -245,7 +245,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's width is correct
-        $this->assertTrue($entry->getGphotoWidth() instanceof \Zend\GData\Photos\Extension\Width);
+        $this->assertTrue($entry->getGphotoWidth() instanceof \ZendGData\Photos\Extension\Width);
         $this->verifyProperty2($entry, "gphotoWidth", "text",
                 "2560");
         $this->verifyProperty3($entry, "gphotoWidth", "text",
@@ -261,7 +261,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's height is correct
-        $this->assertTrue($entry->getGphotoHeight() instanceof \Zend\GData\Photos\Extension\Height);
+        $this->assertTrue($entry->getGphotoHeight() instanceof \ZendGData\Photos\Extension\Height);
         $this->verifyProperty2($entry, "gphotoHeight", "text",
                 "1600");
         $this->verifyProperty3($entry, "gphotoHeight", "text",
@@ -277,7 +277,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's size is correct
-        $this->assertTrue($entry->getGphotoSize() instanceof \Zend\GData\Photos\Extension\Size);
+        $this->assertTrue($entry->getGphotoSize() instanceof \ZendGData\Photos\Extension\Size);
         $this->verifyProperty2($entry, "gphotoSize", "text",
                 "798334");
         $this->verifyProperty3($entry, "gphotoSize", "text",
@@ -293,7 +293,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's client is correct
-        $this->assertTrue($entry->getGphotoClient() instanceof \Zend\GData\Photos\Extension\Client);
+        $this->assertTrue($entry->getGphotoClient() instanceof \ZendGData\Photos\Extension\Client);
         $this->verifyProperty2($entry, "gphotoClient", "text",
                 "");
         $this->verifyProperty3($entry, "gphotoClient", "text",
@@ -309,7 +309,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's checksum is correct
-        $this->assertTrue($entry->getGphotoChecksum() instanceof \Zend\GData\Photos\Extension\Checksum);
+        $this->assertTrue($entry->getGphotoChecksum() instanceof \ZendGData\Photos\Extension\Checksum);
         $this->verifyProperty2($entry, "gphotoChecksum", "text",
                 "");
         $this->verifyProperty3($entry, "gphotoChecksum", "text",
@@ -325,7 +325,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getGphotoTimestamp() instanceof \Zend\GData\Photos\Extension\Timestamp);
+        $this->assertTrue($entry->getGphotoTimestamp() instanceof \ZendGData\Photos\Extension\Timestamp);
         $this->verifyProperty2($entry, "gphotoTimestamp", "text",
                 "1189025363000");
         $this->verifyProperty3($entry, "gphotoTimestamp", "text",
@@ -341,7 +341,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getGphotoCommentingEnabled() instanceof \Zend\GData\Photos\Extension\CommentingEnabled);
+        $this->assertTrue($entry->getGphotoCommentingEnabled() instanceof \ZendGData\Photos\Extension\CommentingEnabled);
         $this->verifyProperty2($entry, "gphotoCommentingEnabled", "text",
                 "true");
         $this->verifyProperty3($entry, "gphotoCommentingEnabled", "text",
@@ -357,7 +357,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's title is correct
-        $this->assertTrue($entry->getGphotoCommentCount() instanceof \Zend\GData\Photos\Extension\CommentCount);
+        $this->assertTrue($entry->getGphotoCommentCount() instanceof \ZendGData\Photos\Extension\CommentCount);
         $this->verifyProperty2($entry, "gphotoCommentCount", "text",
                 "0");
         $this->verifyProperty3($entry, "gphotoCommentCount", "text",
@@ -372,7 +372,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
         $entry = $this->photoEntry;
 
         // Assert that the entry's media group exists
-        $this->assertTrue($entry->getMediaGroup() instanceof \Zend\GData\Media\Extension\MediaGroup);
+        $this->assertTrue($entry->getMediaGroup() instanceof \ZendGData\Media\Extension\MediaGroup);
     }
 
 }

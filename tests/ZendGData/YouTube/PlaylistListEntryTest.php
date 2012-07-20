@@ -8,11 +8,11 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
-use Zend\GData\Extension;
-use Zend\GData\App;
+use ZendGData\YouTube;
+use ZendGData\Extension;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -27,7 +27,7 @@ class PlaylistListEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->v2entryText = file_get_contents(
-                'Zend/GData/YouTube/_files/PlaylistListEntryDataSampleV2.xml',
+                'ZendGData/YouTube/_files/PlaylistListEntryDataSampleV2.xml',
                 true);
         $this->entry = new YouTube\PlaylistListEntry();
     }

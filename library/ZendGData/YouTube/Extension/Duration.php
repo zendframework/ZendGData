@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:duration element used by the YouTube data API
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Duration extends \Zend\GData\Extension
+class Duration extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -30,7 +30,7 @@ class Duration extends \Zend\GData\Extension
      */
     public function __construct($seconds = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
         $this->_seconds = $seconds;
     }
@@ -86,7 +86,7 @@ class Duration extends \Zend\GData\Extension
      * Set the value for this element's seconds attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\Duration The element being modified.
+     * @return \ZendGData\YouTube\Extension\Duration The element being modified.
      */
     public function setSeconds($value)
     {

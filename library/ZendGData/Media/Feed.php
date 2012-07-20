@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media;
+namespace ZendGData\Media;
 
-use Zend\GData\Media;
+use ZendGData\Media;
 
 /**
  * The Gdata flavor of an Atom Feed with media support
@@ -19,7 +19,7 @@ use Zend\GData\Media;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \ZendGData\Feed
 {
 
     /**
@@ -27,7 +27,7 @@ class Feed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Media\Entry';
+    protected $_entryClassName = 'ZendGData\Media\Entry';
 
     /**
      * Create a new instance.

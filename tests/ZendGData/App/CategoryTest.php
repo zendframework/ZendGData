@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App\Extension;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class CategoryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->categoryText = file_get_contents(
-                'Zend/GData/App/_files/CategoryElementSample1.xml',
+                'ZendGData/App/_files/CategoryElementSample1.xml',
                 true);
         $this->category = new Extension\Category();
     }
@@ -50,7 +50,7 @@ class CategoryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($newCategory->scheme, 'http://schemas.google.com/g/2005#kind');
 
         /* try constructing using magic factory */
-        $app = new \Zend\GData\App();
+        $app = new \ZendGData\App();
         $newCategory2 = $app->newCategory();
         $newCategory2->transferFromXML($newCategory->saveXML());
         $this->assertEquals(count($newCategory2->extensionElements), 1);

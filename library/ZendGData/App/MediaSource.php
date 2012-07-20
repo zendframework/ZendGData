@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
  * Interface for defining data that can be encoded and sent over the network.
@@ -30,7 +30,7 @@ interface MediaSource
      * Set the content type for the file attached (example image/png)
      *
      * @param string $value The content type
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface
+     * @return \ZendGData\App\MediaFileSource Provides a fluent interface
      */
     public function setContentType($value);
 
@@ -46,7 +46,7 @@ interface MediaSource
      * title for the uploaded file.  A null value indicates no slug header.
      *
      * @var string The slug value
-     * @return \Zend\GData\App\MediaSource Provides a fluent interface
+     * @return \ZendGData\App\MediaSource Provides a fluent interface
      */
     public function setSlug($value);
 

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Specialized Link class for use with YouTube. Enables use of yt extension elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Link extends \Zend\GData\App\Extension\Link
+class Link extends \ZendGData\App\Extension\Link
 {
 
     protected $_token = null;
@@ -25,12 +25,12 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Constructs a new Zend_Gdata_Calendar_Extension_Link object.
      * @see Zend_Gdata_App_Extension_Link#__construct
-     * @param \Zend\GData\YouTube\Extension\Token $token
+     * @param \ZendGData\YouTube\Extension\Token $token
      */
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null, $token = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
         $this->_token = $token;
     }
@@ -78,7 +78,7 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Get the value for this element's token attribute.
      *
-     * @return \Zend\GData\YouTube\Extension\Token The token element.
+     * @return \ZendGData\YouTube\Extension\Token The token element.
      */
     public function getToken()
     {
@@ -88,7 +88,7 @@ class Link extends \Zend\GData\App\Extension\Link
     /**
      * Set the value for this element's token attribute.
      *
-     * @param \Zend\GData\YouTube\Extension\Token $value The desired value for this attribute.
+     * @param \ZendGData\YouTube\Extension\Token $value The desired value for this attribute.
      * @return Zend_YouTube_Extension_Link The element being modified.
      */
     public function setToken($value)

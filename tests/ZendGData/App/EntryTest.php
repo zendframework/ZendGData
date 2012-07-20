@@ -8,15 +8,15 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
 use Zend\GData;
-use Zend\GData\App;
-use Zend\GData\App\Extension;
+use ZendGData\App;
+use ZendGData\App\Extension;
 use Zend\Http;
 use Zend\Http\Header\Etag;
 use Zend\Uri;
-use ZendTest\GData\TestAsset;
+use ZendGDataTest\TestAsset;
 
 /**
  * @category   Zend
@@ -29,11 +29,11 @@ class EntryTest extends \PHPUnit_Framework_TestCase
 {
     public $entryText;
     public $httpEntrySample;
-    /** @var \Zend\GData\App\Entry */
+    /** @var \ZendGData\App\Entry */
     public $entry;
     /** @var \Zend\Http\Client\Adapter\AdapterInterface */
     public $adapter;
-    /** @var \Zend\GData\HttpClient */
+    /** @var \ZendGData\HttpClient */
     public $client;
     /** @var App */
     public $service;
@@ -41,14 +41,14 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/App/_files/EntrySample1.xml',
+                'ZendGData/App/_files/EntrySample1.xml',
                 true);
         $this->httpEntrySample = file_get_contents(
-                'Zend/GData/App/_files/EntrySampleHttp1.txt',
+                'ZendGData/App/_files/EntrySampleHttp1.txt',
                 true);
         $this->entry = new App\Entry();
 
-        $this->adapter = new \ZendTest\GData\TestAsset\MockHttpClient();
+        $this->adapter = new \ZendGDataTest\TestAsset\MockHttpClient();
         $this->client = new GData\HttpClient();
         $this->client->setAdapter($this->adapter);
         $this->service = new App($this->client);
@@ -257,7 +257,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
 
     public function testCanSetClassnameOnSave()
     {
-        $className = '\Zend\GData\Entry';
+        $className = '\ZendGData\Entry';
         $this->adapter->setResponse($this->httpEntrySample);
         $entry = $this->service->newEntry();
         $entry->link = array(new Extension\Link(
@@ -265,7 +265,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
                 'edit',
                 'application/atom+xml'));
         $newEntry = $entry->save(null, $className);
-        $this->assertEquals('Zend\GData\Entry', get_class($newEntry));
+        $this->assertEquals('ZendGData\Entry', get_class($newEntry));
     }
 
     public function testIfNoneMatchSetOnReload()
@@ -321,7 +321,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
                 'application/atom+xml'));
         $entry->setEtag($etag);
         $newEntry = $entry->reload();
-        $this->assertEquals('Zend\GData\App\Entry', get_class($newEntry));
+        $this->assertEquals('ZendGData\App\Entry', get_class($newEntry));
     }
 
     public function testReloadPopulatesEntryObject()
@@ -347,7 +347,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
                 'edit',
                 'application/atom+xml'));
         $newEntry = $entry->reload();
-        $this->assertEquals('Zend\GData\App\Entry', get_class($newEntry));
+        $this->assertEquals('ZendGData\App\Entry', get_class($newEntry));
     }
 
     public function testReloadExtractsURIFromEditLink()
@@ -404,7 +404,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
 
     public function testCanSetReloadReturnClassname()
     {
-        $className = '\Zend\GData\Entry';
+        $className = '\ZendGData\Entry';
         $etag = Etag::fromString('Etag: ABCD1234');
         $this->service->setMajorProtocolVersion(2);
         $this->adapter->setResponse($this->httpEntrySample);
@@ -415,12 +415,12 @@ class EntryTest extends \PHPUnit_Framework_TestCase
                 'application/atom+xml'));
         $entry->setEtag($etag);
         $newEntry = $entry->reload(null, $className);
-        $this->assertEquals('Zend\GData\Entry', get_class($newEntry));
+        $this->assertEquals('ZendGData\Entry', get_class($newEntry));
     }
 
     public function testReloadInheritsClassname()
     {
-        $className = '\Zend\GData\Entry';
+        $className = '\ZendGData\Entry';
         $etag = Etag::fromString('Etag: ABCD1234');
         $this->service->setMajorProtocolVersion(2);
         $this->adapter->setResponse($this->httpEntrySample);
@@ -432,7 +432,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
                 'application/atom+xml'));
         $entry->setEtag($etag);
         $newEntry = $entry->reload();
-        $this->assertEquals('Zend\GData\Entry', get_class($newEntry));
+        $this->assertEquals('ZendGData\Entry', get_class($newEntry));
     }
 
     public function testCanSetMajorProtocolVersion()
@@ -457,7 +457,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     {
         $expectedVersion = 0;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $entry->setMajorProtocolVersion($expectedVersion);
     }
 
@@ -465,7 +465,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     {
         $expectedVersion = -1;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $entry->setMajorProtocolVersion($expectedVersion);
     }
 
@@ -491,7 +491,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     {
         $expectedVersion = -1;
         $entry = $this->service->newEntry();
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $entry->setMinorProtocolVersion($expectedVersion);
     }
 

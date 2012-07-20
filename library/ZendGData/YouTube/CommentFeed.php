@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * The YouTube comments flavor of an Atom Feed
@@ -19,7 +19,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class CommentFeed extends \Zend\GData\Feed
+class CommentFeed extends \ZendGData\Feed
 {
 
     /**
@@ -27,7 +27,7 @@ class CommentFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\CommentEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\CommentEntry';
 
     /**
      * Constructs a new YouTube Comment Feed object, to represent

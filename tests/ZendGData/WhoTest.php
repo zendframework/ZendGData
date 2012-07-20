@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class WhoTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whoText = file_get_contents(
-                'Zend/GData/_files/WhoElementSample1.xml',
+                'ZendGData/_files/WhoElementSample1.xml',
                 true);
         $this->who = new Extension\Who();
     }
@@ -70,14 +70,14 @@ class WhoTest extends \PHPUnit_Framework_TestCase
         $newWho->transferFromXML($this->who->saveXML());
         $this->assertEquals(0, count($newWho->extensionElements));
         $newWho->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newWho->extensionElements));
         $this->assertEquals("Test Value String", $newWho->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.speaker", $newWho->rel);
         $this->assertEquals("testemail@somewhere.domain.invalid", $newWho->email);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newWho2 = $gdata->newWho();
         $newWho2->transferFromXML($newWho->saveXML());
         $this->assertEquals(1, count($newWho2->extensionElements));

@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class ReminderTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->reminderText = file_get_contents(
-                'Zend/GData/_files/ReminderElementSample1.xml',
+                'ZendGData/_files/ReminderElementSample1.xml',
                 true);
         $this->reminder = new Extension\Reminder();
     }
@@ -74,7 +74,7 @@ class ReminderTest extends \PHPUnit_Framework_TestCase
         $newReminder->transferFromXML($this->reminder->saveXML());
         $this->assertEquals(0, count($newReminder->extensionElements));
         $newReminder->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newReminder->extensionElements));
         $this->assertEquals("12", $newReminder->days);
         $this->assertEquals("64", $newReminder->minutes);
@@ -83,7 +83,7 @@ class ReminderTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("80", $newReminder->hours);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newReminder2 = $gdata->newReminder();
         $newReminder2->transferFromXML($newReminder->saveXML());
         $this->assertEquals(1, count($newReminder2->extensionElements));

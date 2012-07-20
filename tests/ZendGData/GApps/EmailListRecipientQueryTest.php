@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class EmailListRecipientQueryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->query = new \Zend\GData\GApps\EmailListRecipientQuery();
+        $this->query = new \ZendGData\GApps\EmailListRecipientQuery();
     }
 
     // Test to make sure that the domain accessor methods work and propagate

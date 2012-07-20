@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube video playlist flavor of an Atom entry
@@ -22,12 +22,12 @@ use Zend\GData\YouTube;
 class PlaylistVideoEntry extends VideoEntry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\PlaylistVideoEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\PlaylistVideoEntry';
 
     /**
      * Position of the entry in the feed, as specified by the user
      *
-     * @var \Zend\GData\YouTube\Extension\Position
+     * @var \ZendGData\YouTube\Extension\Position
      */
     protected $_position = null;
 
@@ -88,9 +88,9 @@ class PlaylistVideoEntry extends VideoEntry
     /**
      * Sets the array of embedded feeds related to the video
      *
-     * @param \Zend\GData\YouTube\Extension\Position $position
+     * @param \ZendGData\YouTube\Extension\Position $position
      *     The position of the entry in the feed, as specified by the user.
-     * @return \Zend\GData\YouTube\PlaylistVideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\PlaylistVideoEntry Provides a fluent interface
      */
     public function setPosition($position = null)
     {
@@ -101,7 +101,7 @@ class PlaylistVideoEntry extends VideoEntry
     /**
      * Returns the position of the entry in the feed, as specified by the user
      *
-     * @return \Zend\GData\YouTube\Extension\Position The position
+     * @return \ZendGData\YouTube\Extension\Position The position
      */
     public function getPosition()
     {

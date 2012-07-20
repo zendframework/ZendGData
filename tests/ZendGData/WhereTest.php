@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class WhereTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whereText = file_get_contents(
-                'Zend/GData/_files/WhereElementSample1.xml',
+                'ZendGData/_files/WhereElementSample1.xml',
                 true);
         $this->where = new Extension\Where();
     }
@@ -70,14 +70,14 @@ class WhereTest extends \PHPUnit_Framework_TestCase
         $newWhere->transferFromXML($this->where->saveXML());
         $this->assertEquals(0, count($newWhere->extensionElements));
         $newWhere->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newWhere->extensionElements));
         $this->assertEquals("Test Value String", $newWhere->valueString);
         $this->assertEquals("http://schemas.google.com/g/2005#event.alternate", $newWhere->rel);
         $this->assertEquals("Test Label", $newWhere->label);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newWhere2 = $gdata->newWhere();
         $newWhere2->transferFromXML($newWhere->saveXML());
         $this->assertEquals(1, count($newWhere2->extensionElements));

@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
-use Zend\GData\App;
+use ZendGData\YouTube;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -121,7 +121,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function testVideoQuerySetLocationException()
     {
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $yt = new YouTube();
         $query = $yt->newVideoQuery();
         $location = 'foobar';
@@ -133,7 +133,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function testVideoQuerySetLocationExceptionV2()
     {
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $yt = new YouTube();
         $query = $yt->newVideoQuery();
         $location = '-100x,-200y';
@@ -145,7 +145,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
      */
     public function testVideoQuerySetLocationExceptionV3()
     {
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
         $yt = new YouTube();
         $query = $yt->newVideoQuery();
         $location = '-100x,-200y!';

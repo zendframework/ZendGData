@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class OpenSearchStartIndexTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchStartIndexText = file_get_contents(
-                'Zend/GData/_files/OpenSearchStartIndexElementSample1.xml',
+                'ZendGData/_files/OpenSearchStartIndexElementSample1.xml',
                 true);
         $this->openSearchStartIndex = new Extension\OpenSearchStartIndex();
     }
@@ -67,12 +67,12 @@ class OpenSearchStartIndexTest extends \PHPUnit_Framework_TestCase
         $newOpenSearchStartIndex->transferFromXML($this->openSearchStartIndex->saveXML());
         $this->assertEquals(0, count($newOpenSearchStartIndex->extensionElements));
         $newOpenSearchStartIndex->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newOpenSearchStartIndex->extensionElements));
         $this->assertEquals("20", $newOpenSearchStartIndex->text);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newOpenSearchStartIndex2 = $gdata->newOpenSearchStartIndex();
         $newOpenSearchStartIndex2->transferFromXML($newOpenSearchStartIndex->saveXML());
         $this->assertEquals(1, count($newOpenSearchStartIndex2->extensionElements));

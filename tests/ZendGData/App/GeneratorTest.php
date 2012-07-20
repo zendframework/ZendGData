@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App\Extension;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->generatorText = file_get_contents(
-                'Zend/GData/App/_files/GeneratorElementSample1.xml',
+                'ZendGData/App/_files/GeneratorElementSample1.xml',
                 true);
         $this->generator = new Extension\Generator();
     }

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Represents the atom:generator element
@@ -68,7 +68,7 @@ class Generator extends AbstractExtension
 
     /**
      * @param Uri $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setUri($value)
     {
@@ -86,7 +86,7 @@ class Generator extends AbstractExtension
 
     /**
      * @param Version $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setVersion($value)
     {

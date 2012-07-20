@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\App;
+use ZendGData\App;
 use Zend\Stdlib\ErrorHandler;
 
 /**
@@ -55,9 +55,9 @@ class ServiceException extends \Exception
      * Add a single Error object to the list of errors received by the
      * server.
      *
-     * @param \Zend\GData\GApps\Error $error An instance of an error returned
+     * @param \ZendGData\GApps\Error $error An instance of an error returned
      *          by the server. The error's errorCode must be set.
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      */
     public function addError($error)
     {
@@ -77,7 +77,7 @@ class ServiceException extends \Exception
      * @param array $array An associative array containing a collection of
      *          Zend_Gdata_GApps_Error objects. All errors must have their
      *          errorCode value set.
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      */
     public function setErrors($array)
     {
@@ -102,7 +102,7 @@ class ServiceException extends \Exception
     /**
      * Return the Error object associated with a specific error code.
      *
-     * @return \Zend\GData\GApps\Error The Error object requested, or null
+     * @return \ZendGData\GApps\Error The Error object requested, or null
      *              if not found.
      */
     public function getError($errorCode)
@@ -132,8 +132,8 @@ class ServiceException extends \Exception
      * Import an AppsForYourDomain error from XML.
      *
      * @param string $string The XML data to be imported
-     * @return \Zend\GData\GApps\ServiceException Provides a fluent interface.
-     * @throws \Zend\GData\App\Exception
+     * @return \ZendGData\GApps\ServiceException Provides a fluent interface.
+     * @throws \ZendGData\App\Exception
      */
     public function importFromString($string)
     {

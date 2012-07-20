@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Data model class to represent a participant
@@ -35,8 +35,8 @@ class Who extends Extension
      * @param string $email (optional) Email address.
      * @param string $rel (optional) Relationship description.
      * @param string $valueString (optional) Simple string describing this person.
-     * @param \Zend\GData\Extension\AttendeeStatus $attendeeStatus (optional) The status of the attendee.
-     * @param \Zend\GData\Extension\AttendeeType $attendeeType (optional) The type of the attendee.
+     * @param \ZendGData\Extension\AttendeeStatus $attendeeStatus (optional) The status of the attendee.
+     * @param \ZendGData\Extension\AttendeeType $attendeeType (optional) The type of the attendee.
      * @param string $entryLink URL pointing to an associated entry (Contact kind) describing this person.
      */
     public function __construct($email = null, $rel = null, $valueString = null,
@@ -168,7 +168,7 @@ class Who extends Extension
      * Set the value for this element's ValueString attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setValueString($value)
     {
@@ -190,7 +190,7 @@ class Who extends Extension
      * Set the value for this element's Email attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setEmail($value)
     {
@@ -212,7 +212,7 @@ class Who extends Extension
      * Set the value for this element's Rel attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setRel($value)
     {
@@ -223,7 +223,7 @@ class Who extends Extension
     /**
      * Get this entry's AttendeeStatus element.
      *
-     * @return \Zend\GData\Extension\AttendeeStatus The requested entry.
+     * @return \ZendGData\Extension\AttendeeStatus The requested entry.
      */
     public function getAttendeeStatus()
     {
@@ -233,8 +233,8 @@ class Who extends Extension
     /**
      * Set the child's AttendeeStatus element.
      *
-     * @param \Zend\GData\Extension\AttendeeStatus $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @param \ZendGData\Extension\AttendeeStatus $value The desired value for this attribute.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setAttendeeStatus($value)
     {
@@ -245,7 +245,7 @@ class Who extends Extension
     /**
      * Get this entry's AttendeeType element.
      *
-     * @return \Zend\GData\Extension\AttendeeType The requested entry.
+     * @return \ZendGData\Extension\AttendeeType The requested entry.
      */
     public function getAttendeeType()
     {
@@ -255,8 +255,8 @@ class Who extends Extension
     /**
      * Set the child's AttendeeType element.
      *
-     * @param \Zend\GData\Extension\AttendeeType $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @param \ZendGData\Extension\AttendeeType $value The desired value for this attribute.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setAttendeeType($value)
     {

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Abstract class for data models that require only text and type-- such as:
@@ -52,7 +52,7 @@ abstract class AbstractText extends AbstractExtension
     }
 
     /*
-     * @return Zend\GData\App\Extension\Type
+     * @return ZendGData\App\Extension\Type
      */
     public function getType()
     {
@@ -61,7 +61,7 @@ abstract class AbstractText extends AbstractExtension
 
     /*
      * @param string $value
-     * @return Zend\GData\App\Extension\AbstractText Provides a fluent interface
+     * @return ZendGData\App\Extension\AbstractText Provides a fluent interface
      */
     public function setType($value)
     {

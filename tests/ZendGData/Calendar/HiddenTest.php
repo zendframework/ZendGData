@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class HiddenTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->hiddenText = file_get_contents(
-                'Zend/GData/Calendar/_files/HiddenElementSample1.xml',
+                'ZendGData/Calendar/_files/HiddenElementSample1.xml',
                 true);
         $this->hidden = new Extension\Hidden();
     }
@@ -65,12 +65,12 @@ class HiddenTest extends \PHPUnit_Framework_TestCase
         $newHidden->transferFromXML($this->hidden->saveXML());
         $this->assertEquals(count($newHidden->extensionElements), 0);
         $newHidden->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newHidden->extensionElements), 1);
         $this->assertEquals($newHidden->value, true);
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newHidden2 = $cal->newHidden();
         $newHidden2->transferFromXML($newHidden->saveXML());
         $this->assertEquals(count($newHidden2->extensionElements), 1);

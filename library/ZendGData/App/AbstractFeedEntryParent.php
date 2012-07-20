@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
-use Zend\GData\App;
+use ZendGData\App;
 use Zend\Http\Header\Etag;
 
 /**
@@ -84,7 +84,7 @@ abstract class AbstractFeedEntryParent extends AbstractBase
      * Set the active service instance for this object. This will be used to
      * perform network requests, such as when calling save() and delete().
      *
-     * @param \Zend\GData\App $instance The new service instance.
+     * @param \ZendGData\App $instance The new service instance.
      * @return AbstractFeedEntryParent Provides a fluent interface.
      */
     public function setService(App $instance = null)
@@ -97,7 +97,7 @@ abstract class AbstractFeedEntryParent extends AbstractBase
      * Get the active service instance for this object. This will be used to
      * perform network requests, such as when calling save() and delete().
      *
-     * @return \Zend\GData\App|null The current service instance, or null if
+     * @return \ZendGData\App|null The current service instance, or null if
      *         not set.
      */
     public function getService()

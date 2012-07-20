@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:keywords element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaKeywords extends \Zend\GData\Extension
+class MediaKeywords extends \ZendGData\Extension
 {
     protected $_rootElement = 'keywords';
     protected $_rootNamespace = 'media';
@@ -27,7 +27,7 @@ class MediaKeywords extends \Zend\GData\Extension
      */
     public function __construct()
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
     }
 

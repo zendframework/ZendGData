@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Provides a mechanism to build a query URL for Gdata services.
@@ -106,7 +106,7 @@ class Query
     /**
      * @param string $name
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setParam($name, $value)
     {
@@ -124,7 +124,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setAlt($value)
     {
@@ -138,7 +138,7 @@ class Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setMaxResults($value)
     {
@@ -152,7 +152,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setQuery($value)
     {
@@ -166,7 +166,7 @@ class Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setStartIndex($value)
     {
@@ -180,7 +180,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setUpdatedMax($value)
     {
@@ -194,7 +194,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setUpdatedMin($value)
     {
@@ -208,7 +208,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setPublishedMax($value)
     {
@@ -222,7 +222,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setPublishedMin($value)
     {
@@ -236,7 +236,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setAuthor($value)
     {
@@ -358,7 +358,7 @@ class Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Query Provides a fluent interface
+     * @return \ZendGData\Query Provides a fluent interface
      */
     public function setCategory($value)
     {

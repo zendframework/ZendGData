@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Represents the gd:entryLink element
@@ -61,7 +61,7 @@ class EntryLink extends Extension
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('atom') . ':' . 'entry';
-                $entry = new \Zend\GData\Entry();
+                $entry = new \ZendGData\Entry();
                 $entry->transferFromDOM($child);
                 $this->_entry = $entry;
                 break;
@@ -83,7 +83,7 @@ class EntryLink extends Extension
             } elseif ($attribute->nodeValue == "false") {
                 $this->_readOnly = false;
             } else {
-                throw new \Zend\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+                throw new \ZendGData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;
         case 'rel':

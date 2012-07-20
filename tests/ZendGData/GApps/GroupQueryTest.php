@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\GroupQuery;
+use ZendGData\GApps\GroupQuery;
 
 /**
  * @category   Zend

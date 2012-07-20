@@ -8,25 +8,25 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model for a collection of Google Apps member entries, usually
  * provided by the Google Apps servers.
  *
  * For information on requesting this feed from a server, see the Google
- * Apps service class, Zend\GData\GApps.
+ * Apps service class, ZendGData\GApps.
  *
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Gapps
  */
-class MemberFeed extends \Zend\GData\Feed
+class MemberFeed extends \ZendGData\Feed
 {
 
-    protected $_entryClassName = '\Zend\GData\GApps\MemberEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\MemberFeed';
+    protected $_entryClassName = '\ZendGData\GApps\MemberEntry';
+    protected $_feedClassName = '\ZendGData\GApps\MemberFeed';
 
 }

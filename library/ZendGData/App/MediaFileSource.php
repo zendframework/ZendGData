@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
  * Concrete class to use a file handle as an attachment within a MediaEntry.
@@ -34,7 +34,7 @@ class MediaFileSource extends AbstractBaseMediaSource
     protected $_contentType = null;
 
     /**
-     * Create a new \Zend\GData\App\MediaFileSource object.
+     * Create a new \ZendGData\App\MediaFileSource object.
      *
      * @param string $filename The name of the file to read from.
      */
@@ -47,7 +47,7 @@ class MediaFileSource extends AbstractBaseMediaSource
      * Return the MIME multipart representation of this MediaEntry.
      *
      * @return string
-     * @throws \Zend\GData\App\IOException
+     * @throws \ZendGData\App\IOException
      */
     public function encode()
     {
@@ -83,7 +83,7 @@ class MediaFileSource extends AbstractBaseMediaSource
      * Set the filename which is to be read.
      *
      * @param string $value The desired file handle.
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface.
+     * @return \ZendGData\App\MediaFileSource Provides a fluent interface.
      */
     public function setFilename($value)
     {
@@ -105,7 +105,7 @@ class MediaFileSource extends AbstractBaseMediaSource
      * Set the content type for the file attached (example image/png)
      *
      * @param string $value The content type
-     * @return \Zend\GData\App\MediaFileSource Provides a fluent interface
+     * @return \ZendGData\App\MediaFileSource Provides a fluent interface
      */
     public function setContentType($value)
     {

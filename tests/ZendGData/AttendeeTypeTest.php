@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class AttendeeTypeTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->attendeeTypeText = file_get_contents(
-                'Zend/GData/_files/AttendeeTypeElementSample1.xml',
+                'ZendGData/_files/AttendeeTypeElementSample1.xml',
                 true);
         $this->attendeeType = new Extension\AttendeeType();
     }
@@ -66,12 +66,12 @@ class AttendeeTypeTest extends \PHPUnit_Framework_TestCase
         $newAttendeeType->transferFromXML($this->attendeeType->saveXML());
         $this->assertEquals(0, count($newAttendeeType->extensionElements));
         $newAttendeeType->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newAttendeeType->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#event.optional", $newAttendeeType->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newAttendeeType2 = $gdata->newAttendeeType();
         $newAttendeeType2->transferFromXML($newAttendeeType->saveXML());
         $this->assertEquals(1, count($newAttendeeType2->extensionElements));

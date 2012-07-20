@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube video subscription flavor of an Atom entry
@@ -20,10 +20,10 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class SubscriptionEntry extends \Zend\GData\Entry
+class SubscriptionEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\SubscriptionEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\SubscriptionEntry';
 
     /**
      * Nested feed links
@@ -35,7 +35,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * The username of this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\Username
+     * @var \ZendGData\YouTube\Extension\Username
      */
     protected $_username = null;
 
@@ -44,7 +44,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
      *
      * This element is only used on subscriptions to playlists.
      *
-     * @var \Zend\GData\YouTube\Extension\PlaylistTitle
+     * @var \ZendGData\YouTube\Extension\PlaylistTitle
      */
     protected $_playlistTitle = null;
 
@@ -53,7 +53,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
      *
      * This element is only used on subscriptions to playlists.
      *
-     * @var \Zend\GData\YouTube\Extension\PlaylistId
+     * @var \ZendGData\YouTube\Extension\PlaylistId
      */
     protected $_playlistId = null;
 
@@ -62,21 +62,21 @@ class SubscriptionEntry extends \Zend\GData\Entry
      *
      * This element is only used on subscriptions to playlists.
      *
-     * @var \Zend\GData\Media\Extension\MediaThumbnail
+     * @var \ZendGData\Media\Extension\MediaThumbnail
      */
     protected $_mediaThumbnail = null;
 
     /**
      * The countHint for this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\CountHint
+     * @var \ZendGData\YouTube\Extension\CountHint
      */
     protected $_countHint = null;
 
     /**
      * The queryString for this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\QueryString
+     * @var \ZendGData\YouTube\Extension\QueryString
      */
     protected $_queryString = null;
 
@@ -143,12 +143,12 @@ class SubscriptionEntry extends \Zend\GData\Entry
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
         case $this->lookupNamespace('gd') . ':' . 'feedLink':
-            $feedLink = new \Zend\GData\Extension\FeedLink();
+            $feedLink = new \ZendGData\Extension\FeedLink();
             $feedLink->transferFromDOM($child);
             $this->_feedLink[] = $feedLink;
             break;
         case $this->lookupNamespace('media') . ':' . 'thumbnail':
-            $mediaThumbnail = new \Zend\GData\Media\Extension\MediaThumbnail();
+            $mediaThumbnail = new \ZendGData\Media\Extension\MediaThumbnail();
             $mediaThumbnail->transferFromDOM($child);
             $this->_mediaThumbnail = $mediaThumbnail;
             break;
@@ -187,7 +187,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
      * Sets the array of embedded feeds related to the video
      *
      * @param array $feedLink The array of embedded feeds relating to the video
-     * @return \Zend\GData\YouTube\SubscriptionEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\SubscriptionEntry Provides a fluent interface
      */
     public function setFeedLink($feedLink = null)
     {
@@ -201,7 +201,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \ZendGData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available
@@ -225,8 +225,8 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the playlist title for a 'playlist' subscription.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\PlaylistId
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\PlaylistId
      */
     public function getPlaylistId()
     {
@@ -243,10 +243,10 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Sets the yt:playlistId element for a new playlist subscription.
      *
-     * @param \Zend\GData\YouTube\Extension\PlaylistId $id The id of
+     * @param \ZendGData\YouTube\Extension\PlaylistId $id The id of
      *        the playlist to which to subscribe to.
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\SubscriptionEntry Provides a fluent interface
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\SubscriptionEntry Provides a fluent interface
      */
     public function setPlaylistId($id = null)
     {
@@ -264,7 +264,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the queryString of the subscription
      *
-     * @return \Zend\GData\YouTube\Extension\QueryString
+     * @return \ZendGData\YouTube\Extension\QueryString
      */
     public function getQueryString()
     {
@@ -274,9 +274,9 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Sets the yt:queryString element for a new keyword subscription.
      *
-     * @param \Zend\GData\YouTube\Extension\QueryString $queryString The query
+     * @param \ZendGData\YouTube\Extension\QueryString $queryString The query
      *        string to subscribe to
-     * @return \Zend\GData\YouTube\SubscriptionEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\SubscriptionEntry Provides a fluent interface
      */
     public function setQueryString($queryString = null)
     {
@@ -287,8 +287,8 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the playlist title for a 'playlist' subscription.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\PlaylistTitle
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\PlaylistTitle
      */
     public function getPlaylistTitle()
     {
@@ -305,10 +305,10 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Sets the yt:playlistTitle element for a new playlist subscription.
      *
-     * @param \Zend\GData\YouTube\Extension\PlaylistTitle $title The title of
+     * @param \ZendGData\YouTube\Extension\PlaylistTitle $title The title of
      *        the playlist to which to subscribe to.
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\SubscriptionEntry Provides a fluent interface
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\SubscriptionEntry Provides a fluent interface
      */
     public function setPlaylistTitle($title = null)
     {
@@ -326,8 +326,8 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the counthint for a subscription.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\CountHint
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\CountHint
      */
     public function getCountHint()
     {
@@ -344,8 +344,8 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the thumbnail for a subscription.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\Media\Extension\MediaThumbnail
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\Media\Extension\MediaThumbnail
      */
     public function getMediaThumbnail()
     {
@@ -362,7 +362,7 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Get the username for a channel subscription.
      *
-     * @return \Zend\GData\YouTube\Extension\Username
+     * @return \ZendGData\YouTube\Extension\Username
      */
     public function getUsername()
     {
@@ -372,9 +372,9 @@ class SubscriptionEntry extends \Zend\GData\Entry
     /**
      * Sets the username for a new channel subscription.
      *
-     * @param \Zend\GData\YouTube\Extension\Username $username The username of
+     * @param \ZendGData\YouTube\Extension\Username $username The username of
      *        the channel to which to subscribe to.
-     * @return \Zend\GData\YouTube\SubscriptionEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\SubscriptionEntry Provides a fluent interface
      */
     public function setUsername($username = null)
     {

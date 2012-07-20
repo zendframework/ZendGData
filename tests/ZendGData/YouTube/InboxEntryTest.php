@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
@@ -27,7 +27,7 @@ class InboxEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->v2entryText = file_get_contents(
-                'Zend/GData/YouTube/_files/' .
+                'ZendGData/YouTube/_files/' .
                 'InboxEntryDataSampleV2.xml',
                 true);
 

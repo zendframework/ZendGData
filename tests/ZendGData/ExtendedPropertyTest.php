@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class ExtendedPropertyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->extendedPropertyText = file_get_contents(
-                'Zend/GData/_files/ExtendedPropertyElementSample1.xml',
+                'ZendGData/_files/ExtendedPropertyElementSample1.xml',
                 true);
         $this->extendedProperty = new Extension\ExtendedProperty();
     }
@@ -68,13 +68,13 @@ class ExtendedPropertyTest extends \PHPUnit_Framework_TestCase
         $newExtendedProperty->transferFromXML($this->extendedProperty->saveXML());
         $this->assertEquals(0, count($newExtendedProperty->extensionElements));
         $newExtendedProperty->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newExtendedProperty->extensionElements));
         $this->assertEquals("http://www.example.com/schemas/2007#mycal.foo", $newExtendedProperty->name);
         $this->assertEquals("5678", $newExtendedProperty->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newExtendedProperty2 = $gdata->newExtendedProperty();
         $newExtendedProperty2->transferFromXML($newExtendedProperty->saveXML());
         $this->assertEquals(1, count($newExtendedProperty2->extensionElements));

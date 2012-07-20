@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class CellQueryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->docQuery = new \Zend\GData\Spreadsheets\CellQuery();
+        $this->docQuery = new \ZendGData\Spreadsheets\CellQuery();
     }
 
     public function testMinRow()

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
 /**
  * Gdata GApps Error class. This class is used to represent errors returned
@@ -23,7 +23,7 @@ namespace Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class Error extends \Zend\GData\App\AbstractBase
+class Error extends \ZendGData\App\AbstractBase
 {
 
     // Error codes as defined at

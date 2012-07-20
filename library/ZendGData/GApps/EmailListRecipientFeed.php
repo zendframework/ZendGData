@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
 /**
  * Data model for a collection of Google Apps email list recipient entries,
@@ -21,10 +21,10 @@ namespace Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class EmailListRecipientFeed extends \Zend\GData\Feed
+class EmailListRecipientFeed extends \ZendGData\Feed
 {
 
-    protected $_entryClassName = '\Zend\GData\GApps\EmailListRecipientEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\EmailListRecipientFeed';
+    protected $_entryClassName = '\ZendGData\GApps\EmailListRecipientEntry';
+    protected $_feedClassName = '\ZendGData\GApps\EmailListRecipientFeed';
 
 }

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:noembed element used by the YouTube data API
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class NoEmbed extends \Zend\GData\Extension
+class NoEmbed extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -29,7 +29,7 @@ class NoEmbed extends \Zend\GData\Extension
      */
     public function __construct($enabled = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
     }
 

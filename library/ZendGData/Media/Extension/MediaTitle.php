@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:title element in MediaRSS
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaTitle extends \Zend\GData\Extension
+class MediaTitle extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'title';
@@ -36,7 +36,7 @@ class MediaTitle extends \Zend\GData\Extension
      */
     public function __construct($text = null, $type = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_type = $type;
         $this->_text = $text;
@@ -89,7 +89,7 @@ class MediaTitle extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaTitle Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaTitle Provides a fluent interface
      */
     public function setType($value)
     {

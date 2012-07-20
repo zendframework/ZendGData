@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace ZendGData\GApps\Extension;
 
 /**
  * Represents the apps:nickname element used by the Apps data API. This
@@ -19,7 +19,7 @@ namespace Zend\GData\GApps\Extension;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class Nickname extends \Zend\GData\Extension
+class Nickname extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -39,7 +39,7 @@ class Nickname extends \Zend\GData\Extension
      */
     public function __construct($name = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct();
         $this->_name = $name;
     }
@@ -98,7 +98,7 @@ class Nickname extends \Zend\GData\Extension
      * name will be delivered to the user who owns this nickname.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Nickname Provides a fluent
+     * @return \ZendGData\GApps\Extension\Nickname Provides a fluent
      *          interface.
      */
     public function setName($value)

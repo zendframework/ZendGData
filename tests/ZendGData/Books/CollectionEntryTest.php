@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Books;
+namespace ZendGDataTest\Books;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class CollectionEntryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->gdata = new \Zend\GData\Books\CollectionEntry();
+        $this->gdata = new \ZendGData\Books\CollectionEntry();
     }
 
     public function testCollectionEntry()

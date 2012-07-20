@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Atom feed class
@@ -27,7 +27,7 @@ abstract class AbstractFeedSourceParent extends AbstractFeedEntryParent
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\App\Entry';
+    protected $_entryClassName = '\ZendGData\App\Entry';
 
     /**
      * Root XML element for Atom entries.
@@ -46,7 +46,7 @@ abstract class AbstractFeedSourceParent extends AbstractFeedEntryParent
      * This will be used to perform network requests, such as when calling
      * save() and delete().
      *
-     * @param \Zend\GData\App $instance The new service instance.
+     * @param \ZendGData\App $instance The new service instance.
      * @return AbstractFeedEntryParent Provides a fluent interface.
      */
     public function setService(App $instance = null)

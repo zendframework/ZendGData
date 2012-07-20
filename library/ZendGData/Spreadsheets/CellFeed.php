@@ -8,16 +8,16 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class CellFeed extends \Zend\GData\Feed
+class CellFeed extends \ZendGData\Feed
 {
 
     /**
@@ -25,26 +25,26 @@ class CellFeed extends \Zend\GData\Feed
     *
     * @var string
     */
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\CellEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\CellEntry';
 
     /**
     * The classname for the feed.
     *
     * @var string
     */
-    protected $_feedClassName = 'Zend\GData\Spreadsheets\CellFeed';
+    protected $_feedClassName = 'ZendGData\Spreadsheets\CellFeed';
 
     /**
     * The row count for the feed.
     *
-    * @var \Zend\GData\Spreadsheets\Extension\RowCount
+    * @var \ZendGData\Spreadsheets\Extension\RowCount
     */
     protected $_rowCount = null;
 
     /**
     * The column count for the feed.
     *
-    * @var \Zend\GData\Spreadsheets\Extension\ColCount
+    * @var \ZendGData\Spreadsheets\Extension\ColCount
     */
     protected $_colCount = null;
 

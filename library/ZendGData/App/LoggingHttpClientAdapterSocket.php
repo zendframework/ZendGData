@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
  * Overrides the traditional socket-based adapter class for Zend_Http_Client to

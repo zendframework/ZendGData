@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Class that represents elements which were not handled by other parsing

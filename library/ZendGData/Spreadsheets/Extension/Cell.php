@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets\Extension;
+namespace ZendGData\Spreadsheets\Extension;
 
 /**
  * Concrete class for working with cell elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\Spreadsheets\Extension;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class Cell extends \Zend\GData\Extension
+class Cell extends \ZendGData\Extension
 {
     protected $_rootElement = 'cell';
     protected $_rootNamespace = 'gs';
@@ -61,7 +61,7 @@ class Cell extends \Zend\GData\Extension
      */
     public function __construct($text = null, $row = null, $col = null, $inputValue = null, $numericValue = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Spreadsheets::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Spreadsheets::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_row = $row;

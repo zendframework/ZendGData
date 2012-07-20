@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\App;
-use Zend\GData\Photos;
+use ZendGData\App;
+use ZendGData\Photos;
 
 /**
  * Assists in constructing queries for user entries.
@@ -25,7 +25,7 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class UserQuery extends \Zend\GData\Query
+class UserQuery extends \ZendGData\Query
 {
 
     /**
@@ -66,7 +66,7 @@ class UserQuery extends \Zend\GData\Query
      * 'api' or 'base'. Normally, 'api' will be desired. Default is 'api'.
      *
      * @param string $value
-     * @return \Zend\GData\Photos\UserQuery Provides a fluent interface
+     * @return \ZendGData\Photos\UserQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -90,7 +90,7 @@ class UserQuery extends \Zend\GData\Query
      * 'feed' or 'entry'. Normally, 'feed' will be desired. Default is 'feed'.
      *
      * @param string $value
-     * @return \Zend\GData\Photos\UserQuery Provides a fluent interface
+     * @return \ZendGData\Photos\UserQuery Provides a fluent interface
      */
     public function setType($value)
     {
@@ -301,7 +301,7 @@ class UserQuery extends \Zend\GData\Query
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function getQueryUrl($incomingUri = null)
     {

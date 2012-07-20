@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class RecurrenceTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->recurrenceText = file_get_contents(
-                'Zend/GData/_files/RecurrenceElementSample1.xml',
+                'ZendGData/_files/RecurrenceElementSample1.xml',
                 true);
         $this->recurrence = new Extension\Recurrence();
     }
@@ -66,12 +66,12 @@ class RecurrenceTest extends \PHPUnit_Framework_TestCase
         $newRecurrence->transferFromXML($this->recurrence->saveXML());
         $this->assertEquals(0, count($newRecurrence->extensionElements));
         $newRecurrence->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newRecurrence->extensionElements));
         $this->assertEquals("Foo", $newRecurrence->text);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newRecurrence2 = $gdata->newRecurrence();
         $newRecurrence2->transferFromXML($newRecurrence->saveXML());
         $this->assertEquals(1, count($newRecurrence2->extensionElements));

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the services which use the
@@ -39,8 +39,8 @@ class DublinCore extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\DublinCore');
-        $this->registerPackage('Zend\GData\DublinCore\Extension');
+        $this->registerPackage('ZendGData\DublinCore');
+        $this->registerPackage('ZendGData\DublinCore\Extension');
         parent::__construct($client, $applicationId);
     }
 

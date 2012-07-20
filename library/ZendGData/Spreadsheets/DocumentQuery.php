@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing queries for Google Spreadsheets documents
@@ -21,7 +21,7 @@ use Zend\GData\App;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class DocumentQuery extends \Zend\GData\Query
+class DocumentQuery extends \ZendGData\Query
 {
 
     const SPREADSHEETS_FEED_URI = 'https://spreadsheets.google.com/feeds';
@@ -44,7 +44,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the spreadsheet key for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setSpreadsheetKey($value)
     {
@@ -64,7 +64,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the worksheet id for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setWorksheetId($value)
     {
@@ -84,7 +84,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the document type for this query.
      * @param string $value spreadsheets or worksheets
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setDocumentType($value)
     {
@@ -104,7 +104,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the projection for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -114,7 +114,7 @@ class DocumentQuery extends \Zend\GData\Query
 
     /**
      * Sets the visibility for this query.
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -143,7 +143,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the title attribute for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setTitle($value)
     {
@@ -158,7 +158,7 @@ class DocumentQuery extends \Zend\GData\Query
     /**
      * Sets the title-exact attribute for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setTitleExact($value)
     {

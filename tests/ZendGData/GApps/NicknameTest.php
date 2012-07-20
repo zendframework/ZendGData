@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\Extension;
+use ZendGData\GApps\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class NicknameTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->nicknameText = file_get_contents(
-                'Zend/GData/GApps/_files/NicknameElementSample1.xml',
+                'ZendGData/GApps/_files/NicknameElementSample1.xml',
                 true);
         $this->nickname = new Extension\Nickname();
     }
@@ -67,12 +67,12 @@ class NicknameTest extends \PHPUnit_Framework_TestCase
         $newNickname->transferFromXML($this->nickname->saveXML());
         $this->assertEquals(0, count($newNickname->extensionElements));
         $newNickname->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newNickname->extensionElements));
         $this->assertEquals("Trogdor", $newNickname->name);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GApps();
+        $gdata = new \ZendGData\GApps();
         $newNickname2 = $gdata->newNickname();
         $newNickname2->transferFromXML($newNickname->saveXML());
         $this->assertEquals(1, count($newNickname2->extensionElements));

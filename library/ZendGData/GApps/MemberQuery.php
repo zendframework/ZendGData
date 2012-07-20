@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps member entries.
@@ -18,7 +18,7 @@ use Zend\GData\GApps;
  * required.
  *
  * For information on submitting queries to a server, see the Google Apps
- * service class, Zend\GData\GApps.
+ * service class, ZendGData\GApps.
  *
  * @category   Zend
  * @package    Zend_Gdata
@@ -155,13 +155,13 @@ class MemberQuery extends AbstractQuery
     public function getQueryUrl()
     {
 
-        $uri = \Zend\GData\GApps::APPS_BASE_FEED_URI;
-        $uri .= \Zend\GData\GApps::APPS_GROUP_PATH;
+        $uri = \ZendGData\GApps::APPS_BASE_FEED_URI;
+        $uri .= \ZendGData\GApps::APPS_GROUP_PATH;
         $uri .= '/' . $this->_domain;
         if ($this->_groupId !== null) {
             $uri .= '/' . $this->_groupId;
         } else {
-            throw new \Zend\GData\App\InvalidArgumentException(
+            throw new \ZendGData\App\InvalidArgumentException(
                     'groupId must not be null');
         }
 

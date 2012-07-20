@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube video playlist flavor of an Atom entry
@@ -20,10 +20,10 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class PlaylistListEntry extends \Zend\GData\Entry
+class PlaylistListEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\PlaylistListEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\PlaylistListEntry';
 
     /**
      * Nested feed links
@@ -35,14 +35,14 @@ class PlaylistListEntry extends \Zend\GData\Entry
     /**
      * Id of this playlist
      *
-     * @var \Zend\GData\YouTube\Extension\PlaylistId
+     * @var \ZendGData\YouTube\Extension\PlaylistId
      */
     protected $_playlistId = null;
 
     /**
      * CountHint for this playlist.
      *
-     * @var \Zend\GData\YouTube\Extension\CountHint
+     * @var \ZendGData\YouTube\Extension\CountHint
      */
     protected $_countHint = null;
 
@@ -107,7 +107,7 @@ class PlaylistListEntry extends \Zend\GData\Entry
             $this->_playlistId = $playlistId;
             break;
         case $this->lookupNamespace('gd') . ':' . 'feedLink':
-            $feedLink = new \Zend\GData\Extension\FeedLink();
+            $feedLink = new \ZendGData\Extension\FeedLink();
             $feedLink->transferFromDOM($child);
             $this->_feedLink[] = $feedLink;
             break;
@@ -122,8 +122,8 @@ class PlaylistListEntry extends \Zend\GData\Entry
      *
      * The countHint is the number of videos on a playlist.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\CountHint  The count of videos on
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\CountHint  The count of videos on
      *         a playlist.
      */
     public function getCountHint()
@@ -134,8 +134,8 @@ class PlaylistListEntry extends \Zend\GData\Entry
     /**
      * Returns the Id relating to the playlist.
      *
-     * @throws \Zend\GData\App\VersionException
-     * @return \Zend\GData\YouTube\Extension\PlaylistId  The id of this playlist.
+     * @throws \ZendGData\App\VersionException
+     * @return \ZendGData\YouTube\Extension\PlaylistId  The id of this playlist.
      */
     public function getPlaylistId()
     {
@@ -146,7 +146,7 @@ class PlaylistListEntry extends \Zend\GData\Entry
      * Sets the array of embedded feeds related to the playlist
      *
      * @param array $feedLink The array of embedded feeds relating to the video
-     * @return \Zend\GData\YouTube\PlaylistListEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\PlaylistListEntry Provides a fluent interface
      */
     public function setFeedLink($feedLink = null)
     {
@@ -160,7 +160,7 @@ class PlaylistListEntry extends \Zend\GData\Entry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \ZendGData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available

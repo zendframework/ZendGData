@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
 /**
  * @category   Zend
@@ -24,14 +24,14 @@ class EventQueryExceptionTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->query = new \Zend\GData\Calendar\EventQuery();
+        $this->query = new \ZendGData\Calendar\EventQuery();
     }
 
     public function testSingleEventsThrowsExceptionOnSetInvalidValue()
     {
         $this->query->resetParameters();
         $singleEvents = 'puppy';
-        $this->setExpectedException('Zend\GData\App\Exception');
+        $this->setExpectedException('ZendGData\App\Exception');
         $this->query->setUser(self::GOOGLE_DEVELOPER_CALENDAR);
         $this->query->setSingleEvents($singleEvents);
     }
@@ -40,7 +40,7 @@ class EventQueryExceptionTest extends \PHPUnit_Framework_TestCase
     {
         $this->query->resetParameters();
         $futureEvents = 'puppy';
-        $this->setExpectedException('Zend\GData\App\Exception');
+        $this->setExpectedException('ZendGData\App\Exception');
         $this->query->setUser(self::GOOGLE_DEVELOPER_CALENDAR);
         $this->query->setFutureEvents($futureEvents);
     }

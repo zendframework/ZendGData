@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
 /**
  * Represents the YouTube flavor of a Gdata Media Entry
@@ -17,15 +17,15 @@ namespace Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class MediaEntry extends \Zend\GData\Media\Entry
+class MediaEntry extends \ZendGData\Media\Entry
 {
 
-    protected $_entryClassName = '\Zend\GData\YouTube\MediaEntry';
+    protected $_entryClassName = '\ZendGData\YouTube\MediaEntry';
 
     /**
      * media:group element
      *
-     * @var \Zend\GData\YouTube\Extension\MediaGroup
+     * @var \ZendGData\YouTube\Extension\MediaGroup
      */
     protected $_mediaGroup = null;
 

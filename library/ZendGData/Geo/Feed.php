@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Geo;
+namespace ZendGData\Geo;
 
-use Zend\GData\Geo;
+use ZendGData\Geo;
 
 /**
  * Feed for Gdata Geographic data entries.
@@ -19,7 +19,7 @@ use Zend\GData\Geo;
  * @package    Zend_Gdata
  * @subpackage Geo
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \ZendGData\Feed
 {
 
     /**
@@ -27,7 +27,7 @@ class Feed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Geo\Entry';
+    protected $_entryClassName = 'ZendGData\Geo\Entry';
 
     public function __construct($element = null)
     {

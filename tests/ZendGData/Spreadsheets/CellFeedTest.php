@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
-use Zend\GData\Spreadsheets\Extension;
+use ZendGData\Spreadsheets;
+use ZendGData\Spreadsheets\Extension;
 
 /**
  * @category   Zend
@@ -28,7 +28,7 @@ class CellFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->cellFeed = new Spreadsheets\CellFeed(
-                file_get_contents('Zend/GData/Spreadsheets/_files/TestDataCellFeedSample1.xml', true),
+                file_get_contents('ZendGData/Spreadsheets/_files/TestDataCellFeedSample1.xml', true),
                 true);
     }
 
@@ -37,12 +37,12 @@ class CellFeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($this->cellFeed->entries));
         $this->assertEquals(2, $this->cellFeed->entries->count());
         foreach($this->cellFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Spreadsheets\CellEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Spreadsheets\CellEntry', $entry);
         }
-        $this->assertInstanceOf('Zend\GData\Spreadsheets\Extension\RowCount',
+        $this->assertInstanceOf('ZendGData\Spreadsheets\Extension\RowCount',
                                 $this->cellFeed->getRowCount());
         $this->assertTrue($this->cellFeed->getRowCount()->getText() == '100');
-        $this->assertInstanceOf('Zend\GData\Spreadsheets\Extension\ColCount',
+        $this->assertInstanceOf('ZendGData\Spreadsheets\Extension\ColCount',
                                 $this->cellFeed->getColumnCount());
         $this->assertTrue($this->cellFeed->getColumnCount()->getText() == '20');
 
@@ -54,12 +54,12 @@ class CellFeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($newCellFeed->entries));
         $this->assertEquals(2, $newCellFeed->entries->count());
         foreach($newCellFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Spreadsheets\CellEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Spreadsheets\CellEntry', $entry);
         }
-        $this->assertInstanceOf('Zend\GData\Spreadsheets\Extension\RowCount',
+        $this->assertInstanceOf('ZendGData\Spreadsheets\Extension\RowCount',
                                 $newCellFeed->getRowCount());
         $this->assertTrue($newCellFeed->getRowCount()->getText() == '100');
-        $this->assertInstanceOf('Zend\GData\Spreadsheets\Extension\ColCount',
+        $this->assertInstanceOf('ZendGData\Spreadsheets\Extension\ColCount',
                                 $newCellFeed->getColumnCount());
         $this->assertTrue($newCellFeed->getColumnCount()->getText() == '20');
     }

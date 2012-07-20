@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class SelectedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->selectedText = file_get_contents(
-                'Zend/GData/Calendar/_files/SelectedElementSample1.xml',
+                'ZendGData/Calendar/_files/SelectedElementSample1.xml',
                 true);
         $this->selected = new Extension\Selected();
     }
@@ -65,12 +65,12 @@ class SelectedTest extends \PHPUnit_Framework_TestCase
         $newSelected->transferFromXML($this->selected->saveXML());
         $this->assertEquals(count($newSelected->extensionElements), 0);
         $newSelected->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newSelected->extensionElements), 1);
         $this->assertEquals($newSelected->value, true);
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newSelected2 = $cal->newSelected();
         $newSelected2->transferFromXML($newSelected->saveXML());
         $this->assertEquals(count($newSelected2->extensionElements), 1);

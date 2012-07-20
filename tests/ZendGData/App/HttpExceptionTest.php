@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
@@ -34,7 +34,7 @@ class HttpExceptionTest extends \PHPUnit_Framework_TestCase
         $this->sprKey = constant('TESTS_ZEND_GDATA_SPREADSHEETS_SPREADSHEETKEY');
         $this->wksId = constant('TESTS_ZEND_GDATA_SPREADSHEETS_WORKSHEETID');
         $service = Spreadsheets::AUTH_SERVICE_NAME;
-        $client = \Zend\GData\ClientLogin::getHttpClient($user, $pass, $service);
+        $client = \ZendGData\ClientLogin::getHttpClient($user, $pass, $service);
         $this->gdata = new Spreadsheets($client);
     }
 
@@ -43,8 +43,8 @@ class HttpExceptionTest extends \PHPUnit_Framework_TestCase
         try {
             $rowData = array();
             $entry = $this->gdata->insertRow($rowData, $this->sprKey);
-            $this->fail('Expecting Zend\GData\App\HttpException');
-        } catch (\Zend\GData\App\HttpException $hExc) {
+            $this->fail('Expecting ZendGData\App\HttpException');
+        } catch (\ZendGData\App\HttpException $hExc) {
             $message = $hExc->getMessage();
             $this->assertEquals('Expected response code 200, got 400', $message);
             $body = $hExc->getRawResponseBody();

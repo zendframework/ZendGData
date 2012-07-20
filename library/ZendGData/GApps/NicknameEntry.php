@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model class for a Google Apps Nickname Entry.
@@ -30,23 +30,23 @@ use Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class NicknameEntry extends \Zend\GData\Entry
+class NicknameEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\NicknameEntry';
+    protected $_entryClassName = 'ZendGData\GApps\NicknameEntry';
 
     /**
      * <apps:login> element used to hold information about the owner
      * of this nickname, including their username.
      *
-     * @var \Zend\GData\GApps\Extension\Login
+     * @var \ZendGData\GApps\Extension\Login
      */
     protected $_login = null;
 
     /**
      * <apps:nickname> element used to hold the name of this nickname.
      *
-     * @var \Zend\GData\GApps\Extension\Nickname
+     * @var \ZendGData\GApps\Extension\Nickname
      */
     protected $_nickname = null;
 
@@ -114,7 +114,7 @@ class NicknameEntry extends \Zend\GData\Entry
      * Get the value of the login property for this object.
      *
      * @see setLogin
-     * @return \Zend\GData\GApps\Extension\Login The requested object.
+     * @return \ZendGData\GApps\Extension\Login The requested object.
      */
     public function getLogin()
     {
@@ -125,9 +125,9 @@ class NicknameEntry extends \Zend\GData\Entry
      * Set the value of the login property for this object. This property
      * is used to store the username address of the current user.
      *
-     * @param \Zend\GData\GApps\Extension\Login $value The desired value for
+     * @param \ZendGData\GApps\Extension\Login $value The desired value for
      *          this instance's login property.
-     * @return \Zend\GData\GApps\NicknameEntry Provides a fluent interface.
+     * @return \ZendGData\GApps\NicknameEntry Provides a fluent interface.
      */
     public function setLogin($value)
     {
@@ -139,7 +139,7 @@ class NicknameEntry extends \Zend\GData\Entry
      * Get the value of the nickname property for this object.
      *
      * @see setNickname
-     * @return \Zend\GData\GApps\Extension\Nickname The requested object.
+     * @return \ZendGData\GApps\Extension\Nickname The requested object.
      */
     public function getNickname()
     {
@@ -150,9 +150,9 @@ class NicknameEntry extends \Zend\GData\Entry
      * Set the value of the nickname property for this object. This property
      * is used to store the the name of the current nickname.
      *
-     * @param \Zend\GData\GApps\Extension\Nickname $value The desired value for
+     * @param \ZendGData\GApps\Extension\Nickname $value The desired value for
      *          this instance's nickname property.
-     * @return \Zend\GData\GApps\NicknameEntry Provides a fluent interface.
+     * @return \ZendGData\GApps\NicknameEntry Provides a fluent interface.
      */
     public function setNickname($value)
     {

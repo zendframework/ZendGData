@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:player element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaPlayer extends \Zend\GData\Extension
+class MediaPlayer extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'player';
@@ -47,7 +47,7 @@ class MediaPlayer extends \Zend\GData\Extension
      */
     public function __construct($url = null, $width = null, $height = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_url = $url;
         $this->_width = $width;
@@ -113,7 +113,7 @@ class MediaPlayer extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaPlayer Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaPlayer Provides a fluent interface
      */
     public function setUrl($value)
     {
@@ -131,7 +131,7 @@ class MediaPlayer extends \Zend\GData\Extension
 
     /**
      * @param int $value
-     * @return \Zend\GData\Media\Extension\MediaPlayer Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaPlayer Provides a fluent interface
      */
     public function setWidth($value)
     {
@@ -149,7 +149,7 @@ class MediaPlayer extends \Zend\GData\Extension
 
     /**
      * @param int $value
-     * @return \Zend\GData\Media\Extension\MediaPlayer Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaPlayer Provides a fluent interface
      */
     public function setHeight($value)
     {

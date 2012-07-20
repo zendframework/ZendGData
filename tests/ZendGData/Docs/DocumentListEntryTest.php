@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Docs;
+namespace ZendGDataTest\Docs;
 
-use Zend\GData\Docs;
+use ZendGData\Docs;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class DocumentListEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->doc = new Docs\DocumentListEntry(
-                file_get_contents('Zend/GData/Docs/_files/TestDataDocumentListEntrySample.xml', true));
+                file_get_contents('ZendGData/Docs/_files/TestDataDocumentListEntrySample.xml', true));
     }
 
     public function testToAndFromString()

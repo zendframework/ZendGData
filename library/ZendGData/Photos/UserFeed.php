@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * Data model for a collection of entries for a specific user, usually
@@ -23,38 +23,38 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class UserFeed extends \Zend\GData\Feed
+class UserFeed extends \ZendGData\Feed
 {
 
     /**
      * gphoto:user element
      *
-     * @var \Zend\GData\Photos\Extension\User
+     * @var \ZendGData\Photos\Extension\User
      */
     protected $_gphotoUser = null;
 
     /**
      * gphoto:thumbnail element
      *
-     * @var \Zend\GData\Photos\Extension\Thumbnail
+     * @var \ZendGData\Photos\Extension\Thumbnail
      */
     protected $_gphotoThumbnail = null;
 
     /**
      * gphoto:nickname element
      *
-     * @var \Zend\GData\Photos\Extension\Nickname
+     * @var \ZendGData\Photos\Extension\Nickname
      */
     protected $_gphotoNickname = null;
 
-    protected $_entryClassName = 'Zend\GData\Photos\UserEntry';
-    protected $_feedClassName = 'Zend\GData\Photos\UserFeed';
+    protected $_entryClassName = 'ZendGData\Photos\UserEntry';
+    protected $_feedClassName = 'ZendGData\Photos\UserFeed';
 
     protected $_entryKindClassMapping = array(
-        'http://schemas.google.com/photos/2007#album' => 'Zend\GData\Photos\AlbumEntry',
-        'http://schemas.google.com/photos/2007#photo' => 'Zend\GData\Photos\PhotoEntry',
-        'http://schemas.google.com/photos/2007#comment' => 'Zend\GData\Photos\CommentEntry',
-        'http://schemas.google.com/photos/2007#tag' => 'Zend\GData\Photos\TagEntry'
+        'http://schemas.google.com/photos/2007#album' => 'ZendGData\Photos\AlbumEntry',
+        'http://schemas.google.com/photos/2007#photo' => 'ZendGData\Photos\PhotoEntry',
+        'http://schemas.google.com/photos/2007#comment' => 'ZendGData\Photos\CommentEntry',
+        'http://schemas.google.com/photos/2007#tag' => 'ZendGData\Photos\TagEntry'
     );
 
     public function __construct($element = null)
@@ -90,7 +90,7 @@ class UserFeed extends \Zend\GData\Feed
                 break;
             case $this->lookupNamespace('atom') . ':' . 'entry':
                 $entryClassName = $this->_entryClassName;
-                $tmpEntry = new \Zend\GData\App\Entry($child);
+                $tmpEntry = new \ZendGData\App\Entry($child);
                 $categories = $tmpEntry->getCategory();
                 foreach ($categories as $category) {
                     if ($category->scheme == Photos::KIND_PATH &&
@@ -98,7 +98,7 @@ class UserFeed extends \Zend\GData\Feed
                             $entryClassName = $this->_entryKindClassMapping[$category->term];
                             break;
                     } else {
-                        throw new \Zend\GData\App\Exception('Entry is missing kind declaration.');
+                        throw new \ZendGData\App\Exception('Entry is missing kind declaration.');
                     }
                 }
 
@@ -143,7 +143,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:user attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\User The element being modified.
+     * @return \ZendGData\Photos\Extension\User The element being modified.
      */
     public function setGphotoUser($value)
     {
@@ -166,7 +166,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:nickname attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Nickname The element being modified.
+     * @return \ZendGData\Photos\Extension\Nickname The element being modified.
      */
     public function setGphotoNickname($value)
     {
@@ -189,7 +189,7 @@ class UserFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:thumbnail attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Thumbnail The element being modified.
+     * @return \ZendGData\Photos\Extension\Thumbnail The element being modified.
      */
     public function setGphotoThumbnail($value)
     {

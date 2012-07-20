@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the Books service
@@ -43,8 +43,8 @@ class Books extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Books');
-        $this->registerPackage('Zend\GData\Books\Extension');
+        $this->registerPackage('ZendGData\Books');
+        $this->registerPackage('ZendGData\Books\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
      }
@@ -52,10 +52,10 @@ class Books extends GData
     /**
      * Retrieves a feed of volumes.
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \ZendGData\Query|string|null $location (optional) The URL to
      *        query or a Zend_Gdata_Query object from which a URL can be
      *        determined.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \ZendGData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getVolumeFeed($location = null)
@@ -67,17 +67,17 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'ZendGData\Books\VolumeFeed');
     }
 
     /**
      * Retrieves a specific volume entry.
      *
      * @param string|null $volumeId The volumeId of interest.
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \ZendGData\Query|string|null $location (optional) The URL to
      *        query or a Zend_Gdata_Query object from which a URL can be
      *        determined.
-     * @return \Zend\GData\Books\VolumeEntry The feed of volumes found at the
+     * @return \ZendGData\Books\VolumeEntry The feed of volumes found at the
      *         specified URL.
      */
     public function getVolumeEntry($volumeId = null, $location = null)
@@ -89,15 +89,15 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Books\VolumeEntry');
+        return parent::getEntry($uri, 'ZendGData\Books\VolumeEntry');
     }
 
     /**
      * Retrieves a feed of volumes, by default the User library feed.
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \ZendGData\Query|string|null $location (optional) The URL to
      *        query.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \ZendGData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getUserLibraryFeed($location = null)
@@ -107,15 +107,15 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'ZendGData\Books\VolumeFeed');
     }
 
     /**
      * Retrieves a feed of volumes, by default the User annotation feed
      *
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \ZendGData\Query|string|null $location (optional) The URL to
      *        query.
-     * @return \Zend\GData\Books\VolumeFeed The feed of volumes found at the
+     * @return \ZendGData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
      */
     public function getUserAnnotationFeed($location = null)
@@ -125,16 +125,16 @@ class Books extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Books\VolumeFeed');
+        return parent::getFeed($uri, 'ZendGData\Books\VolumeFeed');
     }
 
     /**
      * Insert a Volume / Annotation
      *
-     * @param \Zend\GData\Books\VolumeEntry $entry
-     * @param \Zend\GData\Query|string|null $location (optional) The URL to
+     * @param \ZendGData\Books\VolumeEntry $entry
+     * @param \ZendGData\Query|string|null $location (optional) The URL to
      *        query
-     * @return \Zend\GData\Books\VolumeEntry The inserted volume entry.
+     * @return \ZendGData\Books\VolumeEntry The inserted volume entry.
      */
     public function insertVolume($entry, $location = null)
     {
@@ -144,13 +144,13 @@ class Books extends GData
             $uri = $location;
         }
         return parent::insertEntry(
-            $entry, $uri, 'Zend\GData\Books\VolumeEntry');
+            $entry, $uri, 'ZendGData\Books\VolumeEntry');
     }
 
     /**
      * Delete a Volume
      *
-     * @param \Zend\GData\Books\VolumeEntry $entry
+     * @param \ZendGData\Books\VolumeEntry $entry
      * @return void
      */
     public function deleteVolume($entry)

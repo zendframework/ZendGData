@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar;
+namespace ZendGData\Calendar;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing queries for Google Calendar events
@@ -21,7 +21,7 @@ use Zend\GData\App;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class EventQuery extends \Zend\GData\Query
+class EventQuery extends \ZendGData\Query
 {
 
     const CALENDAR_FEED_URI = 'https://www.google.com/calendar/feeds';
@@ -89,7 +89,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @see $_comments
      * @param string $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setComments($value)
     {
@@ -100,7 +100,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @see $_event
      * @param string $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setEvent($value)
     {
@@ -111,7 +111,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @see $_projection
      * @param string $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -122,7 +122,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @see $_user
      * @param string $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setUser($value)
     {
@@ -133,7 +133,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @see $_visibility
      * @param bool $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -188,7 +188,7 @@ class EventQuery extends \Zend\GData\Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setStartMax($value)
     {
@@ -202,7 +202,7 @@ class EventQuery extends \Zend\GData\Query
 
     /**
      * @param int $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setStartMin($value)
     {
@@ -216,7 +216,7 @@ class EventQuery extends \Zend\GData\Query
 
     /**
      * @param string $value
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setOrderBy($value)
     {
@@ -342,7 +342,7 @@ class EventQuery extends \Zend\GData\Query
 
     /**
      * @param string $value Also accepts bools.
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function getSingleEvents()
     {
@@ -367,7 +367,7 @@ class EventQuery extends \Zend\GData\Query
 
     /**
      * @param string $value Also accepts bools. If using a string, must be either "true" or "false".
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setSingleEvents($value)
     {
@@ -414,7 +414,7 @@ class EventQuery extends \Zend\GData\Query
     /**
      * @param string $value Also accepts bools. If using a string, must be either "true" or "false" or
      *                      an exception will be thrown on retrieval.
-     * @return \Zend\GData\Calendar\EventQuery Provides a fluent interface
+     * @return \ZendGData\Calendar\EventQuery Provides a fluent interface
      */
     public function setFutureEvents($value)
     {

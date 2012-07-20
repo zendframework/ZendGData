@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App\Extension;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class AuthorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->authorText = file_get_contents(
-                'Zend/GData/App/_files/AuthorElementSample1.xml',
+                'ZendGData/App/_files/AuthorElementSample1.xml',
                 true);
         $this->author = new Extension\Author();
     }
@@ -50,7 +50,7 @@ class AuthorTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($newAuthor->name->text, 'Jeff Scudder');
 
         /* try constructing using magic factory */
-        $app = new \Zend\GData\App();
+        $app = new \ZendGData\App();
         $newAuthor2 = $app->newAuthor();
         $newAuthor2->transferFromXML($newAuthor->saveXML());
         $this->assertEquals(count($newAuthor2->extensionElements), 1);

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * Data model for a collection of photo entries, usually
@@ -23,99 +23,99 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class PhotoFeed extends \Zend\GData\Feed
+class PhotoFeed extends \ZendGData\Feed
 {
 
     /**
      * gphoto:id element
      *
-     * @var \Zend\GData\Photos\Extension\Id
+     * @var \ZendGData\Photos\Extension\Id
      */
     protected $_gphotoId = null;
 
     /**
      * gphoto:albumid element
      *
-     * @var \Zend\GData\Photos\Extension\AlbumId
+     * @var \ZendGData\Photos\Extension\AlbumId
      */
     protected $_gphotoAlbumId = null;
 
     /**
      * gphoto:version element
      *
-     * @var \Zend\GData\Photos\Extension\Version
+     * @var \ZendGData\Photos\Extension\Version
      */
     protected $_gphotoVersion = null;
 
     /**
      * gphoto:width element
      *
-     * @var \Zend\GData\Photos\Extension\Width
+     * @var \ZendGData\Photos\Extension\Width
      */
     protected $_gphotoWidth = null;
 
     /**
      * gphoto:height element
      *
-     * @var \Zend\GData\Photos\Extension\Height
+     * @var \ZendGData\Photos\Extension\Height
      */
     protected $_gphotoHeight = null;
 
     /**
      * gphoto:size element
      *
-     * @var \Zend\GData\Photos\Extension\Size
+     * @var \ZendGData\Photos\Extension\Size
      */
     protected $_gphotoSize = null;
 
     /**
      * gphoto:client element
      *
-     * @var \Zend\GData\Photos\Extension\Client
+     * @var \ZendGData\Photos\Extension\Client
      */
     protected $_gphotoClient = null;
 
     /**
      * gphoto:checksum element
      *
-     * @var \Zend\GData\Photos\Extension\Checksum
+     * @var \ZendGData\Photos\Extension\Checksum
      */
     protected $_gphotoChecksum = null;
 
     /**
      * gphoto:timestamp element
      *
-     * @var \Zend\GData\Photos\Extension\Timestamp
+     * @var \ZendGData\Photos\Extension\Timestamp
      */
     protected $_gphotoTimestamp = null;
 
     /**
      * gphoto:commentCount element
      *
-     * @var \Zend\GData\Photos\Extension\CommentCount
+     * @var \ZendGData\Photos\Extension\CommentCount
      */
     protected $_gphotoCommentCount = null;
 
     /**
      * gphoto:commentingEnabled element
      *
-     * @var \Zend\GData\Photos\Extension\CommentingEnabled
+     * @var \ZendGData\Photos\Extension\CommentingEnabled
      */
     protected $_gphotoCommentingEnabled = null;
 
     /**
      * media:group element
      *
-     * @var \Zend\GData\Media\Extension\MediaGroup
+     * @var \ZendGData\Media\Extension\MediaGroup
      */
     protected $_mediaGroup = null;
 
-    protected $_entryClassName = 'Zend\GData\Photos\PhotoEntry';
-    protected $_feedClassName = 'Zend\GData\Photos\PhotoFeed';
+    protected $_entryClassName = 'ZendGData\Photos\PhotoEntry';
+    protected $_feedClassName = 'ZendGData\Photos\PhotoFeed';
 
     protected $_entryKindClassMapping = array(
-        'http://schemas.google.com/photos/2007#comment' => 'Zend\GData\Photos\CommentEntry',
-        'http://schemas.google.com/photos/2007#tag' => 'Zend\GData\Photos\TagEntry'
+        'http://schemas.google.com/photos/2007#comment' => 'ZendGData\Photos\CommentEntry',
+        'http://schemas.google.com/photos/2007#tag' => 'ZendGData\Photos\TagEntry'
     );
 
     public function __construct($element = null)
@@ -225,13 +225,13 @@ class PhotoFeed extends \Zend\GData\Feed
                 $this->_gphotoCommentCount = $commentCount;
                 break;
             case $this->lookupNamespace('media') . ':' . 'group';
-                $mediaGroup = new \Zend\GData\Media\Extension\MediaGroup();
+                $mediaGroup = new \ZendGData\Media\Extension\MediaGroup();
                 $mediaGroup->transferFromDOM($child);
                 $this->_mediaGroup = $mediaGroup;
                 break;
             case $this->lookupNamespace('atom') . ':' . 'entry':
                 $entryClassName = $this->_entryClassName;
-                $tmpEntry = new \Zend\GData\App\Entry($child);
+                $tmpEntry = new \ZendGData\App\Entry($child);
                 $categories = $tmpEntry->getCategory();
                 foreach ($categories as $category) {
                     if ($category->scheme == Photos::KIND_PATH &&
@@ -239,7 +239,7 @@ class PhotoFeed extends \Zend\GData\Feed
                             $entryClassName = $this->_entryKindClassMapping[$category->term];
                             break;
                     } else {
-                        throw new \Zend\GData\App\Exception('Entry is missing kind declaration.');
+                        throw new \ZendGData\App\Exception('Entry is missing kind declaration.');
                     }
                 }
 
@@ -268,7 +268,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:id attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Id The element being modified.
+     * @return \ZendGData\Photos\Extension\Id The element being modified.
      */
     public function setGphotoId($value)
     {
@@ -291,7 +291,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:version attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Version The element being modified.
+     * @return \ZendGData\Photos\Extension\Version The element being modified.
      */
     public function setGphotoVersion($value)
     {
@@ -314,7 +314,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:albumid attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\AlbumId The element being modified.
+     * @return \ZendGData\Photos\Extension\AlbumId The element being modified.
      */
     public function setGphotoAlbumId($value)
     {
@@ -337,7 +337,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:width attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Width The element being modified.
+     * @return \ZendGData\Photos\Extension\Width The element being modified.
      */
     public function setGphotoWidth($value)
     {
@@ -360,7 +360,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:height attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Height The element being modified.
+     * @return \ZendGData\Photos\Extension\Height The element being modified.
      */
     public function setGphotoHeight($value)
     {
@@ -383,7 +383,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:size attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Size The element being modified.
+     * @return \ZendGData\Photos\Extension\Size The element being modified.
      */
     public function setGphotoSize($value)
     {
@@ -406,7 +406,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:client attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Client The element being modified.
+     * @return \ZendGData\Photos\Extension\Client The element being modified.
      */
     public function setGphotoClient($value)
     {
@@ -429,7 +429,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:checksum attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Checksum The element being modified.
+     * @return \ZendGData\Photos\Extension\Checksum The element being modified.
      */
     public function setGphotoChecksum($value)
     {
@@ -452,7 +452,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:timestamp attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Timestamp The element being modified.
+     * @return \ZendGData\Photos\Extension\Timestamp The element being modified.
      */
     public function setGphotoTimestamp($value)
     {
@@ -475,7 +475,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:commentCount attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\CommentCount The element being modified.
+     * @return \ZendGData\Photos\Extension\CommentCount The element being modified.
      */
     public function setGphotoCommentCount($value)
     {
@@ -498,7 +498,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's gphoto:commentingEnabled attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\CommentingEnabled The element being modified.
+     * @return \ZendGData\Photos\Extension\CommentingEnabled The element being modified.
      */
     public function setGphotoCommentingEnabled($value)
     {
@@ -521,7 +521,7 @@ class PhotoFeed extends \Zend\GData\Feed
      * Set the value for this element's media:group attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Media\Extension\MediaGroup The element being modified.
+     * @return \ZendGData\Media\Extension\MediaGroup The element being modified.
      */
     public function setMediaGroup($value)
     {

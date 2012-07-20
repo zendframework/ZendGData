@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets\Extension;
+namespace ZendGData\Spreadsheets\Extension;
 
 /**
  * Concrete class for working with custom gsx elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\Spreadsheets\Extension;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class Custom extends \Zend\GData\Extension
+class Custom extends \ZendGData\Extension
 {
     // custom elements have custom names.
     protected $_rootElement = null; // The name of the column
@@ -30,7 +30,7 @@ class Custom extends \Zend\GData\Extension
      */
     public function __construct($column = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Spreadsheets::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Spreadsheets::$namespaces);
         parent::__construct();
         $this->_text = $value;
         $this->_rootElement = $column;

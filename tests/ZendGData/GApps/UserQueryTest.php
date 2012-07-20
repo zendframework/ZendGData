@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class UserQueryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->query = new \Zend\GData\GApps\UserQuery();
+        $this->query = new \ZendGData\GApps\UserQuery();
     }
 
     // Test to make sure that URI generation works

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Analytics;
+namespace ZendGData\Analytics;
 
 use Zend\GData;
 
@@ -24,17 +24,17 @@ class AccountFeed extends GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Analytics\AccountEntry';
+    protected $_entryClassName = 'ZendGData\Analytics\AccountEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Analytics\AccountFeed';
+    protected $_feedClassName = 'ZendGData\Analytics\AccountFeed';
 
     /**
-     * @see Zend\GData\Feed::__construct()
+     * @see ZendGData\Feed::__construct()
      */
     public function __construct($element = null)
     {

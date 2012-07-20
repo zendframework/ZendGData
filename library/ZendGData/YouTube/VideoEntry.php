@@ -8,12 +8,12 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\Extension as GDataExtension;
-use Zend\GData\Media\Extension as MediaExtension;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\Extension as GDataExtension;
+use ZendGData\Media\Extension as MediaExtension;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube video flavor of an Atom entry
@@ -27,40 +27,40 @@ class VideoEntry extends MediaEntry
 
     const YOUTUBE_DEVELOPER_TAGS_SCHEMA = 'http://gdata.youtube.com/schemas/2007/developertags.cat';
     const YOUTUBE_CATEGORY_SCHEMA = 'http://gdata.youtube.com/schemas/2007/categories.cat';
-    protected $_entryClassName = 'Zend\GData\YouTube\VideoEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\VideoEntry';
 
     /**
      * If null, the video can be embedded
      *
-     * @var \Zend\GData\YouTube\Extension\NoEmbed|null
+     * @var \ZendGData\YouTube\Extension\NoEmbed|null
      */
     protected $_noEmbed = null;
 
     /**
      * Specifies the statistics relating to the video.
      *
-     * @var \Zend\GData\YouTube\Extension\Statistics
+     * @var \ZendGData\YouTube\Extension\Statistics
      */
     protected $_statistics = null;
 
     /**
      * If not null, specifies that the video is private.
      *
-     * @var \Zend\GData\YouTube\Extension\Private|null
+     * @var \ZendGData\YouTube\Extension\Private|null
      */
     protected $_private = null;
 
     /**
      * Specifies the video's rating.
      *
-     * @var \Zend\GData\Extension\Rating
+     * @var \ZendGData\Extension\Rating
      */
     protected $_rating = null;
 
     /**
      * Specifies the comments associated with a video.
      *
-     * @var \Zend\GData\Extension\Comments
+     * @var \ZendGData\Extension\Comments
      */
     protected $_comments = null;
 
@@ -74,21 +74,21 @@ class VideoEntry extends MediaEntry
     /**
      * Geo location for the video
      *
-     * @var \Zend\GData\Geo\Extension\GeoRssWhere
+     * @var \ZendGData\Geo\Extension\GeoRssWhere
      */
     protected $_where = null;
 
     /**
      * Recording date for the video
      *
-     * @var \Zend\GData\YouTube\Extension\Recorded|null
+     * @var \ZendGData\YouTube\Extension\Recorded|null
      */
     protected $_recorded = null;
 
     /**
      * Location informtion for the video
      *
-     * @var \Zend\GData\YouTube\Extension\Location|null
+     * @var \ZendGData\YouTube\Extension\Location|null
      */
     protected $_location = null;
 
@@ -201,7 +201,7 @@ class VideoEntry extends MediaEntry
             $this->_feedLink[] = $feedLink;
             break;
         case $this->lookupNamespace('georss') . ':' . 'where':
-            $where = new \Zend\GData\Geo\Extension\GeoRssWhere();
+            $where = new \ZendGData\Geo\Extension\GeoRssWhere();
             $where->transferFromDOM($child);
             $this->_where = $where;
             break;
@@ -224,8 +224,8 @@ class VideoEntry extends MediaEntry
     /**
      * Sets when the video was recorded.
      *
-     * @param \Zend\GData\YouTube\Extension\Recorded $recorded When the video was recorded
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Recorded $recorded When the video was recorded
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setRecorded($recorded = null)
     {
@@ -236,7 +236,7 @@ class VideoEntry extends MediaEntry
     /**
      * Gets the date that the video was recorded.
      *
-     * @return \Zend\GData\YouTube\Extension\Recorded|null
+     * @return \ZendGData\YouTube\Extension\Recorded|null
      */
     public function getRecorded()
     {
@@ -246,9 +246,9 @@ class VideoEntry extends MediaEntry
     /**
      * Sets the location information.
      *
-     * @param \Zend\GData\YouTube\Extension\Location $location Where the video
+     * @param \ZendGData\YouTube\Extension\Location $location Where the video
      *        was recorded
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setLocation($location = null)
     {
@@ -259,7 +259,7 @@ class VideoEntry extends MediaEntry
     /**
      * Gets the location where the video was recorded.
      *
-     * @return \Zend\GData\YouTube\Extension\Location|null
+     * @return \ZendGData\YouTube\Extension\Location|null
      */
     public function getLocation()
     {
@@ -271,9 +271,9 @@ class VideoEntry extends MediaEntry
      * the video cannot be embedded.  Otherwise, if null is passsed in, the
      * video is able to be embedded.
      *
-     * @param \Zend\GData\YouTube\Extension\NoEmbed $noEmbed Whether or not the
+     * @param \ZendGData\YouTube\Extension\NoEmbed $noEmbed Whether or not the
      *          video can be embedded.
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setNoEmbed($noEmbed = null)
     {
@@ -285,7 +285,7 @@ class VideoEntry extends MediaEntry
      * If the return value is an instance of
      * Zend_Gdata_YouTube_Extension_NoEmbed, this video cannot be embedded.
      *
-     * @return \Zend\GData\YouTube\Extension\NoEmbed|null Whether or not the video can be embedded
+     * @return \ZendGData\YouTube\Extension\NoEmbed|null Whether or not the video can be embedded
      */
     public function getNoEmbed()
     {
@@ -309,8 +309,8 @@ class VideoEntry extends MediaEntry
     /**
      * Sets the statistics relating to the video.
      *
-     * @param \Zend\GData\YouTube\Extension\Statistics $statistics The statistics relating to the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @param \ZendGData\YouTube\Extension\Statistics $statistics The statistics relating to the video
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setStatistics($statistics = null)
     {
@@ -321,7 +321,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the statistics relating to the video.
      *
-     * @return \Zend\GData\YouTube\Extension\Statistics  The statistics relating to the video
+     * @return \ZendGData\YouTube\Extension\Statistics  The statistics relating to the video
      */
     public function getStatistics()
     {
@@ -331,8 +331,8 @@ class VideoEntry extends MediaEntry
     /**
      * Sets the rating relating to the video.
      *
-     * @param \Zend\GData\Extension\Rating $rating The rating relating to the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @param \ZendGData\Extension\Rating $rating The rating relating to the video
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setRating($rating = null)
     {
@@ -343,7 +343,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the rating relating to the video.
      *
-     * @return \Zend\GData\Extension\Rating  The rating relating to the video
+     * @return \ZendGData\Extension\Rating  The rating relating to the video
      */
     public function getRating()
     {
@@ -353,8 +353,8 @@ class VideoEntry extends MediaEntry
     /**
      * Sets the comments relating to the video.
      *
-     * @param \Zend\GData\Extension\Comments $comments The comments relating to the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @param \ZendGData\Extension\Comments $comments The comments relating to the video
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setComments($comments = null)
     {
@@ -365,7 +365,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the comments relating to the video.
      *
-     * @return \Zend\GData\Extension\Comments  The comments relating to the video
+     * @return \ZendGData\Extension\Comments  The comments relating to the video
      */
     public function getComments()
     {
@@ -376,7 +376,7 @@ class VideoEntry extends MediaEntry
      * Sets the array of embedded feeds related to the video
      *
      * @param array $feedLink The array of embedded feeds relating to the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setFeedLink($feedLink = null)
     {
@@ -390,7 +390,7 @@ class VideoEntry extends MediaEntry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \ZendGData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available
@@ -414,7 +414,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the link element relating to video responses.
      *
-     * @return \Zend\GData\App\Extension\Link
+     * @return \ZendGData\App\Extension\Link
      */
     public function getVideoResponsesLink()
     {
@@ -424,7 +424,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the link element relating to video ratings.
      *
-     * @return \Zend\GData\App\Extension\Link
+     * @return \ZendGData\App\Extension\Link
      */
     public function getVideoRatingsLink()
     {
@@ -434,7 +434,7 @@ class VideoEntry extends MediaEntry
     /**
      * Returns the link element relating to video complaints.
      *
-     * @return \Zend\GData\App\Extension\Link
+     * @return \ZendGData\App\Extension\Link
      */
     public function getVideoComplaintsLink()
     {
@@ -494,7 +494,7 @@ class VideoEntry extends MediaEntry
     /**
      * Gets the georss:where element
      *
-     * @return \Zend\GData\Geo\Extension\GeoRssWhere
+     * @return \ZendGData\Geo\Extension\GeoRssWhere
      */
     public function getWhere()
     {
@@ -504,8 +504,8 @@ class VideoEntry extends MediaEntry
     /**
      * Sets the georss:where element
      *
-     * @param \Zend\GData\Geo\Extension\GeoRssWhere $value The georss:where class value
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @param \ZendGData\Geo\Extension\GeoRssWhere $value The georss:where class value
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setWhere($value)
     {
@@ -533,7 +533,7 @@ class VideoEntry extends MediaEntry
      * Sets the title of the video as a string.
      *
      * @param string $title Title for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoTitle($title)
     {
@@ -547,7 +547,7 @@ class VideoEntry extends MediaEntry
      * Sets the description of the video as a string.
      *
      * @param string $description Description for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoDescription($description)
     {
@@ -673,7 +673,7 @@ class VideoEntry extends MediaEntry
     /**
      * Sets video to private.
      *
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoPrivate()
     {
@@ -685,7 +685,7 @@ class VideoEntry extends MediaEntry
     /**
      * Sets a private video to be public.
      *
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoPublic()
     {
@@ -720,7 +720,7 @@ class VideoEntry extends MediaEntry
      *
      * @param mixed $tags Either a comma-separated string or an array
      * of tags for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoTags($tags)
     {
@@ -822,7 +822,7 @@ class VideoEntry extends MediaEntry
      * Sets the category of the video as a string.
      *
      * @param string $category Categories for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoCategory($category)
     {
@@ -862,7 +862,7 @@ class VideoEntry extends MediaEntry
      * Adds a developer tag to array of tags for the video.
      *
      * @param string $developerTag DeveloperTag for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function addVideoDeveloperTag($developerTag)
     {
@@ -883,7 +883,7 @@ class VideoEntry extends MediaEntry
      * Set multiple developer tags for the video as strings.
      *
      * @param array $developerTags Array of developerTag for the video
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface
      */
     public function setVideoDeveloperTags($developerTags)
     {
@@ -897,7 +897,7 @@ class VideoEntry extends MediaEntry
     /**
      * Get the current publishing state of the video.
      *
-     * @return \Zend\GData\YouTube\Extension\State|null The publishing state of this video
+     * @return \ZendGData\YouTube\Extension\State|null The publishing state of this video
      */
     public function getVideoState()
     {
@@ -930,7 +930,7 @@ class VideoEntry extends MediaEntry
      * @param integer $ratingValue A number representing the rating. Must
      *          be between 1 and 5 inclusive.
      * @throws App\InvalidArgumentException
-     * @return \Zend\GData\YouTube\VideoEntry Provides a fluent interface.
+     * @return \ZendGData\YouTube\VideoEntry Provides a fluent interface.
      */
     public function setVideoRating($ratingValue)
     {

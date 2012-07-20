@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:content element of Media RSS.
@@ -20,7 +20,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaContent extends \Zend\GData\Extension
+class MediaContent extends \ZendGData\Extension
 {
     protected $_rootElement = 'content';
     protected $_rootNamespace = 'media';
@@ -104,7 +104,7 @@ class MediaContent extends \Zend\GData\Extension
             $channels = null, $duration = null, $height = null, $width = null,
             $lang = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_url = $url;
         $this->_fileSize = $fileSize;
@@ -258,7 +258,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param string $value     The direct URL to the media object
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setUrl($value)
     {
@@ -276,7 +276,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int $value
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setFileSize($value)
     {
@@ -294,7 +294,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setType($value)
     {
@@ -312,7 +312,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setMedium($value)
     {
@@ -330,7 +330,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param bool $value
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setIsDefault($value)
     {
@@ -348,7 +348,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param string
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setExpression($value)
     {
@@ -366,7 +366,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setBitrate($value)
     {
@@ -384,7 +384,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setFramerate($value)
     {
@@ -402,7 +402,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setSamplingrate($value)
     {
@@ -420,7 +420,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setChannels($value)
     {
@@ -439,7 +439,7 @@ class MediaContent extends \Zend\GData\Extension
     /**
      *
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setDuration($value)
     {
@@ -457,7 +457,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setHeight($value)
     {
@@ -475,7 +475,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param int
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setWidth($value)
     {
@@ -493,7 +493,7 @@ class MediaContent extends \Zend\GData\Extension
 
     /**
      * @param string
-     * @return \Zend\GData\Media\Extension\MediaContent  Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaContent  Provides a fluent interface
      */
     public function setLang($value)
     {

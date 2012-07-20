@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App\TestAsset;
+namespace ZendGDataTest\App\TestAsset;
 
-use Zend\GData\App\AbstractBase;
+use ZendGData\App\AbstractBase;
 
 /**
  * Minimal implementation of Zend_GData_App_Base

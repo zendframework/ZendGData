@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing queries for Google Spreadsheets cells
@@ -21,7 +21,7 @@ use Zend\GData\App;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class CellQuery extends \Zend\GData\Query
+class CellQuery extends \ZendGData\Query
 {
 
     const SPREADSHEETS_CELL_FEED_URI = 'https://spreadsheets.google.com/feeds/cells';
@@ -47,7 +47,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the spreadsheet key for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setSpreadsheetKey($value)
     {
@@ -69,7 +69,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the worksheet id for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setWorksheetId($value)
     {
@@ -91,7 +91,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the cell id for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setCellId($value)
     {
@@ -113,7 +113,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the projection for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -124,7 +124,7 @@ class CellQuery extends \Zend\GData\Query
     /**
      * Sets the visibility for this query.
      *
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -156,7 +156,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the min-row attribute for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setMinRow($value)
     {
@@ -186,7 +186,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the max-row attribute for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setMaxRow($value)
     {
@@ -216,7 +216,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the min-col attribute for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setMinCol($value)
     {
@@ -246,7 +246,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the max-col attribute for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setMaxCol($value)
     {
@@ -276,7 +276,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the range attribute for this query.
      *
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setRange($value)
     {
@@ -306,7 +306,7 @@ class CellQuery extends \Zend\GData\Query
      * Sets the return-empty attribute for this query.
      *
      * @param mixed $value String or bool value for whether to return empty cells
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setReturnEmpty($value)
     {

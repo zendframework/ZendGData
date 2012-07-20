@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * Data model class for a Comment Entry.
@@ -25,15 +25,15 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class CommentEntry extends \Zend\GData\Entry
+class CommentEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Photos\CommentEntry';
+    protected $_entryClassName = 'ZendGData\Photos\CommentEntry';
 
     /**
      * gphoto:id element
      *
-     * @var \Zend\GData\Photos\Extension\Id
+     * @var \ZendGData\Photos\Extension\Id
      */
     protected $_gphotoId = null;
 
@@ -42,7 +42,7 @@ class CommentEntry extends \Zend\GData\Entry
      * actual identification number unique exclusively to photo entries,
      * whereas gphoto:id can refer to all gphoto objects
      *
-     * @var \Zend\GData\Photos\Extension\PhotoId
+     * @var \ZendGData\Photos\Extension\PhotoId
      */
     protected $_gphotoPhotoId = null;
 
@@ -57,7 +57,7 @@ class CommentEntry extends \Zend\GData\Entry
         $this->registerAllNamespaces(Photos::$namespaces);
         parent::__construct($element);
 
-        $category = new \Zend\GData\App\Extension\Category(
+        $category = new \ZendGData\App\Extension\Category(
             'http://schemas.google.com/photos/2007#comment',
             'http://schemas.google.com/g/2005#kind');
         $this->setCategory(array($category));
@@ -126,7 +126,7 @@ class CommentEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:photoid attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\PhotoId The element being modified.
+     * @return \ZendGData\Photos\Extension\PhotoId The element being modified.
      */
     public function setGphotoPhotoId($value)
     {
@@ -149,7 +149,7 @@ class CommentEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:id attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Id The element being modified.
+     * @return \ZendGData\Photos\Extension\Id The element being modified.
      */
     public function setGphotoId($value)
     {

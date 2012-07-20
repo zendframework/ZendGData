@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 use Zend\Http;
 
@@ -104,8 +104,8 @@ class HttpClient extends Http\Client
      *
      * @param string $key The private key
      * @param string $passphrase The optional private key passphrase
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @throws \ZendGData\App\InvalidArgumentException
+     * @return \ZendGData\HttpClient Provides a fluent interface
      */
     public function setAuthSubPrivateKey($key, $passphrase = null)
     {
@@ -143,7 +143,7 @@ class HttpClient extends Http\Client
      * Sets the AuthSub token used for authentication
      *
      * @param string $token The token
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @return \ZendGData\HttpClient Provides a fluent interface
      */
     public function setAuthSubToken($token)
     {
@@ -165,7 +165,7 @@ class HttpClient extends Http\Client
      * Sets the ClientLogin token used for authentication
      *
      * @param string $token The token
-     * @return \Zend\GData\HttpClient Provides a fluent interface
+     * @return \ZendGData\HttpClient Provides a fluent interface
      */
     public function setClientLoginToken($token)
     {
@@ -190,7 +190,7 @@ class HttpClient extends Http\Client
      *                       sent with the request or null
      * @param string $body The body of the request or null
      * @param string $contentType The MIME content type of the body or null
-     * @throws \Zend\GData\App\Exception if there was a signing failure
+     * @throws \ZendGData\App\Exception if there was a signing failure
      * @return array The processed values in an associative array,
      *               using the same names as the params
      */

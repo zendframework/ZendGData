@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\MemberEntry;
-use Zend\GData\GApps\MemberFeed;
+use ZendGData\GApps\MemberEntry;
+use ZendGData\GApps\MemberFeed;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class MemberFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $memberFeedText = file_get_contents(
-                'Zend/GData/GApps/_files/MemberFeedDataSample1.xml',
+                'ZendGData/GApps/_files/MemberFeedDataSample1.xml',
                 true);
         $this->memberFeed = new MemberFeed($memberFeedText);
         $this->emptyMemberFeed = new MemberFeed();

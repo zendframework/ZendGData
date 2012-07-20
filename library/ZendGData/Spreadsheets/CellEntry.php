@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * Concrete class for working with Cell entries.
@@ -19,10 +19,10 @@ use Zend\GData\Spreadsheets;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class CellEntry extends \Zend\GData\Entry
+class CellEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\CellEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\CellEntry';
     protected $_cell;
 
     /**
@@ -62,7 +62,7 @@ class CellEntry extends \Zend\GData\Entry
 
     /**
      * Gets the Cell element of this Cell Entry.
-     * @return \Zend\GData\Spreadsheets\Extension\Cell
+     * @return \ZendGData\Spreadsheets\Extension\Cell
      */
     public function getCell()
     {
@@ -71,7 +71,7 @@ class CellEntry extends \Zend\GData\Entry
 
     /**
      * Sets the Cell element of this Cell Entry.
-     * @param $cell \Zend\GData\Spreadsheets\Extension\Cell $cell
+     * @param $cell \ZendGData\Spreadsheets\Extension\Cell $cell
      */
     public function setCell($cell)
     {

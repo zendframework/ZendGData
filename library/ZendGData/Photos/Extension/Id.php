@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos\Extension;
+namespace ZendGData\Photos\Extension;
 
 /**
  * Represents the gphoto:id element used by the API. This class
@@ -18,7 +18,7 @@ namespace Zend\GData\Photos\Extension;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class Id extends \Zend\GData\Extension
+class Id extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gphoto';
@@ -31,7 +31,7 @@ class Id extends \Zend\GData\Extension
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Photos::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Photos::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

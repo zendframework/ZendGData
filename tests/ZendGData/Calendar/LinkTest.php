@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->linkText = file_get_contents(
-                'Zend/GData/Calendar/_files/LinkElementSample1.xml',
+                'ZendGData/Calendar/_files/LinkElementSample1.xml',
                 true);
         $this->link = new Extension\Link();
     }
@@ -77,7 +77,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase
         $newLink->transferFromXML($this->link->saveXML());
         $this->assertEquals(count($newLink->extensionElements), 0);
         $newLink->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newLink->extensionElements), 1);
         $this->assertEquals($newLink->rel, "http://nowhere.invalid/");
         $this->assertEquals($newLink->title, "Somewhere");
@@ -88,7 +88,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($newLink->webcontent->width, "2");
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newLink2 = $cal->newLink();
         $newLink2->transferFromXML($newLink->saveXML());
         $this->assertEquals(count($newLink2->extensionElements), 1);

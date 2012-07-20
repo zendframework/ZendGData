@@ -10,8 +10,8 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Photos;
-use Zend\GData\App;
+use ZendGData\Photos;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -33,7 +33,7 @@ class PhotosOnlineTest extends \PHPUnit_Framework_TestCase
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $service = 'lh2';
-        $client = \Zend\GData\ClientLogin::getHttpClient($user, $pass, $service);
+        $client = \ZendGData\ClientLogin::getHttpClient($user, $pass, $service);
         $this->photos = new Photos($client);
     }
 
@@ -81,7 +81,7 @@ class PhotosOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->photos;
 
-        $fd = $client->newMediaFileSource('Zend/GData/_files/testImage.jpg');
+        $fd = $client->newMediaFileSource('ZendGData/_files/testImage.jpg');
         $fd->setContentType('image/jpeg');
 
         $photo = new Photos\PhotoEntry();
@@ -110,7 +110,7 @@ class PhotosOnlineTest extends \PHPUnit_Framework_TestCase
 
         $insertedEntry->title->text = "New Photo";
         $insertedEntry->summary->text = "Photo caption";
-        $keywords = new \Zend\GData\Media\Extension\MediaKeywords();
+        $keywords = new \ZendGData\Media\Extension\MediaKeywords();
         $keywords->setText("foo, bar, baz");
         $insertedEntry->mediaGroup->keywords = $keywords;
 

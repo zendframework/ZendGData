@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:description element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaDescription extends \Zend\GData\Extension
+class MediaDescription extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'description';
@@ -34,7 +34,7 @@ class MediaDescription extends \Zend\GData\Extension
      */
     public function __construct($text = null, $type = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_type = $type;
         $this->_text = $text;
@@ -87,7 +87,7 @@ class MediaDescription extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaDescription Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaDescription Provides a fluent interface
      */
     public function setType($value)
     {

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
 /**
  * @category   Zend
@@ -21,8 +21,8 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->fileName = 'Zend/GData/App/_files/FeedSample1.xml';
-        $this->base = new \ZendTest\GData\App\TestAsset\MockBase();
+        $this->fileName = 'ZendGData/App/_files/FeedSample1.xml';
+        $this->base = new \ZendGDataTest\App\TestAsset\MockBase();
     }
 
     public function testUnknownNamespaceReturnsInput()

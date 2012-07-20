@@ -51,11 +51,11 @@ class GDataTest extends \PHPUnit_Framework_TestCase
             // give it neither a string nor a Zend_GData_Query object,
             // and see if it throws an exception.
             $feed = $gdata->getFeed(new \stdClass());
-            $this->fail('Expecting to catch Zend\GData\App\InvalidArgumentException');
+            $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('Zend\GData\App\InvalidArgumentException', $e,
-                'Expecting Zend\GData\App\InvalidArgumentException, got '.get_class($e));
-            $this->assertEquals('You must specify the location as either a string URI or a child of Zend\GData\Query', $e->getMessage());
+            $this->assertInstanceOf('ZendGData\App\InvalidArgumentException', $e,
+                'Expecting ZendGData\App\InvalidArgumentException, got '.get_class($e));
+            $this->assertEquals('You must specify the location as either a string URI or a child of ZendGData\Query', $e->getMessage());
         }
     }
 
@@ -66,11 +66,11 @@ class GDataTest extends \PHPUnit_Framework_TestCase
             // give it neither a string nor a Zend_GData_Query object,
             // and see if it throws an exception.
             $feed = $gdata->getEntry(new \stdClass());
-            $this->fail('Expecting to catch Zend\GData\App\InvalidArgumentException');
+            $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');
         } catch (\Exception $e) {
-            $this->assertInstanceOf('Zend\GData\App\InvalidArgumentException', $e,
-                'Expecting Zend\GData\App\InvalidArgumentException, got '.get_class($e));
-            $this->assertEquals('You must specify the location as either a string URI or a child of Zend\GData\Query', $e->getMessage());
+            $this->assertInstanceOf('ZendGData\App\InvalidArgumentException', $e,
+                'Expecting ZendGData\App\InvalidArgumentException, got '.get_class($e));
+            $this->assertEquals('You must specify the location as either a string URI or a child of ZendGData\Query', $e->getMessage());
         }
     }
 

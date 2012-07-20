@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
-use Zend\GData\Extension;
+use ZendGData\GApps;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -26,7 +26,7 @@ class UserEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/GApps/_files/UserEntryDataSample1.xml',
+                'ZendGData/GApps/_files/UserEntryDataSample1.xml',
                 true);
         $this->entry = new GApps\UserEntry();
     }

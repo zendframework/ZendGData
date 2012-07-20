@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace ZendGData\Calendar\Extension;
 
 /**
  * Represents the gCal:timezone element used by the Calendar data API
@@ -17,7 +17,7 @@ namespace Zend\GData\Calendar\Extension;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class Timezone extends \Zend\GData\Extension
+class Timezone extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gCal';
@@ -30,7 +30,7 @@ class Timezone extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Calendar::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -86,7 +86,7 @@ class Timezone extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\Timezone The element being modified.
+     * @return \ZendGData\Calendar\Extension\Timezone The element being modified.
      */
     public function setValue($value)
     {

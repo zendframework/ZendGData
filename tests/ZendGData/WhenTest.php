@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class WhenTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whenText = file_get_contents(
-                'Zend/GData/_files/WhenElementSample1.xml',
+                'ZendGData/_files/WhenElementSample1.xml',
                 true);
         $this->when = new Extension\When();
     }
@@ -70,14 +70,14 @@ class WhenTest extends \PHPUnit_Framework_TestCase
         $newWhen->transferFromXML($this->when->saveXML());
         $this->assertEquals(0, count($newWhen->extensionElements));
         $newWhen->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newWhen->extensionElements));
         $this->assertEquals("Later", $newWhen->valueString);
         $this->assertEquals("2007-06-21T21:31:56-07:00", $newWhen->endTime);
         $this->assertEquals("2007-06-19T05:42:19-06:00", $newWhen->startTime);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newWhen2 = $gdata->newWhen();
         $newWhen2->transferFromXML($newWhen->saveXML());
         $this->assertEquals(1, count($newWhen2->extensionElements));

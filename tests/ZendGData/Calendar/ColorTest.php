@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->colorText = file_get_contents(
-                'Zend/GData/Calendar/_files/ColorElementSample1.xml',
+                'ZendGData/Calendar/_files/ColorElementSample1.xml',
                 true);
         $this->color = new Extension\Color();
     }
@@ -65,12 +65,12 @@ class ColorTest extends \PHPUnit_Framework_TestCase
         $newColor->transferFromXML($this->color->saveXML());
         $this->assertEquals(count($newColor->extensionElements), 0);
         $newColor->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newColor->extensionElements), 1);
         $this->assertEquals($newColor->value, '#abcdef');
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newColor2 = $cal->newColor();
         $newColor2->transferFromXML($newColor->saveXML());
         $this->assertEquals(count($newColor2->extensionElements), 1);

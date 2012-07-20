@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\Extension;
+use ZendGData\GApps\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class LoginTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->loginText = file_get_contents(
-                'Zend/GData/GApps/_files/LoginElementSample1.xml',
+                'ZendGData/GApps/_files/LoginElementSample1.xml',
                 true);
         $this->login = new Extension\Login();
     }
@@ -79,7 +79,7 @@ class LoginTest extends \PHPUnit_Framework_TestCase
         $newLogin->transferFromXML($this->login->saveXML());
         $this->assertEquals(0, count($newLogin->extensionElements));
         $newLogin->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newLogin->extensionElements));
         $this->assertEquals("johndoe", $newLogin->username);
         $this->assertEquals("abcdefg1234567890", $newLogin->password);
@@ -90,7 +90,7 @@ class LoginTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(false, $newLogin->agreedToTerms);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GApps();
+        $gdata = new \ZendGData\GApps();
         $newLogin2 = $gdata->newLogin();
         $newLogin2->transferFromXML($newLogin->saveXML());
         $this->assertEquals(1, count($newLogin2->extensionElements));

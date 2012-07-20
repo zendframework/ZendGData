@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
- * Utility class for static functions needed by \Zend\GData\App
+ * Utility class for static functions needed by \ZendGData\App
  *
  * @category   Zend
  * @package    Zend_Gdata
@@ -25,7 +25,7 @@ class Util
      *  2005-04-19T15:30:00
      *
      * @param int $timestamp
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public static function formatTimestamp($timestamp)
     {
@@ -54,7 +54,7 @@ class Util
       * @param array $collection An two-dimensional array of key/value pairs
       *        to search through.
       * @returns mixed The value corresponding to the located key.
-      * @throws \Zend\GData\App\Exception Thrown if $collection is empty.
+      * @throws \ZendGData\App\Exception Thrown if $collection is empty.
       */
     public static function findGreatestBoundedValue($maximumKey, $collection)
     {

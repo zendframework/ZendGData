@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
 /**
  * Assists in constructing queries for comment/tag entries.
@@ -61,7 +61,7 @@ class PhotoQuery extends AlbumQuery
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function getQueryUrl($incomingUri = '')
     {
@@ -69,7 +69,7 @@ class PhotoQuery extends AlbumQuery
         if ($this->getPhotoId() !== null) {
             $uri .= '/photoid/' . $this->getPhotoId();
         } else {
-            throw new \Zend\GData\App\InvalidArgumentException(
+            throw new \ZendGData\App\InvalidArgumentException(
                     'PhotoId cannot be null');
         }
         $uri .= $incomingUri;

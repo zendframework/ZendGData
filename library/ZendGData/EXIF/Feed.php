@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\EXIF;
+namespace ZendGData\EXIF;
 
-use Zend\GData\EXIF;
+use ZendGData\EXIF;
 
 /**
  * Feed for Gdata EXIF data entries.
@@ -19,7 +19,7 @@ use Zend\GData\EXIF;
  * @package    Zend_Gdata
  * @subpackage Exif
  */
-class Feed extends \Zend\GData\Feed
+class Feed extends \ZendGData\Feed
 {
 
     /**
@@ -27,7 +27,7 @@ class Feed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\EXIF\Entry';
+    protected $_entryClassName = '\ZendGData\EXIF\Entry';
 
     /**
      * Create a new instance.

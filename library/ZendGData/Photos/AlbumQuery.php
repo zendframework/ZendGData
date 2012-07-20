@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing album queries for various entries.
@@ -51,7 +51,7 @@ class AlbumQuery extends UserQuery
      *
      * @param string $value The name of the album to retrieve, or null to
      *          clear.
-     * @return \Zend\GData\Photos\AlbumQuery The query object.
+     * @return \ZendGData\Photos\AlbumQuery The query object.
      */
      public function setAlbumName($value)
      {
@@ -82,7 +82,7 @@ class AlbumQuery extends UserQuery
      *
      * @param string $value The ID of the album to retrieve, or null to
      *          clear.
-     * @return \Zend\GData\Photos\AlbumQuery The query object.
+     * @return \ZendGData\Photos\AlbumQuery The query object.
      */
      public function setAlbumId($value)
      {
@@ -108,7 +108,7 @@ class AlbumQuery extends UserQuery
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function getQueryUrl($incomingUri = '')
     {

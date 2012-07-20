@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the services which use the
@@ -44,8 +44,8 @@ class Geo extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Geo');
-        $this->registerPackage('Zend\GData\Geo\Extension');
+        $this->registerPackage('ZendGData\Geo');
+        $this->registerPackage('ZendGData\Geo\Extension');
         parent::__construct($client, $applicationId);
     }
 

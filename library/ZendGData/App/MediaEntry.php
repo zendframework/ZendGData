@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 /**
  * Concrete class for working with Atom entries containing multi-part data.
@@ -22,7 +22,7 @@ class MediaEntry extends Entry
     /**
      * The attached MediaSource/file
      *
-     * @var \Zend\GData\App\MediaSource
+     * @var \ZendGData\App\MediaSource
      */
     protected $_mediaSource = null;
 
@@ -42,7 +42,7 @@ class MediaEntry extends Entry
     /**
      * Return the MIME multipart representation of this MediaEntry.
      *
-     * @return string|\Zend\GData\MediaMimeStream The MIME multipart
+     * @return string|\ZendGData\MediaMimeStream The MIME multipart
      *         representation of this MediaEntry. If the entry consisted only
      *         of XML, a string is returned.
      */
@@ -54,7 +54,7 @@ class MediaEntry extends Entry
             // No attachment, just send XML for entry
             return $xmlData;
         } else {
-            return new \Zend\GData\MediaMimeStream($xmlData,
+            return new \ZendGData\MediaMimeStream($xmlData,
                 $mediaSource->getFilename(), $mediaSource->getContentType());
         }
     }
@@ -63,7 +63,7 @@ class MediaEntry extends Entry
      * Return the MediaSource object representing the file attached to this
      * MediaEntry.
      *
-     * @return \Zend\GData\App\MediaSource The attached MediaSource/file
+     * @return \ZendGData\App\MediaSource The attached MediaSource/file
      */
     public function getMediaSource()
     {
@@ -73,8 +73,8 @@ class MediaEntry extends Entry
     /**
      * Set the MediaSource object (file) for this MediaEntry
      *
-     * @param \Zend\GData\App\MediaSource $value The attached MediaSource/file
-     * @return \Zend\GData\App\MediaEntry Provides a fluent interface
+     * @param \ZendGData\App\MediaSource $value The attached MediaSource/file
+     * @return \ZendGData\App\MediaEntry Provides a fluent interface
      */
     public function setMediaSource($value)
     {
@@ -82,7 +82,7 @@ class MediaEntry extends Entry
             $this->_mediaSource = $value;
         } else {
             throw new InvalidArgumentException(
-                    'You must specify the media data as a class that conforms to \Zend\GData\App\MediaSource.');
+                    'You must specify the media data as a class that conforms to \ZendGData\App\MediaSource.');
         }
         return $this;
     }

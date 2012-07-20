@@ -10,8 +10,8 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Calendar;
-use Zend\GData\App\Extension;
+use ZendGData\Calendar;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $eventFeedText = file_get_contents(
-                'Zend/GData/Calendar/_files/TestDataEventFeedSample1.xml',
+                'ZendGData/Calendar/_files/TestDataEventFeedSample1.xml',
                 true);
         $this->eventFeed = new Calendar\EventFeed($eventFeedText);
     }
@@ -248,7 +248,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $feed = $this->eventFeed;
 
         // Assert that the feed's timezone is correct
-        $this->assertTrue($feed->getTimezone() instanceof \Zend\GData\Calendar\Extension\Timezone);
+        $this->assertTrue($feed->getTimezone() instanceof \ZendGData\Calendar\Extension\Timezone);
         $this->verifyProperty2($feed, "timezone", "value",
                 "America/Los_Angeles");
     }
@@ -262,7 +262,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $feed = $this->eventFeed;
 
         // Assert that the feed's startIndex is correct
-        $this->assertTrue($feed->getStartIndex() instanceof \Zend\GData\Extension\OpenSearchStartIndex);
+        $this->assertTrue($feed->getStartIndex() instanceof \ZendGData\Extension\OpenSearchStartIndex);
         $this->verifyProperty2($feed, "startIndex", "text", "1");
     }
 
@@ -275,7 +275,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $feed = $this->eventFeed;
 
         // Assert that the feed's itemsPerPage is correct
-        $this->assertTrue($feed->getItemsPerPage() instanceof \Zend\GData\Extension\OpenSearchItemsPerPage);
+        $this->assertTrue($feed->getItemsPerPage() instanceof \ZendGData\Extension\OpenSearchItemsPerPage);
         $this->verifyProperty2($feed, "itemsPerPage", "text", "25");
     }
 
@@ -307,7 +307,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have a sendEventNotifications object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getSendEventNotifications() instanceof \Zend\GData\Calendar\Extension\SendEventNotifications);
+            $this->assertTrue($entry->getSendEventNotifications() instanceof \ZendGData\Calendar\Extension\SendEventNotifications);
         }
 
         // Assert one of the entry's values
@@ -325,7 +325,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have a eventStatus object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getEventStatus() instanceof \Zend\GData\Extension\EventStatus);
+            $this->assertTrue($entry->getEventStatus() instanceof \ZendGData\Extension\EventStatus);
         }
 
         // Assert one of the entry's values
@@ -343,7 +343,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert one of the entry's commments links
         $entry = $feed[1];
-        $this->assertTrue($entry->getComments() instanceof \Zend\GData\Extension\Comments);
+        $this->assertTrue($entry->getComments() instanceof \ZendGData\Extension\Comments);
         $this->verifyProperty2($entry->getComments(), "feedLink", "href", "http://www.google.com/calendar/feeds/default/private/full/2qt3ao5hbaq7m9igr5ak9esjo0/comments");
     }
 
@@ -357,7 +357,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have a visibility object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getVisibility() instanceof \Zend\GData\Extension\Visibility);
+            $this->assertTrue($entry->getVisibility() instanceof \ZendGData\Extension\Visibility);
         }
 
         // Assert one of the entries values
@@ -375,7 +375,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have a transparency object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getTransparency() instanceof \Zend\GData\Extension\Transparency);
+            $this->assertTrue($entry->getTransparency() instanceof \ZendGData\Extension\Transparency);
         }
 
         // Assert one of the entries values
@@ -397,7 +397,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($entry->getWhen(), $entry->when);
         $this->assertEquals(1, count($when));
         $w = $when[0];
-        $this->assertTrue($w instanceof \Zend\GData\Extension\When);
+        $this->assertTrue($w instanceof \ZendGData\Extension\When);
         $this->verifyProperty($w, "startTime", "2007-03-24T12:00:00.000-07:00");
         $this->verifyProperty($w, "endTime", "2007-03-24T15:00:00.000-07:00");
 
@@ -420,7 +420,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $entry = $feed[1];
         $where = $entry->getWhere();
         $this->assertEquals(1, count($where));
-        $this->assertTrue($where[0] instanceof \Zend\GData\Extension\Where);
+        $this->assertTrue($where[0] instanceof \ZendGData\Extension\Where);
         $this->verifyProperty($where[0], "valueString", "Dolores Park with Kim");
     }
 
@@ -437,7 +437,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
         $entry = $feed[1];
         $who = $entry->getWho();
         foreach ($who as $w) {
-            $this->assertTrue($w instanceof \Zend\GData\Extension\Who);
+            $this->assertTrue($w instanceof \ZendGData\Extension\Who);
         }
         $this->assertEquals(2, count($who));
 
@@ -473,7 +473,7 @@ class CalendarEventTest extends \PHPUnit_Framework_TestCase
 
         // Assert that one of the event's QuickAdd entries is correct
         $quickAdd = $feed->entry[1]->getQuickAdd();
-        $this->assertTrue($quickAdd instanceof \Zend\GData\Calendar\Extension\QuickAdd);
+        $this->assertTrue($quickAdd instanceof \ZendGData\Calendar\Extension\QuickAdd);
         $this->verifyProperty($quickAdd, "value", true);
     }
 

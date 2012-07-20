@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\EXIF;
+namespace ZendGData\EXIF;
 
-use Zend\GData\EXIF;
+use ZendGData\EXIF;
 
 /**
  * An Atom entry containing EXIF metadata.
@@ -19,14 +19,14 @@ use Zend\GData\EXIF;
  * @package    Zend_Gdata
  * @subpackage Exif
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \ZendGData\Entry
 {
     /**
      * The classname for individual feed elements.
      *
      * @var string
      */
-    protected $_entryClassName = '\Zend\GData\EXIF\Entry';
+    protected $_entryClassName = '\ZendGData\EXIF\Entry';
 
     /**
      * The tags that belong to the Exif group.
@@ -91,7 +91,7 @@ class Entry extends \Zend\GData\Entry
      * Retrieve the tags for this entry.
      *
      * @see setTags
-     * @return \Zend\GData\EXIF\Extension\Tags The requested object
+     * @return \ZendGData\EXIF\Extension\Tags The requested object
      *              or null if not set.
      */
     public function getTags()
@@ -106,9 +106,9 @@ class Entry extends \Zend\GData\Entry
      * This corresponds to the <exif:tags> property in the Google Data
      * protocol.
      *
-     * @param \Zend\GData\EXIF\Extension\Tags $value The desired value
+     * @param \ZendGData\EXIF\Extension\Tags $value The desired value
      *              this element, or null to unset.
-     * @return \Zend\GData\EXIF\Entry Provides a fluent interface
+     * @return \ZendGData\EXIF\Entry Provides a fluent interface
      */
     public function setTags($value)
     {

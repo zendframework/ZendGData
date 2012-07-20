@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media;
+namespace ZendGData\Media;
 
-use Zend\GData\Media;
+use ZendGData\Media;
 
 /**
  * Represents the Gdata flavor of an Atom entry
@@ -19,15 +19,15 @@ use Zend\GData\Media;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Media\Entry';
+    protected $_entryClassName = 'ZendGData\Media\Entry';
 
     /**
      * media:group element
      *
-     * @var \Zend\GData\Media\Extension\MediaGroup
+     * @var \ZendGData\Media\Extension\MediaGroup
      */
     protected $_mediaGroup = null;
 
@@ -85,7 +85,7 @@ class Entry extends \Zend\GData\Entry
     /**
      * Returns the entry's mediaGroup object.
      *
-     * @return \Zend\GData\Media\Extension\MediaGroup
+     * @return \ZendGData\Media\Extension\MediaGroup
     */
     public function getMediaGroup()
     {
@@ -95,8 +95,8 @@ class Entry extends \Zend\GData\Entry
     /**
      * Sets the entry's mediaGroup object.
      *
-     * @param \Zend\GData\Media\Extension\MediaGroup $mediaGroup
-     * @return \Zend\GData\Media\Entry Provides a fluent interface
+     * @param \ZendGData\Media\Extension\MediaGroup $mediaGroup
+     * @return \ZendGData\Media\Entry Provides a fluent interface
      */
     public function setMediaGroup($mediaGroup)
     {

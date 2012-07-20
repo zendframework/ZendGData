@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
-use Zend\GData\App\AbstractBase;
+use ZendGData\App\AbstractBase;
 
 /**
  * Gdata App extensions

@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class OpenSearchItemsPerPageTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchItemsPerPageText = file_get_contents(
-                'Zend/GData/_files/OpenSearchItemsPerPageElementSample1.xml',
+                'ZendGData/_files/OpenSearchItemsPerPageElementSample1.xml',
                 true);
         $this->openSearchItemsPerPage = new Extension\OpenSearchItemsPerPage();
     }
@@ -67,12 +67,12 @@ class OpenSearchItemsPerPageTest extends \PHPUnit_Framework_TestCase
         $newOpenSearchItemsPerPage->transferFromXML($this->openSearchItemsPerPage->saveXML());
         $this->assertEquals(0, count($newOpenSearchItemsPerPage->extensionElements));
         $newOpenSearchItemsPerPage->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newOpenSearchItemsPerPage->extensionElements));
         $this->assertEquals("200", $newOpenSearchItemsPerPage->text);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newOpenSearchItemsPerPage2 = $gdata->newOpenSearchItemsPerPage();
         $newOpenSearchItemsPerPage2->transferFromXML($newOpenSearchItemsPerPage->saveXML());
         $this->assertEquals(1, count($newOpenSearchItemsPerPage2->extensionElements));

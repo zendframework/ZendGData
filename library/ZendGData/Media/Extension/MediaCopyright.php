@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:copyright element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaCopyright extends \Zend\GData\Extension
+class MediaCopyright extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'copyright';
@@ -34,7 +34,7 @@ class MediaCopyright extends \Zend\GData\Extension
      */
     public function __construct($text = null, $url = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_url = $url;
@@ -87,7 +87,7 @@ class MediaCopyright extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaCopyright Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaCopyright Provides a fluent interface
      */
     public function setUrl($value)
     {

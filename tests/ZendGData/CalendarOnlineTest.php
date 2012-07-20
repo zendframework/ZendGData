@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * @category   Zend
@@ -33,7 +33,7 @@ class CalendarOnlineTest extends \PHPUnit_Framework_TestCase
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $service = Calendar::AUTH_SERVICE_NAME;
-        $client = \Zend\GData\ClientLogin::getHttpClient($user, $pass, $service);
+        $client = \ZendGData\ClientLogin::getHttpClient($user, $pass, $service);
         $this->gdata = new Calendar($client);
     }
 
@@ -59,7 +59,7 @@ class CalendarOnlineTest extends \PHPUnit_Framework_TestCase
             !== false);
         $eventCount = 0;
         foreach ( $eventFeed as $event ) {
-            $this->assertInstanceOf('Zend\GData\Calendar\EventEntry', $event);
+            $this->assertInstanceOf('ZendGData\Calendar\EventEntry', $event);
             $eventCount++;
         }
         $this->assertTrue($eventCount > 0 );

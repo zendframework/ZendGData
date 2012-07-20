@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps nickname entries.

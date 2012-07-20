@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace ZendGData\GApps\Extension;
 
 /**
  * Represents the apps:quota element used by the Apps data API. This is
@@ -20,7 +20,7 @@ namespace Zend\GData\GApps\Extension;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class Quota extends \Zend\GData\Extension
+class Quota extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -40,7 +40,7 @@ class Quota extends \Zend\GData\Extension
      */
     public function __construct($limit = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct();
         $this->_limit = $limit;
     }
@@ -99,7 +99,7 @@ class Quota extends \Zend\GData\Extension
      * the associated user.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\Quota Provides a fluent interface.
+     * @return \ZendGData\GApps\Extension\Quota Provides a fluent interface.
      */
     public function setLimit($value)
     {

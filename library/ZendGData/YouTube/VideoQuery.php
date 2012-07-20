@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * Assists in constructing queries for YouTube videos
@@ -22,7 +22,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class VideoQuery extends \Zend\GData\Query
+class VideoQuery extends \ZendGData\Query
 {
 
     /**
@@ -95,8 +95,8 @@ class VideoQuery extends \Zend\GData\Query
      * Sets the location parameter for the query
      *
      * @param string $value
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @throws \ZendGData\App\InvalidArgumentException
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setLocation($value)
     {
@@ -146,7 +146,7 @@ class VideoQuery extends \Zend\GData\Query
      * Sets the location-radius parameter for the query
      *
      * @param string $value
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setLocationRadius($value)
     {
@@ -177,8 +177,8 @@ class VideoQuery extends \Zend\GData\Query
      * Sets the time period over which this query should apply
      *
      * @param string $value
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @throws \ZendGData\App\InvalidArgumentException
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setTime($value = null)
     {
@@ -210,8 +210,8 @@ class VideoQuery extends \Zend\GData\Query
      *
      * @param string $value The value of the uploader parameter. Currently this
      *        can only be set to the value of 'partner'.
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @throws \ZendGData\App\InvalidArgumentException
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setUploader($value = null)
     {
@@ -233,7 +233,7 @@ class VideoQuery extends \Zend\GData\Query
      * Sets the formatted video query URL param value
      *
      * @param string $value
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setVideoQuery($value = null)
     {
@@ -249,7 +249,7 @@ class VideoQuery extends \Zend\GData\Query
      * Sets the param to return videos of a specific format
      *
      * @param string $value
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setFormat($value = null)
     {
@@ -266,8 +266,8 @@ class VideoQuery extends \Zend\GData\Query
      *
      * @param string $value The value of the parameter, currently only 'none',
      *        'moderate' or 'strict' are allowed values.
-     * @throws \Zend\GData\App\InvalidArgumentException
-     * @return \Zend\GData\YouTube\VideoQuery Provides a fluent interface
+     * @throws \ZendGData\App\InvalidArgumentException
+     * @return \ZendGData\YouTube\VideoQuery Provides a fluent interface
      */
     public function setSafeSearch($value)
     {
@@ -383,7 +383,7 @@ class VideoQuery extends \Zend\GData\Query
      *
      * @param integer $majorProtocolVersion The major protocol version
      * @param integer $minorProtocolVersion The minor protocol version
-     * @throws \Zend\GData\App\VersionException
+     * @throws \ZendGData\App\VersionException
      * @return string querystring
      */
     public function getQueryString($majorProtocolVersion = null,

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class WebContentTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->webContentText = file_get_contents(
-                'Zend/GData/Calendar/_files/WebContentElementSample1.xml',
+                'ZendGData/Calendar/_files/WebContentElementSample1.xml',
                 true);
         $this->webContent = new Extension\WebContent();
     }
@@ -71,14 +71,14 @@ class WebContentTest extends \PHPUnit_Framework_TestCase
         $newWebContent->transferFromXML($this->webContent->saveXML());
         $this->assertEquals(count($newWebContent->extensionElements), 0);
         $newWebContent->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newWebContent->extensionElements), 1);
         $this->assertEquals($newWebContent->url, "http://nowhere.invalid/");
         $this->assertEquals($newWebContent->height, "100");
         $this->assertEquals($newWebContent->width, "200");
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newWebContent2 = $cal->newWebContent();
         $newWebContent2->transferFromXML($newWebContent->saveXML());
         $this->assertEquals(count($newWebContent2->extensionElements), 1);

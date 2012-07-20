@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books;
+namespace ZendGData\Books;
 
-use Zend\GData\Books;
+use ZendGData\Books;
 
 /**
  * Assists in constructing queries for Books volumes
@@ -19,7 +19,7 @@ use Zend\GData\Books;
  * @package    Zend_Gdata
  * @subpackage Books
  */
-class VolumeQuery extends \Zend\GData\Query
+class VolumeQuery extends \ZendGData\Query
 {
 
     /**
@@ -37,7 +37,7 @@ class VolumeQuery extends \Zend\GData\Query
      * Sets the minimum level of viewability of volumes to return in the search results
      *
      * @param string|null $value The minimum viewability - 'full' or 'partial'
-     * @return \Zend\GData\Books\VolumeQuery Provides a fluent interface
+     * @return \ZendGData\Books\VolumeQuery Provides a fluent interface
      */
     public function setMinViewability($value = null)
     {

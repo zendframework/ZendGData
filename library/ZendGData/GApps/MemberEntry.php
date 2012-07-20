@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model class for a Google Apps Member Entry.
@@ -20,7 +20,7 @@ use Zend\GData\GApps;
  *
  * To transfer member entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * Zend\GData\GApps.
+ * ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
@@ -28,10 +28,10 @@ use Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage Gapps
  */
-class MemberEntry extends \Zend\GData\Entry
+class MemberEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = '\Zend\GData\GApps\MemberEntry';
+    protected $_entryClassName = '\ZendGData\GApps\MemberEntry';
 
     /**
      * <apps:property> element containing information about other items
@@ -49,7 +49,7 @@ class MemberEntry extends \Zend\GData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct($element);
     }
 
@@ -100,9 +100,9 @@ class MemberEntry extends \Zend\GData\Entry
      *
      * @param string $rel The rel value of the property to be found. If null,
      *          the array of properties is returned instead.
-     * @return mixed Either an array of \Zend\GData\GApps\Extension\Property
+     * @return mixed Either an array of \ZendGData\GApps\Extension\Property
      *          objects if $rel is null, a single
-     *          \Zend\GData\GApps\Extension\Property object if $rel is specified
+     *          \ZendGData\GApps\Extension\Property object if $rel is specified
      *          and a matching feed link is found, or null if $rel is
      *          specified and no matching property is found.
      */
@@ -124,7 +124,7 @@ class MemberEntry extends \Zend\GData\Entry
      * Set the value of the  property property for this object.
      *
      * @param array $value A collection of
-     *          \Zend\GData\GApps\Extension\Property objects.
+     *          \ZendGData\GApps\Extension\Property objects.
      * @return MemberEntry Provides a fluent interface.
      */
     public function setProperty($value)

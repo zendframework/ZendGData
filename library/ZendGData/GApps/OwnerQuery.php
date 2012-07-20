@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\App\InvalidArgumentException;
-use Zend\GData\GApps;
+use ZendGData\App\InvalidArgumentException;
+use ZendGData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps owner entries.
@@ -19,7 +19,7 @@ use Zend\GData\GApps;
  * required.
  *
  * For information on submitting queries to a server, see the Google Apps
- * service class, Zend\GData\GApps.
+ * service class, ZendGData\GApps.
  *
  * @category   Zend
  * @package    Zend_Gdata

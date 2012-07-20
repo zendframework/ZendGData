@@ -8,11 +8,11 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
-use Zend\GData\App\Extension\Element;
-use Zend\GData\GApps\Extension\Property;
+use ZendGData\GApps;
+use ZendGData\App\Extension\Element;
+use ZendGData\GApps\Extension\Property;
 
 /**
  * @category   Zend
@@ -27,7 +27,7 @@ class PropertyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->thePropertyText = file_get_contents(
-                'Zend/GData/GApps/_files/PropertyElementSample1.xml',
+                'ZendGData/GApps/_files/PropertyElementSample1.xml',
                 true);
         $this->theProperty = new Property();
     }

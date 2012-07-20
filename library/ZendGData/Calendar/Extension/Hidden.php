@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace ZendGData\Calendar\Extension;
 
 /**
  * Represents the gCal:hidden element used by the Calendar data API
@@ -17,7 +17,7 @@ namespace Zend\GData\Calendar\Extension;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class Hidden extends \Zend\GData\Extension
+class Hidden extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gCal';
@@ -30,7 +30,7 @@ class Hidden extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Calendar::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -70,7 +70,7 @@ class Hidden extends \Zend\GData\Extension
             } elseif ($attribute->nodeValue == "false") {
                 $this->_value = false;
             } else {
-                throw new \Zend\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+                throw new \ZendGData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;
         default:
@@ -92,7 +92,7 @@ class Hidden extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Calendar\Extension\Hidden The element being modified.
+     * @return \ZendGData\Calendar\Extension\Hidden The element being modified.
      */
     public function setValue($value)
     {

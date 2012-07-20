@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend
@@ -27,7 +27,7 @@ class ServiceExceptionTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->xmlSample = file_get_contents(
-                'Zend/GData/GApps/_files/AppsForYourDomainElementSample1.xml',
+                'ZendGData/GApps/_files/AppsForYourDomainElementSample1.xml',
                 true);
         $this->fixture = new GApps\ServiceException();
         $this->data[1] = new GApps\Error(1234, "foo", "bar");
@@ -38,7 +38,7 @@ class ServiceExceptionTest extends \PHPUnit_Framework_TestCase
 
     public function testCanThrowServiceException()
     {
-        $this->setExpectedException('Zend\GData\GApps\ServiceException');
+        $this->setExpectedException('ZendGData\GApps\ServiceException');
         throw $this->fixture;
     }
 

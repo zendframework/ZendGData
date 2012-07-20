@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos\Extension;
+namespace ZendGData\Photos\Extension;
 
 /**
  * Represents the gphoto:checksum element used by the API.
@@ -19,7 +19,7 @@ namespace Zend\GData\Photos\Extension;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class Checksum extends \Zend\GData\Extension
+class Checksum extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gphoto';
@@ -32,7 +32,7 @@ class Checksum extends \Zend\GData\Extension
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Photos::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Photos::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

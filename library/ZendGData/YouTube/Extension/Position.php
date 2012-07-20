@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Data model class to represent a playlist item's position in the list (yt:position)
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Position extends \Zend\GData\Extension
+class Position extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'position';
@@ -30,7 +30,7 @@ class Position extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
         $this->_text = $value;
     }
@@ -49,7 +49,7 @@ class Position extends \Zend\GData\Extension
      * Set the value for the position in the playlist
      *
      * @param int $value The 1-based position in the playlist
-     * @return \Zend\GData\Extension\Visibility The element being modified
+     * @return \ZendGData\Extension\Visibility The element being modified
      */
     public function setValue($value)
     {

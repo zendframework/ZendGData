@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 use Zend\Http;
 use Zend\Http\Client;
@@ -76,8 +76,8 @@ class AuthSub
      * @param string $request_uri (optional) URI to which to direct
      *                            the session token upgrade
      * @return string The upgraded token value
-     * @throws \Zend\GData\App\AuthException
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\AuthException
+     * @throws \ZendGData\App\HttpException
      */
     public static function getAuthSubSessionToken(
             $token, $client = null,
@@ -126,7 +126,7 @@ class AuthSub
      * @param \Zend\Http\Client $client (optional) HTTP client to use to make the request
      * @param string $request_uri (optional) URI to which to direct the revokation request
      * @return boolean Whether the revokation was successful
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\HttpException
      */
     public static function AuthSubRevokeToken($token, $client = null,
                                               $request_uri = self::AUTHSUB_REVOKE_TOKEN_URI)

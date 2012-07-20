@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the media:rating element specific to YouTube.
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class MediaRating extends \Zend\GData\Extension
+class MediaRating extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'rating';
@@ -42,7 +42,7 @@ class MediaRating extends \Zend\GData\Extension
      */
     public function __construct($text = null, $scheme = null, $country = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_scheme = $scheme;
         $this->_country = $country;
@@ -102,7 +102,7 @@ class MediaRating extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\YouTube\Extension\MediaRating Provides a fluent interface
+     * @return \ZendGData\YouTube\Extension\MediaRating Provides a fluent interface
      */
     public function setScheme($value)
     {
@@ -120,7 +120,7 @@ class MediaRating extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\YouTube\Extension\MediaRating Provides a fluent interface
+     * @return \ZendGData\YouTube\Extension\MediaRating Provides a fluent interface
      */
     public function setCountry($value)
     {

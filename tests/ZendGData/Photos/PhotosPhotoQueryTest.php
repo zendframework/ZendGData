@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * @category   Zend
@@ -72,7 +72,7 @@ class PhotosPhotoQueryTest extends \PHPUnit_Framework_TestCase
         try {
             $generatedString = $query->getQueryUrl();
         } catch (\Exception $e) {
-            $this->assertTrue($e instanceof \Zend\GData\App\InvalidArgumentException);
+            $this->assertTrue($e instanceof \ZendGData\App\InvalidArgumentException);
         }
       }
 

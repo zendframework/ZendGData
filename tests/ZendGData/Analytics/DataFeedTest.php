@@ -8,11 +8,11 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Analytics;
+namespace ZendGDataTest\Analytics;
 
-use Zend\GData\Analytics\DataEntry;
-use Zend\GData\Analytics\DataFeed;
-use Zend\GData\Analytics\DataQuery;
+use ZendGData\Analytics\DataEntry;
+use ZendGData\Analytics\DataFeed;
+use ZendGData\Analytics\DataQuery;
 
 /**
  * @category   Zend

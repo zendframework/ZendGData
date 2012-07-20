@@ -84,7 +84,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
                     preg_match('/sig="([^"]*)"/', $headerValue, $matches);
                     $sig = $matches[1];
                     if (function_exists('openssl_verify')) {
-                        $fp = fopen('Zend/GData/_files/RsaCert.pem', 'r', true);
+                        $fp = fopen('ZendGData/_files/RsaCert.pem', 'r', true);
                         $cert = '';
                         while (!feof($fp)) {
                             $cert .= fread($fp, 8192);
@@ -108,7 +108,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
 
     public function testPrivateKeyNotFound()
     {
-        $this->setExpectedException('Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('ZendGData\App\InvalidArgumentException');
 
         if (!extension_loaded('openssl')) {
             $this->markTestSkipped('The openssl extension is not available');
@@ -131,7 +131,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend\GData\App\AuthException
+     * @expectedException ZendGData\App\AuthException
      */
     public function testAuthSubSessionTokenCatchesFailedResult()
     {
@@ -146,7 +146,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend\GData\App\HttpException
+     * @expectedException ZendGData\App\HttpException
      */
     public function testAuthSubSessionTokenCatchesHttpClientException()
     {
@@ -187,7 +187,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Zend\Gdata\App\HttpException
+     * @expectedException ZendGData\App\HttpException
      */
     public function testAuthSubRevokeTokenCatchesHttpClientException()
     {
@@ -222,7 +222,7 @@ Secure=false");
     }
 
     /**
-     * @expectedException Zend\Gdata\App\HttpException
+     * @expectedException ZendGData\App\HttpException
      */
     public function testGetAuthSubTokenInfoCatchesHttpClientException()
     {

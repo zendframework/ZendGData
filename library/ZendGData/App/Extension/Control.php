@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Represents the app:control element
@@ -55,7 +55,7 @@ class Control extends AbstractExtension
     }
 
     /**
-     * @return \Zend\GData\App\Extension\Draft
+     * @return \ZendGData\App\Extension\Draft
      */
     public function getDraft()
     {
@@ -63,8 +63,8 @@ class Control extends AbstractExtension
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Draft $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \ZendGData\App\Extension\Draft $value
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setDraft($value)
     {

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar;
+namespace ZendGData\Calendar;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * Data model for a Google Calendar feed of events
@@ -19,7 +19,7 @@ use Zend\GData\Calendar;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class EventFeed extends \Zend\GData\Feed
+class EventFeed extends \ZendGData\Feed
 {
 
     protected $_timezone = null;
@@ -29,14 +29,14 @@ class EventFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Calendar\EventEntry';
+    protected $_entryClassName = 'ZendGData\Calendar\EventEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Calendar\EventFeed';
+    protected $_feedClassName = 'ZendGData\Calendar\EventFeed';
 
     public function __construct($element = null)
     {

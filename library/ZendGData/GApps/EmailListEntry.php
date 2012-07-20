@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Data model class for a Google Apps Email List Entry.
@@ -30,16 +30,16 @@ use Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class EmailListEntry extends \Zend\GData\Entry
+class EmailListEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\GApps\EmailListEntry';
+    protected $_entryClassName = 'ZendGData\GApps\EmailListEntry';
 
     /**
      * <apps:emailList> child element containing general information about
      * this email list.
      *
-     * @var \Zend\GData\GApps\Extension\EmailList
+     * @var \ZendGData\GApps\Extension\EmailList
      */
     protected $_emailList = null;
 
@@ -47,7 +47,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * <gd:feedLink> element containing information about other feeds
      * relevant to this entry.
      *
-     * @var \Zend\GData\Extension\FeedLink
+     * @var \ZendGData\Extension\FeedLink
      */
     protected $_feedLink = array();
 
@@ -101,7 +101,7 @@ class EmailListEntry extends \Zend\GData\Entry
                 $this->_emailList = $emailList;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'feedLink';
-                $feedLink = new \Zend\GData\Extension\FeedLink();
+                $feedLink = new \ZendGData\Extension\FeedLink();
                 $feedLink->transferFromDOM($child);
                 $this->_feedLink[] = $feedLink;
                 break;
@@ -115,7 +115,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * Retrieve the email list property for this entry.
      *
      * @see setEmailList
-     * @return \Zend\GData\GApps\Extension\EmailList The requested object
+     * @return \ZendGData\GApps\Extension\EmailList The requested object
      *              or null if not set.
      */
     public function getEmailList()
@@ -130,7 +130,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * This corresponds to the <apps:emailList> property in the Google Data
      * protocol.
      *
-     * @param \Zend\GData\GApps\Extension\EmailList $value The desired value
+     * @param \ZendGData\GApps\Extension\EmailList $value The desired value
      *              this element, or null to unset.
      * @return EmailListEntry Provides a fluent interface
      */
@@ -146,7 +146,7 @@ class EmailListEntry extends \Zend\GData\Entry
      * @see setFeedLink
      * @param string $rel (optional) The rel value of the link to be found.
      *          If null, the array of links is returned.
-     * @return mixed If $rel is specified, a \Zend\GData\Extension\FeedLink
+     * @return mixed If $rel is specified, a \ZendGData\Extension\FeedLink
      *          object corresponding to the requested rel value is returned
      *          if found, or null if the requested value is not found. If
      *          $rel is null or not specified, an array of all available

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Specialized Control class for use with YouTube. Enables use of yt extension elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class Control extends \Zend\GData\App\Extension\Control
+class Control extends \ZendGData\App\Extension\Control
 {
 
     protected $_state = null;
@@ -25,12 +25,12 @@ class Control extends \Zend\GData\App\Extension\Control
     /**
      * Constructs a new Zend_Gdata_Calendar_Extension_Control object.
      * @see Zend_Gdata_App_Extension_Control#__construct
-     * @param \Zend\GData\App\Extension\Draft $draft
-     * @param \Zend\GData\YouTube\Extension\State $state
+     * @param \ZendGData\App\Extension\Draft $draft
+     * @param \ZendGData\YouTube\Extension\State $state
      */
     public function __construct($draft = null, $state = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct($draft);
         $this->_state = $state;
     }
@@ -78,7 +78,7 @@ class Control extends \Zend\GData\App\Extension\Control
     /**
      * Get the value for this element's state attribute.
      *
-     * @return \Zend\GData\YouTube\Extension\State The state element.
+     * @return \ZendGData\YouTube\Extension\State The state element.
      */
     public function getState()
     {
@@ -88,7 +88,7 @@ class Control extends \Zend\GData\App\Extension\Control
     /**
      * Set the value for this element's state attribute.
      *
-     * @param \Zend\GData\YouTube\Extension\State $value The desired value for this attribute.
+     * @param \ZendGData\YouTube\Extension\State $value The desired value for this attribute.
      * @return Zend_YouTube_Extension_Control The element being modified.
      */
     public function setState($value)

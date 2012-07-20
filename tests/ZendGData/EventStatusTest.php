@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class EventStatusTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->eventStatusText = file_get_contents(
-                'Zend/GData/_files/EventStatusElementSample1.xml',
+                'ZendGData/_files/EventStatusElementSample1.xml',
                 true);
         $this->eventStatus = new Extension\EventStatus();
     }
@@ -66,12 +66,12 @@ class EventStatusTest extends \PHPUnit_Framework_TestCase
         $newEventStatus->transferFromXML($this->eventStatus->saveXML());
         $this->assertEquals(0, count($newEventStatus->extensionElements));
         $newEventStatus->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newEventStatus->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#event.tentative", $newEventStatus->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newEventStatus2 = $gdata->newEventStatus();
         $newEventStatus2->transferFromXML($newEventStatus->saveXML());
         $this->assertEquals(1, count($newEventStatus2->extensionElements));

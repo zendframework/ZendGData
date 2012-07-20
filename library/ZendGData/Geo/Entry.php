@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Geo;
+namespace ZendGData\Geo;
 
-use Zend\GData\Geo;
+use ZendGData\Geo;
 
 /**
  * An Atom entry containing Geograpic data.
@@ -19,10 +19,10 @@ use Zend\GData\Geo;
  * @package    Zend_Gdata
  * @subpackage Geo
  */
-class Entry extends \Zend\GData\Entry
+class Entry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Geo\Entry';
+    protected $_entryClassName = 'ZendGData\Geo\Entry';
 
     protected $_where = null;
 

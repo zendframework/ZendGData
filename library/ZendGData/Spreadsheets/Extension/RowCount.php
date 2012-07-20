@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets\Extension;
+namespace ZendGData\Spreadsheets\Extension;
 
 /**
  * Concrete class for working with RowCount elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\Spreadsheets\Extension;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class RowCount extends \Zend\GData\Extension
+class RowCount extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'rowCount';
@@ -29,7 +29,7 @@ class RowCount extends \Zend\GData\Extension
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Spreadsheets::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Spreadsheets::$namespaces);
         parent::__construct();
         $this->_text = $text;
     }

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend
@@ -29,7 +29,7 @@ class EmailListFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $emailListFeedText = file_get_contents(
-                'Zend/GData/GApps/_files/EmailListFeedDataSample1.xml',
+                'ZendGData/GApps/_files/EmailListFeedDataSample1.xml',
                 true);
         $this->emailListFeed = new GApps\EmailListFeed($emailListFeedText);
         $this->emptyEmailListFeed = new GApps\EmailListFeed();

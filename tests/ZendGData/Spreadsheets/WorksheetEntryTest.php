@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
@@ -29,9 +29,9 @@ class WorksheetEntryTest extends \PHPUnit_Framework_TestCase
 
     public function testToAndFromString()
     {
-        $this->wksEntry->setRowCount(new \Zend\GData\Spreadsheets\Extension\RowCount('20'));
+        $this->wksEntry->setRowCount(new \ZendGData\Spreadsheets\Extension\RowCount('20'));
         $this->assertTrue($this->wksEntry->getRowCount()->getText() == '20');
-        $this->wksEntry->setColumnCount(new \Zend\GData\Spreadsheets\Extension\ColCount('40'));
+        $this->wksEntry->setColumnCount(new \ZendGData\Spreadsheets\Extension\ColCount('40'));
         $this->assertTrue($this->wksEntry->getColumnCount()->getText() == '40');
         $newWksEntry = new Spreadsheets\WorksheetEntry();
         $doc = new \DOMDocument();

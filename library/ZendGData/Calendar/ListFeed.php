@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar;
+namespace ZendGData\Calendar;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * Represents the meta-feed list of calendars
@@ -19,7 +19,7 @@ use Zend\GData\Calendar;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class ListFeed extends \Zend\GData\Feed
+class ListFeed extends \ZendGData\Feed
 {
     protected $_timezone = null;
 
@@ -28,14 +28,14 @@ class ListFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Calendar\ListEntry';
+    protected $_entryClassName = 'ZendGData\Calendar\ListEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Calendar\ListFeed';
+    protected $_feedClassName = 'ZendGData\Calendar\ListFeed';
 
     public function __construct($element = null)
     {
@@ -73,7 +73,7 @@ class ListFeed extends \Zend\GData\Feed
     }
 
     /**
-     * @param \Zend\GData\Calendar\Extension\Timezone $value
+     * @param \ZendGData\Calendar\Extension\Timezone $value
      * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
      */
     public function setTimezone($value)

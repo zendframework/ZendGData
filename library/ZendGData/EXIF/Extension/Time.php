@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\EXIF\Extension;
+namespace ZendGData\EXIF\Extension;
 
 /**
  * Represents the exif:time element used by the Gdata Exif extensions.
@@ -17,7 +17,7 @@ namespace Zend\GData\EXIF\Extension;
  * @package    Zend_Gdata
  * @subpackage Exif
  */
-class Time extends \Zend\GData\Extension
+class Time extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'exif';
@@ -30,7 +30,7 @@ class Time extends \Zend\GData\Extension
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\EXIF::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\EXIF::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

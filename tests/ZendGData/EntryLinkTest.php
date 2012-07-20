@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class EntryLinkTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryLinkText = file_get_contents(
-                'Zend/GData/_files/EntryLinkElementSample1.xml',
+                'ZendGData/_files/EntryLinkElementSample1.xml',
                 true);
         $this->entryLink = new Extension\EntryLink();
     }
@@ -70,14 +70,14 @@ class EntryLinkTest extends \PHPUnit_Framework_TestCase
         $newEntryLink->transferFromXML($this->entryLink->saveXML());
         $this->assertEquals(0, count($newEntryLink->extensionElements));
         $newEntryLink->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newEntryLink->extensionElements));
         $this->assertEquals("http://gmail.com/jo/contacts/Bob", $newEntryLink->href);
         $this->assertEquals("self", $newEntryLink->rel);
         $this->assertTrue($newEntryLink->readOnly);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newEntryLink2 = $gdata->newEntryLink();
         $newEntryLink2->transferFromXML($newEntryLink->saveXML());
         $this->assertEquals(1, count($newEntryLink2->extensionElements));
@@ -131,7 +131,7 @@ class EntryLinkTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("http://gmail.com/jo/contacts/Jo", $this->entryLink->href);
         $this->assertEquals("via", $this->entryLink->rel);
         $this->assertTrue($this->entryLink->readOnly);
-        $this->assertTrue($this->entryLink->entry instanceof \Zend\GData\App\Entry);
+        $this->assertTrue($this->entryLink->entry instanceof \ZendGData\App\Entry);
         $this->assertEquals("Jo March", $this->entryLink->entry->title->text);
     }
 

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs;
+namespace ZendGData\Docs;
 
-use Zend\GData\Docs;
+use ZendGData\Docs;
 
 /**
  * Data model for a Google Documents List feed of documents
@@ -19,7 +19,7 @@ use Zend\GData\Docs;
  * @package    Zend_Gdata
  * @subpackage Docs
  */
-class DocumentListFeed extends \Zend\GData\Feed
+class DocumentListFeed extends \ZendGData\Feed
 {
 
     /**
@@ -27,14 +27,14 @@ class DocumentListFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Docs\DocumentListEntry';
+    protected $_entryClassName = 'ZendGData\Docs\DocumentListEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Docs\DocumentListFeed';
+    protected $_feedClassName = 'ZendGData\Docs\DocumentListFeed';
 
     /**
      * Create a new instance of a feed for a list of documents.

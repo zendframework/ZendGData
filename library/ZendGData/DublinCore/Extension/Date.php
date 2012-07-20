@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\DublinCore\Extension;
+namespace ZendGData\DublinCore\Extension;
 
 /**
  * Point or period of time associated with an event in the lifecycle of the
@@ -18,7 +18,7 @@ namespace Zend\GData\DublinCore\Extension;
  * @package    Zend_Gdata
  * @subpackage DublinCore
  */
-class Date extends \Zend\GData\Extension
+class Date extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'dc';
@@ -34,7 +34,7 @@ class Date extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\DublinCore::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\DublinCore::$namespaces);
         parent::__construct();
         $this->_text = $value;
     }

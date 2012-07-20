@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * Assists in constructing queries for Google Apps email list recipient
@@ -115,7 +115,7 @@ class EmailListRecipientQuery extends AbstractQuery
      * parameters.
      *
      * @return string A URL generated based on the state of this query.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function getQueryUrl()
     {
@@ -125,7 +125,7 @@ class EmailListRecipientQuery extends AbstractQuery
         if ($this->_emailListName !== null) {
             $uri .= '/' . $this->_emailListName;
         } else {
-            throw new \Zend\GData\App\InvalidArgumentException(
+            throw new \ZendGData\App\InvalidArgumentException(
                     'EmailListName must not be null');
         }
         $uri .= GApps::APPS_EMAIL_LIST_RECIPIENT_POSTFIX . '/';

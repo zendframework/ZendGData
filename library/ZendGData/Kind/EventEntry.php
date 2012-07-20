@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Kind;
+namespace ZendGData\Kind;
 
 /**
  * Data model for the Gdata Event "Kind".  Google Calendar has a separate
@@ -18,7 +18,7 @@ namespace Zend\GData\Kind;
  * @package    Zend_Gdata
  * @subpackage Gdata
  */
-class EventEntry extends \Zend\GData\Entry
+class EventEntry extends \ZendGData\Entry
 {
     protected $_who = array();
     protected $_when = array();
@@ -93,62 +93,62 @@ class EventEntry extends \Zend\GData\Entry
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
         case $this->lookupNamespace('gd') . ':' . 'where';
-            $where = new \Zend\GData\Extension\Where();
+            $where = new \ZendGData\Extension\Where();
             $where->transferFromDOM($child);
             $this->_where[] = $where;
             break;
         case $this->lookupNamespace('gd') . ':' . 'when';
-            $when = new \Zend\GData\Extension\When();
+            $when = new \ZendGData\Extension\When();
             $when->transferFromDOM($child);
             $this->_when[] = $when;
             break;
         case $this->lookupNamespace('gd') . ':' . 'who';
-            $who = new \Zend\GData\Extension\Who();
+            $who = new \ZendGData\Extension\Who();
             $who ->transferFromDOM($child);
             $this->_who[] = $who;
             break;
         case $this->lookupNamespace('gd') . ':' . 'recurrence';
-            $recurrence = new \Zend\GData\Extension\Recurrence();
+            $recurrence = new \ZendGData\Extension\Recurrence();
             $recurrence->transferFromDOM($child);
             $this->_recurrence = $recurrence;
             break;
         case $this->lookupNamespace('gd') . ':' . 'eventStatus';
-            $eventStatus = new \Zend\GData\Extension\EventStatus();
+            $eventStatus = new \ZendGData\Extension\EventStatus();
             $eventStatus->transferFromDOM($child);
             $this->_eventStatus = $eventStatus;
             break;
         case $this->lookupNamespace('gd') . ':' . 'comments';
-            $comments = new \Zend\GData\Extension\Comments();
+            $comments = new \ZendGData\Extension\Comments();
             $comments->transferFromDOM($child);
             $this->_comments = $comments;
             break;
         case $this->lookupNamespace('gd') . ':' . 'transparency';
-            $transparency = new \Zend\GData\Extension\Transparency();
+            $transparency = new \ZendGData\Extension\Transparency();
             $transparency ->transferFromDOM($child);
             $this->_transparency = $transparency;
             break;
         case $this->lookupNamespace('gd') . ':' . 'visibility';
-            $visiblity = new \Zend\GData\Extension\Visibility();
+            $visiblity = new \ZendGData\Extension\Visibility();
             $visiblity ->transferFromDOM($child);
             $this->_visibility = $visiblity;
             break;
         case $this->lookupNamespace('gd') . ':' . 'recurrenceException';
-            $recurrenceException = new \Zend\GData\Extension\RecurrenceException();
+            $recurrenceException = new \ZendGData\Extension\RecurrenceException();
             $recurrenceException ->transferFromDOM($child);
             $this->_recurrenceException[] = $recurrenceException;
             break;
         case $this->lookupNamespace('gd') . ':' . 'originalEvent';
-            $originalEvent = new \Zend\GData\Extension\OriginalEvent();
+            $originalEvent = new \ZendGData\Extension\OriginalEvent();
             $originalEvent ->transferFromDOM($child);
             $this->_originalEvent = $originalEvent;
             break;
         case $this->lookupNamespace('gd') . ':' . 'extendedProperty';
-            $extProp = new \Zend\GData\Extension\ExtendedProperty();
+            $extProp = new \ZendGData\Extension\ExtendedProperty();
             $extProp->transferFromDOM($child);
             $this->_extendedProperty[] = $extProp;
             break;
         case $this->lookupNamespace('gd') . ':' . 'entryLink':
-            $entryLink = new \Zend\GData\Extension\EntryLink();
+            $entryLink = new \ZendGData\Extension\EntryLink();
             $entryLink->transferFromDOM($child);
             $this->_entryLink = $entryLink;
             break;
@@ -166,7 +166,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setWhen($value)
     {
@@ -181,7 +181,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setWhere($value)
     {
@@ -196,7 +196,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setWho($value)
     {
@@ -211,7 +211,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setRecurrence($value)
     {
@@ -226,7 +226,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setEventStatus($value)
     {
@@ -241,7 +241,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setComments($value)
     {
@@ -256,7 +256,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param Zend_Gdata_Transparency $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setTransparency($value)
     {
@@ -270,8 +270,8 @@ class EventEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Visibility $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @param \ZendGData\Visibility $value
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -286,7 +286,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setRecurrenceException($value)
     {
@@ -301,7 +301,7 @@ class EventEntry extends \Zend\GData\Entry
 
     /**
      * @param array $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setExtendedProperty($value)
     {
@@ -315,8 +315,8 @@ class EventEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Extension\OriginalEvent $value
-     * @return \Zend\GData\Kind\EventEntry Provides a fluent interface
+     * @param \ZendGData\Extension\OriginalEvent $value
+     * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setOriginalEvent($value)
     {
@@ -327,7 +327,7 @@ class EventEntry extends \Zend\GData\Entry
     /**
      * Get this entry's EntryLink element.
      *
-     * @return \Zend\GData\Extension\EntryLink The requested entry.
+     * @return \ZendGData\Extension\EntryLink The requested entry.
      */
     public function getEntryLink()
     {
@@ -337,8 +337,8 @@ class EventEntry extends \Zend\GData\Entry
     /**
      * Set the child's EntryLink element.
      *
-     * @param \Zend\GData\Extension\EntryLink $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Who The element being modified.
+     * @param \ZendGData\Extension\EntryLink $value The desired value for this attribute.
+     * @return \ZendGData\Extension\Who The element being modified.
      */
     public function setEntryLink($value)
     {

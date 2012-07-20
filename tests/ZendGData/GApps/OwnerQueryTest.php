@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\OwnerQuery;
+use ZendGData\GApps\OwnerQuery;
 
 /**
  * @category   Zend

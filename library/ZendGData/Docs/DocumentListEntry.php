@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs;
+namespace ZendGData\Docs;
 
-use Zend\GData\Docs;
+use ZendGData\Docs;
 
 /**
  * Represents a Documents List entry in the Documents List data API meta feed
@@ -20,7 +20,7 @@ use Zend\GData\Docs;
  * @package    Zend_Gdata
  * @subpackage Docs
  */
-class DocumentListEntry extends \Zend\GData\Entry
+class DocumentListEntry extends \ZendGData\Entry
 {
 
     /**

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class CommentEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/YouTube/_files/CommentEntryDataSample1.xml',
+                'ZendGData/YouTube/_files/CommentEntryDataSample1.xml',
                 true);
         $this->entry = new YouTube\CommentEntry();
     }

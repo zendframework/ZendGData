@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Represents the atom:content element
@@ -59,7 +59,7 @@ class Content extends AbstractText
 
     /**
      * @param string $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setSrc($value)
     {

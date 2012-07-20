@@ -10,8 +10,8 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Books;
-use Zend\GData\App\Extension;
+use ZendGData\Books;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -34,7 +34,7 @@ class BooksOnlineTest extends \PHPUnit_Framework_TestCase
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $service = Books::AUTH_SERVICE_NAME;
-        $client = \Zend\GData\ClientLogin::getHttpClient($user, $pass, $service);
+        $client = \ZendGData\ClientLogin::getHttpClient($user, $pass, $service);
         $this->gdata = new Books($client);
     }
 
@@ -92,7 +92,7 @@ class BooksOnlineTest extends \PHPUnit_Framework_TestCase
 
         $entry = new Books\VolumeEntry();
         $entry->setId(new Extension\Id('Mfer_MFwQrkC'));
-        $entry->setRating(new \Zend\GData\Extension\Rating(3, 1, 5, 1));
+        $entry->setRating(new \ZendGData\Extension\Rating(3, 1, 5, 1));
         $newEntry = $this->gdata->insertVolume($entry,
             Books::MY_ANNOTATION_FEED_URI);
         $this->assertTrue($newEntry instanceof Books\VolumeEntry);

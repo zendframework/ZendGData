@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Analytics;
+namespace ZendGDataTest\Analytics;
 
-use Zend\GData\Analytics\DataQuery;
+use ZendGData\Analytics\DataQuery;
 
 /**
  * @category   Zend

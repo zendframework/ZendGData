@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Data model class to represent an entry's visibility
@@ -86,7 +86,7 @@ class Visibility extends Extension
      * Set the value for this element's Value attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Visibility The element being modified.
+     * @return \ZendGData\Extension\Visibility The element being modified.
      */
     public function setValue($value)
     {

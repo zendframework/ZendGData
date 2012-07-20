@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend
@@ -46,17 +46,17 @@ class GAppsTest extends \PHPUnit_Framework_TestCase
     public function testMagicFactoryLeavesNonQueriesAlone()
     {
         $login = $this->gdata->newLogin('blah');
-        $this->assertTrue($login instanceof \Zend\GData\GApps\Extension\Login);
+        $this->assertTrue($login instanceof \ZendGData\GApps\Extension\Login);
         $this->assertEquals('blah', $login->username);
     }
 
     public function testEmptyResponseExceptionRaisesException()
     {
-      $e = new \Zend\GData\App\HttpException();
+      $e = new \ZendGData\App\HttpException();
       $success = false;
       try {
         $this->gdata->throwServiceExceptionIfDetected($e);
-      } catch (\Zend\GData\App\IOException $f) {
+      } catch (\ZendGData\App\IOException $f) {
         $success = true;
       }
       $this->assertTrue($success, 'Zend_GData_App_IOException not thrown');

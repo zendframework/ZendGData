@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class OpenSearchTotalResultsTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchTotalResultsText = file_get_contents(
-                'Zend/GData/_files/OpenSearchTotalResultsElementSample1.xml',
+                'ZendGData/_files/OpenSearchTotalResultsElementSample1.xml',
                 true);
         $this->openSearchTotalResults = new Extension\OpenSearchTotalResults();
     }
@@ -67,12 +67,12 @@ class OpenSearchTotalResultsTest extends \PHPUnit_Framework_TestCase
         $newOpenSearchTotalResults->transferFromXML($this->openSearchTotalResults->saveXML());
         $this->assertEquals(0, count($newOpenSearchTotalResults->extensionElements));
         $newOpenSearchTotalResults->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newOpenSearchTotalResults->extensionElements));
         $this->assertEquals("42", $newOpenSearchTotalResults->text);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newOpenSearchTotalResults2 = $gdata->newOpenSearchTotalResults();
         $newOpenSearchTotalResults2->transferFromXML($newOpenSearchTotalResults->saveXML());
         $this->assertEquals(1, count($newOpenSearchTotalResults2->extensionElements));

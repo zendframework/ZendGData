@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class VisibilityTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->visibilityText = file_get_contents(
-                'Zend/GData/_files/VisibilityElementSample1.xml',
+                'ZendGData/_files/VisibilityElementSample1.xml',
                 true);
         $this->visibility = new Extension\Visibility();
     }
@@ -66,12 +66,12 @@ class VisibilityTest extends \PHPUnit_Framework_TestCase
         $newVisibility->transferFromXML($this->visibility->saveXML());
         $this->assertEquals(0, count($newVisibility->extensionElements));
         $newVisibility->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newVisibility->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#event.private", $newVisibility->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newVisibility2 = $gdata->newVisibility();
         $newVisibility2->transferFromXML($newVisibility->saveXML());
         $this->assertEquals(1, count($newVisibility2->extensionElements));

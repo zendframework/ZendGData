@@ -8,16 +8,16 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class WorksheetFeed extends \Zend\GData\Feed
+class WorksheetFeed extends \ZendGData\Feed
 {
 
     /**
@@ -35,13 +35,13 @@ class WorksheetFeed extends \Zend\GData\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\WorksheetEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\WorksheetEntry';
 
     /**
      * The classname for the feed.
      *
      * @var string
      */
-    protected $_feedClassName = 'Zend\GData\Spreadsheets\WorksheetFeed';
+    protected $_feedClassName = 'ZendGData\Spreadsheets\WorksheetFeed';
 
 }

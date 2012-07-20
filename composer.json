@@ -1,16 +1,24 @@
 {
     "name": "zendframework/zend-gdata",
     "description": "provide programmatic interface to some of Google's online services",
+    "type": "library",
     "license": "BSD-3-Clause",
     "keywords": [
         "zf2",
         "gdata"
     ],
+    "homepage": "http://packages.zendframework.com/",
     "autoload": {
         "psr-0": {
-            "Zend\\GData": ""
+            "ZendGData": "library/"
         }
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        }
+    ],
     "target-dir": "Zend/GData",
     "require": {
         "php": ">=5.3.3",

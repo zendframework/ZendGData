@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs;
+namespace ZendGData\Docs;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing queries for Google Document List documents
@@ -21,7 +21,7 @@ use Zend\GData\App;
  * @package    Zend_Gdata
  * @subpackage Docs
  */
-class Query extends \Zend\GData\Query
+class Query extends \ZendGData\Query
 {
 
     /**
@@ -69,7 +69,7 @@ class Query extends \Zend\GData\Query
      * include 'full'.
      *
      * @param string $value
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \ZendGData\Docs\Query Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -81,7 +81,7 @@ class Query extends \Zend\GData\Query
      * Sets the visibility for this query. Common values for visibility
      * include 'private'.
      *
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \ZendGData\Docs\Query Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -115,7 +115,7 @@ class Query extends \Zend\GData\Query
      * completely match the title.
      *
      * @param string $value
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \ZendGData\Docs\Query Provides a fluent interface
      */
     public function setTitle($value)
     {
@@ -148,7 +148,7 @@ class Query extends \Zend\GData\Query
      * title parameter will be returned.
      *
      * @param boolean $value Use either true or false
-     * @return \Zend\GData\Docs\Query Provides a fluent interface
+     * @return \ZendGData\Docs\Query Provides a fluent interface
      */
     public function setTitleExact($value)
     {

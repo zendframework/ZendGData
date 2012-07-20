@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
+use ZendGData\Spreadsheets;
 
 /**
  * Concrete class for working with Worksheet entries.
@@ -19,10 +19,10 @@ use Zend\GData\Spreadsheets;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class WorksheetEntry extends \Zend\GData\Entry
+class WorksheetEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\WorksheetEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\WorksheetEntry';
 
     protected $_rowCount = null;
     protected $_colCount = null;

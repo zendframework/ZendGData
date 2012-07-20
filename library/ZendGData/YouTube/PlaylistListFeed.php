@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * The YouTube video playlist flavor of an Atom Feed with media support
@@ -21,7 +21,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class PlaylistListFeed extends \Zend\GData\Media\Feed
+class PlaylistListFeed extends \ZendGData\Media\Feed
 {
 
     /**
@@ -29,7 +29,7 @@ class PlaylistListFeed extends \Zend\GData\Media\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\PlaylistListEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\PlaylistListEntry';
 
     /**
      * Creates a Playlist list feed, representing a list of playlists,

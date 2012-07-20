@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * This class represents the media:group element of Media RSS.
@@ -20,7 +20,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
+class MediaGroup extends \ZendGData\Media\Extension\MediaGroup
 {
 
     protected $_rootElement = 'group';
@@ -58,7 +58,7 @@ class MediaGroup extends \Zend\GData\Media\Extension\MediaGroup
 
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct($element);
     }
 

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books;
+namespace ZendGData\Books;
 
-use Zend\GData\Books;
+use ZendGData\Books;
 
 /**
  * Describes an entry in a feed of collections
@@ -19,7 +19,7 @@ use Zend\GData\Books;
  * @package    Zend_Gdata
  * @subpackage Books
  */
-class CollectionEntry extends \Zend\GData\Entry
+class CollectionEntry extends \ZendGData\Entry
 {
 
     /**

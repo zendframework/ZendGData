@@ -8,14 +8,14 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage App
  */
-class Source extends \Zend\GData\App\AbstractFeedSourceParent
+class Source extends \ZendGData\App\AbstractFeedSourceParent
 {
 
     protected $_rootElement = 'source';

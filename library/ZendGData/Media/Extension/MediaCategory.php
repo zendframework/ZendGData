@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:category element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaCategory extends \Zend\GData\Extension
+class MediaCategory extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'category';
@@ -38,7 +38,7 @@ class MediaCategory extends \Zend\GData\Extension
      */
     public function __construct($text = null, $scheme = null, $label = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_scheme = $scheme;
@@ -101,7 +101,7 @@ class MediaCategory extends \Zend\GData\Extension
 
     /**
      * @param string $value     URI that identifies the categorization scheme
-     * @return \Zend\GData\Media\Extension\MediaCategory Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaCategory Provides a fluent interface
      */
     public function setScheme($value)
     {
@@ -119,7 +119,7 @@ class MediaCategory extends \Zend\GData\Extension
 
     /**
      * @param string $value     Human-readable label to be displayed in applications
-     * @return \Zend\GData\Media\Extension\MediaCategory Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaCategory Provides a fluent interface
      */
     public function setLabel($value)
     {

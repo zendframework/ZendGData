@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\MemberEntry;
+use ZendGData\GApps\MemberEntry;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class MemberEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/GApps/_files/MemberEntryDataSample1.xml',
+                'ZendGData/GApps/_files/MemberEntryDataSample1.xml',
                 true);
         $this->entry = new MemberEntry();
     }

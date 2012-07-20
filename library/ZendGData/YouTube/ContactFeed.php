@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * The YouTube contacts flavor of an Atom Feed with media support
@@ -21,7 +21,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class ContactFeed extends \Zend\GData\Media\Feed
+class ContactFeed extends \ZendGData\Media\Feed
 {
 
     /**
@@ -29,7 +29,7 @@ class ContactFeed extends \Zend\GData\Media\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ContactEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\ContactEntry';
 
     /**
      * Constructs a new YouTube Contact Feed object, to represent

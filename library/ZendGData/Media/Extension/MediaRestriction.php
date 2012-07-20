@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:restriction element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaRestriction extends \Zend\GData\Extension
+class MediaRestriction extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'restriction';
@@ -42,7 +42,7 @@ class MediaRestriction extends \Zend\GData\Extension
      */
     public function __construct($text = null, $relationship = null,  $type = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_text = $text;
         $this->_relationship = $relationship;
@@ -102,7 +102,7 @@ class MediaRestriction extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaRestriction Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaRestriction Provides a fluent interface
      */
     public function setRelationship($value)
     {
@@ -120,7 +120,7 @@ class MediaRestriction extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaRestriction Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaRestriction Provides a fluent interface
      */
     public function setType($value)
     {

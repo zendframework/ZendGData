@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar;
-use Zend\GData\App;
+use ZendGData\Calendar;
+use ZendGData\App;
 
 /**
  * @category   Zend

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Geo\Extension;
+namespace ZendGData\Geo\Extension;
 
 /**
  * Represents the gml:point element used by the Gdata Geo extensions.
@@ -17,7 +17,7 @@ namespace Zend\GData\Geo\Extension;
  * @package    Zend_Gdata
  * @subpackage Geo
  */
-class GmlPoint extends \Zend\GData\Extension
+class GmlPoint extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gml';
@@ -26,19 +26,19 @@ class GmlPoint extends \Zend\GData\Extension
     /**
      * The position represented by this GmlPoint
      *
-     * @var \Zend\GData\Geo\Extension\GmlPos
+     * @var \ZendGData\Geo\Extension\GmlPos
      */
     protected $_pos = null;
 
     /**
      * Create a new instance.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPos $pos (optional) Pos to which this
+     * @param \ZendGData\Geo\Extension\GmlPos $pos (optional) Pos to which this
      *          object should be initialized.
      */
     public function __construct($pos = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Geo::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Geo::$namespaces);
         parent::__construct();
         $this->setPos($pos);
     }
@@ -84,7 +84,7 @@ class GmlPoint extends \Zend\GData\Extension
      * Get the value for this element's pos attribute.
      *
      * @see setPos
-     * @return \Zend\GData\Geo\Extension\GmlPos The requested attribute.
+     * @return \ZendGData\Geo\Extension\GmlPos The requested attribute.
      */
     public function getPos()
     {
@@ -94,8 +94,8 @@ class GmlPoint extends \Zend\GData\Extension
     /**
      * Set the value for this element's distance attribute.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPos $value The desired value for this attribute
-     * @return \Zend\GData\Geo\Extension\GmlPoint Provides a fluent interface
+     * @param \ZendGData\Geo\Extension\GmlPos $value The desired value for this attribute
+     * @return \ZendGData\Geo\Extension\GmlPoint Provides a fluent interface
      */
     public function setPos($value)
     {

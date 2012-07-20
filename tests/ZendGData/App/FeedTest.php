@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App;
+use ZendGData\App;
 use Zend\Http\Header\Etag;
 
 /**
@@ -29,7 +29,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'Zend/GData/App/_files/FeedSample1.xml',
+                'ZendGData/App/_files/FeedSample1.xml',
                 true);
         $this->feed = new App\Feed();
     }
@@ -98,7 +98,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(1, count($this->feed->entry));
         $oldTitle = $this->feed->entry[0]->title->text;
         $newEntry = new App\Entry();
-        $newEntry->setTitle(new \Zend\GData\App\Extension\Title("Foo"));
+        $newEntry->setTitle(new \ZendGData\App\Extension\Title("Foo"));
         $this->feed->addEntry($newEntry);
         $this->assertEquals(2, count($this->feed->entry));
         $this->assertEquals($oldTitle, $this->feed->entry[0]->title->text);
@@ -128,14 +128,14 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         if (!is_object($service)) {
             $this->fail('No feed service received');
         }
-        $this->assertEquals('Zend\GData\App', get_class($service));
+        $this->assertEquals('ZendGData\App', get_class($service));
 
         foreach ($entries as $entry) {
             $service = $entry->getService();
             if (!is_object($service)) {
                 $this->fail('No entry service received');
             }
-            $this->assertEquals('Zend\GData\App', get_class($service));
+            $this->assertEquals('ZendGData\App', get_class($service));
 
         }
 

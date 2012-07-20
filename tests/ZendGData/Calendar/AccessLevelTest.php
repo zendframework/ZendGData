@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar\Extension;
+use ZendGData\Calendar\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class AccessLevelTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->accessLevelText = file_get_contents(
-                'Zend/GData/Calendar/_files/AccessLevelElementSample1.xml',
+                'ZendGData/Calendar/_files/AccessLevelElementSample1.xml',
                 true);
         $this->accessLevel = new Extension\AccessLevel();
     }
@@ -65,12 +65,12 @@ class AccessLevelTest extends \PHPUnit_Framework_TestCase
         $newAccessLevel->transferFromXML($this->accessLevel->saveXML());
         $this->assertEquals(count($newAccessLevel->extensionElements), 0);
         $newAccessLevel->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(count($newAccessLevel->extensionElements), 1);
         $this->assertEquals($newAccessLevel->value, 'freebusy');
 
         /* try constructing using magic factory */
-        $cal = new \Zend\GData\Calendar();
+        $cal = new \ZendGData\Calendar();
         $newAccessLevel2 = $cal->newAccessLevel();
         $newAccessLevel2->transferFromXML($newAccessLevel->saveXML());
         $this->assertEquals(count($newAccessLevel2->extensionElements), 1);

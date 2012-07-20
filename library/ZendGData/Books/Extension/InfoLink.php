@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books\Extension;
+namespace ZendGData\Books\Extension;
 
 /**
  * Describes an info link
@@ -35,7 +35,7 @@ class InfoLink extends
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Books::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
     }
 

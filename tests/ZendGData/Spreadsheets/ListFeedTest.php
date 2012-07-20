@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets\ListFeed;
+use ZendGData\Spreadsheets\ListFeed;
 
 /**
  * @category   Zend
@@ -37,7 +37,7 @@ class ListFeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($this->listFeed->entries));
         $this->assertEquals(2, $this->listFeed->entries->count());
         foreach($this->listFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Spreadsheets\ListEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Spreadsheets\ListEntry', $entry);
         }
 
         $newListFeed = new ListFeed();
@@ -48,7 +48,7 @@ class ListFeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($newListFeed->entries));
         $this->assertEquals(2, $newListFeed->entries->count());
         foreach($newListFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Spreadsheets\ListEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Spreadsheets\ListEntry', $entry);
         }
 
     }

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Docs\Extension;
+namespace ZendGData\Docs\Extension;
 
 /**
  * Represents the gAcl:scope element used by the Docs data API.
@@ -17,7 +17,7 @@ namespace Zend\GData\Docs\Extension;
  * @package    Zend_Gdata
  * @subpackage Gapps
  */
-class ACLScope extends \Zend\GData\Extension
+class ACLScope extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gAcl';
@@ -38,14 +38,14 @@ class ACLScope extends \Zend\GData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new \Zend\GData\Docs\Extension\ACLScope object.
+     * Constructs a new \ZendGData\Docs\Extension\ACLScope object.
      *
      * @param string $type The type of entity to share with
      * @param string $value the entity to share with (usually email address)
      */
     public function __construct($type = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Docs::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Docs::$namespaces);
         parent::__construct();
         $this->_type = $type;
         $this->_value = $value;
@@ -110,7 +110,7 @@ class ACLScope extends \Zend\GData\Extension
     /**
      * Set the value for this element's type attribute.
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Docs\Extension\ACLScope The element being modified.
+     * @return \ZendGData\Docs\Extension\ACLScope The element being modified.
      */
     public function setType($value)
     {
@@ -133,7 +133,7 @@ class ACLScope extends \Zend\GData\Extension
      * Set the value for this element's value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Docs\Extension\ACLScope The element being modified.
+     * @return \ZendGData\Docs\Extension\ACLScope The element being modified.
      */
     public function setValue($value)
     {

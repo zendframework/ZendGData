@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Docs;
+use ZendGData\Docs;
 
 /**
  * @category   Zend
@@ -36,7 +36,7 @@ class DocsOnlineTest extends \PHPUnit_Framework_TestCase
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->docTitle = constant('TESTS_ZEND_GDATA_DOCS_DOCUMENTTITLE');
         $service = Docs::AUTH_SERVICE_NAME;
-        $client = \Zend\GData\ClientLogin::getHttpClient($user, $pass, $service);
+        $client = \ZendGData\ClientLogin::getHttpClient($user, $pass, $service);
         $this->gdata = new Docs($client);
     }
 
@@ -87,7 +87,7 @@ class DocsOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $documentTitle = 'spreadsheet_upload_test.csv';
         $newDocumentEntry = $this->gdata->uploadFile(
-            'Zend/GData/_files/DocsTest.csv', $documentTitle,
+            'ZendGData/_files/DocsTest.csv', $documentTitle,
             $this->gdata->lookupMimeType('CSV'),
             Docs::DOCUMENTS_LIST_FEED_URI);
         $this->assertTrue($newDocumentEntry->title->text === $documentTitle);

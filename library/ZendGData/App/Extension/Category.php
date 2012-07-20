@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Represents the atom:category element
@@ -75,7 +75,7 @@ class Category extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Extension\Category Provides a fluent interface
+     * @return \ZendGData\App\Extension\Category Provides a fluent interface
      */
     public function setTerm($value)
     {
@@ -93,7 +93,7 @@ class Category extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Extension\Category Provides a fluent interface
+     * @return \ZendGData\App\Extension\Category Provides a fluent interface
      */
     public function setScheme($value)
     {
@@ -111,7 +111,7 @@ class Category extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Extension\Category Provides a fluent interface
+     * @return \ZendGData\App\Extension\Category Provides a fluent interface
      */
     public function setLabel($value)
     {

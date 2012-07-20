@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Docs;
+namespace ZendGDataTest\Docs;
 
 use DOMDocument;
-use Zend\GData\Docs\DocumentListFeed;
+use ZendGData\Docs\DocumentListFeed;
 
 /**
  * @category   Zend
@@ -39,7 +39,7 @@ class DocumentListFeedTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(2, count($this->docFeed->entries));
         $this->assertEquals(2, $this->docFeed->entries->count());
         foreach($this->docFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Docs\DocumentListEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Docs\DocumentListEntry', $entry);
         }
 
         $newDocFeed = new DocumentListFeed();
@@ -49,7 +49,7 @@ class DocumentListFeedTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(count($newDocFeed->entries), count($this->docFeed->entries));
         foreach($newDocFeed->entries as $entry) {
-            $this->assertInstanceOf('Zend\GData\Docs\DocumentListEntry', $entry);
+            $this->assertInstanceOf('ZendGData\Docs\DocumentListEntry', $entry);
         }
     }
 

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class ActivityFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'Zend/GData/YouTube/_files/ActivityFeedDataSample1.xml',
+                'ZendGData/YouTube/_files/ActivityFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\ActivityFeed();
         $this->feed->setMajorProtocolVersion(2);

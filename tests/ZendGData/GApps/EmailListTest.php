@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps\Extension;
+use ZendGData\GApps\Extension;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class EmailListTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->emailListText = file_get_contents(
-                'Zend/GData/GApps/_files/EmailListElementSample1.xml',
+                'ZendGData/GApps/_files/EmailListElementSample1.xml',
                 true);
         $this->emailList = new Extension\EmailList();
     }
@@ -67,12 +67,12 @@ class EmailListTest extends \PHPUnit_Framework_TestCase
         $newEmailList->transferFromXML($this->emailList->saveXML());
         $this->assertEquals(0, count($newEmailList->extensionElements));
         $newEmailList->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newEmailList->extensionElements));
         $this->assertEquals("test-name", $newEmailList->name);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GApps();
+        $gdata = new \ZendGData\GApps();
         $newEmailList2 = $gdata->newEmailList();
         $newEmailList2->transferFromXML($newEmailList->saveXML());
         $this->assertEquals(1, count($newEmailList2->extensionElements));

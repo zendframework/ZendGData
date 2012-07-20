@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\DublinCore\Extension;
+namespace ZendGData\DublinCore\Extension;
 
 /**
  * An unambiguous reference to the resource within a given context
@@ -17,7 +17,7 @@ namespace Zend\GData\DublinCore\Extension;
  * @package    Zend_Gdata
  * @subpackage DublinCore
  */
-class Identifier extends \Zend\GData\Extension
+class Identifier extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'dc';
@@ -32,7 +32,7 @@ class Identifier extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\DublinCore::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\DublinCore::$namespaces);
         parent::__construct();
         $this->_text = $value;
     }

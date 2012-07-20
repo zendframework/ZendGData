@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace ZendGData\Calendar\Extension;
 
 /**
  * Specialized Link class for use with Calendar. Enables use of gCal extension elements.
@@ -17,7 +17,7 @@ namespace Zend\GData\Calendar\Extension;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class Link extends \Zend\GData\App\Extension\Link
+class Link extends \ZendGData\App\Extension\Link
 {
 
     protected $_webContent = null;
@@ -30,7 +30,7 @@ class Link extends \Zend\GData\App\Extension\Link
     public function __construct($href = null, $rel = null, $type = null,
             $hrefLang = null, $title = null, $length = null, WebContent $webContent = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Calendar::$namespaces);
         parent::__construct($href, $rel, $type, $hrefLang, $title, $length);
         $this->_webContent = $webContent;
     }

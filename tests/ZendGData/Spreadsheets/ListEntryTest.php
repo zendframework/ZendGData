@@ -8,11 +8,11 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets;
-use Zend\GData\Spreadsheets\Extension;
-use Zend\GData\App;
+use ZendGData\Spreadsheets;
+use ZendGData\Spreadsheets\Extension;
+use ZendGData\App;
 
 /**
  * @category   Zend

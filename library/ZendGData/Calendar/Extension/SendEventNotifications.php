@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar\Extension;
+namespace ZendGData\Calendar\Extension;
 
 /**
  * Data model class to represent an entry's sendEventNotifications
@@ -17,7 +17,7 @@ namespace Zend\GData\Calendar\Extension;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class SendEventNotifications extends \Zend\GData\Extension
+class SendEventNotifications extends \ZendGData\Extension
 {
     protected $_rootNamespace = 'gCal';
     protected $_rootElement = 'sendEventNotifications';
@@ -29,7 +29,7 @@ class SendEventNotifications extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Calendar::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Calendar::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -69,7 +69,7 @@ class SendEventNotifications extends \Zend\GData\Extension
             } elseif ($attribute->nodeValue == "false") {
                 $this->_value = false;
             } else {
-                throw new \Zend\GData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
+                throw new \ZendGData\App\InvalidArgumentException("Expected 'true' or 'false' for gCal:selected#value.");
             }
             break;
         default:

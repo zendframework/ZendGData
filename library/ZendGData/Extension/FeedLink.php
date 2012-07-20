@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Represents the gd:feedLink element
@@ -66,7 +66,7 @@ class FeedLink extends Extension
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('atom') . ':' . 'feed';
-                $feed = new \Zend\GData\Feed();
+                $feed = new \ZendGData\Feed();
                 $feed->transferFromDOM($child);
                 $this->_feed = $feed;
                 break;
@@ -87,7 +87,7 @@ class FeedLink extends Extension
             break;
         case 'readOnly':
             if ($attribute->nodeValue != "true" && $attribute->nodeValue != "false") {
-                throw new \Zend\GData\App\InvalidArgumentException(
+                throw new \ZendGData\App\InvalidArgumentException(
                     "Expected 'true' or 'false' for gCal:selected#value.");
             }
             $this->_readOnly = $attribute->nodeValue;

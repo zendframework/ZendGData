@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:state element used by the YouTube data API
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class State extends \Zend\GData\Extension
+class State extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -37,7 +37,7 @@ class State extends \Zend\GData\Extension
     public function __construct($explanation = null, $name = null,
                                 $reasonCode = null, $helpUrl = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
         $this->_text = $explanation;
         $this->_name = $name;
@@ -109,7 +109,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's name attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \ZendGData\YouTube\Extension\State The element being modified.
      */
     public function setName($value)
     {
@@ -131,7 +131,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's reasonCode attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \ZendGData\YouTube\Extension\State The element being modified.
      */
     public function setReasonCode($value)
     {
@@ -153,7 +153,7 @@ class State extends \Zend\GData\Extension
      * Set the value for this element's helpUrl attribute.
      *
      * @param int $value The desired value for this attribute.
-     * @return \Zend\GData\YouTube\Extension\State The element being modified.
+     * @return \ZendGData\YouTube\Extension\State The element being modified.
      */
     public function setHelpUrl($value)
     {

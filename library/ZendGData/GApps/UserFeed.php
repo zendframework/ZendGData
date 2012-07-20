@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
 /**
  * Data model for a collection of Google Apps user entries, usually
@@ -21,10 +21,10 @@ namespace Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class UserFeed extends \Zend\GData\Feed
+class UserFeed extends \ZendGData\Feed
 {
 
-    protected $_entryClassName = '\Zend\GData\GApps\UserEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\UserFeed';
+    protected $_entryClassName = '\ZendGData\GApps\UserEntry';
+    protected $_feedClassName = '\ZendGData\GApps\UserFeed';
 
 }

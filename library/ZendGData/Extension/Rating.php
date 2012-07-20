@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Implements the gd:rating element
@@ -124,7 +124,7 @@ class Rating extends Extension
      * Set the value for this element's min attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \ZendGData\Extension\Rating The element being modified.
      */
     public function setMin($value)
     {
@@ -146,7 +146,7 @@ class Rating extends Extension
      * Set the value for this element's numRaters attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \ZendGData\Extension\Rating The element being modified.
      */
     public function setNumRaters($value)
     {
@@ -168,7 +168,7 @@ class Rating extends Extension
      * Set the value for this element's average attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \ZendGData\Extension\Rating The element being modified.
      */
     public function setAverage($value)
     {
@@ -190,7 +190,7 @@ class Rating extends Extension
      * Set the value for this element's max attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \ZendGData\Extension\Rating The element being modified.
      */
     public function setMax($value)
     {
@@ -212,7 +212,7 @@ class Rating extends Extension
      * Set the value for this element's value attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\Rating The element being modified.
+     * @return \ZendGData\Extension\Rating The element being modified.
      */
     public function setValue($value)
     {

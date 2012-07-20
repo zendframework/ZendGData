@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * The YouTube inbox feed list flavor of an Atom Feed with media support
@@ -21,7 +21,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class InboxFeed extends \Zend\GData\Media\Feed
+class InboxFeed extends \ZendGData\Media\Feed
 {
 
     /**
@@ -29,7 +29,7 @@ class InboxFeed extends \Zend\GData\Media\Feed
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\InboxEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\InboxEntry';
 
     /**
      * Creates an Inbox feed, representing a list of messages,

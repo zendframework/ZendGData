@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 
 /**
  * A concrete class for working with YouTube user activity entries.
@@ -21,7 +21,7 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class ActivityEntry extends \Zend\GData\Entry
+class ActivityEntry extends \ZendGData\Entry
 {
     const ACTIVITY_CATEGORY_SCHEME =
         'http://gdata.youtube.com/schemas/2007/userevents.cat';
@@ -31,7 +31,7 @@ class ActivityEntry extends \Zend\GData\Entry
      *
      * @var string
      */
-    protected $_entryClassName = 'Zend\GData\YouTube\ActivityEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\ActivityEntry';
 
     /**
      * The ID of the video that was part of the activity
@@ -50,7 +50,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * The rating element that was part of the activity
      *
-     * @var \Zend\GData\Extension\Rating
+     * @var \ZendGData\Extension\Rating
      */
     protected $_rating = null;
 
@@ -113,7 +113,7 @@ class ActivityEntry extends \Zend\GData\Entry
                 $this->_username = $username;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'rating':
-                $rating = new \Zend\GData\Extension\Rating();
+                $rating = new \ZendGData\Extension\Rating();
                 $rating->transferFromDOM($child);
                 $this->_rating = $rating;
                 break;
@@ -126,7 +126,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * Returns the video ID for this activity entry.
      *
-     * @return null|\Zend\GData\YouTube\Extension\VideoId
+     * @return null|\ZendGData\YouTube\Extension\VideoId
      */
     public function getVideoId()
     {
@@ -136,7 +136,7 @@ class ActivityEntry extends \Zend\GData\Entry
     /**
      * Returns the username for this activity entry.
      *
-     * @return null|\Zend\GData\YouTube\Extension\Username
+     * @return null|\ZendGData\YouTube\Extension\Username
      */
     public function getUsername()
     {

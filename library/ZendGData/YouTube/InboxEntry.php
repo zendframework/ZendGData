@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube;
+namespace ZendGData\YouTube;
 
-use Zend\GData\App;
-use Zend\GData\YouTube;
+use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * Represents the YouTube message flavor of an Atom entry
@@ -20,29 +20,29 @@ use Zend\GData\YouTube;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class InboxEntry extends \Zend\GData\Media\Entry
+class InboxEntry extends \ZendGData\Media\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\YouTube\InboxEntry';
+    protected $_entryClassName = 'ZendGData\YouTube\InboxEntry';
 
     /**
      * The gd:comments element of this entry.
      *
-     * @var \Zend\GData\Extension\Comments
+     * @var \ZendGData\Extension\Comments
      */
     protected $_comments = null;
 
     /**
      * The gd:rating element of this entry.
      *
-     * @var \Zend\GData\Extension\Rating
+     * @var \ZendGData\Extension\Rating
      */
     protected $_rating = null;
 
     /**
      * The yt:statistics element of this entry.
      *
-     * @var \Zend\GData\YouTube\Extension\Statistics
+     * @var \ZendGData\YouTube\Extension\Statistics
      */
     protected $_statistics = null;
 
@@ -98,12 +98,12 @@ class InboxEntry extends \Zend\GData\Media\Entry
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
             case $this->lookupNamespace('gd') . ':' . 'comments':
-                $comments = new \Zend\GData\Extension\Comments();
+                $comments = new \ZendGData\Extension\Comments();
                 $comments->transferFromDOM($child);
                 $this->_comments = $comments;
                 break;
             case $this->lookupNamespace('gd') . ':' . 'rating':
-                $rating = new \Zend\GData\Extension\Rating();
+                $rating = new \ZendGData\Extension\Rating();
                 $rating->transferFromDOM($child);
                 $this->_rating = $rating;
                 break;
@@ -121,7 +121,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the gd:rating element for the inbox entry
      *
-     * @return \Zend\GData\Extension\Rating|null
+     * @return \ZendGData\Extension\Rating|null
      */
     public function getRating()
     {
@@ -131,9 +131,9 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the gd:rating element for the inbox entry
      *
-     * @param \Zend\GData\Extension\Rating $rating The rating for the video in
+     * @param \ZendGData\Extension\Rating $rating The rating for the video in
      *        the message
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setRating($rating = null)
     {
@@ -144,7 +144,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the gd:comments element of the inbox entry.
      *
-     * @return \Zend\GData\Extension\Comments|null
+     * @return \ZendGData\Extension\Comments|null
      */
     public function getComments()
     {
@@ -154,8 +154,8 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the gd:comments element for the inbox entry
      *
-     * @param \Zend\GData\Extension\Comments $comments The comments feed link
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @param \ZendGData\Extension\Comments $comments The comments feed link
+     * @return \ZendGData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setComments($comments = null)
     {
@@ -166,7 +166,7 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Get the yt:statistics element for the inbox entry
      *
-     * @return \Zend\GData\YouTube\Extension\Statistics|null
+     * @return \ZendGData\YouTube\Extension\Statistics|null
      */
     public function getStatistics()
     {
@@ -176,9 +176,9 @@ class InboxEntry extends \Zend\GData\Media\Entry
     /**
      * Sets the yt:statistics element for the inbox entry
      *
-     * @param \Zend\GData\YouTube\Extension\Statistics $statistics The
+     * @param \ZendGData\YouTube\Extension\Statistics $statistics The
      *        statistics element for the video in the message
-     * @return \Zend\GData\YouTube\InboxEntry Provides a fluent interface
+     * @return \ZendGData\YouTube\InboxEntry Provides a fluent interface
      */
     public function setStatistics($statistics = null)
     {

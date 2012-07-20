@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Analytics\Extension;
+namespace ZendGData\Analytics\Extension;
 
 /**
  * @category   Zend

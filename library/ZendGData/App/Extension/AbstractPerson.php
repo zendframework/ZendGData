@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Base class for people (currently used by atom:author, atom:contributor)
@@ -74,7 +74,7 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @return \Zend\GData\App\Extension\Name
+     * @return \ZendGData\App\Extension\Name
      */
     public function getName()
     {
@@ -82,8 +82,8 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Name $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @param \ZendGData\App\Extension\Name $value
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setName($value)
     {
@@ -92,7 +92,7 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @return \Zend\GData\App\Extension\Email
+     * @return \ZendGData\App\Extension\Email
      */
     public function getEmail()
     {
@@ -100,8 +100,8 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Email $value
-     * @return \Zend\GData\App\Extension\AbstractPerson Provides a fluent interface
+     * @param \ZendGData\App\Extension\Email $value
+     * @return \ZendGData\App\Extension\AbstractPerson Provides a fluent interface
      */
     public function setEmail($value)
     {
@@ -110,7 +110,7 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @return \Zend\GData\App\Extension\Uri
+     * @return \ZendGData\App\Extension\Uri
      */
     public function getUri()
     {
@@ -118,8 +118,8 @@ abstract class AbstractPerson extends AbstractExtension
     }
 
     /**
-     * @param \Zend\GData\App\Extension\Uri $value
-     * @return \Zend\GData\App\Extension\AbstractPerson Provides a fluent interface
+     * @param \ZendGData\App\Extension\Uri $value
+     * @return \ZendGData\App\Extension\AbstractPerson Provides a fluent interface
      */
     public function setUri($value)
     {

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend
@@ -29,7 +29,7 @@ class NicknameFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $nicknameFeedText = file_get_contents(
-                'Zend/GData/GApps/_files/NicknameFeedDataSample1.xml',
+                'ZendGData/GApps/_files/NicknameFeedDataSample1.xml',
                 true);
         $this->nicknameFeed = new GApps\NicknameFeed($nicknameFeedText);
         $this->emptyNicknameFeed = new GApps\NicknameFeed();

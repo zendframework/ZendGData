@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\TestAsset;
+namespace ZendGDataTest\TestAsset;
 
 /**
  * @category   Zend

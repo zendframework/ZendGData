@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Calendar;
+namespace ZendGData\Calendar;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * Represents a Calendar entry in the Calendar data API meta feed of a user's
@@ -20,7 +20,7 @@ use Zend\GData\Calendar;
  * @package    Zend_Gdata
  * @subpackage Calendar
  */
-class ListEntry extends \Zend\GData\Entry
+class ListEntry extends \ZendGData\Entry
 {
 
     protected $_color = null;
@@ -92,7 +92,7 @@ class ListEntry extends \Zend\GData\Entry
             $this->_timezone = $timezone;
             break;
         case $this->lookupNamespace('gd') . ':' . 'where';
-            $where = new \Zend\GData\Extension\Where();
+            $where = new \ZendGData\Extension\Where();
             $where->transferFromDOM($child);
             $this->_where[] = $where;
             break;
@@ -182,7 +182,7 @@ class ListEntry extends \Zend\GData\Entry
     }
 
     /**
-     * @param \Zend\GData\Extension\Where $value
+     * @param \ZendGData\Extension\Where $value
      * @return ListEntry Provides a fluent interface
      */
     public function setWhere($value)

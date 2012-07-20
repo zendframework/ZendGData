@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\App;
+namespace ZendGDataTest\App;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -208,7 +208,7 @@ class UtilTest extends \PHPUnit_Framework_TestCase
                       3 => null,
                       5 => null,
                       -2 => null);
-       $this->setExpectedException('Zend\GData\app\Exception');
+       $this->setExpectedException('ZendGData\app\Exception');
         App\Util::findGreatestBoundedValue(-1, $data);
     }
 }

@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class AttendeeStatusTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->attendeeStatusText = file_get_contents(
-                'Zend/GData/_files/AttendeeStatusElementSample1.xml',
+                'ZendGData/_files/AttendeeStatusElementSample1.xml',
                 true);
         $this->attendeeStatus = new Extension\AttendeeStatus();
     }
@@ -66,12 +66,12 @@ class AttendeeStatusTest extends \PHPUnit_Framework_TestCase
         $newAttendeeStatus->transferFromXML($this->attendeeStatus->saveXML());
         $this->assertEquals(0, count($newAttendeeStatus->extensionElements));
         $newAttendeeStatus->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newAttendeeStatus->extensionElements));
         $this->assertEquals("http://schemas.google.com/g/2005#event.accepted", $newAttendeeStatus->value);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newAttendeeStatus2 = $gdata->newAttendeeStatus();
         $newAttendeeStatus2->transferFromXML($newAttendeeStatus->saveXML());
         $this->assertEquals(1, count($newAttendeeStatus2->extensionElements));

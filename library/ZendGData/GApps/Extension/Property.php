@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace ZendGData\GApps\Extension;
 
 /**
  * Represents the apps:Property element used by the Apps data API.
@@ -17,7 +17,7 @@ namespace Zend\GData\GApps\Extension;
  * @package    Zend_Gdata
  * @subpackage Gapps
  */
-class Property extends \Zend\GData\Extension
+class Property extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -44,7 +44,7 @@ class Property extends \Zend\GData\Extension
      */
     public function __construct($name = null, $value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct();
         $this->_name = $name;
         $this->_value = $value;

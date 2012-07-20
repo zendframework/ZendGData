@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Books;
+namespace ZendGDataTest\Books;
 
-use Zend\GData\Books;
+use ZendGData\Books;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class VolumeFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'Zend/GData/Books/_files/VolumeFeedDataSample1.xml',
+                'ZendGData/Books/_files/VolumeFeedDataSample1.xml',
                 true);
         $this->feed = new Books\VolumeFeed();
     }

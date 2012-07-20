@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend
@@ -29,7 +29,7 @@ class UserFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $userFeedText = file_get_contents(
-                'Zend/GData/GApps/_files/UserFeedDataSample1.xml',
+                'ZendGData/GApps/_files/UserFeedDataSample1.xml',
                 true);
         $this->userFeed = new GApps\UserFeed($userFeedText);
         $this->emptyUserFeed = new GApps\UserFeed();

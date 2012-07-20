@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Extension;
+namespace ZendGData\Extension;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * Data model class to represent an entry's recurrenceException
@@ -79,7 +79,7 @@ class RecurrenceException extends Extension
         switch ($attribute->localName) {
         case 'specialized':
             if ($attribute->nodeValue != "true" && $attribute->nodeValue != "false") {
-                throw new \Zend\GData\App\InvalidArgumentException(
+                throw new \ZendGData\App\InvalidArgumentException(
                     "Expected 'true' or 'false' for gCal:selected#value.");
             }
             $this->_specialized = $attribute->nodeValue;
@@ -129,7 +129,7 @@ class RecurrenceException extends Extension
      * Set the value for this element's Specialized attribute.
      *
      * @param bool $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\RecurrenceException The element being modified.
+     * @return \ZendGData\Extension\RecurrenceException The element being modified.
      */
     public function setSpecialized($value)
     {
@@ -140,7 +140,7 @@ class RecurrenceException extends Extension
     /**
      * Get the value for this element's EntryLink attribute.
      *
-     * @return \Zend\GData\Extension\EntryLink The requested attribute.
+     * @return \ZendGData\Extension\EntryLink The requested attribute.
      */
     public function getEntryLink()
     {
@@ -150,8 +150,8 @@ class RecurrenceException extends Extension
     /**
      * Set the value for this element's EntryLink attribute.
      *
-     * @param \Zend\GData\Extension\EntryLink $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\RecurrenceException The element being modified.
+     * @param \ZendGData\Extension\EntryLink $value The desired value for this attribute.
+     * @return \ZendGData\Extension\RecurrenceException The element being modified.
      */
     public function setEntryLink($value)
     {
@@ -162,7 +162,7 @@ class RecurrenceException extends Extension
     /**
      * Get the value for this element's Specialized attribute.
      *
-     * @return \Zend\GData\Extension\OriginalEvent The requested attribute.
+     * @return \ZendGData\Extension\OriginalEvent The requested attribute.
      */
     public function getOriginalEvent()
     {
@@ -172,8 +172,8 @@ class RecurrenceException extends Extension
     /**
      * Set the value for this element's Specialized attribute.
      *
-     * @param \Zend\GData\Extension\OriginalEvent $value The desired value for this attribute.
-     * @return \Zend\GData\Extension\RecurrenceException The element being modified.
+     * @param \ZendGData\Extension\OriginalEvent $value The desired value for this attribute.
+     * @return \ZendGData\Extension\RecurrenceException The element being modified.
      */
     public function setOriginalEvent($value)
     {

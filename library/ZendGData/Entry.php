@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 use Zend\Http\Header\Etag;
 
@@ -22,7 +22,7 @@ use Zend\Http\Header\Etag;
 class Entry extends App\MediaEntry
 {
 
-    protected $_entryClassName = '\Zend\GData\Entry';
+    protected $_entryClassName = '\ZendGData\Entry';
 
     public function __construct($element = null)
     {

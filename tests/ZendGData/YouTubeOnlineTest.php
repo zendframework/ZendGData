@@ -10,9 +10,9 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\YouTube;
+use ZendGData\YouTube;
 use Zend\GData;
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -446,7 +446,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         try {
             $insertedSubscription = $yt->insertEntry(
                 $newSubscription, $postUrl,
-                '\Zend\GData\YouTube\SubscriptionEntry');
+                '\ZendGData\YouTube\SubscriptionEntry');
         } catch (App\Exception $e) {
             $message = $e->getMessage();
             $successPosting = false;
@@ -541,7 +541,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         try {
             $insertedSubscription = $yt->insertEntry(
                 $newSubscription, $postUrl,
-                '\Zend\GData\YouTube\SubscriptionEntry');
+                '\ZendGData\YouTube\SubscriptionEntry');
         } catch (App\Exception $e) {
             $message = $e->getMessage();
             $successPosting = false;
@@ -636,7 +636,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         try {
             $insertedSubscription = $yt->insertEntry(
                 $newSubscription, $postUrl,
-                '\Zend\GData\YouTube\SubscriptionEntry');
+                '\ZendGData\YouTube\SubscriptionEntry');
         } catch (App\Exception $e) {
             $message = $e->getMessage();
             $successPosting = false;
@@ -730,7 +730,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         try {
             $insertedSubscription = $yt->insertEntry(
                 $newSubscription, $postUrl,
-                '\Zend\GData\YouTube\SubscriptionEntry');
+                '\ZendGData\YouTube\SubscriptionEntry');
         } catch (App\Exception $e) {
             $message = $e->getMessage();
             $successPosting = false;

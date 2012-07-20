@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\App;
+use ZendGData\App;
 use Zend\Http\Header\Etag;
 
 /**
@@ -24,9 +24,9 @@ class EntryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->entry = new \Zend\GData\Entry();
+        $this->entry = new \ZendGData\Entry();
         $this->entryText = file_get_contents(
-                'Zend/GData/_files/EntrySample1.xml',
+                'ZendGData/_files/EntrySample1.xml',
                 true);
         $this->etagLocalName = 'etag';
         $this->expectedEtag = 'W/"CkcHQH8_fCp7ImA9WxRTGEw."';

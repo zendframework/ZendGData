@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App\Extension;
+namespace ZendGData\App\Extension;
 
 /**
  * Data model for representing an atom:link element
@@ -100,7 +100,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setHref($value)
     {
@@ -118,7 +118,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setRel($value)
     {
@@ -136,7 +136,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setType($value)
     {
@@ -154,7 +154,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setHrefLang($value)
     {
@@ -172,7 +172,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setTitle($value)
     {
@@ -190,7 +190,7 @@ class Link extends AbstractExtension
 
     /**
      * @param string|null $value
-     * @return \Zend\GData\App\Entry Provides a fluent interface
+     * @return \ZendGData\App\Entry Provides a fluent interface
      */
     public function setLength($value)
     {

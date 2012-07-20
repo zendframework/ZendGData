@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Docs;
+namespace ZendGDataTest\Docs;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class QueryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->docQuery = new \Zend\GData\Docs\Query();
+        $this->docQuery = new \ZendGData\Docs\Query();
     }
 
     public function testTitle()

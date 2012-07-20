@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\YouTube\Extension;
+namespace ZendGData\YouTube\Extension;
 
 /**
  * Represents the yt:private element used by the YouTube data API
@@ -17,7 +17,7 @@ namespace Zend\GData\YouTube\Extension;
  * @package    Zend_Gdata
  * @subpackage YouTube
  */
-class PrivateExtension extends \Zend\GData\Extension
+class PrivateExtension extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'yt';
@@ -28,7 +28,7 @@ class PrivateExtension extends \Zend\GData\Extension
      */
     public function __construct()
     {
-        $this->registerAllNamespaces(\Zend\GData\YouTube::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\YouTube::$namespaces);
         parent::__construct();
     }
 

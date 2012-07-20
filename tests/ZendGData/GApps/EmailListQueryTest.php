@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\GApps;
+namespace ZendGDataTest\GApps;
 
 /**
  * @category   Zend
@@ -22,7 +22,7 @@ class EmailListQueryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->query = new \Zend\GData\GApps\EmailListQuery();
+        $this->query = new \ZendGData\GApps\EmailListQuery();
     }
 
     // Test to make sure that URI generation works

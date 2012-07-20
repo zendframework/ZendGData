@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Extension;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class OriginalEventTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->originalEventText = file_get_contents(
-                'Zend/GData/_files/OriginalEventElementSample1.xml',
+                'ZendGData/_files/OriginalEventElementSample1.xml',
                 true);
         $this->originalEvent = new Extension\OriginalEvent();
     }
@@ -68,13 +68,13 @@ class OriginalEventTest extends \PHPUnit_Framework_TestCase
         $newOriginalEvent->transferFromXML($this->originalEvent->saveXML());
         $this->assertEquals(0, count($newOriginalEvent->extensionElements));
         $newOriginalEvent->extensionElements = array(
-                new \Zend\GData\App\Extension\Element('foo', 'atom', null, 'bar'));
+                new \ZendGData\App\Extension\Element('foo', 'atom', null, 'bar'));
         $this->assertEquals(1, count($newOriginalEvent->extensionElements));
         $this->assertEquals("http://www.google.com/calendar/feeds/nobody@gmail.com/private/composite", $newOriginalEvent->href);
         $this->assertEquals("abcdef123456789", $newOriginalEvent->id);
 
         /* try constructing using magic factory */
-        $gdata = new \Zend\GData\GData();
+        $gdata = new \ZendGData\GData();
         $newOriginalEvent2 = $gdata->newOriginalEvent();
         $newOriginalEvent2->transferFromXML($newOriginalEvent->saveXML());
         $this->assertEquals(1, count($newOriginalEvent2->extensionElements));

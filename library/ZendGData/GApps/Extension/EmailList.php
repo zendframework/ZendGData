@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps\Extension;
+namespace ZendGData\GApps\Extension;
 
 /**
  * Represents the apps:emailList element used by the Apps data API. This
@@ -19,7 +19,7 @@ namespace Zend\GData\GApps\Extension;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class EmailList extends \Zend\GData\Extension
+class EmailList extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'apps';
@@ -40,7 +40,7 @@ class EmailList extends \Zend\GData\Extension
      */
     public function __construct($name = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\GApps::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\GApps::$namespaces);
         parent::__construct();
         $this->_name = $name;
     }
@@ -99,7 +99,7 @@ class EmailList extends \Zend\GData\Extension
      * domain, and will be used to form this email list's email address.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\GApps\Extension\EmailList The element being modified.
+     * @return \ZendGData\GApps\Extension\EmailList The element being modified.
      */
     public function setName($value)
     {

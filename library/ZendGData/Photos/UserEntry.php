@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * Data model class for a User Entry.
@@ -25,50 +25,50 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class UserEntry extends \Zend\GData\Entry
+class UserEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Photos\UserEntry';
+    protected $_entryClassName = 'ZendGData\Photos\UserEntry';
 
     /**
      * gphoto:nickname element
      *
-     * @var \Zend\GData\Photos\Extension\Nickname
+     * @var \ZendGData\Photos\Extension\Nickname
      */
     protected $_gphotoNickname = null;
 
     /**
      * gphoto:user element
      *
-     * @var \Zend\GData\Photos\Extension\User
+     * @var \ZendGData\Photos\Extension\User
      */
     protected $_gphotoUser = null;
 
     /**
      * gphoto:thumbnail element
      *
-     * @var \Zend\GData\Photos\Extension\Thumbnail
+     * @var \ZendGData\Photos\Extension\Thumbnail
      */
     protected $_gphotoThumbnail = null;
 
     /**
      * gphoto:quotalimit element
      *
-     * @var \Zend\GData\Photos\Extension\QuotaLimit
+     * @var \ZendGData\Photos\Extension\QuotaLimit
      */
     protected $_gphotoQuotaLimit = null;
 
     /**
      * gphoto:quotacurrent element
      *
-     * @var \Zend\GData\Photos\Extension\QuotaCurrent
+     * @var \ZendGData\Photos\Extension\QuotaCurrent
      */
     protected $_gphotoQuotaCurrent = null;
 
     /**
      * gphoto:maxPhotosPerAlbum element
      *
-     * @var \Zend\GData\Photos\Extension\MaxPhotosPerAlbum
+     * @var \ZendGData\Photos\Extension\MaxPhotosPerAlbum
      */
     protected $_gphotoMaxPhotosPerAlbum = null;
 
@@ -83,7 +83,7 @@ class UserEntry extends \Zend\GData\Entry
         $this->registerAllNamespaces(Photos::$namespaces);
         parent::__construct($element);
 
-        $category = new \Zend\GData\App\Extension\Category(
+        $category = new \ZendGData\App\Extension\Category(
             'http://schemas.google.com/photos/2007#user',
             'http://schemas.google.com/g/2005#kind');
         $this->setCategory(array($category));
@@ -184,7 +184,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:nickname attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Nickname The element being modified.
+     * @return \ZendGData\Photos\Extension\Nickname The element being modified.
      */
     public function setGphotoNickname($value)
     {
@@ -207,7 +207,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:thumbnail attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Thumbnail The element being modified.
+     * @return \ZendGData\Photos\Extension\Thumbnail The element being modified.
      */
     public function setGphotoThumbnail($value)
     {
@@ -230,7 +230,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:quotacurrent attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\QuotaCurrent The element being modified.
+     * @return \ZendGData\Photos\Extension\QuotaCurrent The element being modified.
      */
     public function setGphotoQuotaCurrent($value)
     {
@@ -253,7 +253,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:quotalimit attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\QuotaLimit The element being modified.
+     * @return \ZendGData\Photos\Extension\QuotaLimit The element being modified.
      */
     public function setGphotoQuotaLimit($value)
     {
@@ -276,7 +276,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:maxPhotosPerAlbum attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\MaxPhotosPerAlbum The element being modified.
+     * @return \ZendGData\Photos\Extension\MaxPhotosPerAlbum The element being modified.
      */
     public function setGphotoMaxPhotosPerAlbum($value)
     {
@@ -299,7 +299,7 @@ class UserEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:user attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\User The element being modified.
+     * @return \ZendGData\Photos\Extension\User The element being modified.
      */
     public function setGphotoUser($value)
     {

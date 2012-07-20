@@ -11,7 +11,7 @@
 namespace ZendTest\GData;
 
 use Zend\GData;
-use Zend\GData\GApps;
+use ZendGData\GApps;
 
 /**
  * @category   Zend

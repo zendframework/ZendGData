@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the Google Photos Data API.
@@ -97,8 +97,8 @@ class Photos extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Photos');
-        $this->registerPackage('Zend\GData\Photos\Extension');
+        $this->registerPackage('ZendGData\Photos');
+        $this->registerPackage('ZendGData\Photos\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
     }
@@ -110,9 +110,9 @@ class Photos extends GData
      * @param string $userName The userName of interest
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query. If not provided, a default URL will be used instead.
-     * @return \Zend\GData\Photos\UserFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\UserFeed
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getUserFeed($userName = null, $location = null)
     {
@@ -139,7 +139,7 @@ class Photos extends GData
                 self::DEFAULT_USER;
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Photos\UserFeed');
+        return parent::getFeed($uri, 'ZendGData\Photos\UserFeed');
     }
 
     /**
@@ -147,9 +147,9 @@ class Photos extends GData
      * objects.
      *
      * @param mixed $location (optional) The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\AlbumFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\AlbumFeed
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getAlbumFeed($location = null)
     {
@@ -164,7 +164,7 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Photos\AlbumFeed');
+        return parent::getFeed($uri, 'ZendGData\Photos\AlbumFeed');
     }
 
     /**
@@ -174,9 +174,9 @@ class Photos extends GData
      * @param mixed $location (optional) The location for the feed, as a URL
      *          or Query. If not specified, the community search feed will
      *          be returned instead.
-     * @return \Zend\GData\Photos\PhotoFeed
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\PhotoFeed
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getPhotoFeed($location = null)
     {
@@ -192,16 +192,16 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Photos\PhotoFeed');
+        return parent::getFeed($uri, 'ZendGData\Photos\PhotoFeed');
     }
 
     /**
      * Retreive a single UserEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\UserEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\UserEntry
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getUserEntry($location)
     {
@@ -216,16 +216,16 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\Photos\UserEntry');
+        return parent::getEntry($uri, '\ZendGData\Photos\UserEntry');
     }
 
     /**
      * Retreive a single AlbumEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\AlbumEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\AlbumEntry
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getAlbumEntry($location)
     {
@@ -240,16 +240,16 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Photos\AlbumEntry');
+        return parent::getEntry($uri, 'ZendGData\Photos\AlbumEntry');
     }
 
     /**
      * Retreive a single PhotoEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\PhotoEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\PhotoEntry
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getPhotoEntry($location)
     {
@@ -264,16 +264,16 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Photos\PhotoEntry');
+        return parent::getEntry($uri, 'ZendGData\Photos\PhotoEntry');
     }
 
     /**
      * Retreive a single TagEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\TagEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\TagEntry
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getTagEntry($location)
     {
@@ -288,16 +288,16 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Photos\TagEntry');
+        return parent::getEntry($uri, 'ZendGData\Photos\TagEntry');
     }
 
     /**
      * Retreive a single CommentEntry object.
      *
      * @param mixed $location The location for the feed, as a URL or Query.
-     * @return \Zend\GData\Photos\CommentEntry
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @return \ZendGData\Photos\CommentEntry
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function getCommentEntry($location)
     {
@@ -312,21 +312,21 @@ class Photos extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Photos\CommentEntry');
+        return parent::getEntry($uri, 'ZendGData\Photos\CommentEntry');
     }
 
     /**
      * Create a new album from a AlbumEntry.
      *
-     * @param \Zend\GData\Photos\AlbumEntry $album The album entry to
+     * @param \ZendGData\Photos\AlbumEntry $album The album entry to
      *          insert.
      * @param string $url (optional) The URI that the album should be
      *          uploaded to. If null, the default album creation URI for
      *          this domain will be used.
-     * @return \Zend\GData\Photos\AlbumEntry The inserted album entry as
+     * @return \ZendGData\Photos\AlbumEntry The inserted album entry as
      *          returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function insertAlbumEntry($album, $uri = null)
     {
@@ -335,21 +335,21 @@ class Photos extends GData
                 self::DEFAULT_PROJECTION . '/' . self::USER_PATH . '/' .
                 self::DEFAULT_USER;
         }
-        $newEntry = $this->insertEntry($album, $uri, 'Zend\GData\Photos\AlbumEntry');
+        $newEntry = $this->insertEntry($album, $uri, 'ZendGData\Photos\AlbumEntry');
         return $newEntry;
     }
 
     /**
      * Create a new photo from a PhotoEntry.
      *
-     * @param \Zend\GData\Photos\PhotoEntry $photo The photo to insert.
+     * @param \ZendGData\Photos\PhotoEntry $photo The photo to insert.
      * @param string $url The URI that the photo should be uploaded
      *          to. Alternatively, an AlbumEntry can be provided and the
      *          photo will be added to that album.
-     * @return \Zend\GData\Photos\PhotoEntry The inserted photo entry
+     * @return \ZendGData\Photos\PhotoEntry The inserted photo entry
      *          as returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function insertPhotoEntry($photo, $uri = null)
     {
@@ -360,21 +360,21 @@ class Photos extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($photo, $uri, 'Zend\GData\Photos\PhotoEntry');
+        $newEntry = $this->insertEntry($photo, $uri, 'ZendGData\Photos\PhotoEntry');
         return $newEntry;
     }
 
     /**
      * Create a new tag from a TagEntry.
      *
-     * @param \Zend\GData\Photos\TagEntry $tag The tag entry to insert.
+     * @param \ZendGData\Photos\TagEntry $tag The tag entry to insert.
      * @param string $url The URI where the tag should be
      *          uploaded to. Alternatively, a PhotoEntry can be provided and
      *          the tag will be added to that photo.
-     * @return \Zend\GData\Photos\TagEntry The inserted tag entry as returned
+     * @return \ZendGData\Photos\TagEntry The inserted tag entry as returned
      *          by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function insertTagEntry($tag, $uri = null)
     {
@@ -385,22 +385,22 @@ class Photos extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($tag, $uri, 'Zend\GData\Photos\TagEntry');
+        $newEntry = $this->insertEntry($tag, $uri, 'ZendGData\Photos\TagEntry');
         return $newEntry;
     }
 
     /**
      * Create a new comment from a CommentEntry.
      *
-     * @param \Zend\GData\Photos\CommentEntry $comment The comment entry to
+     * @param \ZendGData\Photos\CommentEntry $comment The comment entry to
      *          insert.
      * @param string $url The URI where the comment should be uploaded to.
      *          Alternatively, a PhotoEntry can be provided and
      *          the comment will be added to that photo.
-     * @return \Zend\GData\Photos\CommentEntry The inserted comment entry
+     * @return \ZendGData\Photos\CommentEntry The inserted comment entry
      *          as returned by the server.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function insertCommentEntry($comment, $uri = null)
     {
@@ -411,20 +411,20 @@ class Photos extends GData
             throw new App\InvalidArgumentException(
                     'URI must not be null');
         }
-        $newEntry = $this->insertEntry($comment, $uri, 'Zend\GData\Photos\CommentEntry');
+        $newEntry = $this->insertEntry($comment, $uri, 'ZendGData\Photos\CommentEntry');
         return $newEntry;
     }
 
     /**
      * Delete an AlbumEntry.
      *
-     * @param \Zend\GData\Photos\AlbumEntry $album The album entry to
+     * @param \ZendGData\Photos\AlbumEntry $album The album entry to
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
      * @return void.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function deleteAlbumEntry($album, $catch)
     {
@@ -447,13 +447,13 @@ class Photos extends GData
     /**
      * Delete a PhotoEntry.
      *
-     * @param \Zend\GData\Photos\PhotoEntry $photo The photo entry to
+     * @param \ZendGData\Photos\PhotoEntry $photo The photo entry to
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
      * @return void.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function deletePhotoEntry($photo, $catch)
     {
@@ -476,13 +476,13 @@ class Photos extends GData
     /**
      * Delete a CommentEntry.
      *
-     * @param \Zend\GData\Photos\CommentEntry $comment The comment entry to
+     * @param \ZendGData\Photos\CommentEntry $comment The comment entry to
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
      * @return void.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function deleteCommentEntry($comment, $catch)
     {
@@ -505,13 +505,13 @@ class Photos extends GData
     /**
      * Delete a TagEntry.
      *
-     * @param \Zend\GData\Photos\TagEntry $tag The tag entry to
+     * @param \ZendGData\Photos\TagEntry $tag The tag entry to
      *          delete.
      * @param boolean $catch Whether to catch an exception when
      *            modified and re-delete or throw
      * @return void.
-     * @throws \Zend\GData\App\Exception
-     * @throws \Zend\GData\App\HttpException
+     * @throws \ZendGData\App\Exception
+     * @throws \ZendGData\App\HttpException
      */
     public function deleteTagEntry($tag, $catch)
     {

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the services which use the EXIF extensions
@@ -39,8 +39,8 @@ class EXIF extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\EXIF');
-        $this->registerPackage('Zend\GData\EXIF\Extension');
+        $this->registerPackage('ZendGData\EXIF');
+        $this->registerPackage('ZendGData\EXIF\Extension');
         parent::__construct($client, $applicationId);
     }
 

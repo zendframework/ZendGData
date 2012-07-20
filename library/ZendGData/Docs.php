@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Service class for interacting with the Google Document List data API
@@ -51,7 +51,7 @@ class Docs extends GData
       'PPS'=>'application/vnd.ms-powerpoint');
 
     /**
-    * Namespaces used for \Zend\GData\Docs
+    * Namespaces used for \ZendGData\Docs
     *
     * @var array
     */
@@ -68,7 +68,7 @@ class Docs extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend\GData\Docs');
+        $this->registerPackage('ZendGData\Docs');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
     }
@@ -92,7 +92,7 @@ class Docs extends GData
      * Retreive feed object containing entries for the user's documents.
      *
      * @param mixed $location The location for the feed, as a URL or Query
-     * @return \Zend\GData\Docs\DocumentListFeed
+     * @return \ZendGData\Docs\DocumentListFeed
      */
     public function getDocumentListFeed($location = null)
     {
@@ -103,14 +103,14 @@ class Docs extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Docs\DocumentListFeed');
+        return parent::getFeed($uri, 'ZendGData\Docs\DocumentListFeed');
     }
 
     /**
      * Retreive entry object representing a single document.
      *
      * @param mixed $location The location for the entry, as a URL or Query
-     * @return \Zend\GData\Docs\DocumentListEntry
+     * @return \ZendGData\Docs\DocumentListEntry
      */
     public function getDocumentListEntry($location = null)
     {
@@ -122,7 +122,7 @@ class Docs extends GData
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, 'Zend\GData\Docs\DocumentListEntry');
+        return parent::getEntry($uri, 'ZendGData\Docs\DocumentListEntry');
     }
 
     /**
@@ -134,7 +134,7 @@ class Docs extends GData
      *     dcmg89gw_62hfjj8m, pKq0CzjiF3YmGd0AIlHKqeg
      * @param string $docType The type of the document as used in the Google
      *     Document List URLs. Examples: document, spreadsheet, presentation
-     * @return \Zend\GData\Docs\DocumentListEntry
+     * @return \ZendGData\Docs\DocumentListEntry
      */
     public function getDoc($docId, $docType)
     {
@@ -195,7 +195,7 @@ class Docs extends GData
      * @param string $uri (optional) The URL to which the upload should be
      *         made.
      *         Example: 'https://docs.google.com/feeds/documents/private/full'.
-     * @return \Zend\GData\Docs\DocumentListEntry The entry for the newly
+     * @return \ZendGData\Docs\DocumentListEntry The entry for the newly
      *         created Google Document.
      */
     public function uploadFile($fileLocation, $title=null, $mimeType=null,
@@ -239,7 +239,7 @@ class Docs extends GData
      * @param string $folderName The folder name to create
      * @param string|null $folderResourceId The parent folder to create it in
      *        ("folder%3Amy_parent_folder")
-     * @return \Zend\GData\Entry The folder entry created.
+     * @return \ZendGData\Entry The folder entry created.
      * @todo ZF-8732: This should return a *subclass* of Zend_Gdata_Entry, but
      *       the appropriate type doesn't exist yet.
      */
@@ -268,19 +268,19 @@ class Docs extends GData
      * @param string|null $email
      * @param string $scopeType
      * @param string $role
-     * @return \Zend\GData\App\Entry
+     * @return \ZendGData\App\Entry
      */
     public function setDocumentACL($documentId, $email = NULL, $scopeType = 'default', $role = 'reader')
     {
-        $category = new \Zend\GData\App\Extension\Category(self::DOCUMENT_ACL_TERM, self::DOCUMENTS_ACL_SCHEMEA);
+        $category = new \ZendGData\App\Extension\Category(self::DOCUMENT_ACL_TERM, self::DOCUMENTS_ACL_SCHEMEA);
 
-        $entry = new \Zend\GData\Docs\ACLEntry();
+        $entry = new \ZendGData\Docs\ACLEntry();
 
         $entry->setCategory(array($category));
 
-        $entry->setScope(new \Zend\GData\Docs\Extension\ACLScope($scopeType, $email));
+        $entry->setScope(new \ZendGData\Docs\Extension\ACLScope($scopeType, $email));
 
-        $entry->setRole(new \Zend\GData\Docs\Extension\ACLRole($role));
+        $entry->setRole(new \ZendGData\Docs\Extension\ACLRole($role));
 
         $uri = self::DOCUMENT_ACL_URI . $documentId . '/acl';
 
@@ -293,18 +293,18 @@ class Docs extends GData
     /**
      * Inserts an entry to a given URI and returns the response as an Entry.
      *
-     * @param mixed  $data The \Zend\GData\Docs\DocumentListEntry or media
+     * @param mixed  $data The \ZendGData\Docs\DocumentListEntry or media
      *         source to post. If it is a DocumentListEntry, the mediaSource
      *         should already have been set. If $data is a mediaSource, it
      *         should have the correct slug header and mime type.
      * @param string $uri POST URI
      * @param string $className (optional) The class of entry to be returned.
      *         The default is a 'Zend_Gdata_Docs_DocumentListEntry'.
-     * @return \Zend\GData\Docs\DocumentListEntry The entry returned by the
+     * @return \ZendGData\Docs\DocumentListEntry The entry returned by the
      *     service after insertion.
      */
     public function insertDocument($data, $uri,
-        $className='Zend\GData\Docs\DocumentListEntry')
+        $className='ZendGData\Docs\DocumentListEntry')
     {
         return $this->insertEntry($data, $uri, $className);
     }

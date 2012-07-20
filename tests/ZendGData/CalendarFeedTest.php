@@ -10,8 +10,8 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Calendar;
-use Zend\GData\App\Extension;
+use ZendGData\Calendar;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -30,7 +30,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $listFeedText = file_get_contents(
-                'Zend/GData/Calendar/_files/ListFeedSample1.xml',
+                'ZendGData/Calendar/_files/ListFeedSample1.xml',
                 true);
         $this->listFeed = new Calendar\ListFeed($listFeedText);
     }
@@ -235,7 +235,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have an color object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getColor() instanceof \Zend\GData\Calendar\Extension\Color);
+            $this->assertTrue($entry->getColor() instanceof \ZendGData\Calendar\Extension\Color);
         }
 
         // Assert one of the entry's Titles
@@ -253,7 +253,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have an accessLevel object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getAccessLevel() instanceof \Zend\GData\Calendar\Extension\AccessLevel);
+            $this->assertTrue($entry->getAccessLevel() instanceof \ZendGData\Calendar\Extension\AccessLevel);
         }
 
         // Assert one of the entry's Titles
@@ -271,7 +271,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have an accessLevel object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getTimezone() instanceof \Zend\GData\Calendar\Extension\Timezone);
+            $this->assertTrue($entry->getTimezone() instanceof \ZendGData\Calendar\Extension\Timezone);
         }
 
         // Assert one of the entry's Titles
@@ -289,7 +289,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have an accessLevel object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getHidden() instanceof \Zend\GData\Calendar\Extension\Hidden);
+            $this->assertTrue($entry->getHidden() instanceof \ZendGData\Calendar\Extension\Hidden);
         }
 
         // Assert one of the entry's Titles
@@ -307,7 +307,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
 
         // Assert that all entry's have a selected object
         foreach ($feed as $entry) {
-            $this->assertTrue($entry->getSelected() instanceof \Zend\GData\Calendar\Extension\Selected);
+            $this->assertTrue($entry->getSelected() instanceof \ZendGData\Calendar\Extension\Selected);
         }
 
         // Assert one of the entry's Titles
@@ -324,7 +324,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->listFeed;
 
         // Assert that the feed's startIndex is correct
-        $this->assertTrue($feed->getStartIndex() instanceof \Zend\GData\Extension\OpenSearchStartIndex);
+        $this->assertTrue($feed->getStartIndex() instanceof \ZendGData\Extension\OpenSearchStartIndex);
         $this->verifyProperty2($feed, "startIndex", "text", "1");
     }
 
@@ -339,7 +339,7 @@ class CalendarFeedTest extends \PHPUnit_Framework_TestCase
         // Assert one of the entry's where values
         $entry = $feed[1];
         $this->assertEquals($entry->getWhere(), $entry->where);
-        $this->assertTrue($entry->where[0] instanceof \Zend\GData\Extension\Where);
+        $this->assertTrue($entry->where[0] instanceof \ZendGData\Extension\Where);
         $this->assertEquals("Palo Alto, California", $entry->where[0]->getValueString());
     }
 

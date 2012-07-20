@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos;
+namespace ZendGData\Photos;
 
-use Zend\GData\Photos;
+use ZendGData\Photos;
 
 /**
  * Data model class for a Tag Entry.
@@ -25,10 +25,10 @@ use Zend\GData\Photos;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class TagEntry extends \Zend\GData\Entry
+class TagEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Photos\TagEntry';
+    protected $_entryClassName = 'ZendGData\Photos\TagEntry';
 
     protected $_gphotoWeight = null;
 
@@ -43,7 +43,7 @@ class TagEntry extends \Zend\GData\Entry
         $this->registerAllNamespaces(Photos::$namespaces);
         parent::__construct($element);
 
-        $category = new \Zend\GData\App\Extension\Category(
+        $category = new \ZendGData\App\Extension\Category(
             'http://schemas.google.com/photos/2007#tag',
             'http://schemas.google.com/g/2005#kind');
         $this->setCategory(array($category));
@@ -104,7 +104,7 @@ class TagEntry extends \Zend\GData\Entry
      * Set the value for this element's gphoto:weight attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return \Zend\GData\Photos\Extension\Weight The element being modified.
+     * @return \ZendGData\Photos\Extension\Weight The element being modified.
      */
     public function setGphotoWeight($value)
     {

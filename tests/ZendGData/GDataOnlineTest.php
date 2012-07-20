@@ -11,7 +11,7 @@
 namespace ZendTest\GData;
 
 use Zend\GData;
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * @category   Zend
@@ -177,7 +177,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $gd = new GData\GData($client);
 
         // setup the photo content
-        $fs = $gd->newMediaFileSource('Zend/GData/_files/testImage.jpg');
+        $fs = $gd->newMediaFileSource('ZendGData/_files/testImage.jpg');
         $fs->setContentType('image/jpeg');
 
 
@@ -242,7 +242,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 
         $feed = $gd->getFeed(
             'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured',
-            '\Zend\GData\App\Feed');
+            '\ZendGData\App\Feed');
 
         $this->assertNotNull($feed);
         $this->assertTrue($feed instanceof App\Feed);
@@ -273,7 +273,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 
         $feed = $gd->getFeed(
             'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured',
-            '\Zend\GData\App\Feed');
+            '\ZendGData\App\Feed');
 
         $nextFeed = $feed->getNextFeed();
 

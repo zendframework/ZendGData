@@ -28,7 +28,7 @@ class MediaMimeStreamTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->locationOfFakeBinary =
-            'Zend/GData/_files/MediaMimeStreamSample1.txt';
+            'ZendGData/_files/MediaMimeStreamSample1.txt';
         $this->smallXMLString = '<xml><entry><title>foo</title></entry>';
         $this->testMediaType = 'video/mpeg';
         $this->mediaMimeStream = new GData\MediaMimeStream(
@@ -43,7 +43,7 @@ class MediaMimeStreamTest extends \PHPUnit_Framework_TestCase
         try {
             $mediaMimeStream = new GData\MediaMimeStream(
                 $this->smallXMLString, '/non/existant/path/to/nowhere');
-        } catch (\Zend\GData\App\IOException $e) {
+        } catch (\ZendGData\App\IOException $e) {
             $exceptionThrown = true;
         }
         $this->assertTrue($exceptionThrown, 'Was expecting an exception on ' .

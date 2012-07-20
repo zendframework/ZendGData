@@ -11,10 +11,10 @@
 namespace ZendTest\GData;
 
 use Zend\GData;
-use Zend\GData\App;
-use Zend\GData\App\Extension;
+use ZendGData\App;
+use ZendGData\App\Extension;
 use Zend\Http\Header\Etag;
-use ZendTest\GData\TestAsset;
+use ZendGDataTest\TestAsset;
 
 /**
  * @category   Zend
@@ -35,28 +35,28 @@ class AppTest extends \PHPUnit_Framework_TestCase
     public $httpFeedSampleWithoutVersion;
     /** @var \Zend\Http\Client\Adapter\AdapterInterface */
     public $adapter;
-    /** @var \Zend\GData\HttpClient */
+    /** @var \ZendGData\HttpClient */
     public $client;
     /** @var App */
     public $service;
 
     public function setUp()
     {
-        $this->fileName = 'Zend/GData/App/_files/FeedSample1.xml';
+        $this->fileName = 'ZendGData/App/_files/FeedSample1.xml';
         $this->expectedEtagValue = 'W/"CkcHQH8_fCp7ImA9WxRTGEw."';
         $this->expectedMajorProtocolVersion = 1;
         $this->expectedMinorProtocolVersion = 2;
         $this->httpEntrySample = file_get_contents(
-                'Zend/GData/_files/AppSample1.txt',
+                'ZendGData/_files/AppSample1.txt',
                 true);
         $this->httpEntrySampleWithoutVersion = file_get_contents(
-                'Zend/GData/_files/AppSample2.txt',
+                'ZendGData/_files/AppSample2.txt',
                 true);
         $this->httpFeedSample = file_get_contents(
-                'Zend/GData/_files/AppSample3.txt',
+                'ZendGData/_files/AppSample3.txt',
                 true);
         $this->httpFeedSampleWithoutVersion = file_get_contents(
-                'Zend/GData/_files/AppSample4.txt',
+                'ZendGData/_files/AppSample4.txt',
                 true);
 
         $this->adapter = new TestAsset\MockHttpClient();
@@ -68,7 +68,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
     public function testImportFile()
     {
         $feed = App::importFile($this->fileName,
-                'Zend\GData\App\Feed', true);
+                'ZendGData\App\Feed', true);
         $this->assertEquals('dive into mark', $feed->title->text);
     }
 
@@ -94,19 +94,19 @@ class AppTest extends \PHPUnit_Framework_TestCase
 
     public function testMajorProtocolVersionCannotBeLessThanOne()
     {
-        $this->setExpectedException('\Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('\ZendGData\App\InvalidArgumentException');
         $this->service->setMajorProtocolVersion(0);
     }
 
     public function testMajorProtocolVersionCannotBeNull()
     {
-        $this->setExpectedException('\Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('\ZendGData\App\InvalidArgumentException');
         $this->service->setMajorProtocolVersion(null);
     }
 
     public function testMinorProtocolVersionCannotBeLessThanZero()
     {
-        $this->setExpectedException('\Zend\GData\App\InvalidArgumentException');
+        $this->setExpectedException('\ZendGData\App\InvalidArgumentException');
         $this->service->setMinorProtocolVersion(-1);
     }
 
@@ -359,7 +359,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
         $entry->setEtag($etag);
         $newEntry = $this->service->insertEntry($entry,
                 'http://www.example.com',
-                '\Zend\GData\App\Entry',
+                '\ZendGData\App\Entry',
                 array('If-Match' => $etagOverride));
         $headers = $this->adapter->popRequest()->headers;
         $found = false;
@@ -380,7 +380,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
         $entry->setEtag($etag);
         $newEntry = $this->service->insertEntry($entry,
                 'http://www.example.com',
-                '\Zend\GData\App\Entry',
+                '\ZendGData\App\Entry',
                 array('If-None-Match' => $etagOverride));
         $headers = $this->adapter->popRequest()->headers;
         $found = false;
@@ -401,7 +401,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
         $entry->setEtag($etag);
         $newEntry = $this->service->updateEntry($entry,
                 'http://www.example.com',
-                '\Zend\GData\App\Entry',
+                '\ZendGData\App\Entry',
                 array('If-Match' => $etagOverride));
         $headers = $this->adapter->popRequest()->headers;
         $found = false;
@@ -422,7 +422,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
         $entry->setEtag($etag);
         $newEntry = $this->service->updateEntry($entry,
                 'http://www.example.com',
-                '\Zend\GData\App\Entry',
+                '\ZendGData\App\Entry',
                 array('If-None-Match' => $etagOverride));
         $headers = $this->adapter->popRequest()->headers;
         $found = false;

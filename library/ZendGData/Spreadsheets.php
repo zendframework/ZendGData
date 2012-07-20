@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 /**
  * Gdata Spreadsheets
@@ -48,8 +48,8 @@ class Spreadsheets extends GData
      */
     public function __construct($client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('\Zend\GData\Spreadsheets');
-        $this->registerPackage('\Zend\GData\Spreadsheets\Extension');
+        $this->registerPackage('\ZendGData\Spreadsheets');
+        $this->registerPackage('\ZendGData\Spreadsheets\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
         $this->_server = 'spreadsheets.google.com';
@@ -59,7 +59,7 @@ class Spreadsheets extends GData
      * Gets a spreadsheet feed.
      *
      * @param mixed $location A DocumentQuery or a string URI specifying the feed location.
-     * @return \Zend\GData\Spreadsheets\SpreadsheetFeed
+     * @return \ZendGData\Spreadsheets\SpreadsheetFeed
      */
     public function getSpreadsheetFeed($location = null)
     {
@@ -74,7 +74,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\SpreadsheetFeed');
+        return parent::getFeed($uri, 'ZendGData\Spreadsheets\SpreadsheetFeed');
     }
 
     /**
@@ -94,14 +94,14 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\SpreadsheetEntry');
+        return parent::getEntry($uri, 'ZendGData\Spreadsheets\SpreadsheetEntry');
     }
 
     /**
      * Gets a worksheet feed.
      *
      * @param mixed $location A DocumentQuery, SpreadsheetEntry, or a string URI
-     * @return \Zend\GData\Spreadsheets\WorksheetFeed The feed of worksheets
+     * @return \ZendGData\Spreadsheets\WorksheetFeed The feed of worksheets
      */
     public function getWorksheetFeed($location)
     {
@@ -116,7 +116,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, '\Zend\GData\Spreadsheets\WorksheetFeed');
+        return parent::getFeed($uri, '\ZendGData\Spreadsheets\WorksheetFeed');
     }
 
     /**
@@ -136,7 +136,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\WorksheetEntry');
+        return parent::getEntry($uri, 'ZendGData\Spreadsheets\WorksheetEntry');
     }
 
     /**
@@ -154,7 +154,7 @@ class Spreadsheets extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\CellFeed');
+        return parent::getFeed($uri, 'ZendGData\Spreadsheets\CellFeed');
     }
 
     /**
@@ -171,7 +171,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\CellEntry');
+        return parent::getEntry($uri, 'ZendGData\Spreadsheets\CellEntry');
     }
 
     /**
@@ -190,7 +190,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getFeed($uri, 'Zend\GData\Spreadsheets\ListFeed');
+        return parent::getFeed($uri, 'ZendGData\Spreadsheets\ListFeed');
     }
 
     /**
@@ -207,7 +207,7 @@ class Spreadsheets extends GData
             $uri = $location;
         }
 
-        return parent::getEntry($uri, 'Zend\GData\Spreadsheets\ListEntry');
+        return parent::getEntry($uri, 'ZendGData\Spreadsheets\ListEntry');
     }
 
     /**
@@ -260,7 +260,7 @@ class Spreadsheets extends GData
         $feed = $this->getListFeed($query);
         $editLink = $feed->getLink('http://schemas.google.com/g/2005#post');
 
-        return $this->insertEntry($newEntry->saveXML(), $editLink->href, 'Zend\GData\Spreadsheets\ListEntry');
+        return $this->insertEntry($newEntry->saveXML(), $editLink->href, 'ZendGData\Spreadsheets\ListEntry');
     }
 
     /**
@@ -362,7 +362,7 @@ class Spreadsheets extends GData
      * Alias for getSpreadsheetFeed
      *
      * @param mixed $location A DocumentQuery or a string URI specifying the feed location.
-     * @return \Zend\GData\Spreadsheets\SpreadsheetFeed
+     * @return \ZendGData\Spreadsheets\SpreadsheetFeed
      */
     public function getSpreadsheets($location = null)
     {

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Media\Extension;
+namespace ZendGData\Media\Extension;
 
 /**
  * Represents the media:rating element
@@ -17,7 +17,7 @@ namespace Zend\GData\Media\Extension;
  * @package    Zend_Gdata
  * @subpackage Media
  */
-class MediaRating extends \Zend\GData\Extension
+class MediaRating extends \ZendGData\Extension
 {
 
     protected $_rootElement = 'rating';
@@ -36,7 +36,7 @@ class MediaRating extends \Zend\GData\Extension
      */
     public function __construct($text = null, $scheme = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Media::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Media::$namespaces);
         parent::__construct();
         $this->_scheme = $scheme;
         $this->_text = $text;
@@ -89,7 +89,7 @@ class MediaRating extends \Zend\GData\Extension
 
     /**
      * @param string $value
-     * @return \Zend\GData\Media\Extension\MediaRating Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaRating Provides a fluent interface
      */
     public function setScheme($value)
     {

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Spreadsheets;
+namespace ZendGDataTest\Spreadsheets;
 
-use Zend\GData\Spreadsheets\Extension;
+use ZendGData\Spreadsheets\Extension;
 
 /**
  * @category   Zend

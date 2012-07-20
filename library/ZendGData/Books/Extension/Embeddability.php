@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Books\Extension;
+namespace ZendGData\Books\Extension;
 
 /**
  * Describes an embeddability
@@ -17,7 +17,7 @@ namespace Zend\GData\Books\Extension;
  * @package    Zend_Gdata
  * @subpackage Books
  */
-class Embeddability extends \Zend\GData\Extension
+class Embeddability extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gbs';
@@ -33,7 +33,7 @@ class Embeddability extends \Zend\GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Books::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Books::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
@@ -91,7 +91,7 @@ class Embeddability extends \Zend\GData\Extension
      *
      * @param string|null $value Programmatic value that describes the
      *        embeddability of a volume in Google Book Search
-     * @return \Zend\GData\Books\Extension\Embeddability Provides a fluent
+     * @return \ZendGData\Books\Extension\Embeddability Provides a fluent
      *     interface
      */
     public function setValue($value)

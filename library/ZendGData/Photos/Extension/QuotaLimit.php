@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Photos\Extension;
+namespace ZendGData\Photos\Extension;
 
 /**
  * Represents the gphoto:quotaLimit element used by the API.
@@ -19,7 +19,7 @@ namespace Zend\GData\Photos\Extension;
  * @package    Zend_Gdata
  * @subpackage Photos
  */
-class QuotaLimit extends \Zend\GData\Extension
+class QuotaLimit extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'gphoto';
@@ -32,7 +32,7 @@ class QuotaLimit extends \Zend\GData\Extension
      */
     public function __construct($text = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Photos::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Photos::$namespaces);
         parent::__construct();
         $this->setText($text);
     }

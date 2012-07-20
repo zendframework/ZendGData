@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\App;
-use Zend\GData\Spreadsheets;
+use ZendGData\App;
+use ZendGData\Spreadsheets;
 
 /**
  * Concrete class for working with List entries.
@@ -20,10 +20,10 @@ use Zend\GData\Spreadsheets;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class ListEntry extends \Zend\GData\Entry
+class ListEntry extends \ZendGData\Entry
 {
 
-    protected $_entryClassName = 'Zend\GData\Spreadsheets\ListEntry';
+    protected $_entryClassName = 'ZendGData\Spreadsheets\ListEntry';
 
     /**
      * List of custom row elements (Zend_Gdata_Spreadsheets_Extension_Custom),
@@ -112,7 +112,7 @@ class ListEntry extends \Zend\GData\Entry
      * custom row elements were previously stored, they will be overwritten.
      * @param array $custom The custom row elements to be contained in this
      *          list entry.
-     * @return \Zend\GData\Spreadsheets\ListEntry Provides a fluent interface.
+     * @return \ZendGData\Spreadsheets\ListEntry Provides a fluent interface.
      */
     public function setCustom($custom)
     {
@@ -125,9 +125,9 @@ class ListEntry extends \Zend\GData\Entry
 
     /**
      * Add an individual custom row element to this list entry.
-     * @param \Zend\GData\Spreadsheets\Extension\Custom $custom The custom
+     * @param \ZendGData\Spreadsheets\Extension\Custom $custom The custom
      *             element to be added.
-     * @return \Zend\GData\Spreadsheets\ListEntry Provides a fluent interface.
+     * @return \ZendGData\Spreadsheets\ListEntry Provides a fluent interface.
      */
     public function addCustom($custom)
     {
@@ -140,8 +140,8 @@ class ListEntry extends \Zend\GData\Entry
      * Remove an individual row element from this list entry by index. This
      * will cause the array to be re-indexed.
      * @param int $index The index of the custom element to be deleted.
-     * @return \Zend\GData\Spreadsheets\ListEntry Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \ZendGData\Spreadsheets\ListEntry Provides a fluent interface.
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function removeCustom($index)
     {
@@ -164,8 +164,8 @@ class ListEntry extends \Zend\GData\Entry
     /**
      * Remove an individual row element from this list entry by name.
      * @param string $name The name of the custom element to be deleted.
-     * @return \Zend\GData\Spreadsheets\ListEntry Provides a fluent interface.
-     * @throws \Zend\GData\App\InvalidArgumentException
+     * @return \ZendGData\Spreadsheets\ListEntry Provides a fluent interface.
+     * @throws \ZendGData\App\InvalidArgumentException
      */
     public function removeCustomByName($name)
     {

@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Photos;
+namespace ZendGDataTest\Photos;
 
-use Zend\GData\Photos;
-use Zend\GData\App\Extension;
+use ZendGData\Photos;
+use ZendGData\App\Extension;
 
 /**
  * @category   Zend
@@ -303,7 +303,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoUser() instanceof \Zend\GData\Photos\Extension\User);
+        $this->assertTrue($feed->getGphotoUser() instanceof \ZendGData\Photos\Extension\User);
         $this->verifyProperty2($feed, "gphotoUser", "text",
                 "sample.user");
         $this->verifyProperty3($feed, "gphotoUser", "text",
@@ -319,7 +319,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoNickname() instanceof \Zend\GData\Photos\Extension\Nickname);
+        $this->assertTrue($feed->getGphotoNickname() instanceof \ZendGData\Photos\Extension\Nickname);
         $this->verifyProperty2($feed, "gphotoNickname", "text",
                 "sample");
         $this->verifyProperty3($feed, "gphotoNickname", "text",
@@ -335,7 +335,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoName() instanceof \Zend\GData\Photos\Extension\Name);
+        $this->assertTrue($feed->getGphotoName() instanceof \ZendGData\Photos\Extension\Name);
         $this->verifyProperty2($feed, "gphotoName", "text",
                 "Test");
     }
@@ -349,7 +349,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoId() instanceof \Zend\GData\Photos\Extension\Id);
+        $this->assertTrue($feed->getGphotoId() instanceof \ZendGData\Photos\Extension\Id);
         $this->verifyProperty2($feed, "gphotoId", "text",
                 "1");
         $this->verifyProperty3($feed, "gphotoId", "text",
@@ -365,7 +365,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoLocation() instanceof \Zend\GData\Photos\Extension\Location);
+        $this->assertTrue($feed->getGphotoLocation() instanceof \ZendGData\Photos\Extension\Location);
         $this->verifyProperty2($feed, "gphotoLocation", "text",
                 "");
         $this->verifyProperty3($feed, "gphotoLocation", "text",
@@ -381,7 +381,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoAccess() instanceof \Zend\GData\Photos\Extension\Access);
+        $this->assertTrue($feed->getGphotoAccess() instanceof \ZendGData\Photos\Extension\Access);
         $this->verifyProperty2($feed, "gphotoAccess", "text",
                 "public");
         $this->verifyProperty3($feed, "gphotoAccess", "text",
@@ -397,7 +397,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoTimestamp() instanceof \Zend\GData\Photos\Extension\Timestamp);
+        $this->assertTrue($feed->getGphotoTimestamp() instanceof \ZendGData\Photos\Extension\Timestamp);
         $this->verifyProperty2($feed, "gphotoTimestamp", "text",
                 "1188975600000");
         $this->verifyProperty3($feed, "gphotoTimestamp", "text",
@@ -413,7 +413,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoNumPhotos() instanceof \Zend\GData\Photos\Extension\NumPhotos);
+        $this->assertTrue($feed->getGphotoNumPhotos() instanceof \ZendGData\Photos\Extension\NumPhotos);
         $this->verifyProperty2($feed, "gphotoNumPhotos", "text",
                 "2");
         $this->verifyProperty3($feed, "gphotoNumPhotos", "text",
@@ -429,7 +429,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoCommentingEnabled() instanceof \Zend\GData\Photos\Extension\CommentingEnabled);
+        $this->assertTrue($feed->getGphotoCommentingEnabled() instanceof \ZendGData\Photos\Extension\CommentingEnabled);
         $this->verifyProperty2($feed, "gphotoCommentingEnabled", "text",
                 "true");
         $this->verifyProperty3($feed, "gphotoCommentingEnabled", "text",
@@ -445,7 +445,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
         $feed = $this->albumFeed;
 
         // Assert that the feed's title is correct
-        $this->assertTrue($feed->getGphotoCommentCount() instanceof \Zend\GData\Photos\Extension\CommentCount);
+        $this->assertTrue($feed->getGphotoCommentCount() instanceof \ZendGData\Photos\Extension\CommentCount);
         $this->verifyProperty2($feed, "gphotoCommentCount", "text",
                 "0");
         $this->verifyProperty3($feed, "gphotoCommentCount", "text",

@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\App;
+namespace ZendGData\App;
 
 use Zend\Http;
 use Zend\Http\Client\Exception\ExceptionInterface as ClientExceptionInterface;
@@ -30,7 +30,7 @@ class HttpException extends Exception
     protected $_response = null;
 
     /**
-     * Create a new \Zend\GData\App\HttpException
+     * Create a new \ZendGData\App\HttpException
      *
      * @param string $message Optionally set a message
      * @param ClientExceptionInterface $e Optionally pass in a Zend\Http\Client\Exception\ExceptionInterface

@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Spreadsheets;
+namespace ZendGData\Spreadsheets;
 
-use Zend\GData\App;
+use ZendGData\App;
 
 /**
  * Assists in constructing queries for Google Spreadsheets lists
@@ -21,7 +21,7 @@ use Zend\GData\App;
  * @package    Zend_Gdata
  * @subpackage Spreadsheets
  */
-class ListQuery extends \Zend\GData\Query
+class ListQuery extends \ZendGData\Query
 {
 
     const SPREADSHEETS_LIST_FEED_URI = 'https://spreadsheets.google.com/feeds/list';
@@ -44,7 +44,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the spreadsheet key for the query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setSpreadsheetKey($value)
     {
@@ -64,7 +64,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the worksheet id for the query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setWorksheetId($value)
     {
@@ -84,7 +84,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the row id for the query.
      * @param string $value row id
-     * @return \Zend\GData\Spreadsheets\CellQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\CellQuery Provides a fluent interface
      */
     public function setRowId($value)
     {
@@ -104,7 +104,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the projection for the query.
      * @param string $value Projection
-     * @return \Zend\GData\Spreadsheets\ListQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\ListQuery Provides a fluent interface
      */
     public function setProjection($value)
     {
@@ -115,7 +115,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the visibility for this query.
      * @param string $value visibility
-     * @return \Zend\GData\Spreadsheets\ListQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\ListQuery Provides a fluent interface
      */
     public function setVisibility($value)
     {
@@ -144,7 +144,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the spreadsheet key for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setSpreadsheetQuery($value)
     {
@@ -172,7 +172,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the orderby attribute for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setOrderBy($value)
     {
@@ -200,7 +200,7 @@ class ListQuery extends \Zend\GData\Query
     /**
      * Sets the reverse attribute for this query.
      * @param string $value
-     * @return \Zend\GData\Spreadsheets\DocumentQuery Provides a fluent interface
+     * @return \ZendGData\Spreadsheets\DocumentQuery Provides a fluent interface
      */
     public function setReverse($value)
     {

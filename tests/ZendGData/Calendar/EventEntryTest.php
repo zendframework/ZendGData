@@ -8,9 +8,9 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\Calendar;
+namespace ZendGDataTest\Calendar;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * @category   Zend
@@ -25,7 +25,7 @@ class EventEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'Zend/GData/Calendar/_files/EventEntrySample1.xml',
+                'ZendGData/Calendar/_files/EventEntrySample1.xml',
                 true);
         $this->entry = new Calendar\EventEntry();
     }
@@ -33,7 +33,7 @@ class EventEntryTest extends \PHPUnit_Framework_TestCase
     public function testSetters()
     {
         $entry = new Calendar\EventEntry();
-        $who = new \Zend\GData\Extension\Who();
+        $who = new \ZendGData\Extension\Who();
         $who->setValueString("John Doe");
         $who->setEmail("john@doe.com");
         $entry->setWho($who);

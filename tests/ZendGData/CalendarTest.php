@@ -10,7 +10,7 @@
 
 namespace ZendTest\GData;
 
-use Zend\GData\Calendar;
+use ZendGData\Calendar;
 
 /**
  * @category   Zend
@@ -24,7 +24,7 @@ class CalendarTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->eventFeedText = file_get_contents(
-                'Zend/GData/Calendar/_files/TestDataEventFeedSample1.xml',
+                'ZendGData/Calendar/_files/TestDataEventFeedSample1.xml',
                 true);
         $this->eventFeed = new Calendar\EventFeed();
     }

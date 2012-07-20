@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\GApps;
+namespace ZendGData\GApps;
 
 /**
  * Data model for a collection of Google Apps nickname entries, usually
@@ -21,10 +21,10 @@ namespace Zend\GData\GApps;
  * @package    Zend_Gdata
  * @subpackage GApps
  */
-class NicknameFeed extends \Zend\GData\Feed
+class NicknameFeed extends \ZendGData\Feed
 {
 
-    protected $_entryClassName = '\Zend\GData\GApps\NicknameEntry';
-    protected $_feedClassName = '\Zend\GData\GApps\NicknameFeed';
+    protected $_entryClassName = '\ZendGData\GApps\NicknameEntry';
+    protected $_feedClassName = '\ZendGData\GApps\NicknameFeed';
 
 }

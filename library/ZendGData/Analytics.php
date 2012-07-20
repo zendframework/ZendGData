@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 use Zend\Http\Client;
 
@@ -50,7 +50,7 @@ class Analytics extends GData
     public function getAccountFeed()
     {
         $uri = self::ANALYTICS_ACCOUNT_FEED_URI . '/default?prettyprint=true';
-        return parent::getFeed($uri, 'Zend\GData\Analytics\AccountFeed');
+        return parent::getFeed($uri, 'ZendGData\Analytics\AccountFeed');
     }
 
     /**
@@ -66,7 +66,7 @@ class Analytics extends GData
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, 'Zend\GData\Analytics\DataFeed');
+        return parent::getFeed($uri, 'ZendGData\Analytics\DataFeed');
     }
 
     /**

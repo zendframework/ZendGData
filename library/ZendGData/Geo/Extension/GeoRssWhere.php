@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData\Geo\Extension;
+namespace ZendGData\Geo\Extension;
 
 /**
  * Represents the georss:where element used by the Gdata Geo extensions.
@@ -17,7 +17,7 @@ namespace Zend\GData\Geo\Extension;
  * @package    Zend_Gdata
  * @subpackage Geo
  */
-class GeoRssWhere extends \Zend\GData\Extension
+class GeoRssWhere extends \ZendGData\Extension
 {
 
     protected $_rootNamespace = 'georss';
@@ -26,19 +26,19 @@ class GeoRssWhere extends \Zend\GData\Extension
     /**
      * The point location for this geo element
      *
-     * @var \Zend\GData\Geo\Extension\GmlPoint
+     * @var \ZendGData\Geo\Extension\GmlPoint
      */
     protected $_point = null;
 
     /**
      * Create a new instance.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPoint $point (optional) Point to which
+     * @param \ZendGData\Geo\Extension\GmlPoint $point (optional) Point to which
      *          object should be initialized.
      */
     public function __construct($point = null)
     {
-        $this->registerAllNamespaces(\Zend\GData\Geo::$namespaces);
+        $this->registerAllNamespaces(\ZendGData\Geo::$namespaces);
         parent::__construct();
         $this->setPoint($point);
     }
@@ -84,7 +84,7 @@ class GeoRssWhere extends \Zend\GData\Extension
      * Get the value for this element's point attribute.
      *
      * @see setPoint
-     * @return \Zend\GData\Geo\Extension\GmlPoint The requested attribute.
+     * @return \ZendGData\Geo\Extension\GmlPoint The requested attribute.
      */
     public function getPoint()
     {
@@ -94,8 +94,8 @@ class GeoRssWhere extends \Zend\GData\Extension
     /**
      * Set the value for this element's point attribute.
      *
-     * @param \Zend\GData\Geo\Extension\GmlPoint $value The desired value for this attribute.
-     * @return \Zend\GData\Geo\Extension\GeoRssWhere Provides a fluent interface
+     * @param \ZendGData\Geo\Extension\GmlPoint $value The desired value for this attribute.
+     * @return \ZendGData\Geo\Extension\GeoRssWhere Provides a fluent interface
      */
     public function setPoint($value)
     {

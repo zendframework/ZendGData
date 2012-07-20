@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace Zend\GData;
+namespace ZendGData;
 
 use Zend\Http;
 use Zend\Stdlib\ErrorHandler;
@@ -142,10 +142,10 @@ class YouTube extends Media
         $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
         $developerKey = null)
     {
-        $this->registerPackage('Zend\GData\YouTube');
-        $this->registerPackage('Zend\GData\YouTube\Extension');
-        $this->registerPackage('Zend\GData\Media');
-        $this->registerPackage('Zend\GData\Media\Extension');
+        $this->registerPackage('ZendGData\YouTube');
+        $this->registerPackage('ZendGData\YouTube\Extension');
+        $this->registerPackage('ZendGData\Media');
+        $this->registerPackage('ZendGData\Media\Extension');
 
         // NOTE This constructor no longer calls the parent constructor
         $this->setHttpClient($client, $applicationId, $clientId, $developerKey);
@@ -155,7 +155,7 @@ class YouTube extends Media
      * Set the Zend_Http_Client object used for communication
      *
      * @param \Zend\Http\Client $client The client to use for communication
-     * @return \Zend\GData\App Provides a fluent interface
+     * @return \ZendGData\App Provides a fluent interface
      */
     public function setHttpClient(Http\Client $client = null,
         $applicationId = 'MyCompany-MyApp-1.0', $clientId = null,
@@ -181,7 +181,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getVideoFeed($location = null)
@@ -193,7 +193,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -205,8 +205,8 @@ class YouTube extends Media
      * @param boolean $fullEntry (optional) Retrieve the full metadata for the
      *         entry. Only possible if entry belongs to currently authenticated
      *         user. An exception will be thrown otherwise.
-     * @throws \Zend\GData\App\HttpException
-     * @return \Zend\GData\YouTube\VideoEntry The video entry found at the
+     * @throws \ZendGData\App\HttpException
+     * @return \ZendGData\YouTube\VideoEntry The video entry found at the
      *         specified URL.
      */
     public function getVideoEntry($videoId = null, $location = null,
@@ -223,15 +223,15 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\YouTube\VideoEntry');
+        return parent::getEntry($uri, '\ZendGData\YouTube\VideoEntry');
     }
 
     /**
      * Retrieves a video entry from the user's upload feed.
      *
      * @param mixed $videoID The ID of the video to retrieve.
-     * @throws \Zend\GData\App\HttpException
-     * @return \Zend\GData\YouTube\VideoEntry|null The video entry to be
+     * @throws \ZendGData\App\HttpException
+     * @return \ZendGData\YouTube\VideoEntry|null The video entry to be
      *          retrieved, or null if it was not found or the user requesting it
      *          did not have the appropriate permissions.
      */
@@ -239,7 +239,7 @@ class YouTube extends Media
     {
         $uri = self::USER_URI . "/default/" .
             self::UPLOADS_URI_SUFFIX . "/$videoId";
-        return parent::getEntry($uri, '\Zend\GData\YouTube\VideoEntry');
+        return parent::getEntry($uri, '\ZendGData\YouTube\VideoEntry');
     }
 
     /**
@@ -248,7 +248,7 @@ class YouTube extends Media
      * @param string $videoId The videoId of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getRelatedVideoFeed($videoId = null, $location = null)
@@ -261,7 +261,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -270,7 +270,7 @@ class YouTube extends Media
      * @param string $videoId The videoId of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getVideoResponseFeed($videoId = null, $location = null)
@@ -283,7 +283,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -292,7 +292,7 @@ class YouTube extends Media
      * @param string $videoId The videoId of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\CommentFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\CommentFeed The feed of videos found at the
      *         specified URL.
      */
     public function getVideoCommentFeed($videoId = null, $location = null)
@@ -304,7 +304,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\CommentFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\CommentFeed');
     }
 
     /**
@@ -312,7 +312,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\CommentFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\CommentFeed The feed of videos found at the
      *         specified URL.
      */
     public function getTopRatedVideoFeed($location = null)
@@ -335,7 +335,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
 
@@ -344,7 +344,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getMostViewedVideoFeed($location = null)
@@ -367,7 +367,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -375,7 +375,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getRecentlyFeaturedVideoFeed($location = null)
@@ -398,7 +398,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -407,7 +407,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The feed of videos found at the
+     * @return \ZendGData\YouTube\VideoFeed The feed of videos found at the
      *         specified URL.
      */
     public function getWatchOnMobileVideoFeed($location = null)
@@ -430,7 +430,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -439,7 +439,7 @@ class YouTube extends Media
      * @param string $user (optional) The username of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\PlaylistListFeed The feed of playlists
+     * @return \ZendGData\YouTube\PlaylistListFeed The feed of playlists
      */
     public function getPlaylistListFeed($user = null, $location = null)
     {
@@ -450,7 +450,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\PlaylistListFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\PlaylistListFeed');
     }
 
     /**
@@ -458,7 +458,7 @@ class YouTube extends Media
      *
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\PlaylistVideoFeed The feed of videos found at
+     * @return \ZendGData\YouTube\PlaylistVideoFeed The feed of videos found at
      *         the specified URL.
      */
     public function getPlaylistVideoFeed($location)
@@ -468,7 +468,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\PlaylistVideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\PlaylistVideoFeed');
     }
 
     /**
@@ -488,7 +488,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\SubscriptionFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\SubscriptionFeed');
     }
 
     /**
@@ -497,7 +497,7 @@ class YouTube extends Media
      * @param string $user (optional) The username of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\ContactFeed The feed of contacts
+     * @return \ZendGData\YouTube\ContactFeed The feed of contacts
      */
     public function getContactFeed($user = null, $location = null)
     {
@@ -508,7 +508,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\ContactFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\ContactFeed');
     }
 
     /**
@@ -517,7 +517,7 @@ class YouTube extends Media
      * @param string $user (optional) The username of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The videos uploaded by the user
+     * @return \ZendGData\YouTube\VideoFeed The videos uploaded by the user
      */
     public function getUserUploads($user = null, $location = null)
     {
@@ -529,7 +529,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -538,7 +538,7 @@ class YouTube extends Media
      * @param string $user (optional) The username of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\VideoFeed The videos favorited by the user
+     * @return \ZendGData\YouTube\VideoFeed The videos favorited by the user
      */
     public function getUserFavorites($user = null, $location = null)
     {
@@ -550,7 +550,7 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getFeed($uri, '\Zend\GData\YouTube\VideoFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\VideoFeed');
     }
 
     /**
@@ -559,7 +559,7 @@ class YouTube extends Media
      * @param string $user (optional) The username of interest
      * @param mixed $location (optional) The URL to query or a
      *         Zend_Gdata_Query object from which a URL can be determined
-     * @return \Zend\GData\YouTube\UserProfileEntry The user profile entry
+     * @return \ZendGData\YouTube\UserProfileEntry The user profile entry
      */
     public function getUserProfile($user = null, $location = null)
     {
@@ -570,14 +570,14 @@ class YouTube extends Media
         } else {
             $uri = $location;
         }
-        return parent::getEntry($uri, '\Zend\GData\YouTube\UserProfileEntry');
+        return parent::getEntry($uri, '\ZendGData\YouTube\UserProfileEntry');
     }
 
     /**
      * Helper function for parsing a YouTube token response
      *
      * @param string $response The service response
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      * @return array An array containing the token and URL
      */
     public static function parseFormUploadTokenResponse($response)
@@ -624,9 +624,9 @@ class YouTube extends Media
     /**
      * Retrieves a YouTube token
      *
-     * @param \Zend\GData\YouTube\VideoEntry $videoEntry The video entry
+     * @param \ZendGData\YouTube\VideoEntry $videoEntry The video entry
      * @param string $url The location as a string URL
-     * @throws \Zend\GData\App\Exception
+     * @throws \ZendGData\App\Exception
      * @return array An array containing a token and URL
      */
     public function getFormUploadToken($videoEntry,
@@ -648,8 +648,8 @@ class YouTube extends Media
      * @param mixed $username A string identifying the usernames for which to
      *              retrieve activity for. This can also be a Zend_Gdata_Query
      *              object from which a URL can be determined.
-     * @throws \Zend\GData\App\VersionException if using version less than 2.
-     * @return \Zend\GData\YouTube\ActivityFeed
+     * @throws \ZendGData\App\VersionException if using version less than 2.
+     * @return \ZendGData\YouTube\ActivityFeed
      */
     public function getActivityForUser($username)
     {
@@ -671,14 +671,14 @@ class YouTube extends Media
             $uri = self::ACTIVITY_FEED_URI . '?author=' . $username;
         }
 
-        return parent::getFeed($uri, '\Zend\GData\YouTube\ActivityFeed');
+        return parent::getFeed($uri, '\ZendGData\YouTube\ActivityFeed');
     }
 
     /**
      * Retrieve the activity of the currently authenticated users friend.
      *
-     * @throws \Zend\GData\App\Exception if not logged in.
-     * @return \Zend\GData\YouTube\ActivityFeed
+     * @throws \ZendGData\App\Exception if not logged in.
+     * @return \ZendGData\YouTube\ActivityFeed
      */
     public function getFriendActivityForCurrentUser()
     {
@@ -688,14 +688,14 @@ class YouTube extends Media
                 'Gdata_YouTube.');
         }
         return parent::getFeed(self::FRIEND_ACTIVITY_FEED_URI,
-            '\Zend\GData\YouTube\ActivityFeed');
+            '\ZendGData\YouTube\ActivityFeed');
     }
 
     /**
      * Retrieve a feed of messages in the currently authenticated user's inbox.
      *
-     * @throws \Zend\GData\App\Exception if not logged in.
-     * @return \Zend\GData\YouTube\InboxFeed|null
+     * @throws \ZendGData\App\Exception if not logged in.
+     * @return \ZendGData\YouTube\InboxFeed|null
      */
     public function getInboxFeedForCurrentUser()
     {
@@ -706,7 +706,7 @@ class YouTube extends Media
         }
 
         return parent::getFeed(self::INBOX_FEED_URI,
-            '\Zend\GData\YouTube\InboxFeed');
+            '\ZendGData\YouTube\InboxFeed');
     }
 
     /**
@@ -719,9 +719,9 @@ class YouTube extends Media
      * @param YouTube\VideoEntry $videoEntry (optional) The video entry to send
      * @param string $videoId The id of the video to send
      * @param string $recipientUserName The username of the recipient
-     * @throws \Zend\GData\App\InvalidArgumentException if no valid
+     * @throws \ZendGData\App\InvalidArgumentException if no valid
      *         Zend_Gdata_YouTube_VideoEntry or videoId were provided
-     * @return \Zend\GData\YouTube\InboxEntry|null The
+     * @return \ZendGData\YouTube\InboxEntry|null The
      *         Zend_Gdata_YouTube_Inbox_Entry representing the sent message.
      *
      */
@@ -731,7 +731,7 @@ class YouTube extends Media
         if (!$videoId && !$videoEntry) {
             throw new App\InvalidArgumentException(
                 'Expecting either a valid videoID or a videoEntry object in ' .
-                '\Zend\GData\YouTube->sendVideoMessage().');
+                '\ZendGData\YouTube->sendVideoMessage().');
         }
 
         $messageEntry = new YouTube\InboxEntry();
@@ -764,7 +764,7 @@ class YouTube extends Media
         $insertUrl = 'https://gdata.youtube.com/feeds/api/users/' .
             $recipientUserName . '/inbox';
         $response = $this->insertEntry($messageEntry, $insertUrl,
-            '\Zend\GData\YouTube\InboxEntry');
+            '\ZendGData\YouTube\InboxEntry');
         return $response;
     }
 
@@ -794,7 +794,7 @@ class YouTube extends Media
         $commentFeedPostUrl = self::VIDEO_URI . '/' . $commentIdArray[3] .
             '/comments';
         return $this->insertEntry($newComment,
-            $commentFeedPostUrl, '\Zend\GData\YouTube\CommentEntry');
+            $commentFeedPostUrl, '\ZendGData\YouTube\CommentEntry');
     }
 
 }

@@ -22,7 +22,7 @@ class BooksTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->gdata = new \Zend\GData\Books(new \Zend\Http\Client());
+        $this->gdata = new \ZendGData\Books(new \Zend\Http\Client());
     }
 
     public function testBooks()

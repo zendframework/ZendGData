@@ -8,10 +8,10 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData\YouTube;
+namespace ZendGDataTest\YouTube;
 
-use Zend\GData\YouTube;
-use Zend\GData\Extension;
+use ZendGData\YouTube;
+use ZendGData\Extension;
 
 /**
  * @category   Zend
@@ -26,7 +26,7 @@ class UserProfileEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->V2entryText = file_get_contents(
-                'Zend/GData/YouTube/_files/UserProfileEntryDataSampleV2.xml',
+                'ZendGData/YouTube/_files/UserProfileEntryDataSampleV2.xml',
                 true);
         $this->entry = new YouTube\UserProfileEntry();
     }
@@ -55,7 +55,7 @@ class UserProfileEntryTest extends \PHPUnit_Framework_TestCase
             $userProfileEntry->getStatistics()->getViewCount());
         $thumbnail = $userProfileEntry->getThumbnail();
         $this->assertTrue(
-            $thumbnail instanceof \Zend\GData\Media\Extension\MediaThumbnail);
+            $thumbnail instanceof \ZendGData\Media\Extension\MediaThumbnail);
         $this->assertTrue($thumbnail->getUrl() != null);
         $this->assertEquals('TestAccount',
             $userProfileEntry->getLastName()->text);
