@@ -1,5 +1,5 @@
 {
-    "name": "zendframework/zend-gdata",
+    "name": "zendframework/zendgdata",
     "description": "provide programmatic interface to some of Google's online services",
     "type": "library",
     "license": "BSD-3-Clause",
@@ -19,7 +19,6 @@
             "url": "http://packages.zendframework.com/"
         }
     ],
-    "target-dir": "Zend/GData",
     "require": {
         "php": ">=5.3.3",
         "zendframework/zend-stdlib": "self.version"

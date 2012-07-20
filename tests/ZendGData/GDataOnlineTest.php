@@ -8,7 +8,7 @@
  * @package   Zend_GData
  */
 
-namespace ZendTest\GData;
+namespace ZendGDataTest;
 
 use Zend\GData;
 use ZendGData\App;
