@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics\Extension;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class TableId extends GData\Extension
+class TableId extends ZendGData\Extension
 {
     protected $_rootNamespace = 'ga';
     protected $_rootElement = 'tableId';
@@ -29,7 +29,7 @@ class TableId extends GData\Extension
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }
