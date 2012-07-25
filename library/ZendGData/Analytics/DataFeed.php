@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class DataFeed extends GData\Feed
+class DataFeed extends ZendGData\Feed
 {
 
     /**
@@ -35,7 +35,7 @@ class DataFeed extends GData\Feed
 
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
         parent::__construct($element);
     }
 }

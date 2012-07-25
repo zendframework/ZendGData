@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class AccountEntry extends GData\Entry
+class AccountEntry extends ZendGData\Entry
 {
     protected $_accountId;
     protected $_accountName;
@@ -32,7 +32,7 @@ class AccountEntry extends GData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
         parent::__construct($element);
     }
 
