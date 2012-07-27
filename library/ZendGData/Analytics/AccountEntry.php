@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class AccountEntry extends GData\Entry
+class AccountEntry extends ZendGData\Entry
 {
     protected $_accountId;
     protected $_accountName;
@@ -26,13 +26,15 @@ class AccountEntry extends GData\Entry
     protected $_currency;
     protected $_timezone;
     protected $_tableId;
+    protected $_profileName;
+    protected $_goal;
 
     /**
-     * @see Zend_Gdata_Entry::__construct()
+     * @see ZendGData\Entry::__construct()
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
         parent::__construct($element);
     }
 
@@ -44,15 +46,20 @@ class AccountEntry extends GData\Entry
     {
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName){
-            case $this->lookupNamespace('ga') . ':' . 'property';
+            case $this->lookupNamespace('analytics') . ':' . 'property';
                 $property = new Extension\Property();
                 $property->transferFromDOM($child);
                 $this->{$property->getName()} = $property;
                 break;
-            case $this->lookupNamespace('ga') . ':' . 'tableId';
+            case $this->lookupNamespace('analytics') . ':' . 'tableId';
                 $tableId = new Extension\TableId();
                 $tableId->transferFromDOM($child);
                 $this->_tableId = $tableId;
+                break;
+            case $this->lookupNamespace('ga') . ':' . 'goal';
+                $goal = new Extension\Goal();
+                $goal->transferFromDOM($child);
+                $this->_goal = $goal;
                 break;
             default:
                 parent::takeChildFromDOM($child);

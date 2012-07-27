@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class DataEntry extends GData\Entry
+class DataEntry extends ZendGData\Entry
 {
     /**
      * @var Extension\Dimension[]
@@ -33,7 +33,7 @@ class DataEntry extends GData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
         parent::__construct($element);
     }
 
@@ -45,12 +45,12 @@ class DataEntry extends GData\Entry
     {
         $absoluteNodeName = $child->namespaceURI . ':' . $child->localName;
         switch ($absoluteNodeName) {
-            case $this->lookupNamespace('ga') . ':' . 'dimension';
+            case $this->lookupNamespace('analytics') . ':' . 'dimension';
                 $dimension = new Extension\Dimension();
                 $dimension->transferFromDOM($child);
                 $this->_dimensions[] = $dimension;
                 break;
-            case $this->lookupNamespace('ga') . ':' . 'metric';
+            case $this->lookupNamespace('analytics') . ':' . 'metric';
                 $metric = new Extension\Metric();
                 $metric->transferFromDOM($child);
                 $this->_metrics[] = $metric;
