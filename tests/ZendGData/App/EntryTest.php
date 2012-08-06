@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest\App;
 
-use Zend\GData;
+use ZendGData;
 use ZendGData\App;
 use ZendGData\App\Extension;
 use Zend\Http;

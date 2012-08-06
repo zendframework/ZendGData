@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * Disabled; was not enabled in ZF1 test suite, and tests indicate different

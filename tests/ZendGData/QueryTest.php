@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend
