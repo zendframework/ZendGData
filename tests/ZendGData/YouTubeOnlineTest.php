@@ -11,7 +11,7 @@
 namespace ZendGDataTest;
 
 use ZendGData\YouTube;
-use Zend\GData;
+use ZendGData;
 use ZendGData\App;
 
 /**

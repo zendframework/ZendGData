@@ -10,7 +10,7 @@
 
 namespace ZendGData\Analytics\Extension;
 
-use Zend\GData;
+use ZendGData;
 
 /**
  * @category   Zend

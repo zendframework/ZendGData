@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData;
 use Zend\Http\Client;
 use Zend\Http\Client\Adapter\Test as AdapterTest;
 

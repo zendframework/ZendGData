@@ -46,7 +46,7 @@ defined('TESTS_GENERATE_REPORT_TARGET') || define('TESTS_GENERATE_REPORT_TARGET'
 
 
 /**
- * Zend\GData tests
+ * ZendGData tests
  *
  * If the ONLINE_ENABLED property is false, only tests that can be executed with
  * a mock HTTP client are run. No request is sent to the Google Gdata servers.
