@@ -10,9 +10,9 @@
 
 namespace ZendGDataTest;
 
-use ZendGData\YouTube;
-use Zend\GData;
 use ZendGData\App;
+use ZendGData\ClientLogin;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
@@ -137,7 +137,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
 
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL= 'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -294,7 +294,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL =
             'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -377,7 +377,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL =
             'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -472,7 +472,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL =
             'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -567,7 +567,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL =
             'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -665,7 +665,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
         $service = YouTube::AUTH_SERVICE_NAME;
         $authenticationURL =
             'https://www.google.com/youtube/accounts/ClientLogin';
-        $httpClient = GData\ClientLogin::getHttpClient(
+        $httpClient = ClientLogin::getHttpClient(
             $this->user,
             $this->pass,
             $service,
@@ -766,7 +766,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
             'TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant(
             'TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
 
@@ -802,7 +802,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
             'TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant(
             'TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
 
@@ -824,7 +824,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
             'TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant(
             'TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
 
@@ -869,7 +869,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
             'TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant(
             'TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
 
@@ -895,7 +895,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $developerKey = constant('TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant('TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
 
@@ -934,7 +934,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $developerKey = constant('TESTS_ZEND_GDATA_YOUTUBE_DEVELOPER_KEY');
         $clientId = constant('TESTS_ZEND_GDATA_YOUTUBE_CLIENT_ID');
-        $client = GData\ClientLogin::getHttpClient(
+        $client = ClientLogin::getHttpClient(
             $this->user, $this->pass, 'youtube' , null, 'ZF_UnitTest', null, null,
             'https://www.google.com/youtube/accounts/ClientLogin');
         $youtube = new YouTube($client, 'ZF_UnitTest',

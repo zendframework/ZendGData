@@ -10,8 +10,10 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
 use ZendGData\App;
+use ZendGData\ClientLogin;
+use ZendGData\Entry;
+use ZendGData\GData;
 
 /**
  * @category   Zend
@@ -32,8 +34,8 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->blog = constant('TESTS_ZEND_GDATA_BLOG_ID');
         $service = 'blogger';
-        $client = GData\ClientLogin::getHttpClient($user, $pass, $service);
-        $this->gdata = new GData\GData($client);
+        $client = ClientLogin::getHttpClient($user, $pass, $service);
+        $this->gdata = new GData($client);
         $this->gdata->setMajorProtocolVersion(2);
     }
 
@@ -173,8 +175,8 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->blog = constant('TESTS_ZEND_GDATA_BLOG_ID');
         $service = 'lh2';
-        $client = GData\ClientLogin::getHttpClient($user, $pass, $service);
-        $gd = new GData\GData($client);
+        $client = ClientLogin::getHttpClient($user, $pass, $service);
+        $gd = new GData($client);
 
         // setup the photo content
         $fs = $gd->newMediaFileSource('ZendGData/_files/testImage.jpg');
@@ -237,8 +239,8 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->blog = constant('TESTS_ZEND_GDATA_BLOG_ID');
         $service = 'youtube';
-        $client = GData\ClientLogin::getHttpClient($user, $pass, $service);
-        $gd = new GData\GData($client);
+        $client = ClientLogin::getHttpClient($user, $pass, $service);
+        $gd = new GData($client);
 
         $feed = $gd->getFeed(
             'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured',
@@ -268,8 +270,8 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
         $this->blog = constant('TESTS_ZEND_GDATA_BLOG_ID');
         $service = 'youtube';
-        $client = GData\ClientLogin::getHttpClient($user, $pass, $service);
-        $gd = new GData\GData($client);
+        $client = ClientLogin::getHttpClient($user, $pass, $service);
+        $gd = new GData($client);
 
         $feed = $gd->getFeed(
             'http://gdata.youtube.com/feeds/api/standardfeeds/recently_featured',
@@ -291,7 +293,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 
     public function testDisableXMLToObjectMappingReturnsStringForFeed()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         $gdata::useObjectMapping(false);
         $xmlString = $gdata->getFeed(
             'http://gdata.youtube.com/feeds/api/standardfeeds/top_rated');
@@ -300,7 +302,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 
     public function testDisableXMLToObjectMappingReturnsStringForEntry()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         $gdata::useObjectMapping(false);
         $xmlString = $gdata->getFeed(
             'http://gdata.youtube.com/feeds/api/videos/O4SWAfisH-8');
@@ -309,7 +311,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 
     public function testDisableAndReEnableXMLToObjectMappingReturnsObject()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         $gdata::useObjectMapping(false);
         $xmlString = $gdata->getEntry(
             'http://gdata.youtube.com/feeds/api/videos/O4SWAfisH-8');
@@ -317,7 +319,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $gdata::useObjectMapping(true);
         $entry = $gdata->getEntry(
             'http://gdata.youtube.com/feeds/api/videos/O4SWAfisH-8');
-        $this->assertTrue($entry instanceof GData\Entry);
+        $this->assertTrue($entry instanceof Entry);
     }
 
 }
