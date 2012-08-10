@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -15,13 +15,13 @@ namespace ZendGData;
  * Subclasses exist to implement service-specific features
  *
  * As the Google data API protocol is based upon the Atom Publishing Protocol
- * (APP), Gdata functionality extends the appropriate Zend_Gdata_App classes
+ * (APP), GData functionality extends the appropriate ZendGData\App classes
  *
  * @link http://code.google.com/apis/gdata/overview.html
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class GData extends App
 {
@@ -53,7 +53,7 @@ class GData extends App
         );
 
     /**
-     * Namespaces used for Gdata data
+     * Namespaces used for GData data
      *
      * @var array
      */
@@ -79,7 +79,7 @@ class GData extends App
     protected static $_staticHttpClient = null;
 
     /**
-     * Create Gdata object
+     * Create ZendGData\GData object
      *
      * @param \Zend\Http\Client $client
      * @param string $applicationId The identity of the app in the form of
@@ -170,8 +170,8 @@ class GData extends App
     /**
      * Performs a HTTP request using the specified method.
      *
-     * Overrides the definition in the parent (Zend_Gdata_App)
-     * and uses the Zend_Gdata_HttpClient functionality
+     * Overrides the definition in the parent (ZendGData\App)
+     * and uses the ZendGData\HttpClient functionality
      * to filter the HTTP requests and responses.
      *
      * @param string $method The HTTP method for the request -

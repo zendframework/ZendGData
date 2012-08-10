@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Books;
@@ -16,14 +16,14 @@ use ZendGData\Books;
  * Describes a Book Search collection feed
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Books
  */
 class CollectionFeed extends \ZendGData\Feed
 {
 
     /**
-     * Constructor for Zend_Gdata_Books_CollectionFeed which
+     * Constructor for ZendGData\Books\CollectionFeed which
      * Describes a Book Search collection feed
      *
      * @param DOMElement $element (optional) DOMElement from which this

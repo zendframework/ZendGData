@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Media\Extension;
@@ -17,7 +17,7 @@ namespace ZendGData\Media\Extension;
  * it is a child of an Entry (Atom) or Item (RSS).
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Media
  */
 class MediaGroup extends \ZendGData\Extension
@@ -250,7 +250,7 @@ class MediaGroup extends \ZendGData\Extension
 
     /**
      * @param array $value
-     * @return Zend_Gdata_Media_MediaGroup Provides a fluent interface
+     * @return \ZendGData\Media\Extension\MediaGroup Provides a fluent interface
      */
     public function setContent($value)
     {

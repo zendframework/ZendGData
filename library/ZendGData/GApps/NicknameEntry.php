@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -18,16 +18,16 @@ use ZendGData\GApps;
  * Each nickname entry describes a single nickname within a Google Apps
  * hosted domain. Each user may own several nicknames, but each nickname may
  * only belong to one user. Multiple entries are contained within instances
- * of Zend_Gdata_GApps_NicknameFeed.
+ * of ZendGData\GApps\NicknameFeed.
  *
  * To transfer nickname entries to and from the Google Apps servers,
  * including creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class NicknameEntry extends \ZendGData\Entry

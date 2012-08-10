@@ -5,18 +5,18 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Kind;
 
 /**
- * Data model for the Gdata Event "Kind".  Google Calendar has a separate
+ * Data model for the GData Event "Kind".  Google Calendar has a separate
  * EventEntry class which extends this.
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class EventEntry extends \ZendGData\Entry
 {
@@ -255,7 +255,7 @@ class EventEntry extends \ZendGData\Entry
     }
 
     /**
-     * @param Zend_Gdata_Transparency $value
+     * @param ZendGData\Transparency $value
      * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setTransparency($value)

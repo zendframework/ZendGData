@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
@@ -16,10 +16,10 @@ use ZendGData\App;
 
 /**
  * @category   Zend
- * @package    Zend_GData_YouTube
+ * @package    ZendGData\YouTube
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_YouTube
+ * @group      ZendGData
+ * @group      ZendGData\YouTube
  */
 class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
 {
@@ -30,7 +30,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         if (!constant('TESTS_ZEND_GDATA_ONLINE_ENABLED')) {
-            $this->markTestSkipped('Zend_GData online tests are not enabled');
+            $this->markTestSkipped('ZendGData online tests are not enabled');
         }
         $this->ytAccount = constant('TESTS_ZEND_GDATA_YOUTUBE_ACCOUNT');
         $this->user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
@@ -910,7 +910,7 @@ class YouTubeOnlineTest extends \PHPUnit_Framework_TestCase
 
         // sending message to gdpython (python client library unit test user)
         $sentMessage = $youtube->sendVideoMessage(
-            'Sending a v2 test message from Zend_GData_YouTubeOnlineTest.',
+            'Sending a v2 test message from ZendGData\YouTubeOnlineTest.',
             $videoEntry, null, 'gdpython');
 
         $this->assertTrue(

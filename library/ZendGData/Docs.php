@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -15,7 +15,7 @@ namespace ZendGData;
  * @link http://code.google.com/apis/documents/
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Docs
  */
 class Docs extends GData
@@ -60,7 +60,7 @@ class Docs extends GData
     );
 
     /**
-     * Create Gdata_Docs object
+     * Create ZendGData\Docs object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.
@@ -240,7 +240,7 @@ class Docs extends GData
      * @param string|null $folderResourceId The parent folder to create it in
      *        ("folder%3Amy_parent_folder")
      * @return \ZendGData\Entry The folder entry created.
-     * @todo ZF-8732: This should return a *subclass* of Zend_Gdata_Entry, but
+     * @todo ZF-8732: This should return a *subclass* of ZendGData\Entry, but
      *       the appropriate type doesn't exist yet.
      */
     public function createFolder($folderName, $folderResourceId=null)
@@ -299,7 +299,7 @@ class Docs extends GData
      *         should have the correct slug header and mime type.
      * @param string $uri POST URI
      * @param string $className (optional) The class of entry to be returned.
-     *         The default is a 'Zend_Gdata_Docs_DocumentListEntry'.
+     *         The default is a 'ZendGData\Docs\DocumentListEntry'.
      * @return \ZendGData\Docs\DocumentListEntry The entry returned by the
      *     service after insertion.
      */

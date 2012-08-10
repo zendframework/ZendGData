@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -20,13 +20,13 @@ use ZendGData\GApps;
  *
  * To transfer group entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * \ZendGData\Gapps.
+ * \ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gapps
+ * @package    ZendGData
+ * @subpackage GApps
  */
 class GroupEntry extends \ZendGData\Entry
 {
@@ -37,7 +37,7 @@ class GroupEntry extends \ZendGData\Entry
      * <apps:property> element containing information about other items
      * relevant to this entry.
      *
-     * @var \ZendGData\Gapps\Extension\Property
+     * @var \ZendGData\GApps\Extension\Property
      */
     protected $_property = array();
 

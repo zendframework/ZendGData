@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\EXIF;
@@ -13,11 +13,11 @@ namespace ZendGData\EXIF;
 use ZendGData\EXIF;
 
 /**
- * Feed for Gdata EXIF data entries.
+ * Feed for GData EXIF data entries.
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
+ * @package    ZendGData
+ * @subpackage EXIF
  */
 class Feed extends \ZendGData\Feed
 {

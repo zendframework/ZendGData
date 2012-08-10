@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest\YouTube;
@@ -15,10 +15,10 @@ use ZendGData\App;
 
 /**
  * @category   Zend
- * @package    Zend_GData_YouTube
+ * @package    ZendGData\YouTube
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_YouTube
+ * @group      ZendGData
+ * @group      ZendGData\YouTube
  */
 class VideoQueryTest extends \PHPUnit_Framework_TestCase
 {
@@ -54,7 +54,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
             $exceptionCaught = true;
         }
 
-        $this->assertTrue($exceptionCaught, 'Expected Zend_GData_App_' .
+        $this->assertTrue($exceptionCaught, 'Expected ZendGData\App\\' .
             'IllegalArgumentException when using alpha in setLocation');
     }
 
@@ -70,7 +70,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
             $exceptionCaught = true;
         }
 
-        $this->assertTrue($exceptionCaught, 'Expected Zend_GData_App_' .
+        $this->assertTrue($exceptionCaught, 'Expected ZendGData\App\\' .
             'IllegalArgumentException when using only 1 coordinate ' .
             'in setLocation');
     }
@@ -87,7 +87,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
             $exceptionCaught = true;
         }
 
-        $this->assertTrue($exceptionCaught, 'Expected Zend_GData_App_' .
+        $this->assertTrue($exceptionCaught, 'Expected ZendGData\App\\' .
             'IllegalArgumentException when using invalid string in ' .
             'setUploader.');
     }
@@ -111,7 +111,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
         } catch (App\InvalidArgumentException $e) {
             $exceptionCaught = true;
         }
-        $this->assertTrue($exceptionCaught, 'Expected Zend_GData_App_' .
+        $this->assertTrue($exceptionCaught, 'Expected ZendGData\App\\' .
             'InvalidArgumentException when using invalid value for ' .
             'safeSearch.');
     }
@@ -175,7 +175,7 @@ class VideoQueryTest extends \PHPUnit_Framework_TestCase
     public function testQueryWithGetFeed()
     {
         if (!constant('TESTS_ZEND_GDATA_ONLINE_ENABLED')) {
-            $this->markTestSkipped('Zend_GData online tests are not enabled');
+            $this->markTestSkipped('ZendGData online tests are not enabled');
         }
         $youtube           = new YouTube();
         $query             = $youtube->newVideoQuery();

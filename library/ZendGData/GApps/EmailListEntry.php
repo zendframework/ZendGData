@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -17,17 +17,17 @@ use ZendGData\GApps;
  *
  * Each email list entry describes a single email list within a Google Apps
  * hosted domain. Email lists may contain multiple recipients, as
- * described by instances of Zend_Gdata_GApps_EmailListRecipient. Multiple
- * entries are contained within instances of Zend_Gdata_GApps_EmailListFeed.
+ * described by instances of ZendGData\GApps\EmailListRecipient. Multiple
+ * entries are contained within instances of ZendGData\GApps\EmailListFeed.
  *
  * To transfer email list entries to and from the Google Apps servers,
  * including creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class EmailListEntry extends \ZendGData\Entry
@@ -174,7 +174,7 @@ class EmailListEntry extends \ZendGData\Entry
      * This corresponds to the <gd:feedLink> property in the Google Data
      * protocol.
      *
-     * @param array $value A collection of Zend_Gdata_GApps_Extension_FeedLink
+     * @param array $value A collection of ZendGData\GApps\Extension\FeedLink
      *          instances representing all feed links for this entry, or
      *          null to unset.
      * @return EmailListEntry Provides a fluent interface

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest\YouTube;
@@ -16,10 +16,10 @@ use ZendGData\App;
 
 /**
  * @category   Zend
- * @package    Zend_GData_YouTube
+ * @package    ZendGData\YouTube
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_YouTube
+ * @group      ZendGData
+ * @group      ZendGData\YouTube
  */
 class VideoEntryTest extends \PHPUnit_Framework_TestCase
 {
@@ -271,7 +271,7 @@ class VideoEntryTest extends \PHPUnit_Framework_TestCase
         }
 
         $this->assertTrue($exceptionCaught, 'Expected exception not caught: ' .
-            'Zend_GData_AppException');
+            'ZendGData\App\Exception');
     }
 
     public function testEmptyEntryShouldHaveNoExtensionElements()

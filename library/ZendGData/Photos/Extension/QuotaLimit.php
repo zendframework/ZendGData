@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Photos\Extension;
@@ -16,7 +16,7 @@ namespace ZendGData\Photos\Extension;
  * a user.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Photos
  */
 class QuotaLimit extends \ZendGData\Extension
@@ -26,7 +26,7 @@ class QuotaLimit extends \ZendGData\Extension
     protected $_rootElement = 'quotaLimit';
 
     /**
-     * Constructs a new Zend_Gdata_Photos_Extension_QuotaLimit object.
+     * Constructs a new ZendGData\Photos\Extension\QuotaLimit object.
      *
      * @param string $text (optional) The value being represented.
      */

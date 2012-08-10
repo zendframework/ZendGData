@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Spreadsheets;
@@ -17,7 +17,7 @@ use ZendGData\Spreadsheets;
  * Concrete class for working with List entries.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Spreadsheets
  */
 class ListEntry extends \ZendGData\Entry
@@ -26,21 +26,21 @@ class ListEntry extends \ZendGData\Entry
     protected $_entryClassName = 'ZendGData\Spreadsheets\ListEntry';
 
     /**
-     * List of custom row elements (Zend_Gdata_Spreadsheets_Extension_Custom),
+     * List of custom row elements (ZendGData\Spreadsheets\Extension\Custom),
      * indexed by order added to this entry.
      * @var array
      */
     protected $_custom = array();
 
     /**
-     * List of custom row elements (Zend_Gdata_Spreadsheets_Extension_Custom),
+     * List of custom row elements (ZendGData\Spreadsheets\Extension\Custom),
      * indexed by element name.
      * @var array
      */
     protected $_customByName = array();
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_ListEntry object.
+     * Constructs a new ZendGData\Spreadsheets\ListEntry object.
      * @param DOMElement $element An existing XML element on which to base this new object.
      */
     public function __construct($element = null)
@@ -89,9 +89,9 @@ class ListEntry extends \ZendGData\Entry
      *          or not defined, an array containing all custom elements
      *          indexed by name will be returned.
      * @return mixed If a name is specified, the
-     *          Zend_Gdata_Spreadsheets_Extension_Custom element requested,
+     *          ZendGData\Spreadsheets\Extension\Custom element requested,
      *          is returned or null if not found. Otherwise, an array of all
-     *          Zend_Gdata_Spreadsheets_Extension_Custom elements is returned
+     *          ZendGData\Spreadsheets\Extension\Custom elements is returned
      *          indexed by name.
      */
     public function getCustomByName($name = null)

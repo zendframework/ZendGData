@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -13,14 +13,14 @@ namespace ZendGData;
 use Zend\Http;
 
 /**
- * Gdata Http Client object.
+ * ZendGData\HttpClient object.
  *
- * Class to extend the generic Zend Http Client with the ability to perform
+ * Class to extend the generic Zend\Http\Client with the ability to perform
  * secure AuthSub requests
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class HttpClient extends Http\Client
 {
@@ -99,7 +99,7 @@ class HttpClient extends Http\Client
      * Sets the PEM formatted private key to be used for secure AuthSub auth.
      *
      * In order to call this method, openssl must be enabled in your PHP
-     * installation.  Otherwise, a Zend_Gdata_App_InvalidArgumentException
+     * installation.  Otherwise, a ZendGData\App\InvalidArgumentException
      * will be thrown.
      *
      * @param string $key The private key
@@ -327,7 +327,7 @@ class HttpClient extends Http\Client
      *
      * This is used to support POSTing from open file handles without
      * caching the entire body into memory. It is a wrapper around
-     * Zend_Http_Client::setRawData().
+     * Zend\Http\Client::setRawData().
      *
      * @param string $data The request data
      * @param string $enctype The encoding type

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\EXIF;
@@ -16,8 +16,8 @@ use ZendGData\EXIF;
  * An Atom entry containing EXIF metadata.
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Exif
+ * @package    ZendGData
+ * @subpackage EXIF
  */
 class Entry extends \ZendGData\Entry
 {
@@ -29,7 +29,7 @@ class Entry extends \ZendGData\Entry
     protected $_entryClassName = '\ZendGData\EXIF\Entry';
 
     /**
-     * The tags that belong to the Exif group.
+     * The tags that belong to the EXIF group.
      *
      * @var string
      */
@@ -101,7 +101,7 @@ class Entry extends \ZendGData\Entry
 
     /**
      * Set the tags property for this entry. This property contains
-     * various Exif data.
+     * various EXIF data.
      *
      * This corresponds to the <exif:tags> property in the Google Data
      * protocol.

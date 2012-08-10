@@ -5,18 +5,18 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App;
 
 /**
- * Gdata APP exceptions
+ * GData APP exceptions
  *
- * Class to represent exceptions that occur during Gdata APP operations.
+ * Class to represent exceptions that occur during GData APP operations.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class BadMethodCallException extends Exception

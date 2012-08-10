@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Spreadsheets;
@@ -18,7 +18,7 @@ use ZendGData\App;
  * @link http://code.google.com/apis/gdata/spreadsheets/
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Spreadsheets
  */
 class CellQuery extends \ZendGData\Query
@@ -34,7 +34,7 @@ class CellQuery extends \ZendGData\Query
     protected $_cellId = null;
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_CellQuery object.
+     * Constructs a new ZendGData\Spreadsheets\CellQuery object.
      *
      * @param string $url Base URL to use for queries
      */

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Calendar\Extension;
  * Data model class to represent an entry's sendEventNotifications
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class SendEventNotifications extends \ZendGData\Extension
@@ -24,7 +24,7 @@ class SendEventNotifications extends \ZendGData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_SendEventNotifications object.
+     * Constructs a new ZendGData\Calendar\Extension\SendEventNotifications object.
      * @param bool $value (optional) SendEventNotifications value as URI.
      */
     public function __construct($value = null)
@@ -91,7 +91,7 @@ class SendEventNotifications extends \ZendGData\Extension
      * Set the value for this element's Value attribute.
      *
      * @param string $value The desired value for this attribute.
-     * @return Zend_Gdata_Extension_SendEventNotifications The element being modified.
+     * @return \ZendGData\Calendar\Extension\SendEventNotifications The element being modified.
      */
     public function setValue($value)
     {

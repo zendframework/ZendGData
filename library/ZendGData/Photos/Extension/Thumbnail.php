@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Photos\Extension;
@@ -15,7 +15,7 @@ namespace ZendGData\Photos\Extension;
  * This class represents the URI for a thumbnail image.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Photos
  */
 class Thumbnail extends \ZendGData\Extension
@@ -25,7 +25,7 @@ class Thumbnail extends \ZendGData\Extension
     protected $_rootElement = 'thumbnail';
 
     /**
-     * Constructs a new Zend_Gdata_Photos_Extension_Thumbnail object.
+     * Constructs a new ZendGData\Photos\Extension\Thumbnail object.
      *
      * @param string $text (optional) The thumbnail URI to represent.
      */

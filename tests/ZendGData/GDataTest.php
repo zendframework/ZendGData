@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
@@ -15,9 +15,9 @@ use Zend\Http;
 
 /**
  * @category   Zend
- * @package    Zend_GData
+ * @package    ZendGData
  * @subpackage UnitTests
- * @group      Zend_GData
+ * @group      ZendGData
  */
 class GDataTest extends \PHPUnit_Framework_TestCase
 {
@@ -48,7 +48,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
     {
         $gdata = new GData();
         try {
-            // give it neither a string nor a Zend_GData_Query object,
+            // give it neither a string nor a ZendGData\Query object,
             // and see if it throws an exception.
             $feed = $gdata->getFeed(new \stdClass());
             $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');
@@ -63,7 +63,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
     {
         $gdata = new GData();
         try {
-            // give it neither a string nor a Zend_GData_Query object,
+            // give it neither a string nor a ZendGData\Query object,
             // and see if it throws an exception.
             $feed = $gdata->getEntry(new \stdClass());
             $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');

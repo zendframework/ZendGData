@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Represents the yt:state element used by the YouTube data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class State extends \ZendGData\Extension
@@ -27,7 +27,7 @@ class State extends \ZendGData\Extension
     protected $_helpUrl = null;
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_State object.
+     * Constructs a new ZendGData\YouTube\Extension\State object.
      *
      * @param string $explanation(optional) The explanation of this state
      * @param string $name(optional) The name value

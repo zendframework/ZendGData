@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
@@ -15,9 +15,9 @@ use ZendGData\App;
 
 /**
  * @category   Zend
- * @package    Zend_GData
+ * @package    ZendGData
  * @subpackage UnitTests
- * @group      Zend_GData
+ * @group      ZendGData
  */
 class GDataOnlineTest extends \PHPUnit_Framework_TestCase
 {
@@ -26,7 +26,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         if (!constant('TESTS_ZEND_GDATA_ONLINE_ENABLED')) {
-            $this->markTestSkipped('Zend_GData online tests are not enabled');
+            $this->markTestSkipped('ZendGData online tests are not enabled');
         }
         $user = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_CLIENTLOGIN_PASSWORD');
