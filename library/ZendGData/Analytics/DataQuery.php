@@ -10,14 +10,14 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData\Query;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class DataQuery extends GData\Query
+class DataQuery extends Query
 {
     const ANALYTICS_FEED_URI = 'https://www.google.com/analytics/feeds/data';
 

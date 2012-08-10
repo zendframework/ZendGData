@@ -227,7 +227,7 @@ class App
         }
 
         $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            \Zend\Version::VERSION;
+            \Zend\Version\Version::VERSION;
         $client->getRequest()->getHeaders()->addHeaderLine('User-Agent', $userAgent);
         $client->setOptions(array(
             'strictredirects' => true

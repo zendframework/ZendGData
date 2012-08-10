@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData\GData;
 use Zend\Http;
 
 /**
@@ -24,7 +24,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
 
     public function testDefaultHttpClient()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         $client = $gdata->getHttpClient();
         $this->assertTrue($client instanceof Http\Client,
             'Expecting object of type Zend_Http_Client, got '
@@ -35,7 +35,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
     public function testSpecificHttpClient()
     {
         $client = new Http\Client();
-        $gdata = new GData\GData($client);
+        $gdata = new GData($client);
         $client2 = $gdata->getHttpClient();
         $this->assertTrue($client2 instanceof Http\Client,
             'Expecting object of type Zend_Http_Client, got '
@@ -46,7 +46,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFeedExceptionInvalidLocationType()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         try {
             // give it neither a string nor a Zend_GData_Query object,
             // and see if it throws an exception.
@@ -61,7 +61,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
 
     public function testGetEntryExceptionInvalidLocationType()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         try {
             // give it neither a string nor a Zend_GData_Query object,
             // and see if it throws an exception.

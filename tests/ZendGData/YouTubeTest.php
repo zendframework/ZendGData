@@ -53,7 +53,7 @@ class YouTubeTest extends \PHPUnit_Framework_TestCase
         $client = $yt->getHttpClient();
 
         $this->assertEquals($client->getHeader('User-Agent'),
-                            $applicationId . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION);
+                            $applicationId . ' Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION);
         $this->assertEquals($client->getHeader('X-GData-Key'), 'key='. $developerKey);
         $this->assertEquals($client->getHeader('X-GData-Client'), $clientId);
     }

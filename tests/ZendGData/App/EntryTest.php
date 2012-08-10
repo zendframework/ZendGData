@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest\App;
 
-use Zend\GData;
+use ZendGData\HttpClient;
 use ZendGData\App;
 use ZendGData\App\Extension;
 use Zend\Http;
@@ -49,7 +49,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
         $this->entry = new App\Entry();
 
         $this->adapter = new \ZendGDataTest\TestAsset\MockHttpClient();
-        $this->client = new GData\HttpClient();
+        $this->client = new HttpClient();
         $this->client->setAdapter($this->adapter);
         $this->service = new App($this->client);
     }

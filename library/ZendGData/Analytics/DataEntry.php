@@ -10,14 +10,15 @@
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData\Entry;
+use ZendGData\Analytics;
 
 /**
  * @category   Zend
  * @package    Zend_Gdata
  * @subpackage Analytics
  */
-class DataEntry extends GData\Entry
+class DataEntry extends Entry
 {
     /**
      * @var Extension\Dimension[]
@@ -33,7 +34,7 @@ class DataEntry extends GData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(Analytics::$namespaces);
         parent::__construct($element);
     }
 

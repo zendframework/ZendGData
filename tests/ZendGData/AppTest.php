@@ -10,7 +10,7 @@
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData\HttpClient;
 use ZendGData\App;
 use ZendGData\App\Extension;
 use Zend\Http\Header\Etag;
@@ -60,7 +60,7 @@ class AppTest extends \PHPUnit_Framework_TestCase
                 true);
 
         $this->adapter = new TestAsset\MockHttpClient();
-        $this->client = new GData\HttpClient();
+        $this->client = new HttpClient();
         $this->client->setAdapter($this->adapter);
         $this->service = new App($this->client);
     }
