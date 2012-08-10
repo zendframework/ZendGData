@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Calendar\Extension;
  * Represents the gCal:selected element used by the Calendar data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class Selected extends \ZendGData\Extension
@@ -25,7 +25,7 @@ class Selected extends \ZendGData\Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Selected object.
+     * Constructs a new ZendGData\Calendar\Extension\Selected object.
      * @param bool $value (optional) The value of the element.
      */
     public function __construct($value = null)

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Docs;
@@ -18,7 +18,7 @@ use ZendGData\App;
  * @link http://code.google.com/apis/gdata/spreadsheets/
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Docs
  */
 class Query extends \ZendGData\Query
@@ -57,7 +57,7 @@ class Query extends \ZendGData\Query
     protected $_projection = 'full';
 
     /**
-     * Constructs a new instance of a Zend_Gdata_Docs_Query object.
+     * Constructs a new instance of a ZendGData\Docs\Query object.
      */
     public function __construct()
     {

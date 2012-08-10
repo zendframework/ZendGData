@@ -5,19 +5,19 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
 
 /**
- * Provides a mechanism to build a query URL for Gdata services.
- * Queries are not defined for APP, but are provided by Gdata services
+ * Provides a mechanism to build a query URL for GData services.
+ * Queries are not defined for APP, but are provided by GData services
  * as an extension.
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class Query
 {
@@ -52,7 +52,7 @@ class Query
     protected $_category = null;
 
     /**
-     * Create Gdata_Query object
+     * Create ZendGData\Query object
      */
     public function __construct($url = null)
     {

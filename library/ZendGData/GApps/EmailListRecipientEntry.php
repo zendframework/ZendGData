@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -18,17 +18,17 @@ use ZendGData\GApps;
  * Each instance of this class represents a recipient of an email list
  * hosted on a Google Apps domain. Each email list may contain multiple
  * recipients. Email lists themselves are described by
- * Zend_Gdata_EmailListEntry. Multiple recipient entries are contained within
- * instances of Zend_Gdata_GApps_EmailListRecipientFeed.
+ * ZendGData\EmailListEntry. Multiple recipient entries are contained within
+ * instances of ZendGData\GApps\EmailListRecipientFeed.
  *
  * To transfer email list recipients to and from the Google Apps servers,
  * including creating new recipients, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class EmailListRecipientEntry extends \ZendGData\Entry

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -14,7 +14,7 @@ namespace ZendGData;
  * Service class for interacting with the Books service
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Books
  */
 class Books extends GData
@@ -25,7 +25,7 @@ class Books extends GData
     const AUTH_SERVICE_NAME = 'print';
 
     /**
-     * Namespaces used for Zend_Gdata_Books
+     * Namespaces used for ZendGData\Books
      *
      * @var array
      */
@@ -35,7 +35,7 @@ class Books extends GData
     );
 
     /**
-     * Create Zend_Gdata_Books object
+     * Create ZendGData\Books object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.
@@ -53,7 +53,7 @@ class Books extends GData
      * Retrieves a feed of volumes.
      *
      * @param \ZendGData\Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
+     *        query or a ZendGData\Query object from which a URL can be
      *        determined.
      * @return \ZendGData\Books\VolumeFeed The feed of volumes found at the
      *         specified URL.
@@ -75,7 +75,7 @@ class Books extends GData
      *
      * @param string|null $volumeId The volumeId of interest.
      * @param \ZendGData\Query|string|null $location (optional) The URL to
-     *        query or a Zend_Gdata_Query object from which a URL can be
+     *        query or a ZendGData\Query object from which a URL can be
      *        determined.
      * @return \ZendGData\Books\VolumeEntry The feed of volumes found at the
      *         specified URL.

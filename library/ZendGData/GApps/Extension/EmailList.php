@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps\Extension;
@@ -13,10 +13,10 @@ namespace ZendGData\GApps\Extension;
 /**
  * Represents the apps:emailList element used by the Apps data API. This
  * class represents properties of an email list and is usually contained
- * within an instance of Zend_Gdata_GApps_EmailListEntry.
+ * within an instance of ZendGData\GApps\EmailListEntry.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class EmailList extends \ZendGData\Extension
@@ -34,7 +34,7 @@ class EmailList extends \ZendGData\Extension
     protected $_name = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_EmailList object.
+     * Constructs a new ZendGData\GApps\Extension\EmailList object.
      *
      * @param string $name (optional) The name to be used for this email list.
      */

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\DublinCore\Extension;
@@ -15,7 +15,7 @@ namespace ZendGData\DublinCore\Extension;
  * resource
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage DublinCore
  */
 class Date extends \ZendGData\Extension
@@ -25,7 +25,7 @@ class Date extends \ZendGData\Extension
     protected $_rootElement = 'date';
 
     /**
-     * Constructor for Zend_Gdata_DublinCore_Extension_Date which
+     * Constructor for ZendGData\DublinCore\Extension\Date which
      * Point or period of time associated with an event in the lifecycle of the
      * resource
      *

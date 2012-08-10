@@ -5,25 +5,28 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
 
-use Zend\GData;
+use ZendGData\ClientLogin;
 use ZendGData\GApps;
+use ZendGData\GApps\ServiceException;
+use ZendGData\GApps\Error;
+
 
 /**
  * @category   Zend
- * @package    Zend_GData_GApps
+ * @package    ZendGData\GApps
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_GApps
+ * @group      ZendGData
+ * @group      ZendGData\GApps
  */
 class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
 {
 
-    const GIVEN_NAME = 'Zend_GData';
+    const GIVEN_NAME = 'ZendGData';
     const FAMILY_NAME = 'Automated Test Account';
     const PASSWORD = '4ohtladfl;';
     const PASSWORD_HASH = 'SHA-1';
@@ -31,7 +34,7 @@ class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         if (!constant('TESTS_ZEND_GDATA_ONLINE_ENABLED')) {
-            $this->markTestSkipped('Zend_GData online tests are not enabled');
+            $this->markTestSkipped('ZendGData online tests are not enabled');
         }
 
         if (!constant('TESTS_ZEND_GDATA_GAPPS_ONLINE_ENABLED')) {
@@ -43,7 +46,7 @@ class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
         $username = constant('TESTS_ZEND_GDATA_GAPPS_EMAIL');
         $pass = constant('TESTS_ZEND_GDATA_GAPPS_PASSWORD');
         $this->domain = constant('TESTS_ZEND_GDATA_GAPPS_DOMAIN');
-        $client = GData\ClientLogin::getHttpClient($username, $pass, GApps::AUTH_SERVICE_NAME);
+        $client = ClientLogin::getHttpClient($username, $pass, GApps::AUTH_SERVICE_NAME);
         $this->gdata = new GApps($client, $this->domain);
 
         // Container to hold users and lists created during tests. All entries in
@@ -87,7 +90,7 @@ class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
 
         // Since we can't retrieve the password or hash function via the
         // API, let's see if a ClientLogin auth request succeeds
-        GData\ClientLogin::getHttpClient($this->id . '@' .
+        ClientLogin::getHttpClient($this->id . '@' .
             $this->domain, self::PASSWORD, 'xapi');
 
 
@@ -439,8 +442,8 @@ class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
             // This souldn't execute
             $this->fail('Retrieving a non-existant group entry didn\'t' .
                 'raise exception.');
-        } catch (Zend_Gdata_Gapps_ServiceException $e) {
-            if ($e->hasError(Zend_Gdata_Gapps_Error::ENTITY_DOES_NOT_EXIST)) {
+        } catch (ServiceException $e) {
+            if ($e->hasError(Error::ENTITY_DOES_NOT_EXIST)) {
                 // Dummy assertion just to say we tested something here.
                 $this->assertTrue(true);
             } else {
@@ -766,8 +769,8 @@ class GAppsOnlineTest extends \PHPUnit_Framework_TestCase
             // This souldn't execute
             $this->fail('Retrieving a non-existant email list entry didn\'t' .
                 'raise exception.');
-        } catch (GApps\ServiceException $e) {
-            if ($e->hasError(GApps\Error::ENTITY_DOES_NOT_EXIST)) {
+        } catch (ServiceException $e) {
+            if ($e->hasError(Error::ENTITY_DOES_NOT_EXIST)) {
                 // Dummy assertion just to say we tested something here.
                 $this->assertTrue(true);
             } else {

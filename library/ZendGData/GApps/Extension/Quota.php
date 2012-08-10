@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps\Extension;
@@ -14,10 +14,10 @@ namespace ZendGData\GApps\Extension;
  * Represents the apps:quota element used by the Apps data API. This is
  * used to indicate the amount of storage space available to a user. Quotas
  * may not be able to be set, depending on the domain used. This class
- * is usually contained within an instance of Zend_Gdata_GApps_UserEntry.
+ * is usually contained within an instance of ZendGData\GApps\UserEntry.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class Quota extends \ZendGData\Extension
@@ -34,7 +34,7 @@ class Quota extends \ZendGData\Extension
     protected $_limit = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Quota object.
+     * Constructs a new ZendGData\GApps\Extension\Quota object.
      *
      * @param string $limit (optional) The limit, in bytes, for this quota.
      */

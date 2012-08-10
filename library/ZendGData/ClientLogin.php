@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -16,8 +16,8 @@ namespace ZendGData;
  * @see http://code.google.com/apis/accounts/AuthForInstalledApps.html
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class ClientLogin
 {
@@ -76,7 +76,7 @@ class ClientLogin
         // Build the HTTP client for authentication
         $client->setUri($loginUri);
         $client->setMethod('POST');
-        $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+        $useragent = App::getUserAgentString($source);
         $client->setOptions(array(
                 'maxredirects'    => 0,
                 'strictredirects' => true,
@@ -128,7 +128,7 @@ class ClientLogin
 
         if ($response->getStatusCode() == 200) {
             $client->setClientLoginToken($goog_resp['Auth']);
-            $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $useragent = App::getUserAgentString($source);
             $client->setOptions(array(
                     'strictredirects' => true,
                     'useragent' => $useragent

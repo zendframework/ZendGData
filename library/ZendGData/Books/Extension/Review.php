@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Books\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Books\Extension;
  * User-provided review
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Books
  */
 class Review extends \ZendGData\Extension
@@ -26,7 +26,7 @@ class Review extends \ZendGData\Extension
     protected $_type = null;
 
     /**
-     * Constructor for Zend_Gdata_Books_Extension_Review which
+     * Constructor for ZendGData\Books\Extension\Review which
      * User-provided review
      *
      * @param string|null $lang Review language.

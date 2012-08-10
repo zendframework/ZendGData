@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -18,14 +18,14 @@ namespace ZendGData;
  * @link http://code.google.com/apis/picasaweb/reference.html#georss_reference
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Geo
  */
 class Geo extends GData
 {
 
     /**
-     * Namespaces used for Zend_Gdata_Geo
+     * Namespaces used for ZendGData\Geo
      *
      * @var array
      */
@@ -36,7 +36,7 @@ class Geo extends GData
 
 
     /**
-     * Create Zend_Gdata_Geo object
+     * Create ZendGData\Geo object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google Apps servers.

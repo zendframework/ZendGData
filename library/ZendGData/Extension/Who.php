@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Extension;
@@ -16,8 +16,8 @@ use ZendGData\Extension;
  * Data model class to represent a participant
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class Who extends Extension
 {
@@ -31,7 +31,7 @@ class Who extends Extension
     protected $_entryLink = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Who object.
+     * Constructs a new ZendGData\Extension\Who object.
      * @param string $email (optional) Email address.
      * @param string $rel (optional) Relationship description.
      * @param string $valueString (optional) Simple string describing this person.

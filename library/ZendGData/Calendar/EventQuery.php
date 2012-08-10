@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar;
@@ -18,7 +18,7 @@ use ZendGData\App;
  * @link http://code.google.com/apis/gdata/calendar/
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class EventQuery extends \ZendGData\Query
@@ -68,7 +68,7 @@ class EventQuery extends \ZendGData\Query
     protected $_event = null;
 
     /**
-     * Create Gdata_Calendar_EventQuery object.  If a URL is provided,
+     * Create ZendGData\Calendar\EventQuery object.  If a URL is provided,
      * it becomes the base URL, and additional URL components may be
      * appended.  For instance, if $url is 'https://www.google.com/calendar',
      * the default URL constructed will be

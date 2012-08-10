@@ -5,19 +5,20 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData\Feed;
+use ZendGData\Analytics;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Analytics
  */
-class AccountFeed extends GData\Feed
+class AccountFeed extends Feed
 {
     /**
      * The classname for individual feed elements.
@@ -38,7 +39,7 @@ class AccountFeed extends GData\Feed
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(Analytics::$namespaces);
         parent::__construct($element);
     }
 }

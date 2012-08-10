@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -17,11 +17,11 @@ use Zend\Uri;
 
 /**
  * Provides Atom Publishing Protocol (APP) functionality.  This class and all
- * other components of Zend_Gdata_App are designed to work independently from
- * other Zend_Gdata components in order to interact with generic APP services.
+ * other components of ZendGData\App are designed to work independently from
+ * other ZendGData components in order to interact with generic APP services.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class App
@@ -105,7 +105,7 @@ class App
       * value >= 1 is considered valid.
       *
       * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
+      * ZendGData\App subclasses.
       *
       * @see setMajorProtocolVersion()
       * @see getMajorProtocolVersion()
@@ -121,7 +121,7 @@ class App
       * used in the future.
       *
       * Under most circumtances, this will be automatically set by
-      * Zend_Gdata_App subclasses.
+      * ZendGData\App subclasses.
       *
       * @see setMinorProtocolVersion()
       * @see getMinorProtocolVersion()
@@ -136,7 +136,7 @@ class App
     protected static $_useObjectMapping = true;
 
     /**
-     * Create Gdata object
+     * Create ZendGData\App object
      *
      * @param Http\Client $client
      * @param string $applicationId
@@ -150,7 +150,7 @@ class App
     }
 
     /**
-     * Applys defaults to the Gdata object.
+     * Applies defaults to the GData object.
      * We may want to fire off multiple requests with different protocol versions
      * so after every request we should should apply the defaults.
      */
@@ -226,8 +226,7 @@ class App
             $client = new Http\Client();
         }
 
-        $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            \Zend\Version::VERSION;
+        $userAgent = self::getUserAgentString($applicationId);
         $client->getRequest()->getHeaders()->addHeaderLine('User-Agent', $userAgent);
         $client->setOptions(array(
             'strictredirects' => true
@@ -261,7 +260,7 @@ class App
     {
         if (!self::$_staticHttpClient instanceof Http\Client) {
             $client = new Http\Client();
-            $userAgent = 'Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $userAgent = self::getUserAgentString();
             $client->setHeaders('User-Agent', $userAgent);
             $client->setOptions(array(
                 'strictredirects' => true
@@ -372,6 +371,17 @@ class App
     public static function getMaxRedirects()
     {
         return self::$_maxRedirects;
+    }
+
+    /**
+     * Get ZendGData user agent string
+     *
+     * @param string $applicationId
+     * @return string
+     */
+    public static function getUserAgentString($applicationId = null)
+    {
+        return ($applicationId ? $applicationId . ' ' : null) . 'ZendGData/' . \Zend\Version\Version::VERSION;
     }
 
     /**
@@ -569,7 +579,7 @@ class App
             $headers = array();
         }
 
-        // Append a Gdata version header if protocol v2 or higher is in use.
+        // Append a GData version header if protocol v2 or higher is in use.
         // (Protocol v1 does not use this header.)
         $major = $this->getMajorProtocolVersion();
         $minor = $this->getMinorProtocolVersion();
@@ -962,7 +972,7 @@ class App
      * @param string|null The URI to send requests to, or null if $data
      *        contains the URI.
      * @param string|null The name of the class that should be deserialized
-     *        from the server response. If null, then 'Zend_Gdata_App_Entry'
+     *        from the server response. If null, then 'ZendGData\App\Entry'
      *        will be used.
      * @param array $extraHeaders Extra headers to add to the request, as an
      *        array of string-based key/value pairs.
@@ -998,7 +1008,7 @@ class App
      * Provides a magic factory method to instantiate new objects with
      * shorter syntax than would otherwise be required by the Zend Framework
      * naming conventions.  For instance, to construct a new
-     * Zend_Gdata_Calendar_Extension_Color, a developer simply needs to do
+     * ZendGData\Calendar\Extension\Color, a developer simply needs to do
      * $gCal->newColor().  For this magic constructor, packages are searched
      * in the same order as which they appear in the $_registeredPackages
      * array
@@ -1078,7 +1088,7 @@ class App
 
     /**
      * This method enables logging of requests by changing the
-     * Zend_Http_Client_Adapter used for performing the requests.
+     * Zend\Http\Client\Adapter used for performing the requests.
      * NOTE: This will not work if you have customized the adapter
      * already to use a proxy server or other interface.
      *
@@ -1101,7 +1111,7 @@ class App
      *          If null, the next feed (if found) will be the same class as
      *          the feed that was given as the first argument.
      * @return \ZendGData\App\Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no next set of results
+     *          ZendGData\App\Feed or null if no next set of results
      *          exists.
      */
     public function getNextFeed($feed, $className = null)
@@ -1128,7 +1138,7 @@ class App
      *          If null, the previous feed (if found) will be the same class as
      *          the feed that was given as the first argument.
      * @return \ZendGData\App\Feed|null Returns a
-     *          Zend_Gdata_App_Feed or null if no previous set of results
+     *          ZendGData\App\Feed or null if no previous set of results
      *          exists.
      */
     public function getPreviousFeed($feed, $className = null)

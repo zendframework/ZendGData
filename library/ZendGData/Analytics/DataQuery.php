@@ -5,19 +5,19 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Analytics;
 
-use Zend\GData;
+use ZendGData\Query;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Analytics
  */
-class DataQuery extends GData\Query
+class DataQuery extends Query
 {
     const ANALYTICS_FEED_URI = 'https://www.google.com/analytics/feeds/data';
 

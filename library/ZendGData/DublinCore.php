@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -15,14 +15,14 @@ namespace ZendGData;
  * DublinCore extensions.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage DublinCore
  */
 class DublinCore extends GData
 {
 
     /**
-     * Namespaces used for Zend_Gdata_DublinCore
+     * Namespaces used for ZendGData\DublinCore
      *
      * @var array
      */
@@ -31,7 +31,7 @@ class DublinCore extends GData
     );
 
     /**
-     * Create Zend_Gdata_DublinCore object
+     * Create ZendGData\DublinCore object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google servers.

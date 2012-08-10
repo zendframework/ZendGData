@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Extension;
@@ -16,8 +16,8 @@ use ZendGData\Extension;
  * Data model class to represent an attendee's type (gd:attendeeType)
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class AttendeeType extends Extension
 {
@@ -26,7 +26,7 @@ class AttendeeType extends Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_AttendeeType object.
+     * Constructs a new ZendGData\Extension\AttendeeType object.
      * @param string $value (optional) This entry's 'value' attribute.
      */
     public function __construct($value = null)

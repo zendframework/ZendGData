@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Extension;
@@ -16,8 +16,8 @@ use ZendGData\Extension;
  * Implements the gd:rating element
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class Rating extends Extension
 {
@@ -30,7 +30,7 @@ class Rating extends Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Rating object.
+     * Constructs a new ZendGData\Extension\Rating object.
      *
      * @param integer $average (optional) Average rating.
      * @param integer $min (optional) Minimum rating.

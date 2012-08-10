@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -20,12 +20,12 @@ use ZendGData\GApps;
  *
  * To transfer user entries to and from the Google Apps servers, including
  * creating new entries, refer to the Google Apps service class,
- * Zend_Gdata_GApps.
+ * ZendGData\GApps.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class UserEntry extends \ZendGData\Entry
@@ -224,7 +224,7 @@ class UserEntry extends \ZendGData\Entry
      *          the array of links is returned instead.
      * @return mixed Either an array of \ZendGData\Extension\FeedLink
      *          objects if $rel is null, a single
-     *          Zend_Gdata_Extension_FeedLink object if $rel is specified
+     *          ZendGData\Extension\FeedLink object if $rel is specified
      *          and a matching feed link is found, or null if $rel is
      *          specified and no matching feed link is found.
      */
@@ -247,7 +247,7 @@ class UserEntry extends \ZendGData\Entry
      * is used to provide links to alternative feeds relevant to this entry.
      *
      * @param array $value A collection of
-     *          Zend_Gdata_GApps_Extension_FeedLink objects.
+     *          ZendGData\GApps\Extension\FeedLink objects.
      * @return EventEntry Provides a fluent interface.
      */
     public function setFeedLink($value)

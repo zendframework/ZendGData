@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Extension;
@@ -13,12 +13,12 @@ namespace ZendGData\Extension;
 use ZendGData\Extension;
 
 /**
- * Data model for gd:extendedProperty element, used by some Gdata
+ * Data model for gd:extendedProperty element, used by some GData
  * services to implement arbitrary name/value pair storage
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class ExtendedProperty extends Extension
 {

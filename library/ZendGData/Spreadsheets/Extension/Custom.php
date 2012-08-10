@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Spreadsheets\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Spreadsheets\Extension;
  * Concrete class for working with custom gsx elements.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Spreadsheets
  */
 class Custom extends \ZendGData\Extension
@@ -24,7 +24,7 @@ class Custom extends \ZendGData\Extension
     protected $_rootNamespace = 'gsx';
 
     /**
-     * Constructs a new Zend_Gdata_Spreadsheets_Extension_Custom object.
+     * Constructs a new ZendGData\Spreadsheets\Extension\Custom object.
      * @param string $column (optional) The column/tag name of the element.
      * @param string $value (optional) The text content of the element.
      */

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
@@ -15,9 +15,9 @@ use Zend\Http\Header\Etag;
 
 /**
  * @category   Zend
- * @package    Zend_GData
+ * @package    ZendGData
  * @subpackage UnitTests
- * @group      Zend_GData
+ * @group      ZendGData
  */
 class EntryTest extends \PHPUnit_Framework_TestCase
 {
@@ -84,7 +84,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
         } catch (App\IOException $e) {
             $exceptionCaught = true;
         }
-        $this->assertTrue($exceptionCaught, "Exception Zend_GData_IO_Exception expected");
+        $this->assertTrue($exceptionCaught, "Exception ZendGData\\App\\IOException expected");
     }
 
     public function testHttpAndXmlEtagsDifferingThrowsExceptionWithMessage()
@@ -97,7 +97,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
             if ($e->getMessage() == $this->expectedMismatchExceptionMessage)
                 $messageCorrect = true;
         }
-        $this->assertTrue($messageCorrect, "Exception Zend_GData_IO_Exception message incorrect");
+        $this->assertTrue($messageCorrect, "Exception ZendGData\\App\\IOException message incorrect");
     }
 
     public function testNothingBadHappensWhenHttpAndXmlEtagsMatch()

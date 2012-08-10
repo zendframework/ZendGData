@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Represents the yt:token element used by the YouTube data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Token extends \ZendGData\App\Extension\AbstractExtension
@@ -24,7 +24,7 @@ class Token extends \ZendGData\App\Extension\AbstractExtension
     protected $_rootElement = 'token';
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Token object.
+     * Constructs a new ZendGData\YouTube\Extension\Token object.
      */
     public function __construct($text = null)
     {

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -14,7 +14,7 @@ use Zend\Http\Client;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Analytics
  */
 class Analytics extends GData
@@ -28,7 +28,7 @@ class Analytics extends GData
     );
 
     /**
-     * Create Gdata object
+     * Create ZendGData\Analytics object
      *
      * @param Client $client
      * @param string $applicationId The identity of the app in the form of
@@ -36,8 +36,8 @@ class Analytics extends GData
      */
     public function __construct(Client $client = null, $applicationId = 'MyCompany-MyApp-1.0')
     {
-        $this->registerPackage('Zend_Gdata_Analytics');
-        $this->registerPackage('Zend_Gdata_Analytics_Extension');
+        $this->registerPackage('ZendGData\Analytics');
+        $this->registerPackage('ZendGData\Analytics\Extension');
         parent::__construct($client, $applicationId);
         $this->_httpClient->setParameterPost(array('service' => self::AUTH_SERVICE_NAME));
     }

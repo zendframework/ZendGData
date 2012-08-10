@@ -5,31 +5,32 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Analytics\Extension;
 
-use Zend\GData;
+use ZendGData\Extension;
+use ZendGData\Analytics;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Analytics
  */
-class TableId extends GData\Extension
+class TableId extends Extension
 {
     protected $_rootNamespace = 'ga';
     protected $_rootElement = 'tableId';
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Timezone object.
+     * Constructs a new ZendGData\Calendar\Extension\Timezone object.
      * @param string $value (optional) The text content of the element.
      */
     public function __construct($value = null)
     {
-        $this->registerAllNamespaces(GData\Analytics::$namespaces);
+        $this->registerAllNamespaces(Analytics::$namespaces);
         parent::__construct();
         $this->_value = $value;
     }

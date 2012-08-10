@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Books;
@@ -16,7 +16,7 @@ use ZendGData\Books;
  * Describes an entry in a feed of Book Search volumes
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Books
  */
 class VolumeEntry extends \ZendGData\Entry
@@ -43,7 +43,7 @@ class VolumeEntry extends \ZendGData\Entry
     protected $_viewability = null;
 
     /**
-     * Constructor for Zend_Gdata_Books_VolumeEntry which
+     * Constructor for ZendGData\Books\VolumeEntry which
      * Describes an entry in a feed of Book Search volumes
      *
      * @param DOMElement $element (optional) DOMElement from which this

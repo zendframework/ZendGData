@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App;
@@ -14,7 +14,7 @@ namespace ZendGData\App;
  * Atom feed class
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class Feed extends AbstractFeedSourceParent
@@ -289,7 +289,7 @@ class Feed extends AbstractFeedSourceParent
 
     /**
      * Set the major protocol version that should be used. Values < 1 will
-     * cause a \Zend_Gdata\App\InvalidArgumentException to be thrown.
+     * cause a \ZendGData\App\InvalidArgumentException to be thrown.
      *
      * This value will be propagated to all child entries.
      *
