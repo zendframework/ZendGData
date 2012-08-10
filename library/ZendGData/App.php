@@ -381,7 +381,7 @@ class App
      */
     public static function getUserAgentString($applicationId = null)
     {
-        return ($applicationId ? $applicationId . ' ' : null) . 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
+        return ($applicationId ? $applicationId . ' ' : null) . 'ZendGData/' . \Zend\Version\Version::VERSION;
     }
 
     /**
