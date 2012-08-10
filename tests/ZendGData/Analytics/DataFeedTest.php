@@ -21,7 +21,7 @@ use ZendGData\Analytics\DataQuery;
  * @group      ZendGData
  * @group      ZendGData\Analytics
  */
-class Zend_Gdata_Analytics_DataFeedTest extends \PHPUnit_Framework_TestCase
+class DataFeedTest extends \PHPUnit_Framework_TestCase
 {
     public $testData = array(
         'blogger.com' => 68140,
