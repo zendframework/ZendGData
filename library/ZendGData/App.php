@@ -226,8 +226,7 @@ class App
             $client = new Http\Client();
         }
 
-        $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            \Zend\Version\Version::VERSION;
+        $userAgent = self::getUserAgentString($applicationId);
         $client->getRequest()->getHeaders()->addHeaderLine('User-Agent', $userAgent);
         $client->setOptions(array(
             'strictredirects' => true
@@ -261,7 +260,7 @@ class App
     {
         if (!self::$_staticHttpClient instanceof Http\Client) {
             $client = new Http\Client();
-            $userAgent = 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
+            $userAgent = self::getUserAgentString();
             $client->setHeaders('User-Agent', $userAgent);
             $client->setOptions(array(
                 'strictredirects' => true
@@ -372,6 +371,17 @@ class App
     public static function getMaxRedirects()
     {
         return self::$_maxRedirects;
+    }
+
+    /**
+     * Get ZendGData user agent string
+     *
+     * @param string $applicationId
+     * @return string
+     */
+    public static function getUserAgentString($applicationId = null)
+    {
+        return ($applicationId ? $applicationId . ' ' : null) . 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
     }
 
     /**

@@ -212,7 +212,7 @@ class AuthSub
             $client = new HttpClient();
         }
 
-        $useragent = 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
+        $useragent = App::getUserAgentString();
         $client->setOptions(array(
                 'strictredirects' => true,
                 'useragent' => $useragent
