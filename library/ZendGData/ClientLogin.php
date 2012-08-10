@@ -76,7 +76,7 @@ class ClientLogin
         // Build the HTTP client for authentication
         $client->setUri($loginUri);
         $client->setMethod('POST');
-        $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+        $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
         $client->setOptions(array(
                 'maxredirects'    => 0,
                 'strictredirects' => true,
@@ -128,7 +128,7 @@ class ClientLogin
 
         if ($response->getStatusCode() == 200) {
             $client->setClientLoginToken($goog_resp['Auth']);
-            $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $useragent = $source . ' Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
             $client->setOptions(array(
                     'strictredirects' => true,
                     'useragent' => $useragent
