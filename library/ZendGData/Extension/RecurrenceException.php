@@ -30,8 +30,8 @@ class RecurrenceException extends Extension
     /**
      * Constructs a new ZendGData\Extension\RecurrenceException object.
      * @param bool $specialized (optional) Whether this is a specialized exception or not.
-     * @param ZendGData\EntryLink (optional) An Event entry with details about the exception.
-     * @param ZendGData\OriginalEvent (optional) The origianl recurrent event this is an exeption to.
+     * @param \ZendGData\EntryLink (optional) An Event entry with details about the exception.
+     * @param \ZendGData\OriginalEvent (optional) The origianl recurrent event this is an exeption to.
      */
     public function __construct($specialized = null, $entryLink = null,
             $originalEvent = null)

@@ -52,7 +52,7 @@ abstract class AbstractText extends AbstractExtension
     }
 
     /*
-     * @return ZendGData\App\Extension\Type
+     * @return \ZendGData\App\Extension\Type
      */
     public function getType()
     {
@@ -61,7 +61,7 @@ abstract class AbstractText extends AbstractExtension
 
     /*
      * @param string $value
-     * @return ZendGData\App\Extension\AbstractText Provides a fluent interface
+     * @return \ZendGData\App\Extension\AbstractText Provides a fluent interface
      */
     public function setType($value)
     {

@@ -255,7 +255,7 @@ class EventEntry extends \ZendGData\Entry
     }
 
     /**
-     * @param ZendGData\Transparency $value
+     * @param \ZendGData\Transparency $value
      * @return \ZendGData\Kind\EventEntry Provides a fluent interface
      */
     public function setTransparency($value)
