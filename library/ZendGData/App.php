@@ -227,7 +227,7 @@ class App
         }
 
         $userAgent = $applicationId . ' Zend_Framework_Gdata/' .
-            \Zend\Version::VERSION;
+            \Zend\Version\Version::VERSION;
         $client->getRequest()->getHeaders()->addHeaderLine('User-Agent', $userAgent);
         $client->setOptions(array(
             'strictredirects' => true
@@ -261,7 +261,7 @@ class App
     {
         if (!self::$_staticHttpClient instanceof Http\Client) {
             $client = new Http\Client();
-            $userAgent = 'Zend_Framework_Gdata/' . \Zend\Version::VERSION;
+            $userAgent = 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
             $client->setHeaders('User-Agent', $userAgent);
             $client->setOptions(array(
                 'strictredirects' => true

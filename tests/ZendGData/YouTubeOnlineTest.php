@@ -10,9 +10,9 @@
 
 namespace ZendGDataTest;
 
-use ZendGData\YouTube;
-use Zend\GData;
+use ZendGData as GData;
 use ZendGData\App;
+use ZendGData\YouTube;
 
 /**
  * @category   Zend
