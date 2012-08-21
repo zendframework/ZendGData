@@ -16,8 +16,8 @@ use ZendGData\Analytics\DataQuery;
  * @category   Zend
  * @package    Zend_GData_Analytics
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_Analytics
+ * @group      ZendGData
+ * @group      ZendGData_Analytics
  */
 class DataQueryTest extends \PHPUnit_Framework_TestCase
 {

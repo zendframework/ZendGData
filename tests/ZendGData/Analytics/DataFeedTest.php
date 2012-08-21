@@ -18,17 +18,16 @@ use ZendGData\Analytics\DataQuery;
  * @category   Zend
  * @package    Zend_Gdata_Analytics
  * @subpackage UnitTests
- * @group      Zend_Gdata
- * @group      Zend_Gdata_Analytics
+ * @group      ZendGdata
+ * @group      ZendGdata_Analytics
  */
-class Zend_Gdata_Analytics_DataFeedTest extends \PHPUnit_Framework_TestCase
+class DataFeedTest extends \PHPUnit_Framework_TestCase
 {
     public $testData = array(
-        'blogger.com' => 68140,
-        'google.com'  => 29666,
-        'stumbleupon.com' => 4012,
-        'google.co.uk' => 2968,
-        'google.co.in' => 2793,
+        'foobarbaz.de' => 12,
+        'foobar.de' => 3,
+        'foobarbaz.ch' => 1,
+        'baz.ch' => 1,
     );
     /** @var DataFeed */
     public $dataFeed;
@@ -36,8 +35,7 @@ class Zend_Gdata_Analytics_DataFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->dataFeed = new DataFeed(
-            file_get_contents(dirname(__FILE__) . '/_files/TestDataFeed.xml'),
-            true
+            file_get_contents(dirname(__FILE__) . '/_files/TestDataFeed.xml')
         );
     }
 
