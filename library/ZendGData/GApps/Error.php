@@ -5,13 +5,13 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
 
 /**
- * Gdata GApps Error class. This class is used to represent errors returned
+ * ZendGData\GApps\Error class. This class is used to represent errors returned
  * within an AppsForYourDomainErrors message received from the Google Apps
  * servers.
  *
@@ -20,7 +20,7 @@ namespace ZendGData\GApps;
  * available at the time of this writing, see getErrorCode.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class Error extends \ZendGData\App\AbstractBase
@@ -106,7 +106,7 @@ class Error extends \ZendGData\App\AbstractBase
      * For more information about these codes and their meaning, please
      * see Appendix D of the Google Apps Provisioning API Reference.
      *
-     * @link http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html#appendix_d Google Apps Provisioning API Reference: Appendix D - Gdata Error Codes
+     * @link http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html#appendix_d Google Apps Provisioning API Reference: Appendix D - GData Error Codes
      * @see setErrorCode
      * @return integer The error code returned by the Google Apps server.
      */

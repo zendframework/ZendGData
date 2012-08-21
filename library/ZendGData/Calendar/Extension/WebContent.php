@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Calendar\Extension;
  * Represents the gCal:webContent element used by the Calendar data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class WebContent extends \ZendGData\Extension
@@ -27,7 +27,7 @@ class WebContent extends \ZendGData\Extension
     protected $_width = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_WebContent object.
+     * Constructs a new ZendGData\Calendar\Extension\WebContent object.
      * @param string $url (optional) The value for this element's URL attribute.
      * @param string $height (optional) The value for this element's height attribute.
      * @param string $width (optional) The value for this element's width attribute.

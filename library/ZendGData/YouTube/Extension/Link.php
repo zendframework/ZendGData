@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Specialized Link class for use with YouTube. Enables use of yt extension elements.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Link extends \ZendGData\App\Extension\Link
@@ -23,8 +23,8 @@ class Link extends \ZendGData\App\Extension\Link
     protected $_token = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Link object.
-     * @see Zend_Gdata_App_Extension_Link#__construct
+     * Constructs a new ZendGData\YouTube\Extension\Link object.
+     * @see ZendGData\App\Extension\Link#__construct
      * @param \ZendGData\YouTube\Extension\Token $token
      */
     public function __construct($href = null, $rel = null, $type = null,
@@ -89,7 +89,7 @@ class Link extends \ZendGData\App\Extension\Link
      * Set the value for this element's token attribute.
      *
      * @param \ZendGData\YouTube\Extension\Token $value The desired value for this attribute.
-     * @return Zend_YouTube_Extension_Link The element being modified.
+     * @return \ZendGData\YouTube\Extension\Link The element being modified.
      */
     public function setToken($value)
     {

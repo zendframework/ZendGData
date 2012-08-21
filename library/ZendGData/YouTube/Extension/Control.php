@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Specialized Control class for use with YouTube. Enables use of yt extension elements.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Control extends \ZendGData\App\Extension\Control
@@ -23,8 +23,8 @@ class Control extends \ZendGData\App\Extension\Control
     protected $_state = null;
 
     /**
-     * Constructs a new Zend_Gdata_Calendar_Extension_Control object.
-     * @see Zend_Gdata_App_Extension_Control#__construct
+     * Constructs a new ZendGData\YouTube\Extension\Control object.
+     * @see ZendGData\App\Extension\Control#__construct
      * @param \ZendGData\App\Extension\Draft $draft
      * @param \ZendGData\YouTube\Extension\State $state
      */
@@ -89,7 +89,7 @@ class Control extends \ZendGData\App\Extension\Control
      * Set the value for this element's state attribute.
      *
      * @param \ZendGData\YouTube\Extension\State $value The desired value for this attribute.
-     * @return Zend_YouTube_Extension_Control The element being modified.
+     * @return \ZendGData\YouTube\Extension\Control The element being modified.
      */
     public function setState($value)
     {

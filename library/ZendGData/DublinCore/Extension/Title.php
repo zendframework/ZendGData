@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\DublinCore\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\DublinCore\Extension;
  * Name given to the resource
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage DublinCore
  */
 class Title extends \ZendGData\Extension
@@ -24,7 +24,7 @@ class Title extends \ZendGData\Extension
     protected $_rootElement = 'title';
 
     /**
-     * Constructor for Zend_Gdata_DublinCore_Extension_Title which
+     * Constructor for ZendGData\DublinCore\Extension\Title which
      * Name given to the resource
      *
      * @param DOMElement $element (optional) DOMElement from which this

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -22,7 +22,7 @@ namespace ZendGData;
  * @link http://code.google.com/apis/apps/gdata_provisioning_api_v2.0_reference.html
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class GApps extends GData
@@ -73,7 +73,7 @@ class GApps extends GData
     );
 
     /**
-     * Create \Gdata\GApps object
+     * Create \ZendGData\GApps object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the Google Apps servers.
@@ -904,7 +904,7 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return GApps\UserFeed Collection of Zend_Gdata_UserEntry
+     * @return GApps\UserFeed Collection of GApps\UserEntry
      *              objects representing all users in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -923,7 +923,7 @@ class GApps extends GData
      * Provisioning API specification. Normally users will instead want to
      * call UserEntry::save() instead.
      *
-     * @see Zend_Gdata_App_Entry::save
+     * @see ZendGData\App\Entry::save
      * @param string $username The username whose data will be overwritten.
      * @param GApps\UserEntry $userEntry The user entry which
      *          will be overwritten.
@@ -1065,7 +1065,7 @@ class GApps extends GData
      * @param string $startNickname (optional) The first nickname to
      *          retrieve. If null or not declared, the page will begin with
      *          the first nickname in the domain.
-     * @return GApps\NicknameFeed Collection of Zend_Gdata_NicknameEntry
+     * @return GApps\NicknameFeed Collection of GApps\NicknameEntry
      *              objects representing all nicknames in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -1084,7 +1084,7 @@ class GApps extends GData
      * signifigant amount of time to complete. On larger domains this may
      * may cause execution to timeout without proper precautions in place.
      *
-     * @return GApps\NicknameFeed Collection of Zend_Gdata_NicknameEntry
+     * @return GApps\NicknameFeed Collection of GApps\NicknameEntry
      *              objects representing all nicknames in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -1485,7 +1485,7 @@ class GApps extends GData
      * @param string $username The recipient whose associated email lists
      *          should be returned.
      * @return GApps\EmailListFeed The list of email lists found as
-     *          Zend_Gdata_EmailListEntry objects.
+     *          GApps\EmailListEntry objects.
      * @throws App\Exception
      * @throws App\HttpException
      * @throws GApps\ServiceException
@@ -1504,7 +1504,7 @@ class GApps extends GData
      * @param string $startEmailListName (optional) The first list to
      *              retrieve. If null or not defined, the page will begin
      *              with the first email list in the domain.
-     * @return GApps\EmailListFeed Collection of Zend_Gdata_EmailListEntry
+     * @return GApps\EmailListFeed Collection of GApps\EmailListEntry
      *              objects representing all nicknames in the domain.
      * @throws App\Exception
      * @throws App\HttpException
@@ -1581,7 +1581,7 @@ class GApps extends GData
      *              recipient, or null to start with the first recipient in
      *              the list.
      * @return GApps\EmailListRecipientFeed Collection of
-     *              Zend_Gdata_EmailListRecipientEntry objects representing all
+     *              GApps\EmailListRecipientEntry objects representing all
      *              recpients in the specified list.
      * @throws App\Exception
      * @throws App\HttpException

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Books;
@@ -16,14 +16,14 @@ use ZendGData\Books;
  * Assists in constructing queries for Books volumes
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Books
  */
 class VolumeQuery extends \ZendGData\Query
 {
 
     /**
-     * Create Gdata_Books_VolumeQuery object
+     * Create ZendGData\Books\VolumeQuery object
      *
      * @param string|null $url If non-null, pre-initializes the instance to
      *        use a given URL.

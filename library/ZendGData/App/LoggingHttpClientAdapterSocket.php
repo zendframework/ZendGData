@@ -5,19 +5,19 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App;
 
 /**
- * Overrides the traditional socket-based adapter class for Zend_Http_Client to
+ * Overrides the traditional socket-based adapter class for Zend\Http\Client to
  * enable logging of requests.  All requests are logged to a location specified
  * in the config as $config['logfile'].  Requests and responses are logged after
  * they are sent and received/processed, thus an error could prevent logging.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class LoggingHttpClientAdapterSocket extends \Zend\Http\Client\Adapter\Socket

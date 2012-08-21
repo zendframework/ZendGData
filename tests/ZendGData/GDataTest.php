@@ -5,26 +5,26 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
 
-use ZendGData as GData;
+use ZendGData\GData;
 use Zend\Http;
 
 /**
  * @category   Zend
- * @package    Zend_GData
+ * @package    ZendGData
  * @subpackage UnitTests
- * @group      Zend_GData
+ * @group      ZendGData
  */
 class GDataTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testDefaultHttpClient()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         $client = $gdata->getHttpClient();
         $this->assertTrue($client instanceof Http\Client,
             'Expecting object of type Zend_Http_Client, got '
@@ -35,7 +35,7 @@ class GDataTest extends \PHPUnit_Framework_TestCase
     public function testSpecificHttpClient()
     {
         $client = new Http\Client();
-        $gdata = new GData\GData($client);
+        $gdata = new GData($client);
         $client2 = $gdata->getHttpClient();
         $this->assertTrue($client2 instanceof Http\Client,
             'Expecting object of type Zend_Http_Client, got '
@@ -46,9 +46,9 @@ class GDataTest extends \PHPUnit_Framework_TestCase
 
     public function testGetFeedExceptionInvalidLocationType()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         try {
-            // give it neither a string nor a Zend_GData_Query object,
+            // give it neither a string nor a ZendGData\Query object,
             // and see if it throws an exception.
             $feed = $gdata->getFeed(new \stdClass());
             $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');
@@ -61,9 +61,9 @@ class GDataTest extends \PHPUnit_Framework_TestCase
 
     public function testGetEntryExceptionInvalidLocationType()
     {
-        $gdata = new GData\GData();
+        $gdata = new GData();
         try {
-            // give it neither a string nor a Zend_GData_Query object,
+            // give it neither a string nor a ZendGData\Query object,
             // and see if it throws an exception.
             $feed = $gdata->getEntry(new \stdClass());
             $this->fail('Expecting to catch ZendGData\App\InvalidArgumentException');

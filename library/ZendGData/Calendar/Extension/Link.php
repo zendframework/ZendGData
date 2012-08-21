@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\Calendar\Extension;
  * Specialized Link class for use with Calendar. Enables use of gCal extension elements.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class Link extends \ZendGData\App\Extension\Link
@@ -24,7 +24,7 @@ class Link extends \ZendGData\App\Extension\Link
 
     /**
      * Constructs a new Link object.
-     * @see Zend_Gdata_App_Extension_Link#__construct
+     * @see ZendGData\App\Extension\Link#__construct
      * @param Webcontent $webContent
      */
     public function __construct($href = null, $rel = null, $type = null,

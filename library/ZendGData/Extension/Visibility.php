@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Extension;
@@ -16,8 +16,8 @@ use ZendGData\Extension;
  * Data model class to represent an entry's visibility
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class Visibility extends Extension
 {
@@ -26,7 +26,7 @@ class Visibility extends Extension
     protected $_value = null;
 
     /**
-     * Constructs a new Zend_Gdata_Extension_Visibility object.
+     * Constructs a new ZendGData\Extension\Visibility object.
      * @param bool $value (optional) Visibility value as URI.
      */
     public function __construct($value = null)

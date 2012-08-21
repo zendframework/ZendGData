@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Photos;
@@ -17,12 +17,12 @@ use ZendGData\Photos;
  *
  * To transfer user entries to and from the servers, including
  * creating new entries, refer to the service class,
- * Zend_Gdata_Photos.
+ * ZendGData\Photos.
  *
  * This class represents <atom:entry> in the Google Data protocol.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Photos
  */
 class PhotoEntry extends \ZendGData\Media\Entry

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Calendar;
@@ -16,7 +16,7 @@ use ZendGData\Calendar;
  * Represents the meta-feed list of calendars
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Calendar
  */
 class ListFeed extends \ZendGData\Feed
@@ -74,7 +74,7 @@ class ListFeed extends \ZendGData\Feed
 
     /**
      * @param \ZendGData\Calendar\Extension\Timezone $value
-     * @return Zend_Gdata_Extension_ListEntry Provides a fluent interface
+     * @return \ZendGData\Calendar\ListFeed Provides a fluent interface
      */
     public function setTimezone($value)
     {

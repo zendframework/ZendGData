@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps;
@@ -14,7 +14,7 @@ use ZendGData\App;
 use Zend\Stdlib\ErrorHandler;
 
 /**
- * Gdata GApps Exception class. This is thrown when an
+ * GData GApps Exception class. This is thrown when an
  * AppsForYourDomainErrors message is received from the Google Apps
  * servers.
  *
@@ -22,7 +22,7 @@ use Zend\Stdlib\ErrorHandler;
  * of error codes available, see getErrorCode.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class ServiceException extends \Exception
@@ -31,7 +31,7 @@ class ServiceException extends \Exception
     protected $_rootElement = "AppsForYourDomainErrors";
 
     /**
-     * Array of Zend_Gdata_Error objects indexed by error code.
+     * Array of ZendGData\Error objects indexed by error code.
      *
      * @var array
      */
@@ -41,7 +41,7 @@ class ServiceException extends \Exception
      * Create a new ServiceException.
      *
      * @return array An array containing a collection of
-     *          Zend_Gdata_GApps_Error objects.
+     *          ZendGData\GApps\Error objects.
      */
     public function __construct($errors = null)
     {
@@ -75,7 +75,7 @@ class ServiceException extends \Exception
      * AppsForYourDomainErrors tag.
      *
      * @param array $array An associative array containing a collection of
-     *          Zend_Gdata_GApps_Error objects. All errors must have their
+     *          ZendGData\GApps\Error objects. All errors must have their
      *          errorCode value set.
      * @throws \ZendGData\App\Exception
      */
@@ -92,7 +92,7 @@ class ServiceException extends \Exception
      * AppsForYourDomainErrors tag.
      *
      * @return array An associative array containing a collection of
-     *          Zend_Gdata_GApps_Error objects, indexed by error code.
+     *          ZendGData\GApps\Error objects, indexed by error code.
      */
     public function getErrors()
     {

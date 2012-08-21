@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App\Extension;
@@ -15,7 +15,7 @@ namespace ZendGData\App\Extension;
  * title, summary, etc.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 abstract class AbstractText extends AbstractExtension
@@ -52,7 +52,7 @@ abstract class AbstractText extends AbstractExtension
     }
 
     /*
-     * @return ZendGData\App\Extension\Type
+     * @return \ZendGData\App\Extension\Type
      */
     public function getType()
     {
@@ -61,7 +61,7 @@ abstract class AbstractText extends AbstractExtension
 
     /*
      * @param string $value
-     * @return ZendGData\App\Extension\AbstractText Provides a fluent interface
+     * @return \ZendGData\App\Extension\AbstractText Provides a fluent interface
      */
     public function setType($value)
     {

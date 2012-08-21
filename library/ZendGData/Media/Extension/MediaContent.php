@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Media\Extension;
@@ -14,10 +14,10 @@ namespace ZendGData\Media\Extension;
  * Represents the media:content element of Media RSS.
  * Represents media objects.  Multiple media objects representing
  * the same content can be represented using a
- * media:group (Zend_Gdata_Media_Extension_MediaGroup) element.
+ * media:group (ZendGData\Media\Extension\MediaGroup) element.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Media
  */
 class MediaContent extends \ZendGData\Extension

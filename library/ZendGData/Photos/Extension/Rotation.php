@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Photos\Extension;
@@ -16,7 +16,7 @@ namespace ZendGData\Photos\Extension;
  * rotation has not already been applied to the image.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Photos
  */
 class Rotation extends \ZendGData\Extension
@@ -26,7 +26,7 @@ class Rotation extends \ZendGData\Extension
     protected $_rootElement = 'rotation';
 
     /**
-     * Constructs a new Zend_Gdata_Photos_Extension_Rotation object.
+     * Constructs a new ZendGData\Photos\Extension\Rotation object.
      *
      * @param string $text (optional) The value to represent.
      */

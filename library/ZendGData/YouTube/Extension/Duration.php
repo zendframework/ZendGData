@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Represents the yt:duration element used by the YouTube data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Duration extends \ZendGData\Extension
@@ -25,7 +25,7 @@ class Duration extends \ZendGData\Extension
     protected $_seconds = null;
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Duration object.
+     * Constructs a new ZendGData\YouTube\Extension\Duration object.
      * @param bool $seconds(optional) The seconds value of the element.
      */
     public function __construct($seconds = null)

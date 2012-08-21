@@ -5,19 +5,20 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\Analytics;
 
-use ZendGData;
+use ZendGData\Entry;
+use ZendGData\Analytics;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Analytics
  */
-class AccountEntry extends ZendGData\Entry
+class AccountEntry extends Entry
 {
     protected $_accountId;
     protected $_accountName;
@@ -34,7 +35,7 @@ class AccountEntry extends ZendGData\Entry
      */
     public function __construct($element = null)
     {
-        $this->registerAllNamespaces(ZendGData\Analytics::$namespaces);
+        $this->registerAllNamespaces(Analytics::$namespaces);
         parent::__construct($element);
     }
 

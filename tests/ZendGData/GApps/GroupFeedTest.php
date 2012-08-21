@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest\GApps;
@@ -15,10 +15,10 @@ use ZendGData\GApps\GroupFeed;
 
 /**
  * @category   Zend
- * @package    Zend_Gdata_Gapps
+ * @package    ZendGData\GApps
  * @subpackage UnitTests
- * @group      Zend_Gdata
- * @group      Zend_Gdata_Gapps
+ * @group      ZendGData
+ * @group      ZendGData\GApps
  */
 class GroupFeedTest extends \PHPUnit_Framework_TestCase
 {

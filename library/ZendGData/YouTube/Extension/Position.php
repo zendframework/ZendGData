@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Data model class to represent a playlist item's position in the list (yt:position)
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Position extends \ZendGData\Extension
@@ -24,7 +24,7 @@ class Position extends \ZendGData\Extension
     protected $_rootNamespace = 'yt';
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Position object.
+     * Constructs a new ZendGData\YouTube\Extension\Position object.
      *
      * @param string $value (optional) The 1-based position in the playlist
      */

@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube\Extension;
@@ -14,7 +14,7 @@ namespace ZendGData\YouTube\Extension;
  * Represents the yt:statistics element used by the YouTube data API
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class Statistics extends \ZendGData\Extension
@@ -73,7 +73,7 @@ class Statistics extends \ZendGData\Extension
     protected $_favoriteCount = null;
 
     /**
-     * Constructs a new Zend_Gdata_YouTube_Extension_Statistics object.
+     * Constructs a new ZendGData\YouTube\Extension\Statistics object.
      * @param string $viewCount(optional) The viewCount value
      * @param string $videoWatchCount(optional) The videoWatchCount value
      * @param string $subscriberCount(optional) The subscriberCount value

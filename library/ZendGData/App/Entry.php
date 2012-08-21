@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App;
@@ -16,7 +16,7 @@ use Zend\Http\Header\Etag;
  * Concrete class for working with Atom entries.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class Entry extends AbstractFeedEntryParent
@@ -165,7 +165,7 @@ class Entry extends AbstractFeedEntryParent
 
     /**
      * Deletes this entry to the server using the referenced
-     * Zend_Http_Client to do a HTTP DELETE to the edit link stored in this
+     * Zend\Http\Client to do a HTTP DELETE to the edit link stored in this
      * entry's link collection.
      *
      * @return void
@@ -205,7 +205,7 @@ class Entry extends AbstractFeedEntryParent
             $className = get_called_class();
         }
 
-        // Append ETag, if present (Gdata v2 and above, only) and doesn't
+        // Append ETag, if present (GData v2 and above, only) and doesn't
         // conflict with existing headers
         if (($this->_etag instanceof Etag)
                 && !array_key_exists('If-Match', $extraHeaders)

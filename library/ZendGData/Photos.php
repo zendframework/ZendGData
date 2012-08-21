@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -19,7 +19,7 @@ namespace ZendGData;
  * @link http://code.google.com/apis/picasaweb/gdata.html
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage Photos
  */
 class Photos extends GData
@@ -75,7 +75,7 @@ class Photos extends GData
     const KIND_PATH = 'http://schemas.google.com/g/2005#kind';
 
     /**
-     * Namespaces used for Zend_Gdata_Photos
+     * Namespaces used for ZendGData\Photos
      *
      * @var array
      */
@@ -89,7 +89,7 @@ class Photos extends GData
     );
 
     /**
-     * Create Zend_Gdata_Photos object
+     * Create ZendGData\Photos object
      *
      * @param \Zend\Http\Client $client (optional) The HTTP client to use when
      *          when communicating with the servers.

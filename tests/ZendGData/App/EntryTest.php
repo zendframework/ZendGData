@@ -5,12 +5,12 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest\App;
 
-use ZendGData as GData;
+use ZendGData\HttpClient;
 use ZendGData\App;
 use ZendGData\App\Extension;
 use Zend\Http;
@@ -20,10 +20,10 @@ use ZendGDataTest\TestAsset;
 
 /**
  * @category   Zend
- * @package    Zend_GData_App
+ * @package    ZendGData\App
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_App
+ * @group      ZendGData
+ * @group      ZendGData\App
  */
 class EntryTest extends \PHPUnit_Framework_TestCase
 {
@@ -49,7 +49,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
         $this->entry = new App\Entry();
 
         $this->adapter = new \ZendGDataTest\TestAsset\MockHttpClient();
-        $this->client = new GData\HttpClient();
+        $this->client = new HttpClient();
         $this->client->setAdapter($this->adapter);
         $this->service = new App($this->client);
     }

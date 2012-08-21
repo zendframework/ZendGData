@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps\Extension;
@@ -13,10 +13,10 @@ namespace ZendGData\GApps\Extension;
 /**
  * Represents the apps:name element used by the Apps data API. This is used
  * to represent a user's full name. This class is usually contained within
- * instances of Zend_Gdata_GApps_UserEntry.
+ * instances of ZendGData\GApps\UserEntry.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class Name extends \ZendGData\Extension
@@ -40,7 +40,7 @@ class Name extends \ZendGData\Extension
     protected $_givenName = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Name object.
+     * Constructs a new ZendGData\GApps\Extension\Name object.
      *
      * @param string $familyName (optional) The familyName to be set for this
      *          object.

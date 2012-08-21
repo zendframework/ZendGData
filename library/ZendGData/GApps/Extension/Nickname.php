@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps\Extension;
@@ -13,10 +13,10 @@ namespace ZendGData\GApps\Extension;
 /**
  * Represents the apps:nickname element used by the Apps data API. This
  * is used to describe a nickname's properties, and is usually contained
- * within instances of Zend_Gdata_GApps_NicknameEntry.
+ * within instances of ZendGData\GApps\NicknameEntry.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class Nickname extends \ZendGData\Extension
@@ -34,7 +34,7 @@ class Nickname extends \ZendGData\Extension
     protected $_name = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Nickname object.
+     * Constructs a new ZendGData\GApps\Extension\Nickname object.
      * @param string $name (optional) The nickname being represented.
      */
     public function __construct($name = null)

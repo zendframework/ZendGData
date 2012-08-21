@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest;
@@ -14,10 +14,10 @@ use ZendGData\YouTube;
 
 /**
  * @category   Zend
- * @package    Zend_GData_YouTube
+ * @package    ZendGData\YouTube
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_YouTube
+ * @group      ZendGData
+ * @group      ZendGData\YouTube
  */
 class YouTubeTest extends \PHPUnit_Framework_TestCase
 {
@@ -53,7 +53,7 @@ class YouTubeTest extends \PHPUnit_Framework_TestCase
         $client = $yt->getHttpClient();
 
         $this->assertEquals($client->getHeader('User-Agent'),
-                            $applicationId . ' Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION);
+                            \ZendGData\App::getUserAgentString($applicationId));
         $this->assertEquals($client->getHeader('X-GData-Key'), 'key='. $developerKey);
         $this->assertEquals($client->getHeader('X-GData-Client'), $clientId);
     }

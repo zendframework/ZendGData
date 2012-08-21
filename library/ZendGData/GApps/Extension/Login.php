@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\GApps\Extension;
@@ -15,11 +15,11 @@ use ZendGData\App;
 /**
  * Represents the apps:login element used by the Apps data API. This
  * class is used to describe properties of a user, and is usually contained
- * within instances of Zene_Gdata_GApps_UserEntry or any other class
+ * within instances of ZendGData\GApps\UserEntry or any other class
  * which is linked to a particular username.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage GApps
  */
 class Login extends \ZendGData\Extension
@@ -88,7 +88,7 @@ class Login extends \ZendGData\Extension
     protected $_changePasswordAtNextLogin = null;
 
     /**
-     * Constructs a new Zend_Gdata_GApps_Extension_Login object.
+     * Constructs a new ZendGData\GApps\Extension\Login object.
      *
      * @param string $username (optional) The username to be used for this
      *          login.

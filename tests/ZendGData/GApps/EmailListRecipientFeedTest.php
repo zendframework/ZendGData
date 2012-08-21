@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGDataTest\GApps;
@@ -14,10 +14,10 @@ use ZendGData\GApps;
 
 /**
  * @category   Zend
- * @package    Zend_GData_GApps
+ * @package    ZendGData\GApps
  * @subpackage UnitTests
- * @group      Zend_GData
- * @group      Zend_GData_GApps
+ * @group      ZendGData
+ * @group      ZendGData\GApps
  */
 class EmailListRecipientFeedTest extends \PHPUnit_Framework_TestCase
 {

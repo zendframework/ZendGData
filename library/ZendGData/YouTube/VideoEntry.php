@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\YouTube;
@@ -19,7 +19,7 @@ use ZendGData\YouTube;
  * Represents the YouTube video flavor of an Atom entry
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage YouTube
  */
 class VideoEntry extends MediaEntry
@@ -267,7 +267,7 @@ class VideoEntry extends MediaEntry
     }
 
     /**
-     * If an instance of Zend_Gdata_YouTube_Extension_NoEmbed is passed in,
+     * If an instance of ZendGData\YouTube\Extension\NoEmbed is passed in,
      * the video cannot be embedded.  Otherwise, if null is passsed in, the
      * video is able to be embedded.
      *
@@ -283,7 +283,7 @@ class VideoEntry extends MediaEntry
 
     /**
      * If the return value is an instance of
-     * Zend_Gdata_YouTube_Extension_NoEmbed, this video cannot be embedded.
+     * ZendGData\YouTube\Extension\NoEmbed, this video cannot be embedded.
      *
      * @return \ZendGData\YouTube\Extension\NoEmbed|null Whether or not the video can be embedded
      */
@@ -912,7 +912,7 @@ class VideoEntry extends MediaEntry
     }
 
     /**
-     * Get the VideoEntry's Zend_Gdata_YouTube_Extension_MediaGroup object.
+     * Get the VideoEntry's ZendGData\YouTube\Extension\MediaGroup object.
      * If the mediaGroup does not exist, then set it.
      *
      * @return void

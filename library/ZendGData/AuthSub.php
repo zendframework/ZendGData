@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData;
@@ -20,8 +20,8 @@ use Zend\Http\Client;
  * @see http://code.google.com/apis/accounts/AuthForWebApps.html
  *
  * @category   Zend
- * @package    Zend_Gdata
- * @subpackage Gdata
+ * @package    ZendGData
+ * @subpackage GData
  */
 class AuthSub
 {
@@ -212,7 +212,7 @@ class AuthSub
             $client = new HttpClient();
         }
 
-        $useragent = 'Zend_Framework_Gdata/' . \Zend\Version\Version::VERSION;
+        $useragent = App::getUserAgentString();
         $client->setOptions(array(
                 'strictredirects' => true,
                 'useragent' => $useragent

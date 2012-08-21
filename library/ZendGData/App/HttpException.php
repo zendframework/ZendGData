@@ -5,7 +5,7 @@
  * @link      http://github.com/zendframework/zf2 for the canonical source repository
  * @copyright Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
- * @package   Zend_GData
+ * @package   ZendGData
  */
 
 namespace ZendGData\App;
@@ -14,12 +14,12 @@ use Zend\Http;
 use Zend\Http\Client\Exception\ExceptionInterface as ClientExceptionInterface;
 
 /**
- * Gdata exceptions
+ * GData exceptions
  *
- * Class to represent exceptions that occur during Gdata operations.
+ * Class to represent exceptions that occur during GData App operations.
  *
  * @category   Zend
- * @package    Zend_Gdata
+ * @package    ZendGData
  * @subpackage App
  */
 class HttpException extends Exception
@@ -44,7 +44,7 @@ class HttpException extends Exception
     }
 
     /**
-     * Get the Zend_Http_Client_Exception.
+     * Get the Zend\Http\Client\Exception.
      *
      * @return ClientExceptionInterface
      */
