@@ -256,6 +256,7 @@ class Spreadsheets extends GData
         $query = new Spreadsheets\ListQuery();
         $query->setSpreadsheetKey($key);
         $query->setWorksheetId($wkshtId);
+        $query->setMaxResults(0);
 
         $feed = $this->getListFeed($query);
         $editLink = $feed->getLink('http://schemas.google.com/g/2005#post');
