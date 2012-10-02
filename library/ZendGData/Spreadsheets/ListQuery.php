@@ -256,7 +256,7 @@ class ListQuery extends \ZendGData\Query
             return null;
         }
     }
- 
+
     /**
      * Gets the full query URL for this query.
      * @return string url
