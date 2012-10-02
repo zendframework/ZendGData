@@ -228,6 +228,36 @@ class ListQuery extends \ZendGData\Query
     }
 
     /**
+     * Sets the max-results attribute for this query.
+     *
+     * @param string $value
+     * @return Zend_Gdata_Spreadsheets_ListQuery Provides a fluent interface
+     */
+    public function setMaxResults($value)
+    {
+        if ($value !== NULL) {
+            $this->_params['max-results'] = $value;
+        } else {
+            unset($this->_params['max-results']);
+        }
+        return $this;
+    }
+
+    /**
+     * Gets the max-results attribute for this query.
+     *
+     * @return string max-results
+     */
+    public function getMaxResults()
+    {
+        if (array_key_exists('max-results', $this->_params)) {
+            return $this->_params['max-results'];
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Gets the full query URL for this query.
      * @return string url
      */
