@@ -614,6 +614,17 @@ class App
         } else {
             $headers['Accept-encoding'] = 'identity';
         }
+        $rqHeaders = $this->_httpClient->getRequest()->getHeaders();
+        if ($rqHeaders)
+        {
+            foreach ($rqHeaders->toArray() as $key => $value)
+            {
+                if (!array_key_exists($key, $headers))
+                {
+                    $headers[$key] = $value;
+                }
+            }
+        }
 
         // Make sure the HTTP client object is 'clean' before making a request
         // In addition to standard headers to reset via resetParameters(),
