@@ -615,12 +615,9 @@ class App
             $headers['Accept-encoding'] = 'identity';
         }
         $rqHeaders = $this->_httpClient->getRequest()->getHeaders();
-        if ($rqHeaders)
-        {
-            foreach ($rqHeaders->toArray() as $key => $value)
-            {
-                if (!array_key_exists($key, $headers))
-                {
+        if ($rqHeaders) {
+            foreach ($rqHeaders->toArray() as $key => $value) {
+                if (!array_key_exists($key, $headers)) {
                     $headers[$key] = $value;
                 }
             }
