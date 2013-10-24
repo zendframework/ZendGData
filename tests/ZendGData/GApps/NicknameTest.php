@@ -25,7 +25,7 @@ class NicknameTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->nicknameText = file_get_contents(
-                'ZendGData/GApps/_files/NicknameElementSample1.xml',
+                __DIR__ . '/_files/NicknameElementSample1.xml',
                 true);
         $this->nickname = new Extension\Nickname();
     }

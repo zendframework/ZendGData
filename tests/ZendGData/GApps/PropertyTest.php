@@ -27,7 +27,7 @@ class PropertyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->thePropertyText = file_get_contents(
-                'ZendGData/GApps/_files/PropertyElementSample1.xml',
+                __DIR__ . '/_files/PropertyElementSample1.xml',
                 true);
         $this->theProperty = new Property();
     }

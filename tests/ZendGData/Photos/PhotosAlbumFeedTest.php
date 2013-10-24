@@ -31,7 +31,7 @@ class PhotosAlbumFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $albumFeedText = file_get_contents(
-                '_files/TestAlbumFeed.xml',
+                __DIR__ . '/_files/TestAlbumFeed.xml',
                 true);
         $this->albumFeed = new Photos\AlbumFeed($albumFeedText);
     }

@@ -29,7 +29,7 @@ class EmailListRecipientFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $emailListRecipientFeedText = file_get_contents(
-                'ZendGData/GApps/_files/EmailListRecipientFeedDataSample1.xml',
+                __DIR__ . '/_files/EmailListRecipientFeedDataSample1.xml',
                 true);
         $this->emailListRecipientFeed = new GApps\EmailListRecipientFeed($emailListRecipientFeedText);
         $this->emptyEmailListRecipientFeed = new GApps\EmailListRecipientFeed();

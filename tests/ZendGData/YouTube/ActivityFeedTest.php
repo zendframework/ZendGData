@@ -25,7 +25,7 @@ class ActivityFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/YouTube/_files/ActivityFeedDataSample1.xml',
+                __DIR__ . '/_files/ActivityFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\ActivityFeed();
         $this->feed->setMajorProtocolVersion(2);

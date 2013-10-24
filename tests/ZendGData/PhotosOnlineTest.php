@@ -81,7 +81,7 @@ class PhotosOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->photos;
 
-        $fd = $client->newMediaFileSource('ZendGData/_files/testImage.jpg');
+        $fd = $client->newMediaFileSource(__DIR__ . '/_files/testImage.jpg');
         $fd->setContentType('image/jpeg');
 
         $photo = new Photos\PhotoEntry();

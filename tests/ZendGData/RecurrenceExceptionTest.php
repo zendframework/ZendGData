@@ -24,7 +24,7 @@ class RecurrenceExceptionTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->recurrenceExceptionText = file_get_contents(
-                'ZendGData/_files/RecurrenceExceptionElementSample1.xml',
+                __DIR__ . '/_files/RecurrenceExceptionElementSample1.xml',
                 true);
         $this->recurrenceException = new Extension\RecurrenceException();
     }

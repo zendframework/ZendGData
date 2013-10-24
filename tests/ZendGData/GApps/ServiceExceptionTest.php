@@ -27,7 +27,7 @@ class ServiceExceptionTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->xmlSample = file_get_contents(
-                'ZendGData/GApps/_files/AppsForYourDomainElementSample1.xml',
+                __DIR__ . '/_files/AppsForYourDomainElementSample1.xml',
                 true);
         $this->fixture = new GApps\ServiceException();
         $this->data[1] = new GApps\Error(1234, "foo", "bar");

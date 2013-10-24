@@ -25,7 +25,7 @@ class CategoryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->categoryText = file_get_contents(
-                'ZendGData/App/_files/CategoryElementSample1.xml',
+                __DIR__ . '/_files/CategoryElementSample1.xml',
                 true);
         $this->category = new Extension\Category();
     }

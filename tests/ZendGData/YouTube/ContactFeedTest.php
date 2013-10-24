@@ -25,7 +25,7 @@ class ContactFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/YouTube/_files/ContactFeedDataSample1.xml',
+                __DIR__ . '/_files/ContactFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\ContactFeed();
     }

@@ -25,7 +25,7 @@ class DocumentListEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->doc = new Docs\DocumentListEntry(
-                file_get_contents('ZendGData/Docs/_files/TestDataDocumentListEntrySample.xml', true));
+                file_get_contents(__DIR__ . '/_files/TestDataDocumentListEntrySample.xml', true));
     }
 
     public function testToAndFromString()

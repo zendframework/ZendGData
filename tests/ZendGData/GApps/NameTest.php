@@ -25,7 +25,7 @@ class NameTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->theNameText = file_get_contents(
-                'ZendGData/GApps/_files/NameElementSample1.xml',
+                __DIR__ . '/_files/NameElementSample1.xml',
                 true);
         $this->theName = new Extension\Name();
     }
