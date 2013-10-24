@@ -179,7 +179,7 @@ class GDataOnlineTest extends \PHPUnit_Framework_TestCase
         $gd = new GData($client);
 
         // setup the photo content
-        $fs = $gd->newMediaFileSource('ZendGData/_files/testImage.jpg');
+        $fs = $gd->newMediaFileSource(__DIR__ . '/_files/testImage.jpg');
         $fs->setContentType('image/jpeg');
 
 

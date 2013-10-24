@@ -24,7 +24,7 @@ class FeedLinkTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedLinkText = file_get_contents(
-                'ZendGData/_files/FeedLinkElementSample1.xml',
+                __DIR__ . '/_files/FeedLinkElementSample1.xml',
                 true);
         $this->feedLink = new Extension\FeedLink();
     }

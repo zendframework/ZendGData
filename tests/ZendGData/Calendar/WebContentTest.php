@@ -25,7 +25,7 @@ class WebContentTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->webContentText = file_get_contents(
-                'ZendGData/Calendar/_files/WebContentElementSample1.xml',
+                __DIR__ . '/_files/WebContentElementSample1.xml',
                 true);
         $this->webContent = new Extension\WebContent();
     }

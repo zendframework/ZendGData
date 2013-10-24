@@ -25,7 +25,7 @@ class VideoFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/YouTube/_files/VideoFeedDataSample1.xml',
+                __DIR__ . '/_files/VideoFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\VideoFeed();
     }

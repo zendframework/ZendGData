@@ -30,7 +30,7 @@ class MemberFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $memberFeedText = file_get_contents(
-                'ZendGData/GApps/_files/MemberFeedDataSample1.xml',
+                __DIR__ . '/_files/MemberFeedDataSample1.xml',
                 true);
         $this->memberFeed = new MemberFeed($memberFeedText);
         $this->emptyMemberFeed = new MemberFeed();

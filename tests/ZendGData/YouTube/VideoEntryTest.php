@@ -27,10 +27,10 @@ class VideoEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->privateEntryText = file_get_contents(
-                'ZendGData/YouTube/_files/VideoEntryDataSamplePrivate.xml',
+                __DIR__ . '/_files/VideoEntryDataSamplePrivate.xml',
                 true);
         $this->v2EntryText = file_get_contents(
-                'ZendGData/YouTube/_files/VideoEntryDataSampleV2.xml',
+                __DIR__ . '/_files/VideoEntryDataSampleV2.xml',
                 true);
         $this->entry = new YouTube\VideoEntry();
     }

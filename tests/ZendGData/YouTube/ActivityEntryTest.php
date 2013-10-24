@@ -25,7 +25,7 @@ class ActivityEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/YouTube/_files/ActivityEntryDataSample1.xml',
+                __DIR__ . '/_files/ActivityEntryDataSample1.xml',
                 true);
         $this->entry = new YouTube\ActivityEntry();
         $this->entry->setMajorProtocolVersion(2);

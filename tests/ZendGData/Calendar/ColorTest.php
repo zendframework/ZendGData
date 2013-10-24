@@ -25,7 +25,7 @@ class ColorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->colorText = file_get_contents(
-                'ZendGData/Calendar/_files/ColorElementSample1.xml',
+                __DIR__ . '/_files/ColorElementSample1.xml',
                 true);
         $this->color = new Extension\Color();
     }

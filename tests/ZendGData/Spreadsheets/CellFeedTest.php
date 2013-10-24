@@ -28,7 +28,7 @@ class CellFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->cellFeed = new Spreadsheets\CellFeed(
-                file_get_contents('ZendGData/Spreadsheets/_files/TestDataCellFeedSample1.xml', true),
+                file_get_contents(__DIR__ . '/_files/TestDataCellFeedSample1.xml', true),
                 true);
     }
 

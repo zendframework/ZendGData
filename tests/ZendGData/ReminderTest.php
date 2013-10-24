@@ -24,7 +24,7 @@ class ReminderTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->reminderText = file_get_contents(
-                'ZendGData/_files/ReminderElementSample1.xml',
+                __DIR__ . '/_files/ReminderElementSample1.xml',
                 true);
         $this->reminder = new Extension\Reminder();
     }

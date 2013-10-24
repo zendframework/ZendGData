@@ -27,7 +27,7 @@ class InboxEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->v2entryText = file_get_contents(
-                'ZendGData/YouTube/_files/' .
+                __DIR__ . '/_files/' .
                 'InboxEntryDataSampleV2.xml',
                 true);
 

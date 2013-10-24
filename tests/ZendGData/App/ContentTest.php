@@ -25,10 +25,10 @@ class ContentTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->contentText = file_get_contents(
-                'ZendGData/App/_files/ContentElementSample1.xml',
+                __DIR__ . '/_files/ContentElementSample1.xml',
                 true);
         $this->contentText2 = file_get_contents(
-                'ZendGData/App/_files/ContentElementSample2.xml',
+                __DIR__ . '/_files/ContentElementSample2.xml',
                 true);
         $this->content = new Extension\Content();
     }

@@ -27,7 +27,7 @@ class PlaylistListEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->v2entryText = file_get_contents(
-                'ZendGData/YouTube/_files/PlaylistListEntryDataSampleV2.xml',
+                __DIR__ . '/_files/PlaylistListEntryDataSampleV2.xml',
                 true);
         $this->entry = new YouTube\PlaylistListEntry();
     }

@@ -25,7 +25,7 @@ class VolumeFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/Books/_files/VolumeFeedDataSample1.xml',
+                __DIR__ . '/_files/VolumeFeedDataSample1.xml',
                 true);
         $this->feed = new Books\VolumeFeed();
     }

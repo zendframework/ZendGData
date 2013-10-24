@@ -24,7 +24,7 @@ class RecurrenceTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->recurrenceText = file_get_contents(
-                'ZendGData/_files/RecurrenceElementSample1.xml',
+                __DIR__ . '/_files/RecurrenceElementSample1.xml',
                 true);
         $this->recurrence = new Extension\Recurrence();
     }

@@ -24,7 +24,7 @@ class VisibilityTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->visibilityText = file_get_contents(
-                'ZendGData/_files/VisibilityElementSample1.xml',
+                __DIR__ . '/_files/VisibilityElementSample1.xml',
                 true);
         $this->visibility = new Extension\Visibility();
     }

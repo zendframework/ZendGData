@@ -29,10 +29,10 @@ class FeedTest extends \PHPUnit_Framework_TestCase
         $this->expectedMismatchExceptionMessage = "ETag mismatch";
         $this->feed = new \ZendGData\Feed();
         $this->feedTextV1 = file_get_contents(
-                'ZendGData/_files/FeedSampleV1.xml',
+                __DIR__ . '/_files/FeedSampleV1.xml',
                 true);
         $this->feedTextV2 = file_get_contents(
-                'ZendGData/_files/FeedSampleV2.xml',
+                __DIR__ . '/_files/FeedSampleV2.xml',
                 true);
         $this->gdNamespace = 'http://schemas.google.com/g/2005';
         $this->openSearchNamespacev1 = 'http://a9.com/-/spec/opensearchrss/1.0/';

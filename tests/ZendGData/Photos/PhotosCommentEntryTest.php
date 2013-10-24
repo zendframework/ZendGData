@@ -28,7 +28,7 @@ class PhotosCommentEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $commentEntryText = file_get_contents(
-                '_files/TestCommentEntry.xml',
+                __DIR__ . '/_files/TestCommentEntry.xml',
                 true);
         $this->commentEntry = new \ZendGData\Photos\CommentEntry($commentEntryText);
     }

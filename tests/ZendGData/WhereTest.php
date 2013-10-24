@@ -24,7 +24,7 @@ class WhereTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whereText = file_get_contents(
-                'ZendGData/_files/WhereElementSample1.xml',
+                __DIR__ . '/_files/WhereElementSample1.xml',
                 true);
         $this->where = new Extension\Where();
     }

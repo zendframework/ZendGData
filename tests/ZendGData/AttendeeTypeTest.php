@@ -24,7 +24,7 @@ class AttendeeTypeTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->attendeeTypeText = file_get_contents(
-                'ZendGData/_files/AttendeeTypeElementSample1.xml',
+                __DIR__ . '/_files/AttendeeTypeElementSample1.xml',
                 true);
         $this->attendeeType = new Extension\AttendeeType();
     }

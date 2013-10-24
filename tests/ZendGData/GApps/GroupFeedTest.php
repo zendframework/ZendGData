@@ -30,7 +30,7 @@ class GroupFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $groupFeedText = file_get_contents(
-                'ZendGData/GApps/_files/GroupFeedDataSample1.xml',
+                __DIR__ . '/_files/GroupFeedDataSample1.xml',
                 true);
         $this->groupFeed = new GroupFeed($groupFeedText);
         $this->emptyGroupFeed = new GroupFeed();

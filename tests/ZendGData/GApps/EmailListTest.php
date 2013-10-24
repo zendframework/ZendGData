@@ -25,7 +25,7 @@ class EmailListTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->emailListText = file_get_contents(
-                'ZendGData/GApps/_files/EmailListElementSample1.xml',
+                __DIR__ . '/_files/EmailListElementSample1.xml',
                 true);
         $this->emailList = new Extension\EmailList();
     }

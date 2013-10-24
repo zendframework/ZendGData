@@ -25,7 +25,7 @@ class CommentEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/YouTube/_files/CommentEntryDataSample1.xml',
+                __DIR__ . '/_files/CommentEntryDataSample1.xml',
                 true);
         $this->entry = new YouTube\CommentEntry();
     }
