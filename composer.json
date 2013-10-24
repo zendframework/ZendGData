@@ -26,7 +26,6 @@
         "zendframework/zend-version": ">=2.0.0"
     },
     "require-dev": {
-        "zendframework/zendframework": ">=2.0.0",
         "phpunit/PHPUnit": "3.7.*"
     },
     "extra": {
