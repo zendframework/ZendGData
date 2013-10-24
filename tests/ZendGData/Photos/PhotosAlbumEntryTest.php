@@ -28,7 +28,7 @@ class PhotosAlbumEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $albumEntryText = file_get_contents(
-                '_files/TestAlbumEntry.xml',
+                __DIR__ . '/_files/TestAlbumEntry.xml',
                 true);
         $this->albumEntry = new \ZendGData\Photos\AlbumEntry($albumEntryText);
     }

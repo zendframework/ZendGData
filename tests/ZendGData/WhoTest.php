@@ -24,7 +24,7 @@ class WhoTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whoText = file_get_contents(
-                'ZendGData/_files/WhoElementSample1.xml',
+                __DIR__ . '/_files/WhoElementSample1.xml',
                 true);
         $this->who = new Extension\Who();
     }

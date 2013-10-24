@@ -25,7 +25,7 @@ class InboxFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->V2feedText = file_get_contents(
-            'ZendGData/YouTube/_files/InboxFeedDataSampleV2.xml',
+            __DIR__ . '/_files/InboxFeedDataSampleV2.xml',
             true);
         $this->feed = new YouTube\InboxFeed();
     }

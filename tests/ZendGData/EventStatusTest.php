@@ -24,7 +24,7 @@ class EventStatusTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->eventStatusText = file_get_contents(
-                'ZendGData/_files/EventStatusElementSample1.xml',
+                __DIR__ . '/_files/EventStatusElementSample1.xml',
                 true);
         $this->eventStatus = new Extension\EventStatus();
     }

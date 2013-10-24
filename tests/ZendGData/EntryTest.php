@@ -26,7 +26,7 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     {
         $this->entry = new \ZendGData\Entry();
         $this->entryText = file_get_contents(
-                'ZendGData/_files/EntrySample1.xml',
+                __DIR__ . '/_files/EntrySample1.xml',
                 true);
         $this->etagLocalName = 'etag';
         $this->expectedEtag = 'W/"CkcHQH8_fCp7ImA9WxRTGEw."';

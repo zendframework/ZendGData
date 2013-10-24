@@ -24,7 +24,7 @@ class TransparencyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->transparencyText = file_get_contents(
-                'ZendGData/_files/TransparencyElementSample1.xml',
+                __DIR__ . '/_files/TransparencyElementSample1.xml',
                 true);
         $this->transparency = new Extension\Transparency();
     }

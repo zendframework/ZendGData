@@ -28,7 +28,7 @@ class PhotosTagEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $tagEntryText = file_get_contents(
-                '_files/TestTagEntry.xml',
+                __DIR__ . '/_files/TestTagEntry.xml',
                 true);
         $this->tagEntry = new \ZendGData\Photos\TagEntry($tagEntryText);
     }

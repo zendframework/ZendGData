@@ -25,7 +25,7 @@ class GeneratorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->generatorText = file_get_contents(
-                'ZendGData/App/_files/GeneratorElementSample1.xml',
+                __DIR__ . '/_files/GeneratorElementSample1.xml',
                 true);
         $this->generator = new Extension\Generator();
     }

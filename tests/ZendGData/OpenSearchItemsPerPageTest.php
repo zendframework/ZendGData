@@ -25,7 +25,7 @@ class OpenSearchItemsPerPageTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchItemsPerPageText = file_get_contents(
-                'ZendGData/_files/OpenSearchItemsPerPageElementSample1.xml',
+                __DIR__ . '/_files/OpenSearchItemsPerPageElementSample1.xml',
                 true);
         $this->openSearchItemsPerPage = new Extension\OpenSearchItemsPerPage();
     }

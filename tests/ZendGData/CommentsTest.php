@@ -24,7 +24,7 @@ class CommentsTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->commentsText = file_get_contents(
-                'ZendGData/_files/CommentsElementSample1.xml',
+                __DIR__ . '/_files/CommentsElementSample1.xml',
                 true);
         $this->comments = new Extension\Comments();
     }

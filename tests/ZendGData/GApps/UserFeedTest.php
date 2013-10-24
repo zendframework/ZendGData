@@ -29,7 +29,7 @@ class UserFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $userFeedText = file_get_contents(
-                'ZendGData/GApps/_files/UserFeedDataSample1.xml',
+                __DIR__ . '/_files/UserFeedDataSample1.xml',
                 true);
         $this->userFeed = new GApps\UserFeed($userFeedText);
         $this->emptyUserFeed = new GApps\UserFeed();

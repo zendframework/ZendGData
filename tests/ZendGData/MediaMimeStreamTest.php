@@ -28,7 +28,7 @@ class MediaMimeStreamTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->locationOfFakeBinary =
-            'ZendGData/_files/MediaMimeStreamSample1.txt';
+            __DIR__ . '/_files/MediaMimeStreamSample1.txt';
         $this->smallXMLString = '<xml><entry><title>foo</title></entry>';
         $this->testMediaType = 'video/mpeg';
         $this->mediaMimeStream = new GData\MediaMimeStream(

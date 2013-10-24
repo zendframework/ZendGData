@@ -25,7 +25,7 @@ class OpenSearchTotalResultsTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchTotalResultsText = file_get_contents(
-                'ZendGData/_files/OpenSearchTotalResultsElementSample1.xml',
+                __DIR__ . '/_files/OpenSearchTotalResultsElementSample1.xml',
                 true);
         $this->openSearchTotalResults = new Extension\OpenSearchTotalResults();
     }

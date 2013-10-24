@@ -24,7 +24,7 @@ class ExtendedPropertyTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->extendedPropertyText = file_get_contents(
-                'ZendGData/_files/ExtendedPropertyElementSample1.xml',
+                __DIR__ . '/_files/ExtendedPropertyElementSample1.xml',
                 true);
         $this->extendedProperty = new Extension\ExtendedProperty();
     }

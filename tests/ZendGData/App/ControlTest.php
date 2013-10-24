@@ -25,7 +25,7 @@ class ControlTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->controlText = file_get_contents(
-                'ZendGData/App/_files/ControlElementSample1.xml',
+                __DIR__ . '/_files/ControlElementSample1.xml',
                 true);
         $this->control = new Extension\Control();
     }

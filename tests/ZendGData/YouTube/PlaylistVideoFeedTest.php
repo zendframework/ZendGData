@@ -25,7 +25,7 @@ class PlaylistVideoFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/YouTube/_files/PlaylistVideoFeedDataSample1.xml',
+                __DIR__ . '/_files/PlaylistVideoFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\PlaylistVideoFeed();
     }

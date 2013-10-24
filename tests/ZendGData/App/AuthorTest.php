@@ -25,7 +25,7 @@ class AuthorTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->authorText = file_get_contents(
-                'ZendGData/App/_files/AuthorElementSample1.xml',
+                __DIR__ . '/_files/AuthorElementSample1.xml',
                 true);
         $this->author = new Extension\Author();
     }

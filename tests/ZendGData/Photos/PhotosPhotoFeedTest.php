@@ -31,7 +31,7 @@ class PhotosPhotoFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $photoFeedText = file_get_contents(
-                '_files/TestPhotoFeed.xml',
+                __DIR__ . '/_files/TestPhotoFeed.xml',
                 true);
         $this->photoFeed = new Photos\PhotoFeed($photoFeedText);
     }

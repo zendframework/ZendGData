@@ -25,7 +25,7 @@ class QuickAddTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->quickAddText = file_get_contents(
-                'ZendGData/Calendar/_files/QuickAddElementSample1.xml',
+                __DIR__ . '/_files/QuickAddElementSample1.xml',
                 true);
         $this->quickAdd = new Extension\QuickAdd();
     }
