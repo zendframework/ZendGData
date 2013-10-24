@@ -25,7 +25,7 @@ class AccessLevelTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->accessLevelText = file_get_contents(
-                'ZendGData/Calendar/_files/AccessLevelElementSample1.xml',
+                __DIR__ . '/_files/AccessLevelElementSample1.xml',
                 true);
         $this->accessLevel = new Extension\AccessLevel();
     }

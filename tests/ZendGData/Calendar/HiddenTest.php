@@ -25,7 +25,7 @@ class HiddenTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->hiddenText = file_get_contents(
-                'ZendGData/Calendar/_files/HiddenElementSample1.xml',
+                __DIR__ . '/_files/HiddenElementSample1.xml',
                 true);
         $this->hidden = new Extension\Hidden();
     }

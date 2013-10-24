@@ -42,21 +42,21 @@ class AppTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->fileName = 'ZendGData/App/_files/FeedSample1.xml';
+        $this->fileName = __DIR__ . '/App/_files/FeedSample1.xml';
         $this->expectedEtagValue = 'W/"CkcHQH8_fCp7ImA9WxRTGEw."';
         $this->expectedMajorProtocolVersion = 1;
         $this->expectedMinorProtocolVersion = 2;
         $this->httpEntrySample = file_get_contents(
-                'ZendGData/_files/AppSample1.txt',
+                __DIR__ . '/_files/AppSample1.txt',
                 true);
         $this->httpEntrySampleWithoutVersion = file_get_contents(
-                'ZendGData/_files/AppSample2.txt',
+                __DIR__ . '/_files/AppSample2.txt',
                 true);
         $this->httpFeedSample = file_get_contents(
-                'ZendGData/_files/AppSample3.txt',
+                __DIR__ . '/_files/AppSample3.txt',
                 true);
         $this->httpFeedSampleWithoutVersion = file_get_contents(
-                'ZendGData/_files/AppSample4.txt',
+                __DIR__ . '/_files/AppSample4.txt',
                 true);
 
         $this->adapter = new TestAsset\MockHttpClient();

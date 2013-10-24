@@ -25,7 +25,7 @@ class SendEventNotificationsTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->sendEventNotificationsText = file_get_contents(
-                'ZendGData/Calendar/_files/SendEventNotificationsElementSample1.xml',
+                __DIR__ . '/_files/SendEventNotificationsElementSample1.xml',
                 true);
         $this->sendEventNotifications = new Extension\SendEventNotifications();
     }

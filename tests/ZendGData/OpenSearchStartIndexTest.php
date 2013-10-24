@@ -25,7 +25,7 @@ class OpenSearchStartIndexTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->openSearchStartIndexText = file_get_contents(
-                'ZendGData/_files/OpenSearchStartIndexElementSample1.xml',
+                __DIR__ . '/_files/OpenSearchStartIndexElementSample1.xml',
                 true);
         $this->openSearchStartIndex = new Extension\OpenSearchStartIndex();
     }

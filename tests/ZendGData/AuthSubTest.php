@@ -67,7 +67,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped('The openssl extension is not available');
         } else {
             $c = new HttpClient();
-            $c->setAuthSubPrivateKeyFile("Zend/GData/_files/RsaKey.pem",
+            $c->setAuthSubPrivateKeyFile(__DIR__ . "/_files/RsaKey.pem",
                                          null, true);
             $c->setAuthSubToken('abcdefg');
             $requestData = $c->filterHttpRequest('POST',
@@ -85,7 +85,7 @@ class AuthSubTest extends \PHPUnit_Framework_TestCase
                     preg_match('/sig="([^"]*)"/', $headerValue, $matches);
                     $sig = $matches[1];
                     if (function_exists('openssl_verify')) {
-                        $fp = fopen('ZendGData/_files/RsaCert.pem', 'r', true);
+                        $fp = fopen(__DIR__ . '/_files/RsaCert.pem', 'r', true);
                         $cert = '';
                         while (!feof($fp)) {
                             $cert .= fread($fp, 8192);

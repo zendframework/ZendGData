@@ -28,7 +28,7 @@ class PhotosPhotoEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $photoEntryText = file_get_contents(
-                '_files/TestPhotoEntry.xml',
+                __DIR__ . '/_files/TestPhotoEntry.xml',
                 true);
         $this->photoEntry = new \ZendGData\Photos\PhotoEntry($photoEntryText);
     }

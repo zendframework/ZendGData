@@ -25,7 +25,7 @@ class CommentFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/YouTube/_files/CommentFeedDataSample1.xml',
+                __DIR__ . '/_files/CommentFeedDataSample1.xml',
                 true);
         $this->feed = new YouTube\CommentFeed();
     }

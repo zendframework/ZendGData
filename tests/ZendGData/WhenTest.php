@@ -24,7 +24,7 @@ class WhenTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->whenText = file_get_contents(
-                'ZendGData/_files/WhenElementSample1.xml',
+                __DIR__ . '/_files/WhenElementSample1.xml',
                 true);
         $this->when = new Extension\When();
     }

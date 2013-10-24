@@ -25,7 +25,7 @@ class SelectedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->selectedText = file_get_contents(
-                'ZendGData/Calendar/_files/SelectedElementSample1.xml',
+                __DIR__ . '/_files/SelectedElementSample1.xml',
                 true);
         $this->selected = new Extension\Selected();
     }

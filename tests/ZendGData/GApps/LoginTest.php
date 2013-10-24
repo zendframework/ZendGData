@@ -25,7 +25,7 @@ class LoginTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->loginText = file_get_contents(
-                'ZendGData/GApps/_files/LoginElementSample1.xml',
+                __DIR__ . '/_files/LoginElementSample1.xml',
                 true);
         $this->login = new Extension\Login();
     }

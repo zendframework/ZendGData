@@ -26,7 +26,8 @@
         "zendframework/zend-version": ">=2.0.0"
     },
     "require-dev": {
-        "zendframework/zend-i18n": ">=2.0.0"
+        "zendframework/zendframework": ">=2.0.0",
+        "phpunit/PHPUnit": "3.7.*"
     },
     "extra": {
         "branch-alias": {

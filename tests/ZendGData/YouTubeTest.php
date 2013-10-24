@@ -28,7 +28,7 @@ class YouTubeTest extends \PHPUnit_Framework_TestCase
         // bogus authentication credentials.
         $this->gdata = new YouTube(null);
         $this->responseText = file_get_contents(
-                'ZendGData/YouTube/_files/FormUploadTokenResponseSample.xml',
+                __DIR__ . '/YouTube/_files/FormUploadTokenResponseSample.xml',
                 true);
     }
 

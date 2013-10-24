@@ -24,7 +24,7 @@ class AttendeeStatusTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->attendeeStatusText = file_get_contents(
-                'ZendGData/_files/AttendeeStatusElementSample1.xml',
+                __DIR__ . '/_files/AttendeeStatusElementSample1.xml',
                 true);
         $this->attendeeStatus = new Extension\AttendeeStatus();
     }

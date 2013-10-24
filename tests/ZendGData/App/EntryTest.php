@@ -41,10 +41,10 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/App/_files/EntrySample1.xml',
+                __DIR__ . '/_files/EntrySample1.xml',
                 true);
         $this->httpEntrySample = file_get_contents(
-                'ZendGData/App/_files/EntrySampleHttp1.txt',
+                __DIR__ . '/_files/EntrySampleHttp1.txt',
                 true);
         $this->entry = new App\Entry();
 
