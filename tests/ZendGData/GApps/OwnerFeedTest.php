@@ -30,7 +30,7 @@ class OwnerFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $ownerFeedText = file_get_contents(
-                'ZendGData/GApps/_files/OwnerFeedDataSample1.xml',
+                __DIR__ . '/_files/OwnerFeedDataSample1.xml',
                 true);
         $this->ownerFeed = new OwnerFeed($ownerFeedText);
         $this->emptyOwnerFeed = new OwnerFeed();

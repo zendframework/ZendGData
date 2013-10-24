@@ -31,7 +31,7 @@ class PhotosUserFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $userFeedText = file_get_contents(
-                '_files/TestUserFeed.xml',
+                __DIR__ . '/_files/TestUserFeed.xml',
                 true);
         $this->userFeed = new Photos\UserFeed($userFeedText);
     }

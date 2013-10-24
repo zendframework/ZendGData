@@ -25,7 +25,7 @@ class QuotaTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->quotaText = file_get_contents(
-                'ZendGData/GApps/_files/QuotaElementSample1.xml',
+                __DIR__ . '/_files/QuotaElementSample1.xml',
                 true);
         $this->quota = new Extension\Quota();
     }

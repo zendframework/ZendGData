@@ -25,7 +25,7 @@ class EmailListRecipientEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/GApps/_files/EmailListRecipientEntryDataSample1.xml',
+                __DIR__ . '/_files/EmailListRecipientEntryDataSample1.xml',
                 true);
         $this->entry = new GApps\EmailListRecipientEntry();
     }

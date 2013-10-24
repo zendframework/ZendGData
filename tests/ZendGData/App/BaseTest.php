@@ -21,7 +21,7 @@ class BaseTest extends \PHPUnit_Framework_TestCase
 {
     public function setUp()
     {
-        $this->fileName = 'ZendGData/App/_files/FeedSample1.xml';
+        $this->fileName = __DIR__ . '/_files/FeedSample1.xml';
         $this->base = new \ZendGDataTest\App\TestAsset\MockBase();
     }
 

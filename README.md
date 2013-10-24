@@ -1,4 +1,10 @@
 ZendGData component
+===================
+
+**UNMAINTAINED COMPONENT**
+
+This component is unmaintained.  If you require API access to the Google api,
+please consider using https://code.google.com/p/google-api-php-client/
 
 You can install using:
 

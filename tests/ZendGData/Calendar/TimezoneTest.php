@@ -25,7 +25,7 @@ class TimezoneTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->timezoneText = file_get_contents(
-                'ZendGData/Calendar/_files/TimezoneElementSample1.xml',
+                __DIR__ . '/_files/TimezoneElementSample1.xml',
                 true);
         $this->timezone = new Extension\Timezone();
     }

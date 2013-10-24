@@ -29,7 +29,7 @@ class FeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->feedText = file_get_contents(
-                'ZendGData/App/_files/FeedSample1.xml',
+                __DIR__ . '/_files/FeedSample1.xml',
                 true);
         $this->feed = new App\Feed();
     }

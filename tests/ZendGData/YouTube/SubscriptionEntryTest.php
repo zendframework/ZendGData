@@ -26,22 +26,22 @@ class SubscriptionEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/YouTube/_files/SubscriptionEntryDataSample1.xml',
+                __DIR__ . '/_files/SubscriptionEntryDataSample1.xml',
                 true);
         $this->v2entryText_channel = file_get_contents(
-                'ZendGData/YouTube/_files/' .
+                __DIR__ . '/_files/' .
                 'SubscriptionEntryDataSample_channelV2.xml',
                 true);
         $this->v2entryText_playlist = file_get_contents(
-                'ZendGData/YouTube/_files/' .
+                __DIR__ . '/_files/' .
                 'SubscriptionEntryDataSample_playlistV2.xml',
                 true);
         $this->v2entryText_favorites = file_get_contents(
-                'ZendGData/YouTube/_files/' .
+                __DIR__ . '/_files/' .
                 'SubscriptionEntryDataSample_favoritesV2.xml',
                 true);
         $this->v2entryText_query = file_get_contents(
-                'ZendGData/YouTube/_files/' .
+                __DIR__ . '/_files/' .
                 'SubscriptionEntryDataSample_queryV2.xml',
                 true);
 

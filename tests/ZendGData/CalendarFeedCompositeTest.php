@@ -31,7 +31,7 @@ class CalendarFeedCompositeTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $eventFeedText = file_get_contents(
-                'ZendGData/Calendar/_files/EventFeedCompositeSample1.xml',
+                __DIR__ . '/Calendar/_files/EventFeedCompositeSample1.xml',
                 true);
         $this->eventFeed = new Calendar\EventFeed($eventFeedText);
     }

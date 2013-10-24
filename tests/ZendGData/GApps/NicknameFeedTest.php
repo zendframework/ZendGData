@@ -29,7 +29,7 @@ class NicknameFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $nicknameFeedText = file_get_contents(
-                'ZendGData/GApps/_files/NicknameFeedDataSample1.xml',
+                __DIR__ . '/_files/NicknameFeedDataSample1.xml',
                 true);
         $this->nicknameFeed = new GApps\NicknameFeed($nicknameFeedText);
         $this->emptyNicknameFeed = new GApps\NicknameFeed();

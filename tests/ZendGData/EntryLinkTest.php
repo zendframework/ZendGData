@@ -24,7 +24,7 @@ class EntryLinkTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryLinkText = file_get_contents(
-                'ZendGData/_files/EntryLinkElementSample1.xml',
+                __DIR__ . '/_files/EntryLinkElementSample1.xml',
                 true);
         $this->entryLink = new Extension\EntryLink();
     }

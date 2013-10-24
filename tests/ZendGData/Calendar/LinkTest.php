@@ -25,7 +25,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->linkText = file_get_contents(
-                'ZendGData/Calendar/_files/LinkElementSample1.xml',
+                __DIR__ . '/_files/LinkElementSample1.xml',
                 true);
         $this->link = new Extension\Link();
     }

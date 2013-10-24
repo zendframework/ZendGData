@@ -24,7 +24,7 @@ class OriginalEventTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->originalEventText = file_get_contents(
-                'ZendGData/_files/OriginalEventElementSample1.xml',
+                __DIR__ . '/_files/OriginalEventElementSample1.xml',
                 true);
         $this->originalEvent = new Extension\OriginalEvent();
     }

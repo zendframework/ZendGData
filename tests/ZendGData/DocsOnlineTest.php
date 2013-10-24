@@ -87,7 +87,7 @@ class DocsOnlineTest extends \PHPUnit_Framework_TestCase
     {
         $documentTitle = 'spreadsheet_upload_test.csv';
         $newDocumentEntry = $this->gdata->uploadFile(
-            'ZendGData/_files/DocsTest.csv', $documentTitle,
+            __DIR__ . '/_files/DocsTest.csv', $documentTitle,
             $this->gdata->lookupMimeType('CSV'),
             Docs::DOCUMENTS_LIST_FEED_URI);
         $this->assertTrue($newDocumentEntry->title->text === $documentTitle);

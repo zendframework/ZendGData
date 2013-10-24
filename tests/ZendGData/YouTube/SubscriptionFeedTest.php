@@ -25,7 +25,7 @@ class SubscriptionFeedTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->V2feedText = file_get_contents(
-                'ZendGData/YouTube/_files/SubscriptionFeedDataSampleV2.xml',
+                __DIR__ . '/_files/SubscriptionFeedDataSampleV2.xml',
                 true);
         $this->feed = new YouTube\SubscriptionFeed();
     }

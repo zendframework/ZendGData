@@ -25,7 +25,7 @@ class MemberEntryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->entryText = file_get_contents(
-                'ZendGData/GApps/_files/MemberEntryDataSample1.xml',
+                __DIR__ . '/_files/MemberEntryDataSample1.xml',
                 true);
         $this->entry = new MemberEntry();
     }
