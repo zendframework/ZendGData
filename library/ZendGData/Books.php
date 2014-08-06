@@ -23,6 +23,7 @@ class Books extends GData
     const MY_LIBRARY_FEED_URI = 'https://books.google.com/books/feeds/users/me/collections/library/volumes';
     const MY_ANNOTATION_FEED_URI = 'https://books.google.com/books/feeds/users/me/volumes';
     const AUTH_SERVICE_NAME = 'print';
+    const TESTE = 'teste';
 
     /**
      * Namespaces used for ZendGData\Books
